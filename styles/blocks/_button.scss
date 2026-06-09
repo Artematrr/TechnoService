@@ -1,2 +1,62 @@
 .button {
+	@include reset-button;
+	@include flex-center(true);
+	@include fluid-text(16, 18);
+
+	min-height: var(--button-height);
+	padding-inline: 36px;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	color: var(--white);
+	background-color: var(--primary-500);
+	border: 1px solid var(--primary-500);
+	border-radius: 0;
+
+	@include hover {
+		color: var(--primary-500);
+		background-color: var(--white);
+	}
+
+	&--outline {
+		color: var(--white);
+		background-color: transparent;
+		border-color: currentColor;
+
+		@include hover {
+			color: var(--white);
+			background-color: var(--primary-500);
+			border-color: var(--primary-500);
+		}
+	}
+
+	&--link {
+		min-height: auto;
+		padding: 0;
+		color: var(--primary-500);
+		background-color: transparent;
+		border: none;
+
+		@include hover {
+			color: var(--black);
+			background-color: transparent;
+		}
+	}
+
+	&--gray {
+		color: var(--black);
+		background-color: var(--gray-300);
+		border-color: var(--gray-300);
+
+		@include hover {
+			color: var(--white);
+			background-color: var(--primary-500);
+			border-color: var(--primary-500);
+		}
+	}
+
+	@include mobile {
+		width: 100%;
+		padding-inline: 20px;
+	}
 }

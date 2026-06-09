@@ -1,0 +1,123 @@
+.page-hero {
+	margin-bottom: 56px;
+
+	&__body {
+		position: relative;
+		min-height: 509px;
+		overflow: hidden;
+		background-color: var(--white);
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: 0;
+			background-image: url('/images/02-hero/bg-pattern-outline.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% 100%;
+			pointer-events: none;
+		}
+
+		&::after {
+			display: none;
+		}
+	}
+
+	&__picture {
+		display: none;
+	}
+
+	&__stripe {
+		position: absolute;
+		top: 12px;
+		left: 140px;
+		z-index: 2;
+		width: min(690px, 58%);
+		height: 38px;
+		background-color: var(--primary-500);
+		border-radius: 24px 0 20px 0;
+		pointer-events: none;
+	}
+
+	&__title {
+		@include fluid-text(44, 58);
+
+		position: absolute;
+		top: 50%;
+		left: 31%;
+		z-index: 2;
+		font-weight: 700;
+		line-height: 1;
+		text-transform: uppercase;
+		color: #4b4d55;
+		translate: -50% -50%;
+	}
+
+	&__label {
+		@include fluid-text(16, 18);
+		@include flex-center;
+
+		position: absolute;
+		right: 42px;
+		bottom: 52px;
+		z-index: 2;
+		width: min(430px, 36%);
+		min-height: 58px;
+		font-weight: 700;
+		line-height: 1;
+		color: var(--white);
+		text-align: center;
+		background-color: var(--primary-500);
+		border-radius: 28px 0 18px 0;
+		pointer-events: none;
+	}
+
+	@include tablet {
+		margin-bottom: 38px;
+
+		&__body {
+			min-height: auto;
+			height: 34vw;
+			max-height: 509px;
+		}
+	}
+
+	@include mobile {
+		margin-bottom: 28px;
+
+		&__body {
+			height: 241px;
+			background-image: url('/images/02-hero/bg-pattern.svg');
+			background-position: 49% 44%;
+			background-size: 210% auto;
+			border: 2px solid var(--primary-500);
+			border-radius: 10px;
+
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+
+		&__stripe {
+			display: none;
+		}
+
+		&__title {
+			@include fluid-text(20, 22);
+
+			top: 31px;
+			left: 50%;
+			white-space: nowrap;
+		}
+
+		&__label {
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			min-height: 48px;
+		}
+	}
+}

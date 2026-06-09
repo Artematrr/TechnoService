@@ -1,0 +1,40 @@
+.page-text {
+	margin-bottom: 62px;
+
+	&__container {
+		display: grid;
+		gap: 28px;
+	}
+
+	&__lead {
+		@include fluid-text(18, 18);
+
+		max-width: 1230px;
+		font-weight: 700;
+		line-height: 1.45;
+		color: #5c5f68;
+	}
+
+	&__body {
+		@include fluid-text(14, 14);
+
+		max-width: 1410px;
+		line-height: 1.45;
+		color: var(--gray-500);
+	}
+
+	@include mobile {
+		margin-bottom: 32px;
+
+		&__container {
+			gap: 18px;
+		}
+
+		&__lead,
+		&__body {
+			@include fluid-text(13, 14);
+
+			line-height: 1.45;
+		}
+	}
+}

@@ -1,17 +1,38 @@
 .form {
 	display: grid;
+	gap: 16px;
 
 	&__row {
+		display: grid;
+		gap: 16px;
 	}
 
 	&__field {
+		display: grid;
+		gap: 8px;
 	}
 
 	&__label {
+		@include fluid-text(14, 14);
+
+		color: var(--gray-500);
 	}
 
-	&__control {
+	&__control,
+	&__input,
+	&__textarea {
+		@include fluid-text(16, 16);
+
+		width: 100%;
+		min-height: var(--input-height);
+		padding-inline: 30px;
+		color: var(--black);
+		background-color: var(--white);
+		border: 1px solid var(--gray-300);
+		outline: none;
+
 		&:focus {
+			border-color: var(--primary-500);
 		}
 
 		&--textarea {
@@ -19,25 +40,84 @@
 		}
 	}
 
+	&__textarea {
+		min-height: 136px;
+		padding-block: 22px;
+		resize: vertical;
+	}
+
 	&__caption {
+		@include fluid-text(12, 12);
+
+		color: var(--gray-500);
 	}
 
 	&__checkbox {
+		@include fluid-text(12, 12);
+
+		display: flex;
+		align-items: flex-start;
+		gap: 12px;
+		color: var(--gray-500);
+		cursor: pointer;
 	}
 
 	&__checkbox-input {
 		@include visually-hidden;
 
 		&:checked + .form__checkbox-control {
+			background-color: var(--primary-500);
+			border-color: var(--primary-500);
+
+			&::after {
+				opacity: 1;
+			}
 		}
 
 		&:focus-visible + .form__checkbox-control {
+			outline: 2px solid var(--primary-500);
+			outline-offset: 3px;
 		}
 	}
 
 	&__checkbox-control {
+		@include square(18px);
+		@include flex-center;
+
+		flex: 0 0 18px;
+		margin-top: 1px;
+		background-color: var(--white);
+		border: 1px solid var(--gray-300);
+
+		&::after {
+			content: '';
+			width: 9px;
+			height: 5px;
+			border-bottom: 2px solid var(--white);
+			border-left: 2px solid var(--white);
+			rotate: -45deg;
+			translate: 0 -1px;
+			opacity: 0;
+		}
 	}
 
 	&__actions {
+		display: grid;
+		gap: 12px;
+	}
+
+	@include mobile {
+		gap: 12px;
+
+		&__control,
+		&__input,
+		&__textarea {
+			padding-inline: 18px;
+		}
+
+		&__checkbox {
+			gap: 9px;
+			line-height: 1.2;
+		}
 	}
 }
