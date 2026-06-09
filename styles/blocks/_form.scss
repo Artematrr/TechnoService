@@ -1,0 +1,43 @@
+.form {
+	display: grid;
+
+	&__row {
+	}
+
+	&__field {
+	}
+
+	&__label {
+	}
+
+	&__control {
+		&:focus {
+		}
+
+		&--textarea {
+			resize: vertical;
+		}
+	}
+
+	&__caption {
+	}
+
+	&__checkbox {
+	}
+
+	&__checkbox-input {
+		@include visually-hidden;
+
+		&:checked + .form__checkbox-control {
+		}
+
+		&:focus-visible + .form__checkbox-control {
+		}
+	}
+
+	&__checkbox-control {
+	}
+
+	&__actions {
+	}
+}

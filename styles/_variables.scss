@@ -1,0 +1,38 @@
+:root {
+	--white: #ffffff;
+	--black: #000000;
+
+	--primary-500: #ff2e17;
+	--gray-200: #f9f9f9;
+	--gray-300: #f2f2f2;
+	--gray-500: #85878b;
+	--gray-900: #232427;
+
+	--font-family-base:
+		'Calibri', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	// --font-family-secondary: 'Arial', sans-serif;
+
+	--border: 1px solid transparent;
+
+	--container-width: 1440px;
+	--container-padding-x: 15px;
+
+	--input-height: 68px;
+	--button-height: 72px;
+	--header-height: 135px;
+
+	--transition-duration: 0.2s;
+	--transition-duration-long: 0.35s;
+	--transition-timing-function: ease-in-out;
+
+	@include tablet {
+		--container-padding-x: 24px;
+		--input-height: 52px;
+		--button-height: 48px;
+		--header-height: 92px;
+	}
+
+	// @include mobile {
+	// 	--container-padding-x: 15px;
+	// }
+}
