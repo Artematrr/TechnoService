@@ -1,8 +1,7 @@
 .breadcrumbs {
 	@include fluid-text(12, 12);
 
-	margin-top: 18px;
-	margin-bottom: 34px;
+	margin-block: 15px;
 
 	ul,
 	ol {
@@ -18,7 +17,7 @@
 		gap: 10px;
 
 		&:not(:last-child) {
-			color: var(--gray-500);
+			color: var(--black);
 		}
 
 		&:not(:last-child)::after {
@@ -28,15 +27,11 @@
 
 		&:last-child {
 			pointer-events: none;
+			color: var(--primary-500);
 		}
 
 		@include hover {
 			color: var(--black);
 		}
-	}
-
-	@include mobile {
-		margin-top: 0;
-		margin-bottom: 18px;
 	}
 }

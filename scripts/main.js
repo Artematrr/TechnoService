@@ -54,6 +54,44 @@ $(function () {
 		}
 	});
 
+	if (window.Swiper) {
+		$('.js-cards-slider').each(function () {
+			const slider = this.querySelector('.cards-grid__container');
+			const pagination = this.querySelector('.cards-grid__pagination');
+
+			if (!slider || !pagination) {
+				return;
+			}
+
+			new Swiper(slider, {
+				slidesPerView: 2,
+				spaceBetween: 12,
+				grabCursor: true,
+				simulateTouch: true,
+				watchOverflow: false,
+				pagination: {
+					el: pagination,
+					clickable: true,
+					bulletClass: 'cards-grid__bullet',
+					bulletActiveClass: 'is-active',
+					renderBullet(index, className) {
+						return `<button class="${className}" type="button" aria-label="Показать слайд ${index + 1}"></button>`;
+					},
+				},
+				breakpoints: {
+					768: {
+						slidesPerView: 3,
+						spaceBetween: 24,
+					},
+					1024: {
+						slidesPerView: 4,
+						spaceBetween: 30,
+					},
+				},
+			});
+		});
+	}
+
 	$('.js-mobile-cards-slider').each(function () {
 		const $slider = $(this);
 		const $list = $slider.find('.cards-grid__list');

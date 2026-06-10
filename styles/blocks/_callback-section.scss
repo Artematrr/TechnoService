@@ -1,18 +1,41 @@
 .callback-section {
 	margin-bottom: 70px;
 
+	@include mobile {
+		margin-bottom: 0;
+	}
+
 	&__container {
 		display: grid;
 		grid-template-columns: 330px minmax(0, 940px);
 		align-items: center;
 		justify-content: space-between;
 		gap: 70px;
+
+		@include tablet {
+			grid-template-columns: 1fr;
+			gap: 34px;
+		}
+
+		@include mobile {
+			gap: 26px;
+		}
 	}
 
 	&__content {
 		display: grid;
 		gap: 28px;
 		align-content: start;
+
+		@include tablet {
+			max-width: 620px;
+		}
+
+		@include mobile {
+			justify-items: center;
+			gap: 16px;
+			text-align: center;
+		}
 	}
 
 	&__title {
@@ -21,6 +44,12 @@
 		font-weight: 700;
 		line-height: 1;
 		color: #54565f;
+
+		@include mobile {
+			@include fluid-text(28, 32);
+
+			line-height: 1.05;
+		}
 	}
 
 	&__text {
@@ -28,12 +57,24 @@
 
 		line-height: 1.35;
 		color: #54565f;
+
+		@include mobile {
+			@include fluid-text(13, 14);
+
+			line-height: 1.35;
+		}
 	}
 
 	&__online {
 		display: grid;
 		gap: 12px;
 		margin-top: 20px;
+
+		@include mobile {
+			justify-items: center;
+			gap: 10px;
+			margin-top: 4px;
+		}
 	}
 
 	&__online-title {
@@ -42,6 +83,10 @@
 		font-weight: 700;
 		line-height: 1.1;
 		color: #8b8d93;
+
+		@include mobile {
+			@include fluid-text(16, 18);
+		}
 	}
 
 	&__socials {
@@ -62,12 +107,28 @@
 		background-position: center;
 		background-size: cover;
 		border-radius: 16px;
+
+		@include tablet {
+			width: 100%;
+		}
+
+		@include mobile {
+			min-height: auto;
+			padding: 0;
+			background-image: none;
+			border-radius: 0;
+		}
 	}
 
 	&__form-wrap {
 		display: grid;
 		gap: 22px;
 		width: 450px;
+
+		@include mobile {
+			width: 100%;
+			gap: 16px;
+		}
 	}
 
 	&__form-title {
@@ -75,90 +136,27 @@
 
 		text-align: center;
 		color: #54565f;
-	}
 
-	&__form {
-		gap: 18px;
-	}
-
-	&__submit {
-		min-height: 72px;
-	}
-
-	@include tablet {
-		&__container {
-			grid-template-columns: 1fr;
-			gap: 34px;
-		}
-
-		&__content {
-			max-width: 620px;
-		}
-
-		&__panel {
-			width: 100%;
-		}
-	}
-
-	@include mobile {
-		margin-bottom: 0;
-
-		&__container {
-			gap: 26px;
-		}
-
-		&__content {
-			justify-items: center;
-			gap: 16px;
-			text-align: center;
-		}
-
-		&__title {
-			@include fluid-text(28, 32);
-
-			line-height: 1.05;
-		}
-
-		&__text {
-			@include fluid-text(13, 14);
-
-			line-height: 1.35;
-		}
-
-		&__online {
-			justify-items: center;
-			gap: 10px;
-			margin-top: 4px;
-		}
-
-		&__online-title {
-			@include fluid-text(16, 18);
-		}
-
-		&__panel {
-			min-height: auto;
-			padding: 0;
-			background-image: none;
-			border-radius: 0;
-		}
-
-		&__form-wrap {
-			width: 100%;
-			gap: 16px;
-		}
-
-		&__form-title {
+		@include mobile {
 			@include fluid-text(18, 20);
 
 			font-weight: 700;
 			line-height: 1.1;
 		}
+	}
 
-		&__form {
+	&__form {
+		gap: 18px;
+
+		@include mobile {
 			gap: 12px;
 		}
+	}
 
-		&__submit {
+	&__submit {
+		min-height: 72px;
+
+		@include mobile {
 			min-height: var(--button-height);
 		}
 	}

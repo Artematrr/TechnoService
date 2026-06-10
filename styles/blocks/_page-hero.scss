@@ -1,6 +1,14 @@
 .page-hero {
 	margin-bottom: 56px;
 
+	@include tablet {
+		margin-bottom: 38px;
+	}
+
+	@include mobile {
+		margin-bottom: 28px;
+	}
+
 	&__body {
 		position: relative;
 		min-height: 509px;
@@ -22,6 +30,26 @@
 		&::after {
 			display: none;
 		}
+
+		@include tablet {
+			min-height: auto;
+			height: 34vw;
+			max-height: 509px;
+		}
+
+		@include mobile {
+			height: 241px;
+			background-image: url('/images/02-hero/bg-pattern.svg');
+			background-position: 49% 44%;
+			background-size: 210% auto;
+			border: 2px solid var(--primary-500);
+			border-radius: 10px;
+
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
 	}
 
 	&__picture {
@@ -38,6 +66,10 @@
 		background-color: var(--primary-500);
 		border-radius: 24px 0 20px 0;
 		pointer-events: none;
+
+		@include mobile {
+			display: none;
+		}
 	}
 
 	&__title {
@@ -52,6 +84,14 @@
 		text-transform: uppercase;
 		color: #4b4d55;
 		translate: -50% -50%;
+
+		@include mobile {
+			@include fluid-text(20, 22);
+
+			top: 31px;
+			left: 50%;
+			white-space: nowrap;
+		}
 	}
 
 	&__label {
@@ -71,48 +111,8 @@
 		background-color: var(--primary-500);
 		border-radius: 28px 0 18px 0;
 		pointer-events: none;
-	}
 
-	@include tablet {
-		margin-bottom: 38px;
-
-		&__body {
-			min-height: auto;
-			height: 34vw;
-			max-height: 509px;
-		}
-	}
-
-	@include mobile {
-		margin-bottom: 28px;
-
-		&__body {
-			height: 241px;
-			background-image: url('/images/02-hero/bg-pattern.svg');
-			background-position: 49% 44%;
-			background-size: 210% auto;
-			border: 2px solid var(--primary-500);
-			border-radius: 10px;
-
-			&::before,
-			&::after {
-				display: none;
-			}
-		}
-
-		&__stripe {
-			display: none;
-		}
-
-		&__title {
-			@include fluid-text(20, 22);
-
-			top: 31px;
-			left: 50%;
-			white-space: nowrap;
-		}
-
-		&__label {
+		@include mobile {
 			right: 0;
 			bottom: 0;
 			left: 0;

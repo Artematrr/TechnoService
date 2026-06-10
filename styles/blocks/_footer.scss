@@ -3,26 +3,58 @@
 	color: var(--white);
 	background-color: var(--gray-900);
 
+	@include mobile {
+		padding-block: 32px 34px;
+	}
+
 	&__container {
 		display: grid;
 		gap: 44px;
+
+		@include mobile {
+			gap: 28px;
+		}
 	}
 
 	&__top {
 		display: grid;
 		grid-template-columns: 300px 1fr 330px;
 		gap: 64px;
+
+		@include tablet {
+			grid-template-columns: 1fr 1fr;
+			gap: 40px;
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+			gap: 26px;
+		}
 	}
 
 	&__brand {
 		display: grid;
 		gap: 24px;
 		align-content: start;
+
+		@include tablet {
+			grid-row: span 2;
+		}
+
+		@include mobile {
+			justify-items: center;
+			gap: 16px;
+			text-align: center;
+		}
 	}
 
 	&__logo {
 		display: inline-flex;
 		width: 213px;
+
+		@include mobile {
+			width: 178px;
+		}
 	}
 
 	&__tagline {
@@ -31,11 +63,22 @@
 		max-width: 250px;
 		font-weight: 700;
 		line-height: 1.2;
+
+		@include mobile {
+			max-width: 260px;
+		}
 	}
 
 	&__contacts {
 		display: grid;
 		gap: 20px;
+
+		@include mobile {
+			width: 100%;
+			justify-self: stretch;
+			gap: 14px;
+			text-align: left;
+		}
 	}
 
 	&__contact {
@@ -104,12 +147,26 @@
 		grid-template-columns: repeat(2, minmax(180px, 1fr));
 		gap: 34px 76px;
 		align-content: start;
+
+		@include tablet {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 28px;
+		}
+
+		@include mobile {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 22px 24px;
+		}
 	}
 
 	&__group {
 		display: grid;
 		gap: 14px;
 		align-content: start;
+
+		@include mobile {
+			gap: 10px;
+		}
 	}
 
 	&__title {
@@ -122,6 +179,10 @@
 	&__list {
 		display: grid;
 		gap: 10px;
+
+		@include mobile {
+			gap: 8px;
+		}
 	}
 
 	&__link {
@@ -138,6 +199,10 @@
 		display: grid;
 		gap: 34px;
 		align-content: start;
+
+		@include mobile {
+			gap: 22px;
+		}
 	}
 
 	&__tender {
@@ -146,6 +211,11 @@
 		padding: 18px;
 		text-align: center;
 		border: 1px solid rgba(255, 255, 255, 0.7);
+
+		@include mobile {
+			gap: 14px;
+			padding: 18px 16px;
+		}
 	}
 
 	&__tender-text {
@@ -163,6 +233,14 @@
 		padding-top: 28px;
 		color: rgba(255, 255, 255, 0.36);
 		border-top: 1px solid rgba(255, 255, 255, 0.75);
+
+		@include mobile {
+			display: grid;
+			justify-items: center;
+			gap: 10px;
+			padding-top: 0;
+			border-top: none;
+		}
 	}
 
 	&__copyright,
@@ -173,86 +251,6 @@
 	&__policy {
 		@include hover {
 			color: var(--primary-500);
-		}
-	}
-
-	@include tablet {
-		&__top {
-			grid-template-columns: 1fr 1fr;
-			gap: 40px;
-		}
-
-		&__brand {
-			grid-row: span 2;
-		}
-
-		&__nav {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 28px;
-		}
-	}
-
-	@include mobile {
-		padding-block: 32px 34px;
-
-		&__container {
-			gap: 28px;
-		}
-
-		&__top {
-			grid-template-columns: 1fr;
-			gap: 26px;
-		}
-
-		&__brand {
-			justify-items: center;
-			gap: 16px;
-			text-align: center;
-		}
-
-		&__logo {
-			width: 178px;
-		}
-
-		&__tagline {
-			max-width: 260px;
-		}
-
-		&__contacts {
-			width: 100%;
-			justify-self: stretch;
-			gap: 14px;
-			text-align: left;
-		}
-
-		&__nav {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 22px 24px;
-		}
-
-		&__group {
-			gap: 10px;
-		}
-
-		&__list {
-			gap: 8px;
-		}
-
-		&__aside {
-			gap: 22px;
-		}
-
-		&__tender {
-			gap: 14px;
-			padding: 18px 16px;
-		}
-
-		&__bottom {
-			display: grid;
-			justify-items: center;
-			gap: 10px;
-			padding-top: 0;
-			border-top: none;
 		}
 	}
 }

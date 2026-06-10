@@ -1,9 +1,17 @@
 .page-text {
 	margin-bottom: 62px;
 
+	@include mobile {
+		margin-bottom: 32px;
+	}
+
 	&__container {
 		display: grid;
 		gap: 28px;
+
+		@include mobile {
+			gap: 18px;
+		}
 	}
 
 	&__lead {
@@ -13,6 +21,12 @@
 		font-weight: 700;
 		line-height: 1.45;
 		color: #5c5f68;
+
+		@include mobile {
+			@include fluid-text(13, 14);
+
+			line-height: 1.45;
+		}
 	}
 
 	&__body {
@@ -21,17 +35,8 @@
 		max-width: 1410px;
 		line-height: 1.45;
 		color: var(--gray-500);
-	}
 
-	@include mobile {
-		margin-bottom: 32px;
-
-		&__container {
-			gap: 18px;
-		}
-
-		&__lead,
-		&__body {
+		@include mobile {
 			@include fluid-text(13, 14);
 
 			line-height: 1.45;

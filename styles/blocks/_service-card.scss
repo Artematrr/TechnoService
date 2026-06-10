@@ -8,6 +8,11 @@
 	border: 1px solid var(--gray-300);
 	border-radius: 6px;
 
+	@include mobile {
+		min-height: 215px;
+		border-radius: 4px;
+	}
+
 	@include hover {
 		border-color: var(--primary-500);
 
@@ -42,12 +47,24 @@
 		left: 16px;
 		background-color: rgba(35, 36, 39, 0.38);
 		border: 1px solid rgba(255, 255, 255, 0.78);
+
+		@include mobile {
+			@include square(44px);
+
+			bottom: 10px;
+			left: 10px;
+		}
 	}
 
 	&__icon-image {
 		width: 32px;
 		height: 32px;
 		object-fit: contain;
+
+		@include mobile {
+			width: 24px;
+			height: 24px;
+		}
 	}
 
 	&__body {
@@ -55,6 +72,11 @@
 		grid-template-rows: auto 1fr auto;
 		gap: 18px;
 		padding: 20px 16px 22px;
+
+		@include mobile {
+			gap: 10px;
+			padding: 12px 10px 13px;
+		}
 	}
 
 	&__title {
@@ -63,6 +85,12 @@
 		font-weight: 700;
 		line-height: 0.95;
 		color: #54565f;
+
+		@include mobile {
+			@include fluid-text(16, 18);
+
+			line-height: 1.05;
+		}
 	}
 
 	&__text {
@@ -71,6 +99,12 @@
 		max-width: 210px;
 		line-height: 1.25;
 		color: #54565f;
+
+		@include mobile {
+			@include fluid-text(12, 12);
+
+			line-height: 1.25;
+		}
 	}
 
 	&__arrow {
@@ -78,6 +112,10 @@
 		height: 16px;
 		object-fit: contain;
 		transition: translate var(--transition-duration) var(--transition-timing-function);
+
+		@include mobile {
+			width: 22px;
+		}
 	}
 
 	&--plain {
@@ -85,56 +123,18 @@
 
 		.service-card__media {
 			aspect-ratio: 330 / 220;
+
+			@include mobile {
+				aspect-ratio: 150 / 92;
+			}
 		}
 
 		.service-card__icon {
 			display: none;
 		}
-	}
 
-	@include mobile {
-		min-height: 215px;
-		border-radius: 4px;
-
-		&__body {
-			gap: 10px;
-			padding: 12px 10px 13px;
-		}
-
-		&__icon {
-			@include square(44px);
-
-			bottom: 10px;
-			left: 10px;
-		}
-
-		&__icon-image {
-			width: 24px;
-			height: 24px;
-		}
-
-		&__title {
-			@include fluid-text(16, 18);
-
-			line-height: 1.05;
-		}
-
-		&__text {
-			@include fluid-text(12, 12);
-
-			line-height: 1.25;
-		}
-
-		&__arrow {
-			width: 22px;
-		}
-
-		&--plain {
+		@include mobile {
 			min-height: 205px;
-
-			.service-card__media {
-				aspect-ratio: 150 / 92;
-			}
 		}
 	}
 }

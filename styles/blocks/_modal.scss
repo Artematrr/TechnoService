@@ -14,6 +14,11 @@
 		min-height: 100%;
 		padding: 24px;
 		background-color: rgba(0, 0, 0, 0.55);
+
+		@include mobile {
+			align-items: flex-start;
+			padding: 16px;
+		}
 	}
 
 	&__container {
@@ -21,6 +26,10 @@
 		width: min(100%, 520px);
 		padding: 44px;
 		background-color: var(--white);
+
+		@include mobile {
+			padding: 40px 18px 24px;
+		}
 	}
 
 	&__close {
@@ -65,16 +74,5 @@
 		font-weight: 700;
 		line-height: 1;
 		color: #54565f;
-	}
-
-	@include mobile {
-		&__overlay {
-			align-items: flex-start;
-			padding: 16px;
-		}
-
-		&__container {
-			padding: 40px 18px 24px;
-		}
 	}
 }

@@ -1,6 +1,6 @@
 @mixin fluid-text($min: 16, $max: 48) {
 	// 1440 или 2000 - ширина макета
-	$layoutWidth: 2000;
+	$layoutWidth: 1440;
 	font-size: clamp(#{$min}px, #{$max / $layoutWidth * 100}vw, #{$max}px);
 }
 

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Оборудование ТехноСервис - энергия сжатия и потенциал холода">
+	<meta name="description" content="Оборудование ТехноСервис">
 	<title>Оборудование — ТехноСервис</title>
 
 	<link rel="stylesheet" href="/styles/css/jquery-ui.min.css">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<header class="header js-header">
+	<header class="header header--inner-page js-header">
 		<div class="header__container container">
 			<a class="header__logo" href="/" aria-label="ТехноСервис">
 				<img class="header__logo-image" src="/images/icons/logo.svg" alt="ТехноСервис" width="213" height="90">
@@ -54,7 +54,8 @@
 						<img src="/images/icons/search.svg" alt="" width="22" height="22">
 					</a>
 
-					<button class="header__menu-button js-menu-button" type="button" aria-label="Открыть меню" aria-expanded="false">
+					<button class="header__menu-button js-menu-button" type="button" aria-label="Открыть меню"
+						aria-expanded="false">
 						<span></span>
 						<span></span>
 					</button>
@@ -113,16 +114,40 @@
 							<a class="header__nav-link" href="#">Импортозамещение</a>
 						</li>
 					</ul>
+
+					<div class="header__mobile-contacts" aria-label="Контакты">
+						<div class="header__mobile-row">
+							<a class="header__mobile-phone" href="tel:+74951205039">+7 (495) 120-50-39</a>
+							<div class="header__mobile-socials" aria-label="Мессенджеры">
+								<a class="header__mobile-social" href="#" aria-label="Telegram">
+									<img src="/images/icons/tg.svg" alt="" width="28" height="28">
+								</a>
+								<a class="header__mobile-social" href="#" aria-label="MAX">
+									<img src="/images/icons/max.svg" alt="" width="28" height="28">
+								</a>
+							</div>
+						</div>
+
+						<a class="header__mobile-mail" href="mailto:info@tech-srv.ru">
+							<img src="/images/icons/mail.svg" alt="" width="20" height="16">
+							info@tech-srv.ru
+						</a>
+
+						<button class="header__mobile-callback" type="button" data-micromodal-trigger="callback-modal">
+							<img src="/images/icons/call.svg" alt="" width="20" height="20">
+							Заказать звонок
+						</button>
+					</div>
 				</nav>
 			</div>
 		</div>
 	</header>
 
-	<main class="main support-page" id="main">
+	<main class="main" id="main">
 		<nav class="breadcrumbs container" aria-label="Хлебные крошки">
-			<ol class="breadcrumbs__list">
-				<li><a href="/">Главная</a></li>
-				<li><a href="equipment.html">Оборудование</a></li>
+			<ol>
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">Оборудование</a></li>
 			</ol>
 		</nav>
 
@@ -143,18 +168,22 @@
 		<section class="page-text section">
 			<div class="page-text__container container">
 				<p class="page-text__lead">
-					Мы используем накопленный многолетний опыт работы мировых машиностроительных концернов. Мы имеем полное понимание технологий, компетенций управления проектами. Все это позволяет нам гарантировать высокое качество работы в части управления проектами. Уже на старте сотрудничества мы устанавливаем точные сроки, которые соблюдаем до успешного внедрения работы на производственных площадках.
+					Мы используем накопленный многолетний опыт работы мировых машиностроительных концернов. Мы имеем полное
+					понимание технологий, компетенций управления проектами. Все это позволяет нам гарантировать высокое качество
+					работы в части управления проектами. Уже на старте сотрудничества мы устанавливаем точные сроки, которые
+					соблюдаем до успешного внедрения работы на производственных площадках.
 				</p>
 			</div>
 		</section>
 
-		<section class="cards-grid cards-grid--slider-mobile section js-mobile-cards-slider" aria-label="Разделы оборудования">
-			<div class="cards-grid__container container">
-				<ul class="cards-grid__list">
-					<li>
+		<section class="cards-grid cards-grid--slider section js-cards-slider" aria-label="Разделы оборудования">
+			<div class="cards-grid__container container swiper">
+				<ul class="cards-grid__list swiper-wrapper">
+					<li class="cards-grid__item swiper-slide">
 						<a class="service-card service-card--plain" href="#">
 							<span class="service-card__media">
-								<img class="service-card__image" src="/images/05-equipment/equipment-slide-01.png" alt="" width="330" height="220">
+								<img class="service-card__image" src="/images/05-equipment/equipment-slide-01.png" alt="" width="330"
+									height="220">
 							</span>
 							<span class="service-card__body">
 								<span class="service-card__title">Продукция</span>
@@ -163,10 +192,11 @@
 							</span>
 						</a>
 					</li>
-					<li>
+					<li class="cards-grid__item swiper-slide">
 						<a class="service-card service-card--plain" href="#">
 							<span class="service-card__media">
-								<img class="service-card__image" src="/images/05-equipment/equipment-slide-02.png" alt="" width="330" height="220">
+								<img class="service-card__image" src="/images/05-equipment/equipment-slide-02.png" alt="" width="330"
+									height="220">
 							</span>
 							<span class="service-card__body">
 								<span class="service-card__title">Производство</span>
@@ -175,10 +205,11 @@
 							</span>
 						</a>
 					</li>
-					<li>
+					<li class="cards-grid__item swiper-slide">
 						<a class="service-card service-card--plain" href="#">
 							<span class="service-card__media">
-								<img class="service-card__image" src="/images/05-equipment/equipment-slide-03.png" alt="" width="330" height="220">
+								<img class="service-card__image" src="/images/05-equipment/equipment-slide-03.png" alt="" width="330"
+									height="220">
 							</span>
 							<span class="service-card__body">
 								<span class="service-card__title">Модификация и апгрейды</span>
@@ -187,10 +218,11 @@
 							</span>
 						</a>
 					</li>
-					<li>
+					<li class="cards-grid__item swiper-slide">
 						<a class="service-card service-card--plain" href="#">
 							<span class="service-card__media">
-								<img class="service-card__image" src="/images/05-equipment/equipment-slide-04.png" alt="" width="330" height="220">
+								<img class="service-card__image" src="/images/05-equipment/equipment-slide-04.png" alt="" width="330"
+									height="220">
 							</span>
 							<span class="service-card__body">
 								<span class="service-card__title">Опросные листы</span>
@@ -200,14 +232,17 @@
 						</a>
 					</li>
 				</ul>
-				<div class="cards-grid__pagination" aria-hidden="true"></div>
+				<div class="cards-grid__pagination" aria-label="Навигация по разделам оборудования"></div>
 			</div>
 		</section>
 
 		<section class="page-text section">
 			<div class="page-text__container container">
 				<p class="page-text__lead">
-					Мы используем накопленный многолетний опыт работы мировых машиностроительных концернов. Мы имеем полное понимание технологий, компетенций управления проектами. Все это позволяет нам гарантировать высокое качество работы в части управления проектами. Уже на старте сотрудничества мы устанавливаем точные сроки, которые соблюдаем до успешного внедрения работы на производственных площадках.
+					Мы используем накопленный многолетний опыт работы мировых машиностроительных концернов. Мы имеем полное
+					понимание технологий, компетенций управления проектами. Все это позволяет нам гарантировать высокое качество
+					работы в части управления проектами. Уже на старте сотрудничества мы устанавливаем точные сроки, которые
+					соблюдаем до успешного внедрения работы на производственных площадках.
 				</p>
 			</div>
 		</section>
@@ -217,7 +252,8 @@
 				<div class="callback-section__content">
 					<h2 class="callback-section__title" id="callback-title">Оставьте заявку на реализацию готового решения</h2>
 					<p class="callback-section__text">
-						Пишите нам, звоните, используйте форму обратной связи. Мы на связи с вами 24/7. И всегда готовы к предоставлению уточняющих данных по каждому пункту
+						Пишите нам, звоните, используйте форму обратной связи. Мы на связи с вами 24/7. И всегда готовы к
+						предоставлению уточняющих данных по каждому пункту
 					</p>
 					<div class="callback-section__online">
 						<p class="callback-section__online-title">Или напишите,<br>мы сейчас онлайн</p>
@@ -242,7 +278,8 @@
 							</label>
 							<label class="form__field">
 								<span class="visually-hidden">Ваш номер телефона</span>
-								<input class="form__input" type="tel" name="phone" placeholder="Ваш номер телефона" autocomplete="tel" required>
+								<input class="form__input" type="tel" name="phone" placeholder="Ваш номер телефона" autocomplete="tel"
+									required>
 							</label>
 							<button class="callback-section__submit button" type="submit">Получить консультацию</button>
 							<label class="form__checkbox">
@@ -370,8 +407,10 @@
 					<div class="footer__group">
 						<p class="footer__title">Контакты</p>
 						<div class="footer__tender">
-							<p class="footer__tender-text">Принимаем участие в тендерных закупках коммерческих организаций, а так же в соответствии с 44-ФЗ и 223-ФЗ</p>
-							<button class="footer__tender-button button" type="button" data-micromodal-trigger="callback-modal">Пригласить в тендер</button>
+							<p class="footer__tender-text">Принимаем участие в тендерных закупках коммерческих организаций, а так же в
+								соответствии с 44-ФЗ и 223-ФЗ</p>
+							<button class="footer__tender-button button" type="button"
+								data-micromodal-trigger="callback-modal">Пригласить в тендер</button>
 						</div>
 					</div>
 				</div>
@@ -396,11 +435,13 @@
 					</label>
 					<label class="form__field">
 						<span class="visually-hidden">Ваш номер телефона</span>
-						<input class="form__input" type="tel" name="modal-phone" placeholder="Ваш номер телефона" autocomplete="tel" required>
+						<input class="form__input" type="tel" name="modal-phone" placeholder="Ваш номер телефона" autocomplete="tel"
+							required>
 					</label>
 					<label class="form__field">
 						<span class="visually-hidden">Email</span>
-						<input class="form__input" type="email" name="modal-email" placeholder="Email" autocomplete="email" required>
+						<input class="form__input" type="email" name="modal-email" placeholder="Email" autocomplete="email"
+							required>
 					</label>
 					<button class="button" type="submit">Отправить</button>
 					<label class="form__checkbox">
