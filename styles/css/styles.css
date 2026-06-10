@@ -1941,7 +1941,6 @@ h4,
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: grayscale(1) brightness(0.74);
   transition: scale var(--transition-duration-long) var(--transition-timing-function);
 }
 .product-catalog__card-title {
