@@ -1,8 +1,12 @@
 .cards-grid {
-	margin-bottom: 60px;
+	margin-bottom: var(--section-margin-bottom);
 
-	@include mobile {
-		margin-bottom: 44px;
+	&--plain {
+		.service-card__media {
+			@include mobile {
+				aspect-ratio: 169 / 122;
+			}
+		}
 	}
 
 	&__list {
@@ -26,16 +30,14 @@
 
 	&__bullet {
 		@include reset-button;
-		@include square(8px);
+		@include square(10px);
 
 		flex: 0 0 auto;
 		background-color: var(--gray-500);
 		border-radius: 50%;
-		opacity: 0.65;
 
 		&.is-active {
 			background-color: var(--primary-500);
-			opacity: 1;
 		}
 	}
 
@@ -75,43 +77,11 @@
 			display: flex;
 			justify-content: center;
 			gap: 12px;
-			margin-top: 24px;
+			margin-top: 15px;
+			padding-block: 10px;
 
-			@include mobile {
-				margin-top: 22px;
-			}
-		}
-	}
-
-	&--slider-mobile {
-		@include mobile {
-			.cards-grid__container {
-				overflow: hidden;
-			}
-
-			.cards-grid__list {
-				display: flex;
-				grid-template-columns: none;
-				gap: 12px;
-				overflow-x: auto;
-				scroll-snap-type: x mandatory;
-				scrollbar-width: none;
-
-				&::-webkit-scrollbar {
-					display: none;
-				}
-
-				> li {
-					flex: 0 0 calc((100% - 12px) / 2);
-					scroll-snap-align: start;
-				}
-			}
-
-			.cards-grid__pagination {
-				display: flex;
-				justify-content: center;
-				gap: 12px;
-				margin-top: 22px;
+			&.swiper-pagination-lock {
+				display: none;
 			}
 		}
 	}

@@ -68,7 +68,7 @@ $(function () {
 				spaceBetween: 12,
 				grabCursor: true,
 				simulateTouch: true,
-				watchOverflow: false,
+				watchOverflow: true,
 				pagination: {
 					el: pagination,
 					clickable: true,
@@ -138,5 +138,22 @@ $(function () {
 
 		$list.on('scroll', updatePagination);
 		$(window).on('resize', updatePagination);
+	});
+
+	$('.product-catalog__nav').each(function () {
+		const $nav = $(this);
+		const $list = $nav.find('.product-catalog__nav-list');
+		const $arrows = $nav.find('.product-catalog__nav-arrow');
+
+		if (!$list.length || $arrows.length < 2) {
+			return;
+		}
+
+		$arrows.on('click', function () {
+			const direction = $(this).is($arrows.first()) ? -1 : 1;
+			const step = Math.max(180, $list.innerWidth() * 0.85);
+
+			$list.animate({ scrollLeft: $list.scrollLeft() + step * direction }, 240);
+		});
 	});
 });

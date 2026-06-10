@@ -51,6 +51,7 @@
 		display: grid;
 		grid-template-columns: max-content 1fr max-content max-content max-content max-content max-content;
 		align-items: center;
+		gap: 15px;
 		min-height: 72px;
 		color: var(--gray-900);
 

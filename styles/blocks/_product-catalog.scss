@@ -1,0 +1,241 @@
+.product-catalog {
+	margin-bottom: var(--section-margin-bottom);
+
+	&__container {
+		display: grid;
+		grid-template-columns: 260px minmax(0, 1fr);
+		align-items: start;
+		gap: 30px;
+
+		@include tablet {
+			grid-template-columns: 1fr;
+			gap: 24px;
+		}
+
+		@include mobile {
+			gap: 22px;
+		}
+	}
+
+	&__nav {
+		display: grid;
+		gap: 8px;
+
+		@include tablet {
+			grid-template-columns: 24px minmax(0, 1fr) 24px;
+			align-items: center;
+			gap: 10px;
+		}
+	}
+
+	&__nav-list {
+		display: grid;
+		gap: 8px;
+
+		@include tablet {
+			display: flex;
+			gap: 12px;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+
+			> li {
+				flex: 0 0 240px;
+				scroll-snap-align: center;
+			}
+		}
+
+		@include mobile {
+			> li {
+				flex-basis: min(77vw, 280px);
+			}
+		}
+	}
+
+	&__nav-link {
+		@include reset-link;
+		@include fluid-text(16, 18);
+
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		min-height: 42px;
+		padding: 10px 14px;
+		font-weight: 400;
+		line-height: 1.2;
+		color: #54565f;
+		background-color: var(--gray-200);
+		border: 1px solid #e6e6e6;
+		border-radius: 4px;
+		transition:
+			color var(--transition-duration),
+			border-color var(--transition-duration),
+			background-color var(--transition-duration);
+
+		@include hover {
+			color: var(--primary-500);
+			background-color: var(--white);
+			border-color: var(--primary-500);
+		}
+
+		@include tablet {
+			justify-content: center;
+			min-height: 46px;
+			text-align: center;
+		}
+
+		@include mobile {
+			@include fluid-text(13, 14);
+
+			gap: 8px;
+			min-height: 45px;
+			padding: 10px 12px;
+		}
+
+		img {
+			flex: 0 0 auto;
+
+			@include mobile {
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
+
+	&__nav-arrow {
+		@include reset-button;
+		@include flex-center;
+
+		display: none;
+		min-width: 24px;
+		color: #54565f;
+		cursor: pointer;
+
+		@include tablet {
+			display: flex;
+		}
+	}
+
+	&__content {
+		display: grid;
+		gap: 26px;
+
+		@include mobile {
+			gap: 20px;
+		}
+	}
+
+	&__text {
+		@include fluid-text(16, 18);
+
+		line-height: 1.4;
+		color: #54565f;
+
+		@include mobile {
+			@include fluid-text(12, 14);
+
+			line-height: 1.35;
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 12px;
+
+		@include tablet {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@include mobile {
+			gap: 14px 12px;
+		}
+	}
+
+	&__card {
+		@include reset-link;
+
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		min-height: 190px;
+		padding: 20px 18px;
+		overflow: hidden;
+		color: var(--white);
+		background-color: var(--gray-900);
+		border-radius: 6px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			background: linear-gradient(180deg, rgb(0 0 0 / 10%) 0%, rgb(0 0 0 / 78%) 100%);
+			pointer-events: none;
+		}
+
+		@include hover {
+			.product-catalog__card-image {
+				scale: 1.05;
+			}
+		}
+
+		@include tablet {
+			min-height: 210px;
+		}
+
+		@include mobile {
+			min-height: auto;
+			aspect-ratio: 1 / 1.04;
+			padding: 12px 10px;
+			border-radius: 5px;
+		}
+	}
+
+	&__card-image {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: grayscale(1) brightness(0.74);
+		transition: scale var(--transition-duration-long) var(--transition-timing-function);
+	}
+
+	&__card-title {
+		@include fluid-text(20, 24);
+
+		position: relative;
+		z-index: 2;
+		max-width: calc(100% - 34px);
+		font-weight: 700;
+		line-height: 1.08;
+
+		@include mobile {
+			@include fluid-text(13, 16);
+
+			line-height: 1.15;
+		}
+	}
+
+	&__card-arrow {
+		position: absolute;
+		right: 14px;
+		bottom: 14px;
+		z-index: 2;
+		width: 26px;
+		height: auto;
+		filter: brightness(0) invert(1);
+
+		@include mobile {
+			right: 9px;
+			bottom: 10px;
+			width: 21px;
+		}
+	}
+}

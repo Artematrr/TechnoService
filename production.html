@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Оборудование ТехноСервис">
-	<title>Оборудование — ТехноСервис</title>
+	<meta name="description" content="Продукция ТехноСервис">
+	<title>Продукция — ТехноСервис</title>
 
 	<link rel="stylesheet" href="/styles/css/jquery-ui.min.css">
 	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
@@ -147,7 +147,7 @@
 		<nav class="breadcrumbs container" aria-label="Хлебные крошки">
 			<ol>
 				<li><a href="#">Главная</a></li>
-				<li><a href="#">Оборудование</a></li>
+				<li><a href="#">Продукция</a></li>
 			</ol>
 		</nav>
 
@@ -159,91 +159,166 @@
 						<img class="page-hero__image" src="/images/02-hero/bg-pattern-outline.svg" alt="" width="1410" height="509">
 					</picture>
 					<span class="page-hero__stripe" aria-hidden="true"></span>
-					<h1 class="page-hero__title" id="page-title">Оборудование</h1>
+					<h1 class="page-hero__title" id="page-title">Продукция</h1>
 					<div class="page-hero__label">Человек в деле</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="page-text section">
-			<div class="page-text__container container">
-				<p class="page-text__lead">
-					Мы используем накопленный многолетний опыт работы мировых машиностроительных концернов. Мы имеем полное
-					понимание технологий, компетенций управления проектами. Все это позволяет нам гарантировать высокое качество
-					работы в части управления проектами. Уже на старте сотрудничества мы устанавливаем точные сроки, которые
-					соблюдаем до успешного внедрения работы на производственных площадках.
-				</p>
-			</div>
-		</section>
+		<section class="product-catalog section" aria-labelledby="product-catalog-title">
+			<div class="product-catalog__container container">
+				<aside class="product-catalog__nav" aria-label="Разделы продукции">
+					<button class="product-catalog__nav-arrow" type="button" aria-label="Предыдущий раздел">←</button>
+					<ul class="product-catalog__nav-list">
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/06-production/production-icon-01.svg" alt="" width="24" height="24">
+								Чиллеры
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/06-production/production-icon-02.svg" alt="" width="24" height="24">
+								Компрессоры и компрессорные станции
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/06-production/production-icon-03.svg" alt="" width="24" height="24">
+								Теплообменное оборудование
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/06-production/production-icon-04.svg" alt="" width="24" height="24">
+								Насосы и насосные станции
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/06-production/production-icon-05.svg" alt="" width="24" height="24">
+								Сосуды и емкости
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/06-production/production-icon-06.svg" alt="" width="24" height="24">
+								Вспомогательное оборудование
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/06-production/production-icon-07.svg" alt="" width="24" height="24">
+								Щиты
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/06-production/production-icon-08.svg" alt="" width="24" height="24">
+								Модификация и автоматизация
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/06-production/production-icon-09.svg" alt="" width="24" height="24">
+								Опросные листы
+							</a>
+						</li>
+					</ul>
+					<button class="product-catalog__nav-arrow" type="button" aria-label="Следующий раздел">→</button>
+				</aside>
 
-		<section class="cards-grid cards-grid--plain cards-grid--slider section js-cards-slider" aria-label="Разделы оборудования">
-			<div class="cards-grid__container container swiper">
-				<ul class="cards-grid__list swiper-wrapper">
-					<li class="cards-grid__item swiper-slide">
-						<a class="service-card" href="#">
-							<span class="service-card__media">
-								<img class="service-card__image" src="/images/05-equipment/equipment-slide-01.png" alt="" width="330"
-									height="220">
-							</span>
-							<span class="service-card__body">
-								<span class="service-card__title">Продукция</span>
-								<span class="service-card__text">Техническое обследование оборудования</span>
-								<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
-							</span>
-						</a>
-					</li>
-					<li class="cards-grid__item swiper-slide">
-						<a class="service-card" href="#">
-							<span class="service-card__media">
-								<img class="service-card__image" src="/images/05-equipment/equipment-slide-02.png" alt="" width="330"
-									height="220">
-							</span>
-							<span class="service-card__body">
-								<span class="service-card__title">Производство</span>
-								<span class="service-card__text">Обучение персонала</span>
-								<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
-							</span>
-						</a>
-					</li>
-					<li class="cards-grid__item swiper-slide">
-						<a class="service-card" href="#">
-							<span class="service-card__media">
-								<img class="service-card__image" src="/images/05-equipment/equipment-slide-03.png" alt="" width="330"
-									height="220">
-							</span>
-							<span class="service-card__body">
-								<span class="service-card__title">Модификация и апгрейды</span>
-								<span class="service-card__text">Разработка планов модернизации</span>
-								<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
-							</span>
-						</a>
-					</li>
-					<li class="cards-grid__item swiper-slide">
-						<a class="service-card" href="#">
-							<span class="service-card__media">
-								<img class="service-card__image" src="/images/05-equipment/equipment-slide-04.png" alt="" width="330"
-									height="220">
-							</span>
-							<span class="service-card__body">
-								<span class="service-card__title">Опросные листы</span>
-								<span class="service-card__text">Инженерное проектирование</span>
-								<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
-							</span>
-						</a>
-					</li>
-				</ul>
-				<div class="cards-grid__pagination" aria-label="Навигация по разделам оборудования"></div>
-			</div>
-		</section>
+				<div class="product-catalog__content">
+					<h2 class="visually-hidden" id="product-catalog-title">Каталог продукции</h2>
+					<p class="product-catalog__text">
+						Мы используем накопленный многолетний опыт работы мировых машиностроительных концернов. Мы имеем полное
+						понимание технологий, компетенций управления проектами. Все это позволяет нам гарантировать высокое качество
+						работы в части управления проектами. Уже на старте сотрудничества мы устанавливаем точные сроки, которые
+						соблюдаем до успешного внедрения работы на производственных площадках.
+					</p>
 
-		<section class="page-text section">
-			<div class="page-text__container container">
-				<p class="page-text__lead">
-					Мы используем накопленный многолетний опыт работы мировых машиностроительных концернов. Мы имеем полное
-					понимание технологий, компетенций управления проектами. Все это позволяет нам гарантировать высокое качество
-					работы в части управления проектами. Уже на старте сотрудничества мы устанавливаем точные сроки, которые
-					соблюдаем до успешного внедрения работы на производственных площадках.
-				</p>
+					<ul class="product-catalog__grid">
+						<li>
+							<a class="product-catalog__card" href="#">
+								<img class="product-catalog__card-image" src="/images/06-production/production-card-01.png" alt=""
+									width="320" height="220">
+								<span class="product-catalog__card-title">Чиллеры</span>
+								<img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt="" width="26"
+									height="16">
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__card" href="#">
+								<img class="product-catalog__card-image" src="/images/06-production/production-card-02.png" alt=""
+									width="320" height="220">
+								<span class="product-catalog__card-title">Компрессорные станции</span>
+								<img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt="" width="26"
+									height="16">
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__card" href="#">
+								<img class="product-catalog__card-image" src="/images/06-production/production-card-03.png" alt=""
+									width="320" height="220">
+								<span class="product-catalog__card-title">Теплообменное оборудование</span>
+								<img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt="" width="26"
+									height="16">
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__card" href="#">
+								<img class="product-catalog__card-image" src="/images/06-production/production-card-04.png" alt=""
+									width="320" height="220">
+								<span class="product-catalog__card-title">Насосы и насосные станции</span>
+								<img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt="" width="26"
+									height="16">
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__card" href="#">
+								<img class="product-catalog__card-image" src="/images/06-production/production-card-05.png" alt=""
+									width="320" height="220">
+								<span class="product-catalog__card-title">Сосуды и емкости</span>
+								<img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt="" width="26"
+									height="16">
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__card" href="#">
+								<img class="product-catalog__card-image" src="/images/06-production/production-card-06.png" alt=""
+									width="320" height="220">
+								<span class="product-catalog__card-title">Вспомогательное оборудование</span>
+								<img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt="" width="26"
+									height="16">
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__card" href="#">
+								<img class="product-catalog__card-image" src="/images/06-production/production-card-07.png" alt=""
+									width="320" height="220">
+								<span class="product-catalog__card-title">Щиты</span>
+								<img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt="" width="26"
+									height="16">
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__card" href="#">
+								<img class="product-catalog__card-image" src="/images/06-production/production-card-08.png" alt=""
+									width="320" height="220">
+								<span class="product-catalog__card-title">Модификация и автоматизация</span>
+								<img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt="" width="26"
+									height="16">
+							</a>
+						</li>
+					</ul>
+
+					<p class="product-catalog__text">
+						Мы используем накопленный многолетний опыт работы мировых машиностроительных концернов. Мы имеем полное
+						понимание технологий, компетенций управления проектами. Все это позволяет нам гарантировать высокое качество
+						работы в части управления проектами. Уже на старте сотрудничества мы устанавливаем точные сроки, которые
+						соблюдаем до успешного внедрения работы на производственных площадках.
+					</p>
+				</div>
 			</div>
 		</section>
 
@@ -281,6 +356,10 @@
 								<input class="form__input" type="tel" name="phone" placeholder="Ваш номер телефона" autocomplete="tel"
 									required>
 							</label>
+							<label class="form__field">
+								<span class="visually-hidden">Email</span>
+								<input class="form__input" type="email" name="email" placeholder="Email" autocomplete="email" required>
+							</label>
 							<button class="callback-section__submit button" type="submit">Получить консультацию</button>
 							<label class="form__checkbox">
 								<input class="form__checkbox-input" type="checkbox" name="agreement" checked required>
@@ -292,7 +371,6 @@
 				</div>
 			</div>
 		</section>
-
 	</main>
 
 	<footer class="footer">
