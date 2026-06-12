@@ -1,5 +1,5 @@
 .callback-section {
-	margin-bottom: 70px;
+	margin-bottom: var(--section-margin-bottom);
 
 	&__container {
 		display: grid;
@@ -16,37 +16,38 @@
 	&__content {
 		display: grid;
 		gap: 15px;
-		align-content: stretch;
+		align-content: center;
 		height: 100%;
 		padding-block: 30px;
 
-		@include mobile {
+		@include tablet {
 			justify-items: center;
 			text-align: center;
+			padding-block: 30px 15px;
 		}
+	}
+
+	&__top {
+		display: grid;
+		gap: 15px;
+		align-content: start;
 	}
 
 	&__title {
-		@include fluid-text(48, 54);
+		@include fluid-text(34, 54);
 
 		font-weight: 700;
 		line-height: 1;
-		color: #54565f;
-
-		@include mobile {
-			@include fluid-text(28, 32);
-
-			line-height: 1.05;
-		}
+		color: var(--gray-700);
 	}
 
 	&__text {
-		@include fluid-text(14, 14);
+		@include fluid-text(16, 16);
 
-		color: #54565f;
+		color: var(--gray-700);
 		max-width: 330px;
 
-		@include mobile {
+		@include tablet {
 			max-width: unset;
 		}
 	}
@@ -67,29 +68,48 @@
 
 		font-weight: 700;
 		color: var(--gray-500);
+		text-align: left;
+		max-width: 190px;
+
+		@include tablet {
+			max-width: unset;
+		}
 	}
 
 	&__socials {
-		display: flex;
+		@include flex-center;
+
 		gap: 10px;
 	}
 
 	&__social {
 		@include square(28px);
+
+		img {
+			@include square(28px);
+		}
 	}
 
 	&__panel {
+		display: grid;
+		align-items: center;
 		min-height: 500px;
-		padding: 74px 60px;
+		padding: 20px 60px;
 		overflow: hidden;
-		background-image: url('/images/03-feedback-form/feedback-form-bg.png');
+		background-image: var(--callback-section-bg, none);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
-		border-radius: 0 0 16px 16px;
+		border-radius: 0 16px 16px 0;
+
+		@include desktop {
+			padding: 20px 20px;
+		}
 
 		@include tablet {
+			padding: 44px 30px;
 			width: 100%;
+			border-radius: 16px;
 		}
 
 		@include mobile {
@@ -102,41 +122,31 @@
 
 	&__form-wrap {
 		display: grid;
-		gap: 22px;
+		gap: 20px;
 		width: 450px;
 
 		@include mobile {
 			width: 100%;
-			gap: 16px;
+			gap: 15px;
 		}
 	}
 
 	&__form-title {
-		@include fluid-text(16, 16);
+		@include fluid-text(18, 20);
 
-		color: #54565f;
+		color: var(--gray-700);
 
 		@include mobile {
-			@include fluid-text(18, 20);
+			@include fluid-text(24, 24);
 
 			font-weight: 700;
-			line-height: 1.1;
+			text-align: center;
 		}
 	}
 
 	&__form {
-		gap: 18px;
-
-		@include mobile {
-			gap: 12px;
-		}
 	}
 
 	&__submit {
-		min-height: 72px;
-
-		@include mobile {
-			min-height: var(--button-height);
-		}
 	}
 }

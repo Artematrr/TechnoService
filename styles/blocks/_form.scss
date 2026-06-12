@@ -25,7 +25,7 @@
 	&__control,
 	&__input,
 	&__textarea {
-		@include fluid-text(16, 20);
+		@include fluid-text(20, 20);
 
 		width: 100%;
 		min-height: var(--input-height);
@@ -44,24 +44,18 @@
 		}
 
 		@include mobile {
-			padding-inline: 18px;
+			padding-inline: 15px;
 		}
 	}
 
 	&__textarea {
 		min-height: 136px;
-		padding-block: 22px;
+		padding-block: 20px;
 		resize: vertical;
 	}
 
-	&__caption {
-		@include fluid-text(12, 12);
-
-		color: var(--gray-500);
-	}
-
 	&__checkbox {
-		@include fluid-text(12, 16);
+		@include fluid-text(14, 16);
 
 		display: flex;
 		align-items: flex-start;
@@ -93,10 +87,10 @@
 	}
 
 	&__checkbox-control {
-		@include square(18px);
+		@include square(20px);
 		@include flex-center;
 
-		flex: 0 0 18px;
+		flex: 0 0 20px;
 		margin-top: 1px;
 		background-color: var(--white);
 		border: 1px solid var(--gray-300);
@@ -111,10 +105,5 @@
 			translate: 0 -1px;
 			opacity: 0;
 		}
-	}
-
-	&__actions {
-		display: grid;
-		gap: 12px;
 	}
 }

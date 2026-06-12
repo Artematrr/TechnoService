@@ -10,13 +10,13 @@
 		}
 	}
 
-	&__lead {
+	b {
 		@include fluid-text(16, 20);
 
 		color: var(--gray-700);
 	}
 
-	&__body {
+	p {
 		@include fluid-text(14, 16);
 
 		color: var(--gray-500);

@@ -36,4 +36,8 @@
 		--button-height: 48px;
 		--header-height: 92px;
 	}
+
+	@include mobile-s {
+		--container-padding-x: 12px;
+	}
 }

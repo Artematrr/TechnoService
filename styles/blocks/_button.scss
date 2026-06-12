@@ -6,7 +6,7 @@
 	min-height: var(--button-height);
 	padding-inline: 36px;
 	font-weight: 700;
-	line-height: 1;
+	line-height: 1.1;
 	text-align: center;
 	color: var(--white);
 	background-color: var(--primary-500);
@@ -35,19 +35,6 @@
 		}
 	}
 
-	&--link {
-		min-height: auto;
-		padding: 0;
-		color: var(--primary-500);
-		background-color: transparent;
-		border: none;
-
-		@include hover {
-			color: var(--black);
-			background-color: transparent;
-		}
-	}
-
 	&--gray {
 		color: var(--black);
 		background-color: var(--gray-300);
@@ -59,5 +46,4 @@
 			border-color: var(--primary-500);
 		}
 	}
-
 }

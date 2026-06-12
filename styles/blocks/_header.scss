@@ -224,6 +224,10 @@
 			}
 		}
 
+		@include tablet-above {
+			pointer-events: none;
+		}
+
 		@include tablet {
 			border-right: none;
 
@@ -329,7 +333,8 @@
 					border-top: 1.5px solid currentColor;
 					border-right: 1.5px solid currentColor;
 					transform: rotate(45deg);
-					transition: transform var(--transition-duration) var(--transition-timing-function);
+					transition: transform var(--transition-duration)
+						var(--transition-timing-function);
 				}
 
 				img {

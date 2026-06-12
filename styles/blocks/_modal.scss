@@ -1,7 +1,7 @@
 .modal {
 	position: fixed;
 	inset: 0;
-	z-index: 100;
+	z-index: 20;
 	display: none;
 
 	&.is-open {
@@ -12,12 +12,12 @@
 		@include flex-center;
 
 		min-height: 100%;
-		padding: 24px;
+		padding-block: 30px 10px;
+		padding-inline: var(--container-padding-x);
 		background-color: rgba(0, 0, 0, 0.55);
 
 		@include mobile {
 			align-items: flex-start;
-			padding: 16px;
 		}
 	}
 
@@ -68,11 +68,11 @@
 	}
 
 	&__title {
-		@include fluid-text(28, 34);
+		@include fluid-text(24, 34);
 
 		margin-bottom: 22px;
 		font-weight: 700;
 		line-height: 1;
-		color: #54565f;
+		color: var(--gray-700);
 	}
 }
