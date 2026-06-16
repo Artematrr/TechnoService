@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Проектирование промышленных систем ТехноСервис">
+	<title>Проектирование — ТехноСервис</title>
+
+	<link rel="stylesheet" href="/styles/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+</head>
+
+<body>
+	<header class="header header--inner-page js-header">
+		<div class="header__container container">
+			<a class="header__logo" href="#" aria-label="ТехноСервис">
+				<img class="header__logo-image" src="/images/icons/logo.svg" alt="ТехноСервис" width="213" height="90">
+			</a>
+
+			<div class="header__inner">
+				<div class="header__actions">
+					<a class="header__phone" href="tel:+74951205039">+7 (495) 120-50-39</a>
+
+					<ul class="header__socials" aria-label="Мессенджеры">
+						<li>
+							<a class="header__social" href="#" aria-label="Telegram">
+								<img src="/images/icons/tg.svg" alt="" width="24" height="24">
+							</a>
+						</li>
+						<li>
+							<a class="header__social" href="#" aria-label="MAX">
+								<img src="/images/icons/max.svg" alt="" width="24" height="24">
+							</a>
+						</li>
+					</ul>
+
+					<a class="header__mail" href="mailto:info@tech-srv.ru">
+						<img src="/images/icons/mail.svg" alt="" width="18" height="14">
+						info@tech-srv.ru
+					</a>
+
+					<button class="header__icon-button" type="button" aria-label="Показать схему проезда">
+						<img src="/images/icons/location.svg" alt="" width="22" height="22">
+					</button>
+
+					<button class="header__callback" type="button" data-micromodal-trigger="callback-modal">
+						<img src="/images/icons/call.svg" alt="" width="19" height="19">
+						Заказать звонок
+					</button>
+
+					<a class="header__icon-button" href="#" aria-label="Поиск">
+						<img src="/images/icons/search.svg" alt="" width="22" height="22">
+					</a>
+
+					<button class="header__menu-button js-menu-button" type="button" aria-label="Открыть меню"
+						aria-expanded="false">
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+
+				<nav class="header__nav" aria-label="Основная навигация">
+					<ul class="header__menu">
+						<li class="header__menu-item">
+							<button class="header__nav-link js-submenu-button" type="button" aria-expanded="false">
+								О компании
+								<img src="/images/icons/arrow-down.svg" alt="" width="10" height="6">
+							</button>
+							<ul class="header__submenu">
+								<li><a href="#">Миссия, Ценности, Персонал</a></li>
+								<li><a href="#">CPO</a></li>
+								<li><a href="#">Аттестаты, Патенты, Разрешения</a></li>
+								<li><a href="#">Вакансия</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item">
+							<button class="header__nav-link js-submenu-button" type="button" aria-expanded="false">
+								Готовые решения
+								<img src="/images/icons/arrow-down.svg" alt="" width="10" height="6">
+							</button>
+							<ul class="header__submenu">
+								<li><a href="#">Нефтегаз и Энергетика</a></li>
+								<li><a href="#">Охлаждение</a></li>
+								<li><a href="#">Криогеника</a></li>
+								<li><a href="#">Химия</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item">
+							<button class="header__nav-link js-submenu-button" type="button" aria-expanded="false">
+								Запасные части
+								<img src="/images/icons/arrow-down.svg" alt="" width="10" height="6">
+							</button>
+							<ul class="header__submenu">
+								<li><a href="#">Опросные листы</a></li>
+								<li><a href="#">Комплектующие</a></li>
+								<li><a href="#">Сервисные наборы</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item">
+							<button class="header__nav-link js-submenu-button" type="button" aria-expanded="false">
+								Сервис
+								<img src="/images/icons/arrow-down.svg" alt="" width="10" height="6">
+							</button>
+							<ul class="header__submenu">
+								<li><a href="#">Безвозмездная инспекция</a></li>
+								<li><a href="#">Полевой сервис</a></li>
+								<li><a href="#">Капитальный ремонт</a></li>
+								<li><a href="#">Вспомогательное оборудование</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item">
+							<a class="header__nav-link" href="#">Импортозамещение</a>
+						</li>
+					</ul>
+
+					<div class="header__mobile-contacts" aria-label="Контакты">
+						<div class="header__mobile-row">
+							<a class="header__mobile-phone" href="tel:+74951205039">+7 (495) 120-50-39</a>
+							<div class="header__mobile-socials" aria-label="Мессенджеры">
+								<a class="header__mobile-social" href="#" aria-label="Telegram">
+									<img src="/images/icons/tg.svg" alt="" width="28" height="28">
+								</a>
+								<a class="header__mobile-social" href="#" aria-label="MAX">
+									<img src="/images/icons/max.svg" alt="" width="28" height="28">
+								</a>
+							</div>
+						</div>
+
+						<a class="header__mobile-mail" href="mailto:info@tech-srv.ru">
+							<img src="/images/icons/mail.svg" alt="" width="20" height="16">
+							info@tech-srv.ru
+						</a>
+
+						<button class="header__mobile-callback" type="button" data-micromodal-trigger="callback-modal">
+							<img src="/images/icons/call.svg" alt="" width="20" height="20">
+							Заказать звонок
+						</button>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main class="main" id="main">
+		<nav class="breadcrumbs container" aria-label="Хлебные крошки">
+			<ol>
+				<li><a href="#">Главная</a></li>
+				<li><a href="/our-services.html">Услуги</a></li>
+				<li><a href="#">Проектирование</a></li>
+			</ol>
+		</nav>
+
+		<section class="page-hero section" aria-labelledby="page-title">
+			<div class="page-hero__container container">
+				<div class="page-hero__body">
+					<picture class="page-hero__picture">
+						<source srcset="/images/02-hero/bg-pattern.svg" media="(max-width: 767px)">
+						<img class="page-hero__image" src="/images/02-hero/bg-pattern-outline.svg" alt="" width="1410" height="509">
+					</picture>
+					<span class="page-hero__stripe" aria-hidden="true"></span>
+					<h1 class="page-hero__title" id="page-title">Проектирование</h1>
+					<div class="page-hero__label">Семь бед — один звонок</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="product-catalog product-catalog--service-detail section" aria-labelledby="page-title">
+			<div class="product-catalog__container container">
+				<aside class="product-catalog__nav" aria-label="Разделы услуг">
+					<button class="product-catalog__nav-arrow" type="button" aria-label="Предыдущий раздел">←</button>
+					<ul class="product-catalog__nav-list">
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/04-our-services/our-service-list-icon-01.svg" alt="" width="24" height="24">
+								Обследование
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/04-our-services/our-service-list-icon-02.svg" alt="" width="24" height="24">
+								Повышение квалификации
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link" href="#">
+								<img src="/images/04-our-services/our-service-list-icon-03.svg" alt="" width="24" height="24">
+								Стратегия модернизации
+							</a>
+						</li>
+						<li>
+							<a class="product-catalog__nav-link is-active" href="/service-detail-01.html" aria-current="page">
+								<img src="/images/04-our-services/our-service-list-icon-04.svg" alt="" width="24" height="24">
+								Проектирование
+							</a>
+						</li>
+					</ul>
+					<button class="product-catalog__nav-arrow" type="button" aria-label="Следующий раздел">→</button>
+				</aside>
+
+				<div class="product-catalog__content service-detail">
+					<div class="service-detail__copy">
+						<p>Очень часто компании сталкиваются в своей работе под эксплуатацию технически характеризуемого
+							установленного оборудования. Мы оказываем комплексную помощь в подготовке технической документации и
+							проектировании производственных систем.</p>
+						<p>Проектирование технического оснащения и инженерных коммуникаций выполняется с учетом требований
+							безопасности и особенностей объекта заказчика.</p>
+						<p>Направления нашей работы:</p>
+						<ul>
+							<li>газовые криогенные компрессорные станции, насосные блоки и системы редуцирования;</li>
+							<li>инженерные сети для производственных площадок и контрольно-измерительные системы.</li>
+						</ul>
+						<p>Мы внедряем решения, полностью совместимые с действующим оборудованием клиента. Разрабатываем проекты
+							модернизации и автоматизации, сопровождаем монтажные и пусконаладочные работы.</p>
+					</div>
+
+					<section class="detail-accordion" aria-labelledby="stages-title">
+						<h2 class="detail-accordion__title" id="stages-title">Этапы работы</h2>
+						<div class="detail-accordion__list js-detail-accordion">
+							<article class="detail-accordion__item is-open">
+								<button class="detail-accordion__button" type="button" aria-expanded="true"
+									aria-controls="stage-1">
+									<span class="detail-accordion__number">01</span>
+									<span class="detail-accordion__name">Формирование задачи</span>
+									<span class="detail-accordion__icon" aria-hidden="true"></span>
+								</button>
+								<div class="detail-accordion__details" id="stage-1">
+									<div>
+										<ul>
+											<li>Аудит, обследование и сбор исходных данных.</li>
+											<li>Расширенная оценка технического задания и возможных ограничений.</li>
+											<li>Техническое задание и календарный план.</li>
+										</ul>
+									</div>
+								</div>
+							</article>
+							<article class="detail-accordion__item">
+								<button class="detail-accordion__button" type="button" aria-expanded="false"
+									aria-controls="stage-2">
+									<span class="detail-accordion__number">02</span>
+									<span class="detail-accordion__name">Расчеты</span>
+									<span class="detail-accordion__icon" aria-hidden="true"></span>
+								</button>
+								<div class="detail-accordion__details" id="stage-2"><div><p>Выполняем теплотехнические,
+											гидравлические и прочностные расчеты будущей системы.</p></div></div>
+							</article>
+							<article class="detail-accordion__item">
+								<button class="detail-accordion__button" type="button" aria-expanded="false"
+									aria-controls="stage-3">
+									<span class="detail-accordion__number">03</span>
+									<span class="detail-accordion__name">Подбор основного оборудования</span>
+									<span class="detail-accordion__icon" aria-hidden="true"></span>
+								</button>
+								<div class="detail-accordion__details" id="stage-3"><div><p>Формируем спецификацию оборудования,
+											материалов и автоматики с учетом условий эксплуатации.</p></div></div>
+							</article>
+						</div>
+					</section>
+
+					<section class="service-customers" aria-labelledby="customers-title">
+						<h2 class="service-customers__title" id="customers-title">Наши заказчики</h2>
+						<ul class="service-customers__list">
+							<li><img src="/images/11-customers/gazprom-neft.svg" alt="Газпром нефть"></li>
+							<li><img src="/images/11-customers/rosatom.svg" alt="Росатом"></li>
+							<li><img src="/images/11-customers/sibur.svg" alt="Сибур"></li>
+							<li><img src="/images/11-customers/lukoil.svg" alt="Лукойл"></li>
+							<li><img src="/images/11-customers/danone.svg" alt="Danone"></li>
+						</ul>
+					</section>
+
+					<section class="detail-accordion detail-accordion--installations" aria-labelledby="installations-title">
+						<h2 class="detail-accordion__title" id="installations-title">Установки</h2>
+						<div class="detail-accordion__list js-detail-accordion">
+							<article class="detail-accordion__item is-open">
+								<button class="detail-accordion__button" type="button" aria-expanded="true"
+									aria-controls="installation-1">
+									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg"
+										alt="Промышленная установка" width="155" height="120">
+									<span class="detail-accordion__name">Установка 1</span>
+									<span class="detail-accordion__icon" aria-hidden="true"></span>
+								</button>
+								<div class="detail-accordion__details" id="installation-1"><div><ul>
+											<li>Теплообменная мощность и производительность.</li>
+											<li>Расширенный комплект автоматики и контрольно-измерительных приборов.</li>
+											<li>Технологическая линия с подготовкой к монтажу.</li>
+										</ul></div></div>
+							</article>
+							<article class="detail-accordion__item">
+								<button class="detail-accordion__button" type="button" aria-expanded="false"
+									aria-controls="installation-2">
+									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
+										width="155" height="120"><span class="detail-accordion__name">Установка 2</span><span
+										class="detail-accordion__icon" aria-hidden="true"></span>
+								</button>
+								<div class="detail-accordion__details" id="installation-2"><div><p>Технические параметры
+											предоставляются по запросу.</p></div></div>
+							</article>
+							<article class="detail-accordion__item">
+								<button class="detail-accordion__button" type="button" aria-expanded="false"
+									aria-controls="installation-3">
+									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
+										width="155" height="120"><span class="detail-accordion__name">Установка 3</span><span
+										class="detail-accordion__icon" aria-hidden="true"></span>
+								</button>
+								<div class="detail-accordion__details" id="installation-3"><div><p>Технические параметры
+											предоставляются по запросу.</p></div></div>
+							</article>
+							<article class="detail-accordion__item">
+								<button class="detail-accordion__button" type="button" aria-expanded="false"
+									aria-controls="installation-4">
+									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
+										width="155" height="120"><span class="detail-accordion__name">Установка 4</span><span
+										class="detail-accordion__icon" aria-hidden="true"></span>
+								</button>
+								<div class="detail-accordion__details" id="installation-4"><div><p>Технические параметры
+											предоставляются по запросу.</p></div></div>
+							</article>
+							<article class="detail-accordion__item">
+								<button class="detail-accordion__button" type="button" aria-expanded="false"
+									aria-controls="installation-5">
+									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
+										width="155" height="120"><span class="detail-accordion__name">Установка 5</span><span
+										class="detail-accordion__icon" aria-hidden="true"></span>
+								</button>
+								<div class="detail-accordion__details" id="installation-5"><div><p>Технические параметры
+											предоставляются по запросу.</p></div></div>
+							</article>
+							<article class="detail-accordion__item">
+								<button class="detail-accordion__button" type="button" aria-expanded="false"
+									aria-controls="installation-6">
+									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
+										width="155" height="120"><span class="detail-accordion__name">Установка 6</span><span
+										class="detail-accordion__icon" aria-hidden="true"></span>
+								</button>
+								<div class="detail-accordion__details" id="installation-6"><div><p>Технические параметры
+											предоставляются по запросу.</p></div></div>
+							</article>
+						</div>
+					</section>
+				</div>
+			</div>
+		</section>
+
+		<section class="service-detail-text section">
+			<div class="service-detail-text__container container">
+				<p>Очень часто компании сталкиваются в своей работе под эксплуатацию технически характеризуемого оборудования.
+					Максимально допустимые нагрузки, профиль и производительность агрегата учитываются на этапе проектирования.</p>
+				<p>Проектирование позволяет создать эффективную, надежную и безопасную систему. Наши специалисты разрабатывают
+					решения с учетом технологических процессов, требований охраны труда и доступного пространства.</p>
+				<ul>
+					<li>газовые криогенные компрессорные станции, насосные блоки и системы редуцирования;</li>
+					<li>инженерные сети, системы автоматизации и контрольно-измерительное оборудование.</li>
+				</ul>
+				<p>Каждый проект проходит внутреннюю проверку, согласование и подготовку полного комплекта документации.</p>
+			</div>
+		</section>
+
+		<section class="news-slider section js-news-slider" aria-labelledby="news-slider-title">
+			<div class="news-slider__container container">
+				<h2 class="news-slider__title" id="news-slider-title">Новости и статьи</h2>
+				<div class="news-slider__stage">
+					<button class="news-slider__button news-slider__button--prev" type="button"
+						aria-label="Предыдущие новости">←</button>
+					<div class="news-slider__swiper swiper">
+						<ul class="news-slider__list swiper-wrapper">
+							<li class="news-slider__slide swiper-slide">
+								<a class="news-slider__card" href="/news-detail.html">
+									<span class="news-slider__media"><img src="/images/04-our-services/our-service-design-item-01.jpg"
+											alt="Проект промышленной установки" width="330" height="256"></span>
+									<span class="news-slider__body">
+										<span class="news-slider__meta">
+											<time class="news-slider__date" datetime="2025-06-03">3 июня 2025 г.</time>
+											<span class="news-slider__tag">Проект</span>
+										</span>
+										<span class="news-slider__card-title">Effective product marketing techniques for small businesses</span>
+										<span class="news-slider__text">Explore cost-effective marketing strategies to promote your
+											product and improve production processes.</span>
+									</span>
+								</a>
+							</li>
+							<li class="news-slider__slide swiper-slide">
+								<a class="news-slider__card" href="/news-detail.html">
+									<span class="news-slider__media"><img src="/images/07-projects/project-image-01.png"
+											alt="Нефтегазовый объект" width="330" height="256"></span>
+									<span class="news-slider__body">
+										<span class="news-slider__meta">
+											<time class="news-slider__date" datetime="2025-06-15">15 июня 2025 г.</time>
+											<span class="news-slider__tag">Статья</span>
+										</span>
+										<span class="news-slider__card-title">Effective product marketing techniques for small businesses</span>
+										<span class="news-slider__text">Explore cost-effective marketing strategies to promote your
+											product and develop industrial facilities.</span>
+									</span>
+								</a>
+							</li>
+							<li class="news-slider__slide swiper-slide">
+								<a class="news-slider__card" href="/news-detail.html">
+									<span class="news-slider__media"><img src="/images/09-news/news-image-03.jpg"
+											alt="Промышленный объект у воды" width="330" height="256"></span>
+									<span class="news-slider__body">
+										<span class="news-slider__meta">
+											<time class="news-slider__date" datetime="2025-06-20">20 июня 2025 г.</time>
+											<span class="news-slider__tag">Новости</span>
+										</span>
+										<span class="news-slider__card-title">Комплексное проектирование производственных систем</span>
+										<span class="news-slider__text">Как инженерные расчеты помогают сократить сроки реализации
+											проекта.</span>
+									</span>
+								</a>
+							</li>
+							<li class="news-slider__slide swiper-slide">
+								<a class="news-slider__card" href="/news-detail.html">
+									<span class="news-slider__media"><img src="/images/09-news/news-image-04.jpg"
+											alt="Промышленная инфраструктура" width="330" height="256"></span>
+									<span class="news-slider__body">
+										<span class="news-slider__meta">
+											<time class="news-slider__date" datetime="2025-06-26">26 июня 2025 г.</time>
+											<span class="news-slider__tag">Обзор</span>
+										</span>
+										<span class="news-slider__card-title">Автоматизация и повышение надежности оборудования</span>
+										<span class="news-slider__text">Практические решения для модернизации действующих предприятий.</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<button class="news-slider__button news-slider__button--next" type="button"
+						aria-label="Следующие новости">→</button>
+				</div>
+				<div class="news-slider__controls">
+					<div class="news-slider__pagination" aria-label="Навигация по новостям"></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="callback-section section" aria-labelledby="callback-title">
+			<div class="callback-section__container container">
+				<div class="callback-section__content">
+					<div class="callback-section__top">
+						<h2 class="callback-section__title" id="callback-title">Остались вопросы?</h2>
+						<p class="callback-section__text">
+							Требуется консультация наших специалистов по вопросу проектирования? Хотите заключить договор на ремонт и
+							сервисное обслуживание винтовых компрессоров, и прочее компрессорное оборудование? Свяжитесь с нами любым
+							удобным вам способом: позвоните, напишите на почту, оставьте заявку на обратный звонок. Ваше оборудование
+							может больше. Дайте нам возможность это показать.
+						</p>
+					</div>
+					<div class="callback-section__online">
+						<p class="callback-section__online-title">Или напишите, мы&nbsp;сейчас онлайн</p>
+						<div class="callback-section__socials">
+							<a class="callback-section__social" href="#" aria-label="Telegram">
+								<img src="/images/icons/tg.svg" alt="" width="24" height="24">
+							</a>
+							<a class="callback-section__social" href="#" aria-label="MAX">
+								<img src="/images/icons/max.svg" alt="" width="24" height="24">
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="callback-section__panel"
+					style="--callback-section-bg: url('/images/03-feedback-form/feedback-form-bg.png')">
+					<div class="callback-section__form-wrap">
+						<p class="callback-section__form-title">Оставьте свои контакты, и мы свяжемся с вами</p>
+						<form class="callback-section__form form" action="#" method="post">
+							<label class="form__field">
+								<span class="visually-hidden">Ваше имя</span>
+								<input class="form__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
+							</label>
+							<label class="form__field">
+								<span class="visually-hidden">Ваш номер телефона</span>
+								<input class="form__input" type="tel" name="phone" placeholder="Ваш номер телефона" autocomplete="tel"
+									required>
+							</label>
+							<button class="callback-section__submit button" type="submit">Получить консультацию</button>
+							<label class="form__checkbox">
+								<input class="form__checkbox-input" type="checkbox" name="agreement" checked required>
+								<span class="form__checkbox-control"></span>
+								<span>Заполняя поля форму, Вы даете согласие на обработку персональных данных</span>
+							</label>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="footer">
+		<div class="footer__container container">
+			<div class="footer__top">
+				<div class="footer__brand">
+					<a class="footer__logo" href="#" aria-label="ТехноСервис">
+						<img src="/images/icons/logo-white.svg" alt="ТехноСервис" width="213" height="90">
+					</a>
+					<p class="footer__tagline">Промышленные решения полного цикла для различных отраслей</p>
+
+					<address class="footer__contacts">
+						<div class="footer__contact">
+							<img class="footer__contact-icon" src="/images/icons/location-white.svg" alt="" width="20" height="20">
+							<div>
+								<p class="footer__contact-title">Адрес</p>
+								<p class="footer__contact-text">115304, г. Москва, ул. Каспийская, д. 22, корп. 1, стр. 3</p>
+								<a class="footer__route" href="#">Посмотреть схему проезда</a>
+							</div>
+						</div>
+						<div class="footer__contact">
+							<img class="footer__contact-icon" src="/images/icons/time-white.svg" alt="" width="20" height="20">
+							<div>
+								<p class="footer__contact-title">Время работы</p>
+								<p class="footer__contact-text">Пн-Пт: 9:00 - 18:00, Сб-Вс - выходные</p>
+							</div>
+						</div>
+						<div class="footer__contact">
+							<img class="footer__contact-icon" src="/images/icons/call-white.svg" alt="" width="20" height="20">
+							<div>
+								<p class="footer__contact-title">Телефон для связи</p>
+								<a class="footer__contact-link" href="tel:+74951205039">+7 (495) 120-50-39</a>
+								<span class="footer__socials">
+									<a class="footer__social" href="#" aria-label="Telegram">
+										<img src="/images/icons/tg.svg" alt="" width="24" height="24">
+									</a>
+									<a class="footer__social" href="#" aria-label="MAX">
+										<img src="/images/icons/max.svg" alt="" width="24" height="24">
+									</a>
+								</span>
+							</div>
+						</div>
+						<div class="footer__contact">
+							<img class="footer__contact-icon" src="/images/icons/mail-white.svg" alt="" width="20" height="20">
+							<div>
+								<p class="footer__contact-title">Email</p>
+								<a class="footer__contact-link" href="mailto:info@tech-srv.ru">info@tech-srv.ru</a>
+							</div>
+						</div>
+					</address>
+				</div>
+
+				<nav class="footer__nav" aria-label="Навигация в футере">
+					<div class="footer__group">
+						<a href="#" class="footer__title">О компании</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Миссия, Ценности, Персонал</a></li>
+							<li><a class="footer__link" href="#">CPO</a></li>
+							<li><a class="footer__link" href="#">Аттестаты, Патенты, Разрешения</a></li>
+							<li><a class="footer__link" href="#">Контроль качества (СОУТ?)</a></li>
+							<li><a class="footer__link" href="#">Реализованные проекты</a></li>
+							<li><a class="footer__link" href="#">Вакансия</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Сервис</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Безвозмездная инспекция</a></li>
+							<li><a class="footer__link" href="#">Полевой сервис</a></li>
+							<li><a class="footer__link" href="#">Превентивное обслуживание</a></li>
+							<li><a class="footer__link" href="#">Капитальный ремонт</a></li>
+							<li><a class="footer__link" href="#">Вспомогательное оборудование</a></li>
+							<li><a class="footer__link" href="#">Зап части</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Услуги</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Обследование</a></li>
+							<li><a class="footer__link" href="#">Повышение квалификации персонала</a></li>
+							<li><a class="footer__link" href="#">Разработка стратегии модернизации предприятия</a></li>
+							<li><a class="footer__link" href="#">Проектирование</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Оборудование</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Продукция</a></li>
+							<li><a class="footer__link" href="#">Производство (Реализация комплексных проектов)</a></li>
+							<li><a class="footer__link" href="#">Модификация и апгрейды</a></li>
+							<li><a class="footer__link" href="#">Опросные листы</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Импортозамещение</a>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Новости и статьи</a>
+					</div>
+				</nav>
+
+				<div class="footer__aside">
+					<div class="footer__group">
+						<a href="#" class="footer__title">Готовые решения</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Нефтегаз и Энергетика</a></li>
+							<li><a class="footer__link" href="#">Охлаждение</a></li>
+							<li><a class="footer__link" href="#">Криогеника</a></li>
+							<li><a class="footer__link" href="#">Химия</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Контакты</a>
+						<div class="footer__tender">
+							<p class="footer__tender-text">Принимаем участие в тендерных закупках коммерческих организаций, а так же в
+								соответствии с 44-ФЗ и 223-ФЗ</p>
+							<button class="footer__tender-button button" type="button"
+								data-micromodal-trigger="callback-modal">Пригласить в тендер</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<p class="footer__copyright">© ООО «ТехноСервис» 2026</p>
+				<a class="footer__policy" href="#">Политика конфиденциальности</a>
+			</div>
+		</div>
+	</footer>
+
+	<div class="modal micromodal-slide" id="callback-modal" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="callback-modal-title">
+				<button class="modal__close" type="button" aria-label="Закрыть окно" data-micromodal-close></button>
+				<h2 class="modal__title" id="callback-modal-title">Оставьте заявку</h2>
+				<form class="form" action="#" method="post">
+					<label class="form__field">
+						<span class="visually-hidden">Ваше имя</span>
+						<input class="form__input" type="text" name="modal-name" placeholder="Ваше имя" autocomplete="name">
+					</label>
+					<label class="form__field">
+						<span class="visually-hidden">Ваш номер телефона</span>
+						<input class="form__input" type="tel" name="modal-phone" placeholder="Ваш номер телефона" autocomplete="tel"
+							required>
+					</label>
+					<label class="form__field">
+						<span class="visually-hidden">Email</span>
+						<input class="form__input" type="email" name="modal-email" placeholder="Email" autocomplete="email"
+							required>
+					</label>
+					<button class="button" type="submit">Отправить</button>
+					<label class="form__checkbox">
+						<input class="form__checkbox-input" type="checkbox" name="modal-agreement" checked required>
+						<span class="form__checkbox-control"></span>
+						<span>Заполняя поля форму, Вы даете согласие на обработку персональных данных</span>
+					</label>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="/scripts/jquery-3.7.1.min.js"></script>
+	<script src="/scripts/jquery-ui.min.js"></script>
+	<script src="/scripts/jquery.mask.min.js"></script>
+	<script src="/scripts/micromodal.min.js"></script>
+	<script src="/scripts/swiper-bundle.min.js"></script>
+	<script src="/scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,418 @@
+.solution-detail-page {
+	overflow: clip;
+
+	&__news {
+		margin-top: 58px;
+	}
+
+	&__callback {
+		padding-top: 54px;
+
+		@include mobile {
+			padding-top: 26px;
+
+			.callback-section__content {
+				gap: 22px;
+			}
+
+			.callback-section__title {
+				font-size: 24px;
+				text-align: center;
+			}
+
+			.callback-section__text {
+				font-size: 11px;
+				text-align: center;
+			}
+
+			.callback-section__online {
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 8px 14px;
+			}
+
+			.callback-section__online-title {
+				width: 100%;
+				max-width: none;
+				font-size: 12px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.solution-detail-heading {
+	margin-bottom: 28px;
+
+	@include mobile {
+		margin-bottom: 16px;
+	}
+
+	&__title {
+		@include fluid-text(30, 42);
+
+		width: fit-content;
+		padding-bottom: 12px;
+		font-weight: 700;
+		line-height: 1;
+		color: var(--gray-700);
+		border-bottom: 2px solid var(--primary-500);
+
+		@include mobile {
+			@include fluid-text(22, 26);
+
+			width: 100%;
+			padding-bottom: 10px;
+		}
+	}
+}
+
+.solution-section-title {
+	@include fluid-text(30, 42);
+
+	width: fit-content;
+	padding-bottom: 12px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--gray-700);
+	border-bottom: 2px solid var(--primary-500);
+
+	@include mobile {
+		@include fluid-text(22, 26);
+
+		margin-inline: auto;
+		padding-bottom: 8px;
+		text-align: center;
+	}
+}
+
+.solution-temperature {
+	margin-bottom: 58px;
+
+	@include mobile {
+		margin-bottom: 34px;
+	}
+
+	&__layout {
+		display: grid;
+		grid-template-columns: 330px minmax(0, 1fr);
+		align-items: start;
+		gap: 30px;
+
+		@include tablet {
+			grid-template-columns: 280px minmax(0, 1fr);
+			gap: 22px;
+		}
+
+		@include mobile {
+			display: block;
+		}
+	}
+
+	&__stage {
+		position: relative;
+		min-width: 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			inset: 0 auto 0 0;
+			width: 100px;
+			background: linear-gradient(
+				to bottom,
+				#ff3218 0%,
+				#ff7a00 12%,
+				#ffbd00 23%,
+				#ffe400 33%,
+				#d9ed00 43%,
+				#b5db21 53%,
+				#8cc64b 63%,
+				#63aa63 72%,
+				#41937b 82%,
+				#218493 91%,
+				#0878ae 100%
+			);
+			border-radius: 20px;
+		}
+
+		@include mobile {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin-inline: -4px;
+			margin-bottom: 28px;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	&__swiper {
+		width: 100%;
+		min-width: 0;
+		overflow: visible;
+
+		@include mobile {
+			flex: 1 1 auto;
+			width: 0;
+			overflow: hidden;
+		}
+	}
+
+	&__list {
+		position: relative;
+		z-index: 1;
+		display: grid;
+
+		@include mobile {
+			display: flex;
+		}
+	}
+
+	&__item {
+		width: 100% !important;
+		height: 77px;
+
+		@include mobile {
+			flex: 0 0 245px;
+			width: 245px !important;
+			height: 58px;
+		}
+	}
+
+	&__link {
+		@include reset-link;
+
+		display: grid;
+		grid-template-columns: 100px 100px minmax(0, 1fr);
+		align-items: stretch;
+		height: 100%;
+		color: var(--gray-700);
+
+		@include hover {
+			.solution-temperature__name {
+				color: var(--primary-500);
+			}
+
+			img {
+				filter: saturate(1.15);
+			}
+		}
+
+		@include mobile {
+			grid-template-columns: 58px 72px minmax(0, 1fr);
+			overflow: hidden;
+			background-color: var(--white);
+			border: 1px solid var(--gray-300);
+			border-radius: 4px;
+		}
+	}
+
+	&__value {
+		@include flex-center;
+
+		position: relative;
+		z-index: 1;
+		padding-inline: 4px;
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--black);
+
+		@include mobile {
+			font-size: 14px;
+			background-color: var(--temperature-color);
+		}
+	}
+
+	&__link img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: filter var(--transition-duration);
+	}
+
+	&__name {
+		display: flex;
+		align-items: center;
+		padding-inline: 12px 4px;
+		font-size: 13px;
+		line-height: 1.25;
+		transition: color var(--transition-duration);
+
+		@include mobile {
+			padding-inline: 9px 6px;
+			font-size: 11px;
+		}
+	}
+
+	&__item.is-active &__name {
+		color: var(--primary-500);
+	}
+
+	&__item.swiper-slide-active &__name {
+		@include mobile {
+			color: var(--primary-500);
+		}
+	}
+
+	&__button {
+		@include reset-button;
+
+		display: none;
+
+		@include mobile {
+			@include square(24px);
+			@include flex-center;
+
+			flex: 0 0 auto;
+			font-size: 18px;
+			color: var(--gray-700);
+			cursor: pointer;
+
+			&.swiper-button-disabled {
+				opacity: 0.35;
+			}
+		}
+	}
+
+	&__content {
+		display: grid;
+		gap: 30px;
+		width: 100%;
+		min-width: 0;
+
+		@include mobile {
+			gap: 24px;
+		}
+	}
+
+	&__customers {
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 14px;
+
+		@include mobile {
+			display: flex;
+			gap: 10px;
+			margin-inline: calc(var(--container-padding-x) * -1);
+			padding-inline: var(--container-padding-x);
+			overflow: hidden;
+		}
+
+		li {
+			@include flex-center;
+
+			min-width: 0;
+			height: 140px;
+			padding: 24px;
+			border: 1px solid var(--gray-300);
+			border-radius: 6px;
+
+			@include mobile {
+				flex: 0 0 142px;
+				height: 96px;
+				padding: 18px;
+			}
+		}
+
+		img {
+			width: 100%;
+			max-height: 54px;
+			object-fit: contain;
+			filter: grayscale(1);
+			opacity: 0.72;
+		}
+	}
+
+	&__copy {
+		display: grid;
+		gap: 16px;
+		width: 100%;
+		min-width: 0;
+
+		@include mobile {
+			gap: 13px;
+		}
+
+		p {
+			@include fluid-text(12, 14);
+
+			line-height: 1.45;
+			color: var(--gray-700);
+			overflow-wrap: anywhere;
+
+			@include mobile {
+				font-size: 10px;
+			}
+		}
+	}
+}
+
+.solution-services {
+	margin-bottom: 0;
+
+	&__container {
+		display: grid;
+		gap: 28px;
+
+		@include mobile {
+			gap: 20px;
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 30px;
+
+		@include tablet {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 20px;
+		}
+
+		@include mobile {
+			gap: 12px;
+		}
+	}
+
+	.service-card {
+		border: 0;
+		border-radius: 5px;
+
+		&__media {
+			@include mobile {
+				aspect-ratio: 169 / 155;
+			}
+		}
+
+		&__body {
+			grid-template-columns: minmax(0, 1fr) auto;
+			grid-template-rows: auto;
+			align-items: end;
+			gap: 8px;
+			padding: 16px 14px;
+
+			@include mobile {
+				padding: 10px 8px 12px;
+			}
+		}
+
+		&__title {
+			@include fluid-text(14, 18);
+
+			min-height: 0;
+			line-height: 1.2;
+
+			@include mobile {
+				font-size: 11px;
+			}
+		}
+
+		&__arrow {
+			grid-column: 2;
+			width: 22px;
+		}
+	}
+}

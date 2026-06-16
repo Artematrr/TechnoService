@@ -1,0 +1,51 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	@include mobile {
+		gap: 7px;
+	}
+
+	&__item {
+		@include flex-center;
+		@include square(34px);
+		@include fluid-text(12, 14);
+
+		flex: 0 0 auto;
+		color: var(--gray-700);
+		background-color: var(--gray-200);
+		border-radius: 50%;
+		transition:
+			color var(--transition-duration),
+			background-color var(--transition-duration);
+
+		@include hover {
+			color: var(--white);
+			background-color: var(--gray-500);
+		}
+
+		@include mobile {
+			@include square(28px);
+		}
+
+		&.is-active {
+			color: var(--primary-500);
+			background-color: #fff3f1;
+		}
+
+		&--arrow {
+			font-size: 18px;
+
+			@include mobile {
+				font-size: 15px;
+			}
+		}
+
+		&--next {
+			color: var(--white);
+			background-color: var(--gray-500);
+		}
+	}
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+	<rect width="900" height="1200" fill="#f7f7f7"/>
+	<rect x="70" y="60" width="760" height="1080" rx="8" fill="#ffffff" stroke="#d9d9d9"/>
+	<text x="450" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#43454b">ОТЗЫВ О ПРОВЕДЕННЫХ РАБОТАХ</text>
+	<text x="110" y="220" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#43454b">Петровский Петр Петрович</text>
+	<text x="110" y="254" font-family="Arial, sans-serif" font-size="16" fill="#85878b">Старший инженер</text>
+	<g stroke="#cfd0d2" stroke-width="2">
+		<line x1="110" y1="330" x2="790" y2="330"/>
+		<line x1="110" y1="380" x2="790" y2="380"/>
+		<line x1="110" y1="430" x2="790" y2="430"/>
+		<line x1="110" y1="480" x2="790" y2="480"/>
+		<line x1="110" y1="530" x2="790" y2="530"/>
+		<line x1="110" y1="580" x2="790" y2="580"/>
+		<line x1="110" y1="630" x2="790" y2="630"/>
+		<line x1="110" y1="680" x2="790" y2="680"/>
+		<line x1="110" y1="730" x2="790" y2="730"/>
+		<line x1="110" y1="780" x2="790" y2="780"/>
+	</g>
+	<text x="110" y="870" font-family="Arial, sans-serif" font-size="18" fill="#43454b">Работы выполнены качественно и в согласованные сроки.</text>
+	<text x="110" y="910" font-family="Arial, sans-serif" font-size="18" fill="#43454b">Оборудование введено в эксплуатацию без замечаний.</text>
+	<path d="M580 1010c65-55 120 10 175-45" fill="none" stroke="#335b91" stroke-width="5"/>
+	<text x="110" y="1060" font-family="Arial, sans-serif" font-size="16" fill="#85878b">12 августа 2025 г.</text>
+</svg>

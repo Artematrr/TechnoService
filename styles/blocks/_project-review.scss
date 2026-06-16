@@ -1,0 +1,84 @@
+.project-review {
+	margin-bottom: var(--section-margin-bottom);
+
+	&__container {
+		display: grid;
+		gap: 28px;
+	}
+
+	&__title {
+		@include fluid-text(28, 40);
+
+		width: fit-content;
+		padding-bottom: 12px;
+		font-weight: 700;
+		line-height: 1;
+		color: var(--gray-700);
+		border-bottom: 2px solid var(--primary-500);
+
+		@include mobile {
+			@include fluid-text(24, 28);
+
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&__card {
+		display: grid;
+		gap: 20px;
+		padding: 34px 40px;
+		border: 1px solid var(--gray-300);
+		border-radius: 6px;
+
+		@include mobile {
+			gap: 16px;
+			padding: 20px 16px;
+		}
+	}
+
+	&__author {
+		display: grid;
+		gap: 4px;
+	}
+
+	&__name {
+		@include fluid-text(18, 20);
+
+		font-weight: 700;
+		color: var(--gray-700);
+	}
+
+	&__position,
+	&__text {
+		@include fluid-text(13, 14);
+
+		color: var(--gray-500);
+	}
+
+	&__text {
+		line-height: 1.45;
+	}
+
+	&__button {
+		@include fluid-text(16, 18);
+
+		justify-self: start;
+		min-height: 58px;
+		padding-inline: 28px;
+		color: var(--gray-700);
+		background-color: var(--white);
+		border: 1px solid var(--gray-500);
+
+		@include hover {
+			color: var(--white);
+			background-color: var(--gray-700);
+		}
+
+		@include mobile {
+			width: 100%;
+			min-height: 48px;
+			padding-inline: 14px;
+		}
+	}
+}

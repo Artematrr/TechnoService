@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Поставки для Лукойл — реализованный проект ТехноСервис">
+	<title>Поставки для Лукойл — ТехноСервис</title>
+
+	<link rel="stylesheet" href="/styles/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+</head>
+
+<body>
+	<header class="header header--inner-page js-header">
+		<div class="header__container container">
+			<a class="header__logo" href="#" aria-label="ТехноСервис">
+				<img class="header__logo-image" src="/images/icons/logo.svg" alt="ТехноСервис" width="213" height="90">
+			</a>
+
+			<div class="header__inner">
+				<div class="header__actions">
+					<a class="header__phone" href="tel:+74951205039">+7 (495) 120-50-39</a>
+
+					<ul class="header__socials" aria-label="Мессенджеры">
+						<li>
+							<a class="header__social" href="#" aria-label="Telegram">
+								<img src="/images/icons/tg.svg" alt="" width="24" height="24">
+							</a>
+						</li>
+						<li>
+							<a class="header__social" href="#" aria-label="MAX">
+								<img src="/images/icons/max.svg" alt="" width="24" height="24">
+							</a>
+						</li>
+					</ul>
+
+					<a class="header__mail" href="mailto:info@tech-srv.ru">
+						<img src="/images/icons/mail.svg" alt="" width="18" height="14">
+						info@tech-srv.ru
+					</a>
+
+					<button class="header__icon-button" type="button" aria-label="Показать схему проезда">
+						<img src="/images/icons/location.svg" alt="" width="22" height="22">
+					</button>
+
+					<button class="header__callback" type="button" data-micromodal-trigger="callback-modal">
+						<img src="/images/icons/call.svg" alt="" width="19" height="19">
+						Заказать звонок
+					</button>
+
+					<a class="header__icon-button" href="#" aria-label="Поиск">
+						<img src="/images/icons/search.svg" alt="" width="22" height="22">
+					</a>
+
+					<button class="header__menu-button js-menu-button" type="button" aria-label="Открыть меню"
+						aria-expanded="false">
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+
+				<nav class="header__nav" aria-label="Основная навигация">
+					<ul class="header__menu">
+						<li class="header__menu-item">
+							<button class="header__nav-link js-submenu-button" type="button" aria-expanded="false">
+								О компании
+								<img src="/images/icons/arrow-down.svg" alt="" width="10" height="6">
+							</button>
+							<ul class="header__submenu">
+								<li><a href="#">Миссия, Ценности, Персонал</a></li>
+								<li><a href="#">CPO</a></li>
+								<li><a href="#">Аттестаты, Патенты, Разрешения</a></li>
+								<li><a href="#">Вакансия</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item">
+							<button class="header__nav-link js-submenu-button" type="button" aria-expanded="false">
+								Готовые решения
+								<img src="/images/icons/arrow-down.svg" alt="" width="10" height="6">
+							</button>
+							<ul class="header__submenu">
+								<li><a href="#">Нефтегаз и Энергетика</a></li>
+								<li><a href="#">Охлаждение</a></li>
+								<li><a href="#">Криогеника</a></li>
+								<li><a href="#">Химия</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item">
+							<button class="header__nav-link js-submenu-button" type="button" aria-expanded="false">
+								Запасные части
+								<img src="/images/icons/arrow-down.svg" alt="" width="10" height="6">
+							</button>
+							<ul class="header__submenu">
+								<li><a href="#">Опросные листы</a></li>
+								<li><a href="#">Комплектующие</a></li>
+								<li><a href="#">Сервисные наборы</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item">
+							<button class="header__nav-link js-submenu-button" type="button" aria-expanded="false">
+								Сервис
+								<img src="/images/icons/arrow-down.svg" alt="" width="10" height="6">
+							</button>
+							<ul class="header__submenu">
+								<li><a href="#">Безвозмездная инспекция</a></li>
+								<li><a href="#">Полевой сервис</a></li>
+								<li><a href="#">Капитальный ремонт</a></li>
+								<li><a href="#">Вспомогательное оборудование</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item">
+							<a class="header__nav-link" href="#">Импортозамещение</a>
+						</li>
+					</ul>
+
+					<div class="header__mobile-contacts" aria-label="Контакты">
+						<div class="header__mobile-row">
+							<a class="header__mobile-phone" href="tel:+74951205039">+7 (495) 120-50-39</a>
+							<div class="header__mobile-socials" aria-label="Мессенджеры">
+								<a class="header__mobile-social" href="#" aria-label="Telegram">
+									<img src="/images/icons/tg.svg" alt="" width="28" height="28">
+								</a>
+								<a class="header__mobile-social" href="#" aria-label="MAX">
+									<img src="/images/icons/max.svg" alt="" width="28" height="28">
+								</a>
+							</div>
+						</div>
+
+						<a class="header__mobile-mail" href="mailto:info@tech-srv.ru">
+							<img src="/images/icons/mail.svg" alt="" width="20" height="16">
+							info@tech-srv.ru
+						</a>
+
+						<button class="header__mobile-callback" type="button" data-micromodal-trigger="callback-modal">
+							<img src="/images/icons/call.svg" alt="" width="20" height="20">
+							Заказать звонок
+						</button>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main class="main" id="main">
+		<nav class="breadcrumbs container" aria-label="Хлебные крошки">
+			<ol>
+				<li><a href="#">Главная</a></li>
+				<li><a href="/projects.html">Реализованные проекты</a></li>
+				<li><a href="#">Поставки для Лукойл</a></li>
+			</ol>
+		</nav>
+
+		<article class="project-detail section" aria-labelledby="project-title">
+			<div class="project-detail__container container">
+				<h1 class="project-detail__title" id="project-title">Поставки для Лукойл</h1>
+
+				<div class="project-detail__meta">
+					<div class="project-detail__logo" aria-label="Лукойл">
+						<span class="project-detail__logo-mark">ЛК</span>
+						<span class="project-detail__logo-name">ЛУКОЙЛ</span>
+					</div>
+
+					<dl class="project-detail__facts">
+						<div class="project-detail__fact">
+							<dt>Начало работ:</dt>
+							<dd><time datetime="2025-08-12">12 августа 2025 г.</time></dd>
+						</div>
+						<div class="project-detail__fact">
+							<dt>Завершение работ:</dt>
+							<dd><time datetime="2025-08-12">12 августа 2025 г.</time></dd>
+						</div>
+						<div class="project-detail__fact">
+							<dt>Ответственный инженер:</dt>
+							<dd>Ивановский И.И.</dd>
+						</div>
+					</dl>
+				</div>
+
+				<p class="project-detail__text">
+					Однозначно, некоторые особенности внутренней политики, инициированные исключительно синтетически, подвергнуты
+					целой серии независимых исследований. Равным образом, начало повседневной работы по формированию позиции
+					способствует подготовке и реализации прогресса профессионального сообщества. Внезапно активно развивающиеся
+					страны третьего мира будут превращены в посмешище, хотя само их существование приносит несомненную пользу
+					обществу. Ясность нашей позиции очевидна: дальнейшее развитие различных форм деятельности влечет за собой
+					процесс внедрения и модернизации распределения внутренних резервов и ресурсов. Для современного мира глубокий
+					уровень погружения обеспечивает актуальность кластеризации усилий. Следует отметить, что сложившаяся структура
+					организации в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным
+					потребностям. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством
+					простого факта: курс на социально-ориентированный национальный проект предполагает независимые способы
+					реализации форм воздействия.
+				</p>
+			</div>
+		</article>
+
+		<section class="projects-slider projects-slider--single-row section js-projects-slider"
+			aria-label="Фотографии проекта">
+			<div class="projects-slider__container container">
+				<div class="projects-slider__swiper swiper">
+					<ul class="projects-slider__list swiper-wrapper">
+						<li class="projects-slider__slide swiper-slide">
+							<a class="projects-slider__card" href="/images/07-projects/project-image-01.png">
+								<span class="projects-slider__media">
+									<img class="projects-slider__image" src="/images/07-projects/project-image-01.png"
+										alt="Нефтяная качалка на объекте" width="330" height="256">
+								</span>
+							</a>
+						</li>
+						<li class="projects-slider__slide swiper-slide">
+							<a class="projects-slider__card" href="/images/07-projects/project-image-02.png">
+								<span class="projects-slider__media">
+									<img class="projects-slider__image" src="/images/07-projects/project-image-02.png"
+										alt="Промышленная площадка" width="330" height="256">
+								</span>
+							</a>
+						</li>
+						<li class="projects-slider__slide swiper-slide">
+							<a class="projects-slider__card" href="/images/07-projects/project-image-03.png">
+								<span class="projects-slider__media">
+									<img class="projects-slider__image" src="/images/07-projects/project-image-03.png"
+										alt="Промышленный комплекс" width="330" height="256">
+								</span>
+							</a>
+						</li>
+						<li class="projects-slider__slide swiper-slide">
+							<a class="projects-slider__card" href="/images/07-projects/project-image-03.png">
+								<span class="projects-slider__media">
+									<img class="projects-slider__image" src="/images/07-projects/project-image-03.png"
+										alt="Оборудование промышленного комплекса" width="330" height="256">
+								</span>
+							</a>
+						</li>
+						<li class="projects-slider__slide swiper-slide">
+							<a class="projects-slider__card" href="/images/07-projects/project-image-01.png">
+								<span class="projects-slider__media">
+									<img class="projects-slider__image" src="/images/07-projects/project-image-01.png"
+										alt="Оборудование нефтегазового объекта" width="330" height="256">
+								</span>
+							</a>
+						</li>
+						<li class="projects-slider__slide swiper-slide">
+							<a class="projects-slider__card" href="/images/07-projects/project-image-02.png">
+								<span class="projects-slider__media">
+									<img class="projects-slider__image" src="/images/07-projects/project-image-02.png"
+										alt="Выполненные работы на объекте" width="330" height="256">
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="projects-slider__controls">
+					<div class="projects-slider__buttons">
+						<button class="projects-slider__button projects-slider__button--prev" type="button"
+							aria-label="Предыдущие фотографии">←</button>
+						<button class="projects-slider__button projects-slider__button--next" type="button"
+							aria-label="Следующие фотографии">→</button>
+					</div>
+					<div class="projects-slider__pagination" aria-label="Навигация по фотографиям"></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="project-review section" aria-labelledby="review-title">
+			<div class="project-review__container container">
+				<h2 class="project-review__title" id="review-title">Отзыв о проведенных работах</h2>
+				<article class="project-review__card">
+					<header class="project-review__author">
+						<h3 class="project-review__name">Петровский Петр Петрович</h3>
+						<p class="project-review__position">Старший инженер</p>
+					</header>
+					<p class="project-review__text">
+						Разбавленное изрядной долей эмпатии, рациональное мышление прекрасно подходит для реализации новых
+						принципов формирования материально-технической и кадровой базы. Тщательные исследования конкурентов преданы
+						социально-демократической анафеме. Следует отметить, что сложившаяся структура организации в значительной
+						степени обусловливает важность системы обучения кадров и дальнейшее сервисное обслуживание.
+					</p>
+					<button class="project-review__button button" type="button"
+						data-micromodal-trigger="review-modal">Посмотреть оригинал отзыва</button>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__container container">
+			<div class="footer__top">
+				<div class="footer__brand">
+					<a class="footer__logo" href="#" aria-label="ТехноСервис">
+						<img src="/images/icons/logo-white.svg" alt="ТехноСервис" width="213" height="90">
+					</a>
+					<p class="footer__tagline">Промышленные решения полного цикла для различных отраслей</p>
+
+					<address class="footer__contacts">
+						<div class="footer__contact">
+							<img class="footer__contact-icon" src="/images/icons/location-white.svg" alt="" width="20" height="20">
+							<div>
+								<p class="footer__contact-title">Адрес</p>
+								<p class="footer__contact-text">115304, г. Москва, ул. Каспийская, д. 22, корп. 1, стр. 3</p>
+								<a class="footer__route" href="#">Посмотреть схему проезда</a>
+							</div>
+						</div>
+						<div class="footer__contact">
+							<img class="footer__contact-icon" src="/images/icons/time-white.svg" alt="" width="20" height="20">
+							<div>
+								<p class="footer__contact-title">Время работы</p>
+								<p class="footer__contact-text">Пн-Пт: 9:00 - 18:00, Сб-Вс - выходные</p>
+							</div>
+						</div>
+						<div class="footer__contact">
+							<img class="footer__contact-icon" src="/images/icons/call-white.svg" alt="" width="20" height="20">
+							<div>
+								<p class="footer__contact-title">Телефон для связи</p>
+								<a class="footer__contact-link" href="tel:+74951205039">+7 (495) 120-50-39</a>
+								<span class="footer__socials">
+									<a class="footer__social" href="#" aria-label="Telegram">
+										<img src="/images/icons/tg.svg" alt="" width="24" height="24">
+									</a>
+									<a class="footer__social" href="#" aria-label="MAX">
+										<img src="/images/icons/max.svg" alt="" width="24" height="24">
+									</a>
+								</span>
+							</div>
+						</div>
+						<div class="footer__contact">
+							<img class="footer__contact-icon" src="/images/icons/mail-white.svg" alt="" width="20" height="20">
+							<div>
+								<p class="footer__contact-title">Email</p>
+								<a class="footer__contact-link" href="mailto:info@tech-srv.ru">info@tech-srv.ru</a>
+							</div>
+						</div>
+					</address>
+				</div>
+
+				<nav class="footer__nav" aria-label="Навигация в футере">
+					<div class="footer__group">
+						<a href="#" class="footer__title">О компании</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Миссия, Ценности, Персонал</a></li>
+							<li><a class="footer__link" href="#">CPO</a></li>
+							<li><a class="footer__link" href="#">Аттестаты, Патенты, Разрешения</a></li>
+							<li><a class="footer__link" href="#">Контроль качества (СОУТ?)</a></li>
+							<li><a class="footer__link" href="/projects.html">Реализованные проекты</a></li>
+							<li><a class="footer__link" href="#">Вакансия</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Сервис</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Безвозмездная инспекция</a></li>
+							<li><a class="footer__link" href="#">Полевой сервис</a></li>
+							<li><a class="footer__link" href="#">Превентивное обслуживание</a></li>
+							<li><a class="footer__link" href="#">Капитальный ремонт</a></li>
+							<li><a class="footer__link" href="#">Вспомогательное оборудование</a></li>
+							<li><a class="footer__link" href="#">Зап части</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Услуги</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Обследование</a></li>
+							<li><a class="footer__link" href="#">Повышение квалификации персонала</a></li>
+							<li><a class="footer__link" href="#">Разработка стратегии модернизации предприятия</a></li>
+							<li><a class="footer__link" href="#">Проектирование</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Оборудование</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Продукция</a></li>
+							<li><a class="footer__link" href="#">Производство (Реализация комплексных проектов)</a></li>
+							<li><a class="footer__link" href="#">Модификация и апгрейды</a></li>
+							<li><a class="footer__link" href="#">Опросные листы</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Импортозамещение</a>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Новости и статьи</a>
+					</div>
+				</nav>
+
+				<div class="footer__aside">
+					<div class="footer__group">
+						<a href="#" class="footer__title">Готовые решения</a>
+						<ul class="footer__list">
+							<li><a class="footer__link" href="#">Нефтегаз и Энергетика</a></li>
+							<li><a class="footer__link" href="#">Охлаждение</a></li>
+							<li><a class="footer__link" href="#">Криогеника</a></li>
+							<li><a class="footer__link" href="#">Химия</a></li>
+						</ul>
+					</div>
+					<div class="footer__group">
+						<a href="#" class="footer__title">Контакты</a>
+						<div class="footer__tender">
+							<p class="footer__tender-text">Принимаем участие в тендерных закупках коммерческих организаций, а так же в
+								соответствии с 44-ФЗ и 223-ФЗ</p>
+							<button class="footer__tender-button button" type="button"
+								data-micromodal-trigger="callback-modal">Пригласить в тендер</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer__bottom">
+				<p class="footer__copyright">© ООО «ТехноСервис» 2026</p>
+				<a class="footer__policy" href="#">Политика конфиденциальности</a>
+			</div>
+		</div>
+	</footer>
+
+	<div class="modal modal--image micromodal-slide" id="review-modal" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-label="Оригинал отзыва">
+				<button class="modal__close" type="button" aria-label="Закрыть окно" data-micromodal-close></button>
+				<img class="modal__image" src="/images/08-project/project-review.svg"
+					alt="Оригинал отзыва о проведенных работах" width="900" height="1200">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal micromodal-slide" id="callback-modal" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="callback-modal-title">
+				<button class="modal__close" type="button" aria-label="Закрыть окно" data-micromodal-close></button>
+				<h2 class="modal__title" id="callback-modal-title">Оставьте заявку</h2>
+				<form class="form" action="#" method="post">
+					<label class="form__field">
+						<span class="visually-hidden">Ваше имя</span>
+						<input class="form__input" type="text" name="modal-name" placeholder="Ваше имя" autocomplete="name">
+					</label>
+					<label class="form__field">
+						<span class="visually-hidden">Ваш номер телефона</span>
+						<input class="form__input" type="tel" name="modal-phone" placeholder="Ваш номер телефона" autocomplete="tel"
+							required>
+					</label>
+					<label class="form__field">
+						<span class="visually-hidden">Email</span>
+						<input class="form__input" type="email" name="modal-email" placeholder="Email" autocomplete="email"
+							required>
+					</label>
+					<button class="button" type="submit">Отправить</button>
+					<label class="form__checkbox">
+						<input class="form__checkbox-input" type="checkbox" name="modal-agreement" checked required>
+						<span class="form__checkbox-control"></span>
+						<span>Заполняя поля форму, Вы даете согласие на обработку персональных данных</span>
+					</label>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="/scripts/jquery-3.7.1.min.js"></script>
+	<script src="/scripts/jquery-ui.min.js"></script>
+	<script src="/scripts/jquery.mask.min.js"></script>
+	<script src="/scripts/micromodal.min.js"></script>
+	<script src="/scripts/swiper-bundle.min.js"></script>
+	<script src="/scripts/main.js"></script>
+</body>
+
+</html>

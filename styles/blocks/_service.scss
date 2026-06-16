@@ -1,0 +1,306 @@
+.service-page,
+.service-detail-page {
+	&__hero {
+		@include mobile {
+			.page-hero__body {
+				height: 330px;
+			}
+
+			.page-hero__title {
+				top: 34px;
+			}
+		}
+	}
+
+	&__callback {
+		padding-top: 30px;
+
+		@include mobile {
+			padding-top: 0;
+
+			.callback-section__content {
+				gap: 20px;
+			}
+
+			.callback-section__text {
+				font-size: 12px;
+			}
+
+			.callback-section__online {
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 8px 14px;
+			}
+
+			.callback-section__online-title {
+				width: 100%;
+				font-size: 13px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.service-overview {
+	margin-bottom: 48px;
+
+	@include mobile {
+		margin-bottom: 30px;
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: 330px minmax(0, 1fr);
+		align-items: start;
+		gap: 30px;
+
+		@include tablet {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 24px;
+		}
+	}
+
+	&__nav {
+		.product-catalog__nav-link {
+			min-height: 40px;
+			padding: 8px 14px;
+			font-size: 13px;
+		}
+
+		@include mobile {
+			.product-catalog__nav-list > li {
+				flex-basis: calc(100vw - 106px);
+			}
+		}
+	}
+
+	&__copy {
+		gap: 12px;
+
+		p,
+		li {
+			font-size: 13px;
+		}
+
+		@include mobile {
+			p,
+			li {
+				font-size: 11px;
+			}
+		}
+	}
+}
+
+.service-section-title {
+	@include fluid-text(30, 42);
+
+	padding-left: 18px;
+	font-weight: 700;
+	line-height: 1.1;
+	color: var(--gray-700);
+	border-left: 8px solid var(--primary-500);
+	border-radius: 7px 0 0 7px;
+
+	@include mobile {
+		@include fluid-text(24, 28);
+
+		width: fit-content;
+		margin-inline: auto;
+		padding: 0 0 8px;
+		text-align: center;
+		border: 0;
+		border-bottom: 2px solid var(--primary-500);
+		border-radius: 0;
+	}
+}
+
+.service-clients {
+	margin-bottom: 0;
+
+	@include mobile {
+		display: none;
+	}
+
+	&__container {
+		display: grid;
+		gap: 28px;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(7, minmax(0, 1fr));
+		gap: 12px;
+	}
+
+	li {
+		@include flex-center;
+
+		height: 150px;
+		padding: 24px;
+		border: 1px solid var(--gray-300);
+		border-radius: 6px;
+	}
+
+	img {
+		width: 100%;
+		max-height: 58px;
+		object-fit: contain;
+		filter: grayscale(1);
+		opacity: 0.72;
+	}
+}
+
+.service-works {
+	margin-top: 52px;
+	padding-block: 52px;
+	background-color: var(--gray-200);
+
+	@include mobile {
+		margin-top: 0;
+		padding-block: 34px;
+	}
+
+	&__container {
+		display: grid;
+		gap: 30px;
+		min-width: 0;
+
+		@include mobile {
+			gap: 22px;
+		}
+	}
+
+	&__swiper {
+		width: 100%;
+		min-width: 0;
+		overflow: hidden;
+		cursor: grab;
+
+		&:active {
+			cursor: grabbing;
+		}
+	}
+
+	&__slide {
+		height: auto;
+	}
+
+	&__pagination {
+		display: none;
+
+		@include mobile {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+		}
+
+		&.swiper-pagination-lock {
+			display: none;
+		}
+	}
+
+	&__bullet {
+		@include reset-button;
+		@include square(8px);
+
+		flex: 0 0 auto;
+		background-color: var(--gray-500);
+		border-radius: 50%;
+
+		&.is-active {
+			background-color: var(--primary-500);
+		}
+	}
+}
+
+.service-work-card {
+	@include reset-link;
+
+	display: grid;
+	align-content: start;
+	height: 100%;
+	overflow: hidden;
+	color: var(--gray-700);
+	background-color: var(--white);
+	border-radius: 6px;
+
+	@include hover {
+		.service-work-card__media img {
+			scale: 1.035;
+		}
+	}
+
+	&__media {
+		display: block;
+		overflow: hidden;
+		aspect-ratio: 330 / 256;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: scale var(--transition-duration-long);
+		}
+	}
+
+	&__body {
+		display: grid;
+		align-content: start;
+		gap: 12px;
+		padding: 16px;
+
+		@include mobile {
+			gap: 10px;
+			padding: 14px;
+		}
+	}
+
+	&__meta {
+		@include fluid-text(9, 10);
+
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 8px;
+		color: var(--gray-500);
+
+		span {
+			padding: 3px 9px;
+			line-height: 1;
+			border: 1px solid var(--gray-300);
+			border-radius: 999px;
+		}
+	}
+
+	&__title {
+		@include fluid-text(16, 18);
+
+		font-weight: 700;
+		line-height: 1.35;
+	}
+
+	&__text {
+		@include fluid-text(11, 12);
+
+		display: -webkit-box;
+		overflow: hidden;
+		line-height: 1.45;
+		color: var(--gray-600);
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	&__cta {
+		@include flex-center;
+
+		min-height: 48px;
+		margin: 4px -16px -16px;
+		font-weight: 700;
+		color: var(--white);
+		background-color: var(--primary-500);
+
+		@include mobile {
+			display: none;
+		}
+	}
+}

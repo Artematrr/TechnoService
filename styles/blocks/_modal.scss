@@ -75,4 +75,22 @@
 		line-height: 1;
 		color: var(--gray-700);
 	}
+
+	&--image {
+		.modal__overlay {
+			overflow-y: auto;
+		}
+
+		.modal__container {
+			width: min(100%, 900px);
+			padding: 54px 24px 24px;
+		}
+
+		.modal__image {
+			width: 100%;
+			height: auto;
+			max-height: calc(100vh - 110px);
+			object-fit: contain;
+		}
+	}
 }

@@ -10,6 +10,23 @@
 		}
 	}
 
+	&__title {
+		@include fluid-text(34, 54);
+
+		font-weight: 700;
+		line-height: 1;
+		color: var(--gray-700);
+
+		@include mobile {
+			@include fluid-text(28, 32);
+
+			max-width: 100%;
+			overflow-wrap: anywhere;
+			text-wrap: wrap;
+			text-align: center;
+		}
+	}
+
 	b {
 		@include fluid-text(16, 20);
 
