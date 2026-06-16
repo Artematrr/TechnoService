@@ -13,7 +13,7 @@
 		padding-bottom: 14px;
 		font-weight: 700;
 		line-height: 1;
-		color: var(--gray-700);
+		color: var(--gray-800);
 		border-bottom: 2px solid var(--primary-500);
 
 		@include mobile {
@@ -63,7 +63,7 @@
 		margin-right: 10px;
 		font-weight: 700;
 		color: var(--white);
-		background-color: #e31e24;
+		background-color: var(--primary-500);
 	}
 
 	&__logo-name {
@@ -82,7 +82,7 @@
 	&__fact {
 		@include fluid-text(13, 14);
 
-		color: var(--gray-700);
+		color: var(--gray-800);
 
 		dt,
 		dd {
@@ -98,6 +98,6 @@
 		@include fluid-text(14, 16);
 
 		line-height: 1.45;
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 }

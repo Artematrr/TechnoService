@@ -15,7 +15,7 @@
 
 		font-weight: 700;
 		line-height: 1;
-		color: var(--gray-700);
+		color: var(--gray-800);
 
 		@include mobile {
 			@include fluid-text(28, 32);
@@ -30,7 +30,7 @@
 	b {
 		@include fluid-text(16, 20);
 
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	p {

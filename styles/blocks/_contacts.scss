@@ -60,7 +60,7 @@
 		font-weight: 700;
 		line-height: 1;
 		text-transform: uppercase;
-		color: var(--gray-700);
+		color: var(--gray-800);
 		translate: -50% -50%;
 
 		&::before {
@@ -68,7 +68,7 @@
 			position: absolute;
 			inset: -24px -54px;
 			z-index: -1;
-			background-color: rgb(255 255 255 / 76%);
+			background-color: var(--white-alpha-76);
 			border-radius: 50%;
 			filter: blur(18px);
 		}
@@ -145,7 +145,7 @@
 
 		margin-bottom: 28px;
 		font-weight: 700;
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	&__contacts {
@@ -178,7 +178,7 @@
 		@include fluid-text(14, 16);
 
 		line-height: 1.4;
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	&__phone-row {
@@ -192,7 +192,7 @@
 		@include fluid-text(22, 30);
 
 		font-weight: 700;
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	&__socials {
@@ -224,13 +224,13 @@
 
 		font-weight: 700;
 		line-height: 1.05;
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	&__form-text {
 		@include fluid-text(14, 16);
 
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	&__form {
@@ -303,7 +303,7 @@
 		padding-bottom: 22px;
 		font-weight: 700;
 		line-height: 1.35;
-		color: var(--gray-700);
+		color: var(--gray-800);
 		border-bottom: 2px solid var(--primary-500);
 
 		@include tablet {
@@ -360,14 +360,14 @@
 		font-weight: 500;
 		line-height: 1.4;
 		text-align: left;
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	&__icon {
 		@include square(40px);
 
 		position: relative;
-		color: var(--gray-700);
+		color: var(--gray-800);
 		background-color: var(--gray-200);
 		border-radius: 50%;
 		transition:
@@ -382,7 +382,7 @@
 			left: 50%;
 			width: 14px;
 			height: 2px;
-			background-color: currentColor;
+			background-color: var(--current-color);
 			translate: -50% -50%;
 			transition:
 				rotate var(--transition-duration-long),

@@ -25,8 +25,8 @@
 
 	&--outline {
 		color: var(--white);
-		background-color: transparent;
-		border-color: currentColor;
+		background-color: var(--transparent);
+		border-color: var(--current-color);
 
 		@include hover {
 			color: var(--white);

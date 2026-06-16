@@ -17,8 +17,10 @@
 
 	@include mobile {
 		margin-bottom: 22px;
+	}
 
-		.page-hero__title {
+	.page-hero__title {
+		@include mobile {
 			top: 48px;
 			left: 50%;
 			width: 100%;
@@ -34,7 +36,7 @@
 
 	font-weight: 700;
 	line-height: 1.15;
-	color: var(--gray-700);
+	color: var(--gray-800);
 
 	@include mobile {
 		@include fluid-text(22, 26);
@@ -157,7 +159,7 @@
 		@include fluid-text(16, 18);
 
 		text-align: center;
-		color: var(--gray-700);
+		color: var(--gray-800);
 
 		@include mobile {
 			@include fluid-text(13, 15);
@@ -313,7 +315,7 @@
 			@include fluid-text(27, 34);
 
 			font-weight: 700;
-			color: var(--gray-700);
+			color: var(--gray-800);
 
 			@include mobile {
 				@include fluid-text(21, 24);
@@ -397,7 +399,7 @@
 	overflow: hidden;
 	text-align: center;
 	background-image:
-		linear-gradient(rgb(255 255 255 / 86%), rgb(255 255 255 / 86%)),
+		linear-gradient(var(--white-alpha-86), var(--white-alpha-86)),
 		var(--culture-card-bg);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -417,7 +419,7 @@
 		max-width: 520px;
 		font-weight: 700;
 		line-height: 1.35;
-		color: var(--gray-700);
+		color: var(--gray-800);
 
 		@include mobile {
 			@include fluid-text(11, 13);

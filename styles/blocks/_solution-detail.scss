@@ -10,28 +10,38 @@
 
 		@include mobile {
 			padding-top: 26px;
+		}
 
-			.callback-section__content {
+		.callback-section__content {
+			@include mobile {
 				gap: 22px;
 			}
+		}
 
-			.callback-section__title {
+		.callback-section__title {
+			@include mobile {
 				font-size: 24px;
 				text-align: center;
 			}
+		}
 
-			.callback-section__text {
+		.callback-section__text {
+			@include mobile {
 				font-size: 11px;
 				text-align: center;
 			}
+		}
 
-			.callback-section__online {
+		.callback-section__online {
+			@include mobile {
 				flex-wrap: wrap;
 				justify-content: center;
 				gap: 8px 14px;
 			}
+		}
 
-			.callback-section__online-title {
+		.callback-section__online-title {
+			@include mobile {
 				width: 100%;
 				max-width: none;
 				font-size: 12px;
@@ -55,7 +65,7 @@
 		padding-bottom: 12px;
 		font-weight: 700;
 		line-height: 1;
-		color: var(--gray-700);
+		color: var(--gray-800);
 		border-bottom: 2px solid var(--primary-500);
 
 		@include mobile {
@@ -74,7 +84,7 @@
 	padding-bottom: 12px;
 	font-weight: 700;
 	line-height: 1;
-	color: var(--gray-700);
+	color: var(--gray-800);
 	border-bottom: 2px solid var(--primary-500);
 
 	@include mobile {
@@ -189,7 +199,7 @@
 		grid-template-columns: 100px 100px minmax(0, 1fr);
 		align-items: stretch;
 		height: 100%;
-		color: var(--gray-700);
+		color: var(--gray-800);
 
 		@include hover {
 			.solution-temperature__name {
@@ -268,7 +278,7 @@
 
 			flex: 0 0 auto;
 			font-size: 18px;
-			color: var(--gray-700);
+			color: var(--gray-800);
 			cursor: pointer;
 
 			&.swiper-button-disabled {
@@ -340,7 +350,7 @@
 			@include fluid-text(12, 14);
 
 			line-height: 1.45;
-			color: var(--gray-700);
+			color: var(--gray-800);
 			overflow-wrap: anywhere;
 
 			@include mobile {

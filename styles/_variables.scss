@@ -1,21 +1,53 @@
 :root {
 	--white: #ffffff;
 	--black: #000000;
+	--current-color: currentColor;
+	--transparent: transparent;
 
+	--success-500: #11da1f;
+	--primary-100: #fff3f1;
 	--primary-500: #ff2e17;
 	--gray-200: #f9f9f9;
 	--gray-300: #f2f2f2;
+	--gray-400: #e6e6e6;
 	--gray-500: #85878b;
 	--gray-500-trans: #85878ba6;
 	--gray-600: #595b61;
-	--gray-700: #43454b;
+	--gray-700: #54565f;
+	--gray-800: #43454b;
 	--gray-900: #232427;
+
+	// TODO Оставить 1-2 для тени
+	--gray-700-alpha-14: rgb(67 69 75 / 14%);
+	--gray-700-alpha-16: rgb(67 69 75 / 16%);
+	--gray-900-alpha-08: rgb(35 36 39 / 8%);
+	--gray-900-alpha-12: rgb(35 36 39 / 12%);
+	--gray-900-alpha-70: rgb(35 36 39 / 70%);
+	--black-alpha-07: rgb(0 0 0 / 7%);
+	--black-alpha-10: rgb(0 0 0 / 10%);
+	--black-alpha-12: rgb(0 0 0 / 12%);
+	--black-alpha-18: rgb(0 0 0 / 18%);
+	--black-alpha-30: rgb(0 0 0 / 30%);
+	--black-alpha-55: rgb(0 0 0 / 55%);
+	--black-alpha-78: rgb(0 0 0 / 78%);
+	--black-alpha-82: rgb(0 0 0 / 82%);
+	--white-alpha-16: rgb(255 255 255 / 16%);
+	--white-alpha-36: rgb(255 255 255 / 36%);
+	--white-alpha-42: rgb(255 255 255 / 42%);
+	--white-alpha-46: rgb(255 255 255 / 46%);
+	--white-alpha-70: rgb(255 255 255 / 70%);
+	--white-alpha-72: rgb(255 255 255 / 72%);
+	--white-alpha-75: rgb(255 255 255 / 75%);
+	--white-alpha-76: rgb(255 255 255 / 76%);
+	--white-alpha-86: rgb(255 255 255 / 86%);
+	--white-alpha-90: rgb(255 255 255 / 90%);
+	--white-alpha-92: rgb(255 255 255 / 92%);
 
 	--font-family-base:
 		'Encode Sans', 'Calibri', system-ui, -apple-system, 'Segoe UI', sans-serif;
 	// --font-family-secondary: 'Arial', sans-serif;
 
-	--border: 1px solid transparent;
+	--border: 1px solid var(--transparent);
 
 	--container-width: 1410px;
 	--container-padding-x: 15px;

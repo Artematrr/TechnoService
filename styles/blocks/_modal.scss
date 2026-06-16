@@ -14,7 +14,7 @@
 		min-height: 100%;
 		padding-block: 30px 10px;
 		padding-inline: var(--container-padding-x);
-		background-color: rgba(0, 0, 0, 0.55);
+		background-color: var(--black-alpha-55);
 
 		@include mobile {
 			align-items: flex-start;
@@ -73,7 +73,7 @@
 		margin-bottom: 22px;
 		font-weight: 700;
 		line-height: 1;
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	&--image {

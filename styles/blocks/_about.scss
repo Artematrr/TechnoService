@@ -5,7 +5,7 @@
 	padding-bottom: 12px;
 	font-weight: 700;
 	line-height: 1.15;
-	color: var(--gray-700);
+	color: var(--gray-800);
 	border-bottom: 2px solid var(--primary-500);
 
 	@include mobile {
@@ -104,7 +104,7 @@
 		padding-bottom: 18px;
 		font-weight: 700;
 		line-height: 1.45;
-		color: var(--gray-700);
+		color: var(--gray-800);
 		border-bottom: 2px solid var(--primary-500);
 
 		@include tablet {
@@ -185,7 +185,7 @@
 				width: 2px;
 				height: auto;
 				background-color: var(--primary-500);
-				box-shadow: 7px 0 15px rgb(67 69 75 / 14%);
+				box-shadow: 7px 0 15px var(--gray-700-alpha-14);
 				translate: -50% 0;
 			}
 		}
@@ -197,7 +197,7 @@
 		width: 100%;
 		height: 100%;
 		overflow: visible;
-		filter: drop-shadow(8px 10px 8px rgb(67 69 75 / 16%));
+		filter: drop-shadow(8px 10px 8px var(--gray-700-alpha-16));
 
 		polyline {
 			fill: none;
@@ -270,14 +270,14 @@
 		h3 {
 			@include fluid-text(24, 30);
 
-			color: var(--gray-700);
+			color: var(--gray-800);
 		}
 
 		p {
 			@include fluid-text(13, 15);
 
 			font-weight: 700;
-			color: var(--gray-700);
+			color: var(--gray-800);
 		}
 
 		span {
@@ -395,7 +395,7 @@
 		> p {
 			@include fluid-text(12, 14);
 
-			color: var(--gray-700);
+			color: var(--gray-800);
 		}
 	}
 
@@ -446,7 +446,7 @@
 			@include fluid-text(11, 13);
 
 			font-weight: 600;
-			color: var(--gray-700);
+			color: var(--gray-800);
 		}
 	}
 }
@@ -829,7 +829,7 @@
 	b {
 		@include fluid-text(12, 14);
 
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	small {

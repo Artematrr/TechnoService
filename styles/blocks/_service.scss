@@ -1,12 +1,14 @@
 .service-page,
 .service-detail-page {
 	&__hero {
-		@include mobile {
-			.page-hero__body {
+		.page-hero__body {
+			@include mobile {
 				height: 330px;
 			}
+		}
 
-			.page-hero__title {
+		.page-hero__title {
+			@include mobile {
 				top: 34px;
 			}
 		}
@@ -17,22 +19,30 @@
 
 		@include mobile {
 			padding-top: 0;
+		}
 
-			.callback-section__content {
+		.callback-section__content {
+			@include mobile {
 				gap: 20px;
 			}
+		}
 
-			.callback-section__text {
+		.callback-section__text {
+			@include mobile {
 				font-size: 12px;
 			}
+		}
 
-			.callback-section__online {
+		.callback-section__online {
+			@include mobile {
 				flex-wrap: wrap;
 				justify-content: center;
 				gap: 8px 14px;
 			}
+		}
 
-			.callback-section__online-title {
+		.callback-section__online-title {
+			@include mobile {
 				width: 100%;
 				font-size: 13px;
 				text-align: center;
@@ -67,8 +77,8 @@
 			font-size: 13px;
 		}
 
-		@include mobile {
-			.product-catalog__nav-list > li {
+		.product-catalog__nav-list > li {
+			@include mobile {
 				flex-basis: calc(100vw - 106px);
 			}
 		}
@@ -97,7 +107,7 @@
 	padding-left: 18px;
 	font-weight: 700;
 	line-height: 1.1;
-	color: var(--gray-700);
+	color: var(--gray-800);
 	border-left: 8px solid var(--primary-500);
 	border-radius: 7px 0 0 7px;
 
@@ -220,7 +230,7 @@
 	align-content: start;
 	height: 100%;
 	overflow: hidden;
-	color: var(--gray-700);
+	color: var(--gray-800);
 	background-color: var(--white);
 	border-radius: 6px;
 

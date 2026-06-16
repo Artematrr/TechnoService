@@ -67,9 +67,9 @@
 		padding: 10px 14px;
 		font-weight: 400;
 		line-height: 1.2;
-		color: #54565f;
+		color: var(--gray-700);
 		background-color: var(--gray-200);
-		border: 1px solid #e6e6e6;
+		border: 1px solid var(--gray-400);
 		border-radius: 4px;
 		transition:
 			color var(--transition-duration),
@@ -112,7 +112,7 @@
 
 		display: none;
 		min-width: 24px;
-		color: #54565f;
+		color: var(--gray-700);
 		cursor: pointer;
 
 		@include tablet {
@@ -133,7 +133,7 @@
 		@include fluid-text(16, 18);
 
 		line-height: 1.4;
-		color: #54565f;
+		color: var(--gray-700);
 
 		@include mobile {
 			@include fluid-text(12, 14);
@@ -177,8 +177,8 @@
 			z-index: 1;
 			background: linear-gradient(
 				180deg,
-				rgb(0 0 0 / 10%) 0%,
-				rgb(0 0 0 / 78%) 100%
+				var(--black-alpha-10) 0%,
+				var(--black-alpha-78) 100%
 			);
 			pointer-events: none;
 		}

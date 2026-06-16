@@ -81,7 +81,7 @@ ol[class] {
 
 a:not([class]) {
 	text-decoration-skip-ink: auto;
-	color: currentColor;
+	color: var(--current-color);
 }
 
 img {
@@ -119,10 +119,10 @@ select {
 }
 
 // svg *[fill] {
-// 	fill: currentColor;
+// 	fill: var(--current-color);
 // }
 // svg *[stroke] {
-// 	stroke: currentColor;
+// 	stroke: var(--current-color);
 // }
 
 svg * {

@@ -14,7 +14,7 @@
 		@include fluid-text(12, 14);
 
 		flex: 0 0 auto;
-		color: var(--gray-700);
+		color: var(--gray-800);
 		background-color: var(--gray-200);
 		border-radius: 50%;
 		transition:
@@ -32,7 +32,7 @@
 
 		&.is-active {
 			color: var(--primary-500);
-			background-color: #fff3f1;
+			background-color: var(--primary-100);
 		}
 
 		&--arrow {

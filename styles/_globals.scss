@@ -20,7 +20,7 @@ body {
 		overflow: hidden;
 	}
 
-	// scrollbar-color: var(--primary-500) transparent;
+	// scrollbar-color: var(--primary-500) var(--transparent);
 	// scrollbar-width: thin;
 	// overscroll-behavior: contain;
 
@@ -30,7 +30,7 @@ body {
 	// }
 
 	// &::-webkit-scrollbar-track {
-	// 	background: transparent;
+	// 	background: var(--transparent);
 	// }
 
 	// &::-webkit-scrollbar-thumb {

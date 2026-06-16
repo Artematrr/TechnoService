@@ -18,7 +18,7 @@
 	padding-bottom: 10px;
 	font-weight: 500;
 	line-height: 1;
-	color: var(--gray-700);
+	color: var(--gray-800);
 	border-bottom: 2px solid var(--primary-500);
 
 	@include mobile {
@@ -155,7 +155,7 @@
 		position: absolute;
 		bottom: 12px;
 		left: 12px;
-		background-color: rgb(35 36 39 / 70%);
+		background-color: var(--gray-900-alpha-70);
 		border: 1px solid var(--white);
 		border-radius: 3px;
 
@@ -233,21 +233,27 @@
 }
 
 .home-callback {
-	@include mobile {
-		.callback-section__content {
+	.callback-section__content {
+		@include mobile {
 			gap: 10px;
 		}
+	}
 
-		.callback-section__title {
+	.callback-section__title {
+		@include mobile {
 			font-size: 24px;
 			text-align: center;
 		}
+	}
 
-		.callback-section__text {
+	.callback-section__text {
+		@include mobile {
 			font-size: 12px;
 		}
+	}
 
-		.callback-section__online {
+	.callback-section__online {
+		@include mobile {
 			flex-wrap: wrap;
 			justify-content: center;
 		}
@@ -289,7 +295,7 @@
 		height: 100%;
 		min-height: 0;
 		padding: 0;
-		color: var(--gray-700);
+		color: var(--gray-800);
 		background-color: var(--white);
 		border: 1px solid var(--gray-300);
 
@@ -311,7 +317,7 @@
 	.product-catalog__card-title {
 		max-width: none;
 		padding: 16px 14px 8px;
-		color: var(--gray-700);
+		color: var(--gray-800);
 	}
 
 	.product-catalog__card-arrow {
@@ -342,8 +348,8 @@
 		inset: 0;
 		background: linear-gradient(
 			90deg,
-			rgb(35 36 39 / 70%),
-			rgb(35 36 39 / 12%)
+			var(--gray-900-alpha-70),
+			var(--gray-900-alpha-12)
 		);
 	}
 
@@ -627,19 +633,23 @@
 		}
 	}
 
-	@include mobile {
-		.faq__title {
+	.faq__title {
+		@include mobile {
 			font-size: 23px;
 		}
+	}
 
-		.faq__question {
+	.faq__question {
+		@include mobile {
 			grid-template-columns: minmax(0, 1fr) 30px;
 			gap: 10px;
 			padding-block: 14px;
 			font-size: 12px;
 		}
+	}
 
-		.faq__icon {
+	.faq__icon {
+		@include mobile {
 			@include square(28px);
 		}
 	}
