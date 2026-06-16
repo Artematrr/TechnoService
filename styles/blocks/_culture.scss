@@ -1,34 +1,4 @@
 .culture-page {
-	.page-hero {
-		&__title {
-			left: 30%;
-			max-width: 520px;
-			line-height: 1.08;
-		}
-
-		&__label {
-			width: 560px;
-		}
-	}
-}
-
-.culture-hero {
-	margin-bottom: 40px;
-
-	@include mobile {
-		margin-bottom: 22px;
-	}
-
-	.page-hero__title {
-		@include mobile {
-			top: 48px;
-			left: 50%;
-			width: 100%;
-			max-width: none;
-			text-align: center;
-			white-space: normal;
-		}
-	}
 }
 
 .culture-title {

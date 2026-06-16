@@ -5,8 +5,8 @@
   box-sizing: border-box;
 }
 
-ul[class],
-ol[class] {
+ul,
+ol {
   padding: 0;
 }
 
@@ -16,8 +16,8 @@ h2,
 h3,
 h4,
 p,
-ul[class],
-ol[class],
+ul,
+ol,
 li,
 figure,
 figcaption,
@@ -121,63 +121,63 @@ svg * {
   }
 }
 @font-face {
-  font-family: "Encode Sans";
+  font-family: "EncodeSans";
   src: url("/fonts/EncodeSans/EncodeSans-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Encode Sans";
+  font-family: "EncodeSans";
   src: url("/fonts/EncodeSans/EncodeSans-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Encode Sans";
+  font-family: "EncodeSans";
   src: url("/fonts/EncodeSans/EncodeSans-ExtraBold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Encode Sans";
+  font-family: "EncodeSans";
   src: url("/fonts/EncodeSans/EncodeSans-ExtraLight.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Encode Sans";
+  font-family: "EncodeSans";
   src: url("/fonts/EncodeSans/EncodeSans-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Encode Sans";
+  font-family: "EncodeSans";
   src: url("/fonts/EncodeSans/EncodeSans-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Encode Sans";
+  font-family: "EncodeSans";
   src: url("/fonts/EncodeSans/EncodeSans-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Encode Sans";
+  font-family: "EncodeSans";
   src: url("/fonts/EncodeSans/EncodeSans-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Encode Sans";
+  font-family: "EncodeSans";
   src: url("/fonts/EncodeSans/EncodeSans-Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
@@ -225,7 +225,7 @@ svg * {
   --white-alpha-90: rgb(255 255 255 / 90%);
   --white-alpha-92: rgb(255 255 255 / 92%);
   --font-family-base:
-  	'Encode Sans', 'Calibri', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  	'EncodeSans', 'Calibri', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --border: 1px solid var(--transparent);
   --container-width: 1410px;
   --container-padding-x: 15px;
@@ -623,9 +623,19 @@ h4,
 }
 .header__container {
   display: grid;
-  grid-template-columns: 264px 1fr;
-  align-items: start;
+  grid-template-columns: 213px 1fr;
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+  padding-block: 16px;
+  align-items: center;
   min-height: var(--header-height);
+  border-bottom: 1px solid var(--gray-300);
+}
+@media (max-width: 1280px) {
+  .header__container {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
 }
 @media (max-width: 1023px) {
   .header__container {
@@ -639,13 +649,11 @@ h4,
   align-items: center;
   width: 213px;
   height: 90px;
-  margin-top: 18px;
 }
 @media (max-width: 1023px) {
   .header__logo {
     width: 105px;
     height: 44px;
-    margin-top: 0;
   }
 }
 .header__logo-image {
@@ -656,8 +664,14 @@ h4,
 }
 .header__inner {
   display: grid;
-  gap: 18px;
-  min-width: 0;
+  gap: 20px;
+  border-left: 1px solid var(--gray-300);
+  padding-left: 60px;
+}
+@media (max-width: 1280px) {
+  .header__inner {
+    padding-left: 20px;
+  }
 }
 @media (max-width: 1023px) {
   .header__inner {
@@ -883,11 +897,10 @@ h4,
   }
 }
 .header__menu {
-  display: grid;
-  grid-template-columns: repeat(5, max-content);
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 32px;
+  gap: 6px;
 }
 @media (max-width: 1023px) {
   .header__menu {
@@ -1112,7 +1125,7 @@ h4,
 }
 @media (max-width: 767px) {
   .footer {
-    padding-block: 3px;
+    padding-block: 30px;
   }
 }
 .footer__container {
@@ -1588,6 +1601,7 @@ h4,
   position: absolute;
   top: calc(50% + 30px);
   left: 31%;
+  max-width: 660px;
   z-index: 2;
   font-weight: 700;
   line-height: 1;
@@ -1610,6 +1624,7 @@ h4,
     top: 31px;
     left: 50%;
     white-space: nowrap;
+    max-width: unset;
   }
   .page-hero__title::before {
     inset: -12px -28px;
@@ -3902,34 +3917,6 @@ h4,
 .modal__text {
   line-height: 1.55;
   color: var(--gray-600);
-}
-
-.culture-page .page-hero__title {
-  left: 30%;
-  max-width: 520px;
-  line-height: 1.08;
-}
-.culture-page .page-hero__label {
-  width: 560px;
-}
-
-.culture-hero {
-  margin-bottom: 40px;
-}
-@media (max-width: 767px) {
-  .culture-hero {
-    margin-bottom: 22px;
-  }
-}
-@media (max-width: 767px) {
-  .culture-hero .page-hero__title {
-    top: 48px;
-    left: 50%;
-    width: 100%;
-    max-width: none;
-    text-align: center;
-    white-space: normal;
-  }
 }
 
 .culture-title {
@@ -6745,7 +6732,7 @@ h4,
 }
 .product-catalog__container {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: 330px minmax(0, 1fr);
   align-items: start;
   gap: 30px;
 }
@@ -6917,21 +6904,13 @@ h4,
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 190px;
+  min-height: 260px;
   padding: 20px 18px;
   overflow: hidden;
   color: var(--white);
   background-color: var(--gray-900);
   border-radius: 6px;
-  border: 2px solid var(--white);
-}
-.product-catalog__card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, var(--black-alpha-10) 0%, var(--black-alpha-78) 100%);
-  pointer-events: none;
+  border: 1px solid var(--white);
 }
 @media (hover: hover) {
   .product-catalog__card:hover {
@@ -6973,16 +6952,16 @@ h4,
   transition: scale var(--transition-duration-long) var(--transition-timing-function);
 }
 .product-catalog__card-title {
-  font-size: clamp(20px, 1.6666666667vw, 24px);
+  font-size: clamp(13px, 1.6666666667vw, 24px);
   position: relative;
   z-index: 2;
   max-width: calc(100% - 34px);
   font-weight: 700;
   line-height: 1.08;
+  min-height: 3em;
 }
 @media (max-width: 767px) {
   .product-catalog__card-title {
-    font-size: clamp(13px, 1.1111111111vw, 16px);
     line-height: 1.15;
   }
 }

@@ -6,9 +6,16 @@
 
 	&__container {
 		display: grid;
-		grid-template-columns: 264px 1fr;
-		align-items: start;
+		grid-template-columns: 213px 1fr;
+		column-gap: 60px;
+		padding-block: 16px;
+		align-items: center;
 		min-height: var(--header-height);
+		border-bottom: 1px solid var(--gray-300);
+
+		@include desktop {
+			column-gap: 20px;
+		}
 
 		@include tablet {
 			display: flex;
@@ -22,12 +29,10 @@
 		align-items: center;
 		width: 213px;
 		height: 90px;
-		margin-top: 18px;
 
 		@include tablet {
 			width: 105px;
 			height: 44px;
-			margin-top: 0;
 		}
 	}
 
@@ -39,8 +44,13 @@
 
 	&__inner {
 		display: grid;
-		gap: 18px;
-		min-width: 0;
+		gap: 20px;
+		border-left: 1px solid var(--gray-300);
+		padding-left: 60px;
+
+		@include desktop {
+			padding-left: 20px;
+		}
 
 		@include tablet {
 			display: contents;
@@ -257,7 +267,6 @@
 				opacity var(--transition-duration) var(--transition-timing-function),
 				visibility var(--transition-duration) var(--transition-timing-function),
 				translate var(--transition-duration) var(--transition-timing-function);
-
 		}
 
 		.header.is-open & {
@@ -270,11 +279,10 @@
 	}
 
 	&__menu {
-		display: grid;
-		grid-template-columns: repeat(5, max-content);
+		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		gap: 32px;
+		gap: 6px;
 
 		@include tablet {
 			display: grid;
