@@ -1,5 +1,7 @@
 .service-page,
 .service-detail-page {
+
+
 	&__hero {
 		.page-hero__body {
 			@include mobile {
@@ -189,6 +191,10 @@
 		&:active {
 			cursor: grabbing;
 		}
+	}
+
+	&__list {
+
 	}
 
 	&__slide {

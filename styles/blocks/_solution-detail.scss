@@ -103,6 +103,10 @@
 		margin-bottom: 34px;
 	}
 
+	&__container {
+
+	}
+
 	&__layout {
 		display: grid;
 		grid-template-columns: 330px minmax(0, 1fr);
@@ -284,6 +288,11 @@
 			&.swiper-button-disabled {
 				opacity: 0.35;
 			}
+		}
+
+		&--prev,
+		&--next {
+
 		}
 	}
 

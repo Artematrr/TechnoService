@@ -5,6 +5,10 @@
 		margin-bottom: 38px;
 	}
 
+	&__container {
+
+	}
+
 	&__header {
 		padding-bottom: 14px;
 		border-bottom: 2px solid var(--primary-500);
@@ -194,6 +198,10 @@
 		&:active {
 			cursor: grabbing;
 		}
+	}
+
+	&__list {
+
 	}
 
 	&__slide {

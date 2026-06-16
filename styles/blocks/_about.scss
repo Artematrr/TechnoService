@@ -120,6 +120,9 @@
 		border-top: 1px solid var(--gray-300);
 	}
 
+	&__item {
+	}
+
 	&__button {
 		grid-template-columns: 52px minmax(0, 1fr) 32px;
 
@@ -493,6 +496,9 @@
 	&__list {
 		grid-area: list;
 		border-top: 1px solid var(--gray-300);
+	}
+
+	&__item {
 	}
 
 	&__header {

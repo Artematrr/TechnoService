@@ -1,3 +1,8 @@
+.service-brand-page,
+.service-brand-detail-page {
+
+}
+
 .product-catalog--service-detail {
 	.product-catalog__nav-link {
 		&.is-active {
@@ -17,6 +22,7 @@
 }
 
 .service-detail {
+
 	&__copy {
 		display: grid;
 		gap: 14px;
@@ -48,6 +54,8 @@
 }
 
 .detail-accordion {
+
+
 	&__title {
 		@include fluid-text(20, 24);
 
@@ -220,6 +228,8 @@
 }
 
 .service-customers {
+
+
 	&__title {
 		@include fluid-text(20, 24);
 
@@ -939,6 +949,10 @@
 		}
 	}
 
+	&__list {
+		min-width: 0;
+	}
+
 	&__slide {
 		overflow: hidden;
 		aspect-ratio: 1;
@@ -1188,6 +1202,10 @@
 		&:active {
 			cursor: grabbing;
 		}
+	}
+
+	&__list {
+
 	}
 
 	&__slide {

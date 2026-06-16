@@ -27,6 +27,12 @@
 		}
 	}
 
+	&__lead {
+		@include fluid-text(14, 16);
+
+		color: var(--gray-500);
+	}
+
 	b {
 		@include fluid-text(16, 20);
 

@@ -1,6 +1,9 @@
 .page-hero {
 	margin-bottom: var(--section-margin-bottom);
 
+	&__container {
+	}
+
 	&__body {
 		position: relative;
 		min-height: 509px;
@@ -27,16 +30,16 @@
 		height: 100%;
 		display: block;
 		pointer-events: none;
+	}
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: fill;
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: fill;
 
-			@include mobile {
-				object-fit: cover;
-				object-position: center;
-			}
+		@include mobile {
+			object-fit: cover;
+			object-position: center;
 		}
 	}
 
