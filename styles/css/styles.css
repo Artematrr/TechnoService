@@ -1498,16 +1498,27 @@ h4,
   color: var(--gray-800);
 }
 .modal--image .modal__overlay {
+  align-items: center;
+  min-height: 100dvh;
+  padding-block: clamp(12px, 3vh, 30px);
   overflow-y: auto;
 }
+@media (max-width: 767px) {
+  .modal--image .modal__overlay {
+    align-items: center;
+  }
+}
 .modal--image .modal__container {
-  width: min(100%, 900px);
-  padding: 54px 24px 24px;
+  display: flex;
+  width: min(100%, 1060px);
+  max-height: calc(100dvh - clamp(24px, 6vh, 60px));
+  padding: clamp(40px, 5vh, 54px) clamp(12px, 2vw, 24px) clamp(12px, 2vw, 24px);
+  overflow: hidden;
 }
 .modal--image .modal__image {
   width: 100%;
   height: auto;
-  max-height: calc(100vh - 110px);
+  max-height: calc(100dvh - clamp(88px, 12vh, 132px));
   object-fit: contain;
 }
 
@@ -1692,14 +1703,16 @@ h4,
 .project-steps__item {
   counter-increment: project-step;
   display: grid;
-  grid-template-columns: 94px minmax(0, 1fr);
-  gap: 18px;
-  padding-block: 17px;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 24px;
+  padding-block: 18px;
+  padding-left: 24px;
+  border-left: 2px solid var(--primary-500);
   border-bottom: 1px solid var(--gray-300);
 }
 .project-steps__item::before {
   content: counter(project-step, decimal-leading-zero);
-  font-size: clamp(52px, 4.4444444444vw, 64px);
+  font-size: clamp(72px, 6.6666666667vw, 96px);
   align-self: start;
   font-weight: 700;
   line-height: 0.85;
@@ -1710,9 +1723,10 @@ h4,
     grid-template-columns: 1fr;
     gap: 10px;
     padding-block: 15px;
+    padding-left: 16px;
   }
   .project-steps__item::before {
-    font-size: clamp(48px, 3.6111111111vw, 52px);
+    font-size: clamp(64px, 5vw, 72px);
   }
 }
 .project-steps__content {
@@ -1778,6 +1792,11 @@ h4,
   min-height: 96px;
   padding: 20px;
   border: 1px solid var(--gray-300);
+}
+.project-detail__logo img {
+  width: min(100%, 241px);
+  height: auto;
+  object-fit: contain;
 }
 @media (max-width: 767px) {
   .project-detail__logo {
@@ -1933,7 +1952,7 @@ h4,
 .projects-slider__swiper {
   width: 100%;
   min-width: 0;
-  height: 900px;
+  height: 980px;
   overflow: hidden;
   cursor: grab;
 }
@@ -1942,7 +1961,7 @@ h4,
 }
 @media (max-width: 1023px) {
   .projects-slider__swiper {
-    height: 840px;
+    height: 1080px;
   }
 }
 @media (max-width: 767px) {
@@ -1961,8 +1980,10 @@ h4,
 }
 .projects-slider__card {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: minmax(0, auto) 1fr;
+  align-content: start;
   height: 100%;
+  min-height: 0;
   overflow: hidden;
   background-color: var(--white);
   border: 1px solid var(--gray-300);
@@ -1982,8 +2003,10 @@ h4,
   }
 }
 .projects-slider__media {
+  display: block;
   overflow: hidden;
   aspect-ratio: 330/256;
+  min-height: 0;
 }
 .projects-slider__image {
   width: 100%;
@@ -1994,7 +2017,9 @@ h4,
   display: grid;
   align-content: start;
   gap: 16px;
+  min-height: 0;
   padding: 18px 16px 22px;
+  background-color: var(--white);
 }
 @media (max-width: 767px) {
   .projects-slider__body {
@@ -2022,14 +2047,22 @@ h4,
 }
 .projects-slider__card-title {
   font-size: clamp(18px, 1.3888888889vw, 20px);
+  display: -webkit-box;
+  overflow: hidden;
   font-weight: 700;
   line-height: 1.25;
   color: var(--gray-800);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 .projects-slider__text {
   font-size: clamp(13px, 0.9722222222vw, 14px);
+  display: -webkit-box;
+  overflow: hidden;
   line-height: 1.35;
   color: var(--gray-500);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .projects-slider__controls {
   display: flex;
@@ -2062,28 +2095,54 @@ h4,
   height: 48px;
   aspect-ratio: 1;
   flex: 0 0 auto;
-  font-size: 22px;
   color: var(--gray-800);
-  background-color: var(--gray-300);
+  background-color: var(--gray-200);
   border-radius: 50%;
   cursor: pointer;
   transition: color var(--transition-duration), background-color var(--transition-duration);
 }
 @media (hover: hover) {
   .projects-slider__button:hover {
-    color: var(--white);
-    background-color: var(--gray-500);
+    color: var(--gray-900);
+    background-color: var(--gray-400);
   }
 }
 @media (hover: none) {
   .projects-slider__button:active {
-    color: var(--white);
-    background-color: var(--gray-500);
+    color: var(--gray-900);
+    background-color: var(--gray-400);
   }
+}
+.projects-slider__button::before {
+  content: "";
+  width: 17px;
+  height: 17px;
+  -webkit-mask: url("/images/icons/arrow.svg") center/contain no-repeat;
+  mask: url("/images/icons/arrow.svg") center/contain no-repeat;
+  background-color: currentColor;
 }
 .projects-slider__button.swiper-button-disabled {
   cursor: default;
   opacity: 0.45;
+}
+.projects-slider__button--prev::before {
+  rotate: 180deg;
+}
+.projects-slider__button--next {
+  color: var(--white);
+  background-color: var(--gray-500);
+}
+@media (hover: hover) {
+  .projects-slider__button--next:hover {
+    color: var(--white);
+    background-color: var(--gray-600);
+  }
+}
+@media (hover: none) {
+  .projects-slider__button--next:active {
+    color: var(--white);
+    background-color: var(--gray-600);
+  }
 }
 .projects-slider__pagination {
   display: flex;
@@ -2115,6 +2174,7 @@ h4,
 }
 .projects-slider--single-row .projects-slider__card {
   display: block;
+  height: auto;
   border: none;
 }
 .projects-slider--single-row .projects-slider__media {
@@ -2133,6 +2193,7 @@ h4,
 .projects-slider--examples .projects-slider__card {
   display: grid;
   grid-template-rows: auto 1fr;
+  height: 100%;
   background-color: var(--white);
   border: 1px solid var(--gray-300);
 }
@@ -6880,6 +6941,11 @@ h4,
     border-color: var(--primary-500);
   }
 }
+.product-catalog__nav-link.is-active {
+  color: var(--primary-500);
+  background-color: var(--white);
+  border-color: var(--primary-500);
+}
 @media (max-width: 1023px) {
   .product-catalog__nav-link {
     justify-content: center;
@@ -6895,11 +6961,15 @@ h4,
     padding: 10px 12px;
   }
 }
-.product-catalog__nav-link img {
+.product-catalog__nav-link svg {
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  color: currentColor;
+  transition: color var(--transition-duration);
 }
 @media (max-width: 767px) {
-  .product-catalog__nav-link img {
+  .product-catalog__nav-link svg {
     width: 18px;
     height: 18px;
   }

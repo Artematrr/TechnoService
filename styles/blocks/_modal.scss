@@ -78,18 +78,28 @@
 
 	&--image {
 		.modal__overlay {
+			align-items: center;
+			min-height: 100dvh;
+			padding-block: clamp(12px, 3vh, 30px);
 			overflow-y: auto;
+
+			@include mobile {
+				align-items: center;
+			}
 		}
 
 		.modal__container {
-			width: min(100%, 900px);
-			padding: 54px 24px 24px;
+			display: flex;
+			width: min(100%, 1060px);
+			max-height: calc(100dvh - clamp(24px, 6vh, 60px));
+			padding: clamp(40px, 5vh, 54px) clamp(12px, 2vw, 24px) clamp(12px, 2vw, 24px);
+			overflow: hidden;
 		}
 
 		.modal__image {
 			width: 100%;
 			height: auto;
-			max-height: calc(100vh - 110px);
+			max-height: calc(100dvh - clamp(88px, 12vh, 132px));
 			object-fit: contain;
 		}
 	}

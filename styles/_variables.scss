@@ -44,8 +44,9 @@
 	--white-alpha-92: rgb(255 255 255 / 92%);
 
 	--font-family-base:
-		'EncodeSans', 'Calibri', system-ui, -apple-system, 'Segoe UI', sans-serif;
-	// --font-family-secondary: 'Arial', sans-serif;
+		'EncodeSans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-family-secondary:
+		'Calibri', 'Arial', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
 	--border: 1px solid var(--transparent);
 

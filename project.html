@@ -158,8 +158,7 @@
 
 				<div class="project-detail__meta">
 					<div class="project-detail__logo" aria-label="Лукойл">
-						<span class="project-detail__logo-mark">ЛК</span>
-						<span class="project-detail__logo-name">ЛУКОЙЛ</span>
+						<img src="/images/08-project/lukoil.png" alt="Лукойл" width="241" height="75">
 					</div>
 
 					<dl class="project-detail__facts">
@@ -251,12 +250,12 @@
 				</div>
 
 				<div class="projects-slider__controls">
-					<div class="projects-slider__buttons">
-						<button class="projects-slider__button projects-slider__button--prev" type="button"
-							aria-label="Предыдущие фотографии">←</button>
-						<button class="projects-slider__button projects-slider__button--next" type="button"
-							aria-label="Следующие фотографии">→</button>
-					</div>
+						<div class="projects-slider__buttons">
+							<button class="projects-slider__button projects-slider__button--prev" type="button"
+								aria-label="Предыдущие фотографии"></button>
+							<button class="projects-slider__button projects-slider__button--next" type="button"
+								aria-label="Следующие фотографии"></button>
+						</div>
 					<div class="projects-slider__pagination" aria-label="Навигация по фотографиям"></div>
 				</div>
 			</div>
@@ -276,9 +275,62 @@
 						социально-демократической анафеме. Следует отметить, что сложившаяся структура организации в значительной
 						степени обусловливает важность системы обучения кадров и дальнейшее сервисное обслуживание.
 					</p>
-					<button class="project-review__button button" type="button"
-						data-micromodal-trigger="review-modal">Посмотреть оригинал отзыва</button>
+					<button class="project-review__button button" type="button" data-micromodal-trigger="image-modal"
+						data-modal-image-src="/images/08-project/project-review.svg"
+						data-modal-image-alt="Оригинал отзыва о проведенных работах">Посмотреть
+						оригинал отзыва</button>
 				</article>
+			</div>
+		</section>
+
+		<section class="callback-section section" aria-labelledby="callback-title">
+			<div class="callback-section__container container">
+				<div class="callback-section__content">
+					<div class="callback-section__top">
+						<h2 class="callback-section__title" id="callback-title">Остались вопросы?</h2>
+						<p class="callback-section__text">
+							Требуется консультация наших специалистов по вопросу проектирования? Хотите заключить договор на ремонт и
+							сервисное обслуживание винтовых компрессоров, и прочее компрессорное оборудование? Свяжитесь с нами любым
+							удобным вам способом: позвоните, напишите на почту, оставьте заявку на обратный звонок. Ваше оборудование
+							может больше. Дайте нам возможность это показать.
+						</p>
+					</div>
+					<div class="callback-section__online">
+						<p class="callback-section__online-title">Или напишите, мы&nbsp;сейчас онлайн</p>
+						<div class="callback-section__socials">
+							<a class="callback-section__social" href="#" aria-label="Telegram">
+								<img src="/images/icons/tg.svg" alt="" width="24" height="24">
+							</a>
+							<a class="callback-section__social" href="#" aria-label="MAX">
+								<img src="/images/icons/max.svg" alt="" width="24" height="24">
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="callback-section__panel"
+					style="--callback-section-bg: url('/images/03-feedback-form/feedback-form-bg.png')">
+					<div class="callback-section__form-wrap">
+						<p class="callback-section__form-title">Оставьте свои контакты, и мы свяжемся с вами</p>
+						<form class="callback-section__form form" action="#" method="post">
+							<label class="form__field">
+								<span class="visually-hidden">Ваше имя</span>
+								<input class="form__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
+							</label>
+							<label class="form__field">
+								<span class="visually-hidden">Ваш номер телефона</span>
+								<input class="form__input" type="tel" name="phone" placeholder="Ваш номер телефона" autocomplete="tel"
+									required>
+							</label>
+							<button class="callback-section__submit button" type="submit">Получить консультацию</button>
+							<label class="form__checkbox">
+								<input class="form__checkbox-input" type="checkbox" name="agreement" checked required>
+								<span class="form__checkbox-control"></span>
+								<span>Заполняя поля форму, Вы даете согласие на обработку персональных данных</span>
+							</label>
+						</form>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
@@ -411,11 +463,11 @@
 		</div>
 	</footer>
 
-	<div class="modal modal--image micromodal-slide" id="review-modal" aria-hidden="true">
-		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
-			<div class="modal__container" role="dialog" aria-modal="true" aria-label="Оригинал отзыва">
-				<button class="modal__close" type="button" aria-label="Закрыть окно" data-micromodal-close></button>
-				<img class="modal__image" src="/images/08-project/project-review.svg"
+		<div class="modal modal--image micromodal-slide" id="image-modal" aria-hidden="true">
+			<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+				<div class="modal__container" role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+					<button class="modal__close" type="button" aria-label="Закрыть окно" data-micromodal-close></button>
+					<img class="modal__image" src="/images/08-project/project-review.svg"
 					alt="Оригинал отзыва о проведенных работах" width="900" height="1200">
 			</div>
 		</div>

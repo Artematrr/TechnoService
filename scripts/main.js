@@ -4,6 +4,26 @@ $(function () {
 	const $menuButton = $('.js-menu-button');
 	const $submenuButtons = $('.js-submenu-button');
 
+	$(document).on('click', '[data-micromodal-trigger="image-modal"][data-modal-image-src]', function (event) {
+		const modal = document.getElementById('image-modal');
+		const image = modal ? modal.querySelector('.modal__image') : null;
+
+		if (!image) {
+			return;
+		}
+
+		image.src = this.dataset.modalImageSrc;
+		image.alt = this.dataset.modalImageAlt || '';
+
+		if (window.MicroModal) {
+			event.preventDefault();
+			MicroModal.show('image-modal', {
+				openClass: 'is-open',
+				disableScroll: true,
+			});
+		}
+	});
+
 	if (window.MicroModal) {
 		MicroModal.init({
 			openClass: 'is-open',

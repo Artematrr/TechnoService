@@ -50,6 +50,12 @@
 		padding: 20px;
 		border: 1px solid var(--gray-300);
 
+		img {
+			width: min(100%, 241px);
+			height: auto;
+			object-fit: contain;
+		}
+
 		@include mobile {
 			min-height: 78px;
 		}

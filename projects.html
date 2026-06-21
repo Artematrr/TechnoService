@@ -151,9 +151,22 @@
 			</ol>
 		</nav>
 
-		<section class="page-text section" aria-labelledby="page-title">
+		<section class="page-hero section" aria-labelledby="page-title">
+			<div class="page-hero__container container">
+				<div class="page-hero__body">
+					<picture class="page-hero__picture">
+						<source srcset="/images/02-hero/bg-pattern.svg" media="(max-width: 767px)">
+						<img class="page-hero__image" src="/images/02-hero/bg-pattern-outline.svg" alt="" width="1410" height="509">
+					</picture>
+					<span class="page-hero__stripe" aria-hidden="true"></span>
+					<h1 class="page-hero__title" id="page-title">Реализованные проекты</h1>
+					<div class="page-hero__label">Человек в деле</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="page-text section">
 			<div class="page-text__container container">
-				<h1 class="page-text__title" id="page-title">Реализованные проекты</h1>
 				<p>
 					Мы используем накопленный многолетний опыт работы мировых машиностроительных концернов. Мы имеем полное
 					понимание технологий, компетенций управления проектами. Все это позволяет нам гарантировать высокое качество
@@ -430,13 +443,64 @@
 				</div>
 
 				<div class="projects-slider__controls">
-					<div class="projects-slider__buttons">
-						<button class="projects-slider__button projects-slider__button--prev" type="button"
-							aria-label="Предыдущая группа проектов">←</button>
-						<button class="projects-slider__button projects-slider__button--next" type="button"
-							aria-label="Следующая группа проектов">→</button>
-					</div>
+						<div class="projects-slider__buttons">
+							<button class="projects-slider__button projects-slider__button--prev" type="button"
+								aria-label="Предыдущая группа проектов"></button>
+							<button class="projects-slider__button projects-slider__button--next" type="button"
+								aria-label="Следующая группа проектов"></button>
+						</div>
 					<div class="projects-slider__pagination" aria-label="Навигация по проектам"></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="callback-section section" aria-labelledby="callback-title">
+			<div class="callback-section__container container">
+				<div class="callback-section__content">
+					<div class="callback-section__top">
+						<h2 class="callback-section__title" id="callback-title">Остались вопросы?</h2>
+						<p class="callback-section__text">
+							Требуется консультация наших специалистов по вопросу проектирования? Хотите заключить договор на ремонт и
+							сервисное обслуживание винтовых компрессоров, и прочее компрессорное оборудование? Свяжитесь с нами любым
+							удобным вам способом: позвоните, напишите на почту, оставьте заявку на обратный звонок. Ваше оборудование
+							может больше. Дайте нам возможность это показать.
+						</p>
+					</div>
+					<div class="callback-section__online">
+						<p class="callback-section__online-title">Или напишите, мы&nbsp;сейчас онлайн</p>
+						<div class="callback-section__socials">
+							<a class="callback-section__social" href="#" aria-label="Telegram">
+								<img src="/images/icons/tg.svg" alt="" width="24" height="24">
+							</a>
+							<a class="callback-section__social" href="#" aria-label="MAX">
+								<img src="/images/icons/max.svg" alt="" width="24" height="24">
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="callback-section__panel"
+					style="--callback-section-bg: url('/images/03-feedback-form/feedback-form-bg.png')">
+					<div class="callback-section__form-wrap">
+						<p class="callback-section__form-title">Оставьте свои контакты, и мы свяжемся с вами</p>
+						<form class="callback-section__form form" action="#" method="post">
+							<label class="form__field">
+								<span class="visually-hidden">Ваше имя</span>
+								<input class="form__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
+							</label>
+							<label class="form__field">
+								<span class="visually-hidden">Ваш номер телефона</span>
+								<input class="form__input" type="tel" name="phone" placeholder="Ваш номер телефона" autocomplete="tel"
+									required>
+							</label>
+							<button class="callback-section__submit button" type="submit">Получить консультацию</button>
+							<label class="form__checkbox">
+								<input class="form__checkbox-input" type="checkbox" name="agreement" checked required>
+								<span class="form__checkbox-control"></span>
+								<span>Заполняя поля форму, Вы даете согласие на обработку персональных данных</span>
+							</label>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>

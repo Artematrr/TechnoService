@@ -21,14 +21,16 @@
 	&__item {
 		counter-increment: project-step;
 		display: grid;
-		grid-template-columns: 94px minmax(0, 1fr);
-		gap: 18px;
-		padding-block: 17px;
+		grid-template-columns: 132px minmax(0, 1fr);
+		gap: 24px;
+		padding-block: 18px;
+		padding-left: 24px;
+		border-left: 2px solid var(--primary-500);
 		border-bottom: 1px solid var(--gray-300);
 
 		&::before {
 			content: counter(project-step, decimal-leading-zero);
-			@include fluid-text(52, 64);
+			@include fluid-text(72, 96);
 
 			align-self: start;
 			font-weight: 700;
@@ -40,9 +42,10 @@
 			grid-template-columns: 1fr;
 			gap: 10px;
 			padding-block: 15px;
+			padding-left: 16px;
 
 			&::before {
-				@include fluid-text(48, 52);
+				@include fluid-text(64, 72);
 			}
 		}
 	}

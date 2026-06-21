@@ -76,11 +76,17 @@
 			border-color var(--transition-duration),
 			background-color var(--transition-duration);
 
-		@include hover {
-			color: var(--primary-500);
-			background-color: var(--white);
-			border-color: var(--primary-500);
-		}
+			@include hover {
+				color: var(--primary-500);
+				background-color: var(--white);
+				border-color: var(--primary-500);
+			}
+
+			&.is-active {
+				color: var(--primary-500);
+				background-color: var(--white);
+				border-color: var(--primary-500);
+			}
 
 		@include tablet {
 			justify-content: center;
@@ -96,13 +102,17 @@
 			padding: 10px 12px;
 		}
 
-		img {
-			flex: 0 0 auto;
+			svg {
+				flex: 0 0 auto;
+				width: 24px;
+				height: 24px;
+				color: currentColor;
+				transition: color var(--transition-duration);
 
-			@include mobile {
-				width: 18px;
-				height: 18px;
-			}
+				@include mobile {
+					width: 18px;
+					height: 18px;
+				}
 		}
 	}
 

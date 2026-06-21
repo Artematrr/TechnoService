@@ -29,7 +29,7 @@
 	&__swiper {
 		width: 100%;
 		min-width: 0;
-		height: 900px;
+		height: 980px;
 		overflow: hidden;
 		cursor: grab;
 
@@ -38,7 +38,7 @@
 		}
 
 		@include tablet {
-			height: 840px;
+			height: 1080px;
 		}
 
 		@include mobile {
@@ -57,8 +57,10 @@
 		@include reset-link;
 
 		display: grid;
-		grid-template-rows: auto 1fr;
+		grid-template-rows: minmax(0, auto) 1fr;
+		align-content: start;
 		height: 100%;
+		min-height: 0;
 		overflow: hidden;
 		background-color: var(--white);
 		border: 1px solid var(--gray-300);
@@ -74,8 +76,10 @@
 	}
 
 	&__media {
+		display: block;
 		overflow: hidden;
 		aspect-ratio: 330 / 256;
+		min-height: 0;
 	}
 
 	&__image {
@@ -88,7 +92,9 @@
 		display: grid;
 		align-content: start;
 		gap: 16px;
+		min-height: 0;
 		padding: 18px 16px 22px;
+		background-color: var(--white);
 
 		@include mobile {
 			gap: 12px;
@@ -122,16 +128,24 @@
 	&__card-title {
 		@include fluid-text(18, 20);
 
+		display: -webkit-box;
+		overflow: hidden;
 		font-weight: 700;
 		line-height: 1.25;
 		color: var(--gray-800);
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
 	}
 
 	&__text {
 		@include fluid-text(13, 14);
 
+		display: -webkit-box;
+		overflow: hidden;
 		line-height: 1.35;
 		color: var(--gray-500);
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
 	}
 
 	&__controls {
@@ -160,9 +174,8 @@
 		@include square(48px);
 
 		flex: 0 0 auto;
-		font-size: 22px;
 		color: var(--gray-800);
-		background-color: var(--gray-300);
+		background-color: var(--gray-200);
 		border-radius: 50%;
 		cursor: pointer;
 		transition:
@@ -170,8 +183,17 @@
 			background-color var(--transition-duration);
 
 		@include hover {
-			color: var(--white);
-			background-color: var(--gray-500);
+			color: var(--gray-900);
+			background-color: var(--gray-400);
+		}
+
+		&::before {
+			content: '';
+			width: 17px;
+			height: 17px;
+			-webkit-mask: url('/images/icons/arrow.svg') center / contain no-repeat;
+			mask: url('/images/icons/arrow.svg') center / contain no-repeat;
+				background-color: currentColor;
 		}
 
 		&.swiper-button-disabled {
@@ -179,8 +201,18 @@
 			opacity: 0.45;
 		}
 
-		&--prev,
+		&--prev::before {
+			rotate: 180deg;
+		}
+
 		&--next {
+			color: var(--white);
+			background-color: var(--gray-500);
+
+			@include hover {
+				color: var(--white);
+				background-color: var(--gray-600);
+			}
 		}
 	}
 
@@ -217,6 +249,7 @@
 
 		.projects-slider__card {
 			display: block;
+			height: auto;
 			border: none;
 		}
 
@@ -237,6 +270,7 @@
 		.projects-slider__card {
 			display: grid;
 			grid-template-rows: auto 1fr;
+			height: 100%;
 			background-color: var(--white);
 			border: 1px solid var(--gray-300);
 		}
