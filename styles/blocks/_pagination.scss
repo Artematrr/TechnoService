@@ -8,7 +8,8 @@
 		gap: 7px;
 	}
 
-	&__item {
+	> a,
+	> span {
 		@include flex-center;
 		@include square(34px);
 		@include fluid-text(12, 14);
@@ -22,30 +23,49 @@
 			background-color var(--transition-duration);
 
 		@include hover {
-			color: var(--white);
-			background-color: var(--gray-500);
+			color: var(--gray-900);
+			background-color: var(--gray-400);
 		}
 
 		@include mobile {
 			@include square(28px);
 		}
 
-		&.is-active {
+		&[aria-current='page'] {
 			color: var(--primary-500);
 			background-color: var(--primary-100);
 		}
 
-		&--arrow {
-			font-size: 18px;
+		&[aria-label] {
+			&::before {
+				content: '';
+				width: 15px;
+				height: 15px;
+				-webkit-mask: url('/images/icons/arrow.svg') center / contain no-repeat;
+				mask: url('/images/icons/arrow.svg') center / contain no-repeat;
+				background-color: var(--current-color);
+			}
 
 			@include mobile {
-				font-size: 15px;
+				&::before {
+					width: 12px;
+					height: 12px;
+				}
 			}
 		}
 
-		&--next {
+		&[aria-label='Предыдущая страница']::before {
+			rotate: 180deg;
+		}
+
+		&[aria-label='Следующая страница'] {
 			color: var(--white);
 			background-color: var(--gray-500);
+
+			@include hover {
+				color: var(--white);
+				background-color: var(--gray-600);
+			}
 		}
 	}
 }

@@ -149,9 +149,10 @@ $(function () {
 		$('.js-related-news').each(function () {
 			const slider = this.querySelector('.related-news__swiper');
 			const pagination = this.querySelector('.related-news__pagination');
+			const prevButton = this.querySelector('.related-news__prev');
 			const nextButton = this.querySelector('.related-news__next');
 
-			if (!slider || !pagination || !nextButton) {
+			if (!slider || !pagination || !prevButton || !nextButton) {
 				return;
 			}
 
@@ -162,6 +163,7 @@ $(function () {
 				simulateTouch: true,
 				watchOverflow: true,
 				navigation: {
+					prevEl: prevButton,
 					nextEl: nextButton,
 				},
 				pagination: {
