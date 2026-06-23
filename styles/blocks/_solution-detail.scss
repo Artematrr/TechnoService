@@ -104,7 +104,6 @@
 	}
 
 	&__container {
-
 	}
 
 	&__layout {
@@ -187,12 +186,12 @@
 
 	&__item {
 		width: 100% !important;
-		height: 77px;
+		height: 100px;
 
 		@include mobile {
 			flex: 0 0 245px;
 			width: 245px !important;
-			height: 58px;
+			height: 50px;
 		}
 	}
 
@@ -203,7 +202,10 @@
 		grid-template-columns: 100px 100px minmax(0, 1fr);
 		align-items: stretch;
 		height: 100%;
+		gap: 10px;
 		color: var(--gray-800);
+		overflow: hidden;
+		hyphens: auto;
 
 		@include hover {
 			.solution-temperature__name {
@@ -221,6 +223,7 @@
 			background-color: var(--white);
 			border: 1px solid var(--gray-300);
 			border-radius: 4px;
+			gap: 0px;
 		}
 	}
 
@@ -245,19 +248,22 @@
 		height: 100%;
 		object-fit: cover;
 		transition: filter var(--transition-duration);
+		padding-block: 10px;
+
+		@include mobile {
+			padding-block: 0;
+		}
 	}
 
 	&__name {
+		@include fluid-text(14, 16);
+
 		display: flex;
 		align-items: center;
-		padding-inline: 12px 4px;
-		font-size: 13px;
-		line-height: 1.25;
 		transition: color var(--transition-duration);
 
 		@include mobile {
-			padding-inline: 9px 6px;
-			font-size: 11px;
+			padding-inline: 10px 0px;
 		}
 	}
 
@@ -292,7 +298,6 @@
 
 		&--prev,
 		&--next {
-
 		}
 	}
 

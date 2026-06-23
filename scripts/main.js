@@ -654,6 +654,10 @@ $(function () {
 		}
 	});
 
+	$('.js-print-page').on('click', function () {
+		window.print();
+	});
+
 	const galleryLightbox = document.createElement('div');
 	galleryLightbox.className = 'gallery-lightbox';
 	galleryLightbox.setAttribute('aria-hidden', 'true');

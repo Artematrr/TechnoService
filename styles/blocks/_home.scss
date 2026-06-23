@@ -1,12 +1,6 @@
 .home-page {
-	--home-section-gap: 58px;
-
-	@include mobile {
-		--home-section-gap: 32px;
-	}
-
 	.section {
-		margin-bottom: var(--home-section-gap);
+		margin-bottom: var(--section-margin-bottom);
 	}
 }
 

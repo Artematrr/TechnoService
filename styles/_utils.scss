@@ -7,8 +7,7 @@
 
 .section {
 	position: relative;
-	margin-bottom: 0px;
-	margin-bottom: 60px;
+	margin-bottom: var(--section-margin-bottom);
 }
 
 .visually-hidden {
@@ -34,5 +33,13 @@
 .full-width-mobile {
 	@include mobile {
 		@include full-width;
+	}
+}
+
+.reversed-mobile {
+	@include mobile {
+		> :last-child {
+			order: -1;
+		}
 	}
 }

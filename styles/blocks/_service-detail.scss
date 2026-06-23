@@ -90,7 +90,7 @@
 		@include reset-button;
 
 		display: grid;
-		grid-template-columns: 42px minmax(0, 1fr) 32px;
+		grid-template-columns: 80px minmax(0, 1fr) 32px;
 		align-items: center;
 		gap: 12px;
 		width: 100%;
@@ -100,7 +100,7 @@
 		cursor: pointer;
 
 		@include mobile {
-			grid-template-columns: 30px minmax(0, 1fr) 26px;
+			grid-template-columns: 80px minmax(0, 1fr) 26px;
 			gap: 8px;
 			min-height: 54px;
 			padding-inline: 4px;
@@ -167,10 +167,10 @@
 			opacity var(--transition-duration);
 
 		> div {
-			padding: 0 54px 18px;
+			padding: 0 10px 30px;
 
 			@include mobile {
-				padding: 0 34px 14px;
+				padding: 0 4px 10px;
 			}
 		}
 
