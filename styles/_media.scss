@@ -73,16 +73,3 @@ $mobile-s: 375px;
 	}
 }
 
-@mixin hover {
-	@media (hover: hover) {
-		&:hover {
-			@content;
-		}
-	}
-
-	@media (hover: none) {
-		&:active {
-			@content;
-		}
-	}
-}

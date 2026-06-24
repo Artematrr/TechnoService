@@ -184,10 +184,10 @@ svg * {
   font-display: swap;
 }
 :root {
-  --white: #ffffff;
-  --black: #000000;
   --current-color: currentColor;
   --transparent: transparent;
+  --white: #ffffff;
+  --black: #000000;
   --success-500: #11da1f;
   --primary-100: #fff3f1;
   --primary-500: #ff2e17;

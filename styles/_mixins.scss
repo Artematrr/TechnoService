@@ -3,7 +3,11 @@
 @mixin fluid-text($min: 16, $max: 48) {
 	// 1440 или 2000 - ширина макета
 	$layoutWidth: 1440;
-	font-size: clamp(#{$min}px, #{math.div($max, $layoutWidth) * 100}vw, #{$max}px);
+	font-size: clamp(
+		#{$min}px,
+		#{math.div($max, $layoutWidth) * 100}vw,
+		#{$max}px
+	);
 }
 
 @mixin reset-link {
@@ -56,6 +60,20 @@
 	clip-path: inset(100%) !important;
 	clip: rect(0 0 0 0) !important;
 	overflow: hidden !important;
+}
+
+@mixin hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			@content;
+		}
+	}
 }
 
 @mixin full-width {
