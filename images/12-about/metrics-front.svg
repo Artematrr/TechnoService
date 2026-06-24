@@ -1,7 +1,11 @@
-<svg viewBox="0 0 127.686 12.457" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="127.685547" height="12.457031" fill="none" customFrame="#000000">
-	<g id="Group 9">
+<svg viewBox="0 0 127.686 12.457" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="127.685669" height="12.457031" fill="none" customFrame="#000000">
+	<g id="Group 232">
 		<circle id="Ellipse 3" cx="6.22857141" cy="6.22857141" r="6.22857141" fill="rgb(147.524,14.6252,0)" />
 		<circle id="Ellipse 4" cx="121.457085" cy="6.22857141" r="6.22857141" fill="rgb(147.524,14.6252,0)" />
 		<rect id="Rectangle 5" width="109.000000" height="3.114286" x="9.342773" y="4.671387" fill="rgb(147.524,14.6252,0)" />
+		<circle id="Ellipse 5" cx="15.5713034" cy="1.55714285" r="1.55714285" fill="rgb(147.524,14.6252,0)" />
+		<circle id="Ellipse 6" cx="15.5713034" cy="10.8999166" r="1.55714285" fill="rgb(147.524,14.6252,0)" />
+		<circle id="Ellipse 7" cx="112.114273" cy="1.55714285" r="1.55714285" fill="rgb(147.524,14.6252,0)" />
+		<circle id="Ellipse 8" cx="112.114273" cy="10.8999166" r="1.55714285" fill="rgb(147.524,14.6252,0)" />
 	</g>
 </svg>
