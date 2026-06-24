@@ -148,7 +148,8 @@
 		grid-area: map;
 		height: 420px;
 		overflow: hidden;
-		background: var(--gray-200) url('/images/icons/map-placeholder.jpg') center / cover no-repeat;
+		background: var(--gray-200) url('/images/icons/map-placeholder.jpg')
+			center / cover no-repeat;
 		border-radius: 16px;
 
 		@include mobile {
@@ -165,8 +166,6 @@
 }
 
 .faq {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 		display: grid;
 		grid-template-columns: 370px minmax(0, 1fr);
@@ -238,7 +237,7 @@
 
 	&__question {
 		@include reset-button;
-		@include fluid-text(16, 18);
+		@include fluid-text(16, 20);
 
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) 44px;
