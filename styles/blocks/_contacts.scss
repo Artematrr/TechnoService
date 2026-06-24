@@ -30,16 +30,16 @@
 	}
 
 	&__title {
-		@include fluid-text(26, 30);
+		@include fluid-text(34, 34);
 
-		margin-bottom: 28px;
+		margin-bottom: 32px;
 		font-weight: 700;
 		color: var(--gray-800);
 	}
 
 	&__contacts {
 		display: grid;
-		gap: 26px;
+		gap: 32px;
 	}
 
 	&__contact {
@@ -55,19 +55,20 @@
 	}
 
 	&__contact-title {
-		@include fluid-text(14, 14);
+		@include fluid-text(16, 20);
 
-		margin-bottom: 8px;
 		color: var(--gray-500);
 	}
 
 	&__contact-text,
-	&__contact-link,
-	&__route {
-		@include fluid-text(14, 16);
+	&__contact-link {
+		@include fluid-text(16, 20);
 
-		line-height: 1.4;
 		color: var(--gray-800);
+	}
+
+	&__route {
+		@include fluid-text(12, 16);
 	}
 
 	&__phone-row {
@@ -78,7 +79,7 @@
 	}
 
 	&__phone {
-		@include fluid-text(22, 30);
+		@include fluid-text(24, 34);
 
 		font-weight: 700;
 		color: var(--gray-800);
@@ -112,7 +113,7 @@
 		@include fluid-text(28, 34);
 
 		font-weight: 700;
-		line-height: 1.05;
+		line-height: 1;
 		color: var(--gray-800);
 	}
 
@@ -185,21 +186,16 @@
 	}
 
 	&__title {
-		@include fluid-text(34, 48);
+		@include fluid-text(24, 48);
 
 		grid-area: title;
 		padding-bottom: 22px;
 		font-weight: 700;
-		line-height: 1.35;
 		color: var(--gray-800);
 		border-bottom: 2px solid var(--primary-500);
 
 		@include tablet {
 			text-align: center;
-		}
-
-		@include mobile {
-			@include fluid-text(24, 28);
 		}
 	}
 
@@ -246,7 +242,6 @@
 		width: 100%;
 		padding-block: 24px;
 		font-weight: 500;
-		line-height: 1.4;
 		text-align: left;
 		color: var(--gray-800);
 	}
@@ -295,7 +290,6 @@
 			@include fluid-text(14, 15);
 
 			padding: 0 68px 24px 0;
-			line-height: 1.5;
 			color: var(--gray-500);
 
 			@include mobile {

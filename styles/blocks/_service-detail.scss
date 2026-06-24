@@ -1,6 +1,5 @@
 .service-brand-page,
 .service-brand-detail-page {
-
 }
 
 .product-catalog--service-detail {
@@ -22,21 +21,15 @@
 }
 
 .service-detail {
-
 	&__copy {
 		display: grid;
 		gap: 14px;
 
 		p,
 		li {
-			@include fluid-text(14, 16);
+			@include fluid-text(12, 16);
 
-			line-height: 1.45;
 			color: var(--gray-600);
-
-			@include mobile {
-				@include fluid-text(11, 13);
-			}
 		}
 
 		ul {
@@ -54,8 +47,6 @@
 }
 
 .detail-accordion {
-
-
 	&__title {
 		@include fluid-text(20, 24);
 
@@ -115,15 +106,10 @@
 	}
 
 	&__name {
-		@include fluid-text(15, 17);
+		@include fluid-text(12, 18);
 
 		font-weight: 600;
-		line-height: 1.25;
 		color: var(--gray-800);
-
-		@include mobile {
-			@include fluid-text(12, 14);
-		}
 	}
 
 	&__icon {
@@ -176,14 +162,9 @@
 
 		p,
 		li {
-			@include fluid-text(12, 14);
+			@include fluid-text(10, 14);
 
-			line-height: 1.45;
 			color: var(--gray-600);
-
-			@include mobile {
-				@include fluid-text(10, 12);
-			}
 		}
 
 		ul {
@@ -228,8 +209,6 @@
 }
 
 .service-customers {
-
-
 	&__title {
 		@include fluid-text(20, 24);
 
@@ -290,14 +269,9 @@
 
 		p,
 		li {
-			@include fluid-text(14, 16);
+			@include fluid-text(12, 16);
 
-			line-height: 1.45;
 			color: var(--gray-600);
-
-			@include mobile {
-				@include fluid-text(11, 13);
-			}
 		}
 
 		ul {
@@ -646,18 +620,15 @@
 	}
 
 	&__title {
-		@include fluid-text(32, 42);
+		@include fluid-text(24, 42);
 
 		width: fit-content;
 		padding-bottom: 14px;
 		font-weight: 700;
-		line-height: 1.1;
 		color: var(--gray-800);
 		border-bottom: 1px solid var(--primary-500);
 
 		@include mobile {
-			@include fluid-text(24, 28);
-
 			flex: 1;
 			padding-bottom: 10px;
 		}
@@ -789,16 +760,11 @@
 	}
 
 	span {
-		@include fluid-text(15, 18);
+		@include fluid-text(12, 18);
 
 		font-weight: 700;
-		line-height: 1.35;
 		color: var(--gray-800);
 		text-align: center;
-
-		@include mobile {
-			@include fluid-text(12, 14);
-		}
 	}
 }
 
@@ -812,18 +778,15 @@
 	}
 
 	&__title {
-		@include fluid-text(30, 38);
+		@include fluid-text(24, 38);
 
 		width: fit-content;
 		padding-bottom: 12px;
 		font-weight: 700;
-		line-height: 1.1;
 		color: var(--gray-800);
 		border-bottom: 1px solid var(--primary-500);
 
 		@include mobile {
-			@include fluid-text(24, 28);
-
 			margin-inline: auto;
 			padding-bottom: 9px;
 		}
@@ -918,15 +881,9 @@
 	}
 
 	&__text {
-		@include fluid-text(11, 13);
+		@include fluid-text(10, 14);
 
-		line-height: 1.35;
 		color: var(--gray-600);
-
-		@include mobile {
-			font-size: 9px;
-			line-height: 1.3;
-		}
 	}
 }
 
@@ -1205,7 +1162,6 @@
 	}
 
 	&__list {
-
 	}
 
 	&__slide {

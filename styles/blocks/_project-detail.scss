@@ -103,7 +103,6 @@
 	&__text {
 		@include fluid-text(14, 16);
 
-		line-height: 1.45;
 		color: var(--gray-800);
 	}
 }

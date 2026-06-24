@@ -363,13 +363,8 @@
 		p {
 			@include fluid-text(12, 14);
 
-			line-height: 1.45;
 			color: var(--gray-800);
 			overflow-wrap: anywhere;
-
-			@include mobile {
-				font-size: 10px;
-			}
 		}
 	}
 }

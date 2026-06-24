@@ -131,18 +131,16 @@
 		display: -webkit-box;
 		overflow: hidden;
 		font-weight: 700;
-		line-height: 1.25;
 		color: var(--gray-800);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 3;
 	}
 
 	&__text {
-		@include fluid-text(13, 14);
+		@include fluid-text(12, 14);
 
 		display: -webkit-box;
 		overflow: hidden;
-		line-height: 1.35;
 		color: var(--gray-500);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
@@ -193,7 +191,7 @@
 			height: 17px;
 			-webkit-mask: url('/images/icons/arrow.svg') center / contain no-repeat;
 			mask: url('/images/icons/arrow.svg') center / contain no-repeat;
-				background-color: currentColor;
+			background-color: currentColor;
 		}
 
 		&.swiper-button-disabled {

@@ -2,15 +2,12 @@
 }
 
 .culture-title {
-	@include fluid-text(30, 42);
+	@include fluid-text(24, 42);
 
 	font-weight: 700;
-	line-height: 1.15;
 	color: var(--gray-800);
 
 	@include mobile {
-		@include fluid-text(22, 26);
-
 		text-align: center;
 	}
 
@@ -53,16 +50,11 @@
 		}
 
 		p {
-			@include fluid-text(11, 13);
+			@include fluid-text(10, 14);
 
 			position: relative;
 			z-index: 1;
-			line-height: 1.5;
 			color: var(--gray-600);
-
-			@include mobile {
-				@include fluid-text(10, 12);
-			}
 		}
 	}
 
@@ -177,15 +169,10 @@
 		}
 
 		span {
-			@include fluid-text(11, 13);
+			@include fluid-text(10, 14);
 
 			max-width: 190px;
-			line-height: 1.35;
 			color: var(--gray-600);
-
-			@include mobile {
-				@include fluid-text(9, 11);
-			}
 		}
 
 		@include mobile-above {
@@ -262,14 +249,9 @@
 		padding-top: 5px;
 
 		p {
-			@include fluid-text(11, 13);
+			@include fluid-text(10, 14);
 
-			line-height: 1.5;
 			color: var(--gray-600);
-
-			@include mobile {
-				@include fluid-text(10, 12);
-			}
 		}
 	}
 
@@ -384,16 +366,11 @@
 	}
 
 	p {
-		@include fluid-text(16, 20);
+		@include fluid-text(12, 20);
 
 		max-width: 520px;
 		font-weight: 700;
-		line-height: 1.35;
 		color: var(--gray-800);
-
-		@include mobile {
-			@include fluid-text(11, 13);
-		}
 	}
 
 	a:not(.button) {

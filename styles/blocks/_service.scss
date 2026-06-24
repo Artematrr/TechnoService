@@ -1,7 +1,5 @@
 .service-page,
 .service-detail-page {
-
-
 	&__hero {
 		.page-hero__body {
 			@include mobile {
@@ -108,7 +106,7 @@
 
 	padding-left: 18px;
 	font-weight: 700;
-	line-height: 1.1;
+	line-height: 1;
 	color: var(--gray-800);
 	border-left: 8px solid var(--primary-500);
 	border-radius: 7px 0 0 7px;
@@ -194,7 +192,6 @@
 	}
 
 	&__list {
-
 	}
 
 	&__slide {
@@ -292,7 +289,6 @@
 		@include fluid-text(16, 18);
 
 		font-weight: 700;
-		line-height: 1.35;
 	}
 
 	&__text {
@@ -300,7 +296,6 @@
 
 		display: -webkit-box;
 		overflow: hidden;
-		line-height: 1.45;
 		color: var(--gray-600);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;

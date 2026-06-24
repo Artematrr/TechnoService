@@ -6,7 +6,6 @@
 	}
 
 	&__container {
-
 	}
 
 	&__header {
@@ -15,19 +14,15 @@
 	}
 
 	&__title {
-		@include fluid-text(32, 40);
+		@include fluid-text(24, 40);
 
 		max-width: 1380px;
 		margin-bottom: 18px;
 		font-weight: 700;
-		line-height: 1.35;
 		color: var(--gray-800);
 
 		@include mobile {
-			@include fluid-text(24, 28);
-
 			margin-bottom: 12px;
-			line-height: 1.05;
 		}
 	}
 
@@ -36,6 +31,7 @@
 
 		display: flex;
 		align-items: center;
+		font-weight: 600;
 		gap: 28px;
 		color: var(--gray-500);
 	}
@@ -66,14 +62,9 @@
 		}
 
 		p {
-			@include fluid-text(14, 16);
+			@include fluid-text(12, 16);
 
-			line-height: 1.45;
 			color: var(--gray-800);
-
-			@include mobile {
-				@include fluid-text(12, 14);
-			}
 		}
 	}
 
@@ -186,7 +177,8 @@
 				width: 17px;
 				height: 17px;
 				flex: 0 0 auto;
-				-webkit-mask: url('/images/icons/arrow-white.svg') center / contain no-repeat;
+				-webkit-mask: url('/images/icons/arrow-white.svg') center / contain
+					no-repeat;
 				mask: url('/images/icons/arrow-white.svg') center / contain no-repeat;
 				background-color: var(--current-color);
 
@@ -213,17 +205,14 @@
 	}
 
 	&__title {
-		@include fluid-text(30, 36);
+		@include fluid-text(24, 36);
 
 		padding-bottom: 14px;
 		font-weight: 700;
-		line-height: 1.1;
 		color: var(--gray-800);
 		border-bottom: 1px solid var(--primary-500);
 
 		@include mobile {
-			@include fluid-text(24, 28);
-
 			max-width: 260px;
 			margin-inline: auto;
 			text-align: center;
@@ -243,7 +232,6 @@
 	}
 
 	&__list {
-
 	}
 
 	&__slide {

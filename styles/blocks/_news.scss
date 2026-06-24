@@ -2,7 +2,6 @@
 	margin-bottom: var(--section-margin-bottom);
 
 	&__container {
-
 	}
 
 	&__grid {
@@ -104,7 +103,7 @@
 	&__body {
 		display: grid;
 		align-content: start;
-		gap: 20px;
+		gap: 15px;
 
 		@include mobile {
 			gap: 10px;
@@ -112,50 +111,40 @@
 	}
 
 	&__title {
-		@include fluid-text(16, 18);
+		@include fluid-text(16, 20);
 
 		display: -webkit-box;
 		overflow: hidden;
-		line-height: 1.4;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
-
-		@include mobile {
-			@include fluid-text(12, 14);
-		}
+		min-height: 3em;
 	}
 
 	&__text {
-		@include fluid-text(13, 14);
+		@include fluid-text(14, 16);
 
 		display: -webkit-box;
 		overflow: hidden;
-		line-height: 1.5;
 		color: var(--gray-600);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
-
-		@include mobile {
-			@include fluid-text(10, 12);
-		}
 	}
 
 	&__meta {
-		@include fluid-text(11, 12);
+		@include fluid-text(11, 13);
 
 		display: flex;
 		align-items: center;
-		gap: 4px;
+		gap: 10px;
 		width: fit-content;
-		padding: 4px 8px;
+		font-weight: 600;
+		padding: 4px 10px;
 		color: var(--gray-500);
 		background-color: var(--white);
 		border: 1px solid var(--gray-400);
 		border-radius: 4px;
 
 		@include mobile {
-			@include fluid-text(9, 10);
-
 			padding: 3px 5px;
 		}
 	}
@@ -232,6 +221,10 @@
 			@include tablet {
 				aspect-ratio: 330 / 271;
 			}
+		}
+
+		.news-card__title {
+			min-height: 1em;
 		}
 
 		.news-card__play {

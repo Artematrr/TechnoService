@@ -58,7 +58,7 @@
 
 	&__nav-link {
 		@include reset-link;
-		@include fluid-text(16, 18);
+		@include fluid-text(12, 18);
 
 		display: flex;
 		align-items: center;
@@ -66,7 +66,6 @@
 		min-height: 42px;
 		padding: 10px 14px;
 		font-weight: 400;
-		line-height: 1.2;
 		color: var(--gray-700);
 		background-color: var(--gray-200);
 		border: 1px solid var(--gray-400);
@@ -76,17 +75,17 @@
 			border-color var(--transition-duration),
 			background-color var(--transition-duration);
 
-			@include hover {
-				color: var(--primary-500);
-				background-color: var(--white);
-				border-color: var(--primary-500);
-			}
+		@include hover {
+			color: var(--primary-500);
+			background-color: var(--white);
+			border-color: var(--primary-500);
+		}
 
-			&.is-active {
-				color: var(--primary-500);
-				background-color: var(--white);
-				border-color: var(--primary-500);
-			}
+		&.is-active {
+			color: var(--primary-500);
+			background-color: var(--white);
+			border-color: var(--primary-500);
+		}
 
 		@include tablet {
 			justify-content: center;
@@ -95,24 +94,22 @@
 		}
 
 		@include mobile {
-			@include fluid-text(13, 14);
-
 			gap: 8px;
 			min-height: 45px;
 			padding: 10px 12px;
 		}
 
-			svg {
-				flex: 0 0 auto;
-				width: 24px;
-				height: 24px;
-				color: currentColor;
-				transition: color var(--transition-duration);
+		svg {
+			flex: 0 0 auto;
+			width: 24px;
+			height: 24px;
+			color: currentColor;
+			transition: color var(--transition-duration);
 
-				@include mobile {
-					width: 18px;
-					height: 18px;
-				}
+			@include mobile {
+				width: 18px;
+				height: 18px;
+			}
 		}
 	}
 
@@ -140,16 +137,9 @@
 	}
 
 	&__text {
-		@include fluid-text(16, 18);
+		@include fluid-text(12, 18);
 
-		line-height: 1.4;
 		color: var(--gray-700);
-
-		@include mobile {
-			@include fluid-text(12, 14);
-
-			line-height: 1.35;
-		}
 	}
 
 	&__grid {
@@ -231,13 +221,8 @@
 		z-index: 2;
 		max-width: calc(100% - 34px);
 		font-weight: 700;
-		line-height: 1.08;
+		line-height: 1;
 		min-height: 3em;
-
-		@include mobile {
-
-			line-height: 1.15;
-		}
 	}
 
 	&__card-arrow {

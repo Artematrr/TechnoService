@@ -59,14 +59,12 @@
 		@include fluid-text(16, 20);
 
 		font-weight: 700;
-		line-height: 1.2;
 		color: var(--gray-800);
 	}
 
 	&__text {
 		@include fluid-text(13, 14);
 
-		line-height: 1.35;
 		color: var(--gray-500);
 	}
 }
