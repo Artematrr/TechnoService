@@ -126,6 +126,7 @@
 			<h1 class="production-detail-heading__title" id="page-title">Запасные части</h1>
 		</div>
 
+		<!-- AUDIT: похож на блоки `service-overview`, `service-modernization`, `product-catalog`. Вероятно, нужно объединить в общий компонент `detail-layout` с модификаторами. -->
 		<section class="service-inspection service-inspection--spare-parts section" aria-labelledby="page-title">
 			<div class="service-inspection__container container">
 				<div class="service-inspection__sidebar">
@@ -186,6 +187,7 @@
 						<button class="product-catalog__nav-arrow" type="button" aria-label="Следующий вид сервиса">→</button>
 					</aside>
 
+					<!-- AUDIT-CHECK: возможно, аналогичен блокам `home-brands` и `service-clients`. Нужно проверить перед рефакторингом. -->
 					<section class="spare-parts-brands js-spare-parts-brands" aria-labelledby="spare-parts-brands-title">
 						<h2 class="spare-parts-brands__title" id="spare-parts-brands-title">Бренды запчастей</h2>
 						<ul class="spare-parts-brands__list" id="spare-parts-brands-list">
@@ -223,6 +225,7 @@
 						<p>Конечно, каждое производство нами рассматривается индивидуально. Мы берем за основу ваши пожелания,
 							финансовые возможности и перспективу развития.</p>
 					</div>
+					<!-- AUDIT-CHECK: возможно, аналогичен блоку `image-modal` в `project.html`. Нужно проверить перед рефакторингом. -->
 					<section class="service-gallery service-inspection__gallery js-service-gallery"
 						aria-label="Фотографии выполненных работ">
 						<div class="service-gallery__stage">

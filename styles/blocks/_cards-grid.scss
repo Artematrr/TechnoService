@@ -1,11 +1,20 @@
 .cards-grid {
-	margin-bottom: var(--section-margin-bottom);
+	&__container {
+	}
 
-	&--plain {
-		.service-card__media {
-			@include mobile {
-				aspect-ratio: 169 / 122;
-			}
+	&__title {
+		@include fluid-text(34, 48);
+
+		width: fit-content;
+		padding-bottom: 10px;
+		font-weight: 700;
+		color: var(--gray-800);
+		border-bottom: 2px solid var(--primary-500);
+		margin-bottom: 30px;
+
+		@include mobile {
+			margin-inline: auto;
+			text-align: center;
 		}
 	}
 
@@ -25,7 +34,15 @@
 	}
 
 	&__pagination {
-		display: none;
+		display: flex;
+		justify-content: center;
+		gap: 12px;
+		margin-top: 15px;
+		padding-block: 10px;
+
+		&.swiper-pagination-lock {
+			display: none;
+		}
 	}
 
 	&__bullet {
@@ -43,6 +60,7 @@
 
 	&--slider {
 		.cards-grid__container {
+			grid-template-columns: minmax(0, 1fr);
 			overflow: hidden;
 			cursor: grab;
 
@@ -55,6 +73,7 @@
 			display: flex;
 			align-items: stretch;
 			gap: 0;
+			min-width: 0;
 		}
 
 		.cards-grid__item {
@@ -74,15 +93,63 @@
 		}
 
 		.cards-grid__pagination {
-			display: flex;
-			justify-content: center;
-			gap: 12px;
-			margin-top: 15px;
-			padding-block: 10px;
-
 			&.swiper-pagination-lock {
 				display: none;
 			}
+		}
+	}
+
+	&--plain {
+		.service-card__media {
+			@include mobile {
+				aspect-ratio: 169 / 122;
+			}
+		}
+	}
+
+	&--compact {
+		.service-card__title {
+			@include fluid-text(20, 24);
+		}
+
+		.service-card__arrow {
+			margin-left: auto;
+		}
+	}
+
+	&--center {
+		.cards-grid__title {
+			text-align: center;
+			margin-inline: auto;
+		}
+	}
+
+	&--pagination-hidden {
+		.cards-grid__pagination {
+			display: none;
+		}
+	}
+
+	&--darken {
+		.service-card__media {
+			&::after {
+				position: absolute;
+				inset: 0;
+				z-index: 1;
+				pointer-events: none;
+				content: '';
+				background-color: var(--card-overlay);
+				transition: opacity var(--transition-duration-long)
+					var(--transition-timing-function);
+			}
+		}
+
+		.service-card__icon {
+			z-index: 2;
+		}
+
+		.service-card:hover .service-card__media::after {
+			opacity: 0;
 		}
 	}
 }

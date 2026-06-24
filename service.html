@@ -135,6 +135,7 @@
 			</div>
 		</section>
 
+		<!-- AUDIT: похож на блоки `service-inspection`, `service-modernization`, `product-catalog`. Вероятно, нужно объединить в общий компонент `detail-layout` с модификаторами. -->
 		<section class="service-overview section" aria-label="Направления сервиса">
 			<div class="service-overview__container container">
 				<aside class="product-catalog__nav service-overview__nav" aria-label="Виды сервисных работ">
@@ -213,6 +214,7 @@
 			</div>
 		</section>
 
+		<!-- AUDIT: похож на блоки `customers-slider`, `home-brands`, `service-clients--home`. Вероятно, нужно объединить в общий компонент `logos-list` с модификаторами. -->
 		<section class="service-clients section" aria-labelledby="service-clients-title">
 			<div class="service-clients__container container">
 				<h2 class="service-section-title" id="service-clients-title">Наши заказчики</h2>
@@ -228,6 +230,7 @@
 			</div>
 		</section>
 
+		<!-- AUDIT: аналогичен блоку `projects-slider` в `projects.html`. Рекомендуемый общий блок: `work-card-slider`. Отличается только контентом, пагинацией и отсутствием стрелок. -->
 		<section class="service-works section js-service-works" aria-labelledby="service-works-title">
 			<div class="service-works__container container">
 				<h2 class="service-section-title" id="service-works-title">Примеры работ</h2>

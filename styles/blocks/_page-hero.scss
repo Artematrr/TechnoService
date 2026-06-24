@@ -1,6 +1,4 @@
 .page-hero {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 	}
 
@@ -9,6 +7,10 @@
 		min-height: 509px;
 		overflow: hidden;
 		background-color: var(--white);
+
+		span {
+			color: var(--primary-500);
+		}
 
 		@include tablet {
 			min-height: auto;
@@ -65,7 +67,7 @@
 		position: absolute;
 		top: calc(50% + 30px);
 		left: 31%;
-		max-width: 660px;
+		max-width: 750px;
 		z-index: 2;
 		font-weight: 700;
 		line-height: 1;

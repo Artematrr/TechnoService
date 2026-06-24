@@ -17,6 +17,10 @@
 
 		.service-card__arrow {
 			translate: 8px 0;
+
+			@include mobile {
+				translate: 4px 0;
+			}
 		}
 	}
 
@@ -94,5 +98,117 @@
 		object-fit: contain;
 		transition: translate var(--transition-duration)
 			var(--transition-timing-function);
+	}
+
+	&--wide {
+		display: block;
+		min-height: 220px;
+		color: var(--white);
+		background-color: var(--gray-800);
+
+		&::before {
+			position: absolute;
+			inset-inline: 0;
+			bottom: 0;
+			z-index: 1;
+			height: 100%;
+			pointer-events: none;
+			content: '';
+			background: linear-gradient(
+				0deg,
+				var(--gray-900-alpha-70) 0%,
+				var(--gray-900-alpha-12) 50%
+			);
+		}
+
+		.service-card__media {
+			position: absolute;
+			inset: 0;
+			aspect-ratio: auto;
+		}
+
+		.service-card__body {
+			position: relative;
+			z-index: 2;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) auto;
+			align-items: center;
+			gap: 15px;
+			min-height: inherit;
+			padding: 24px 20px 24px 112px;
+		}
+
+		.service-card__content {
+			display: grid;
+			gap: 8px;
+		}
+
+		.service-card__icon {
+			z-index: 2;
+			bottom: 24px;
+			left: 20px;
+		}
+
+		.service-card__title {
+			min-height: 0;
+			color: inherit;
+		}
+
+		.service-card__text {
+			color: inherit;
+		}
+
+		.service-card__arrow {
+			align-self: center;
+		}
+
+		@include mobile {
+			display: grid;
+			grid-template-rows: auto 1fr;
+			min-height: 0;
+			color: var(--black);
+			background-color: var(--white);
+
+			&::before {
+				display: none;
+			}
+
+			.service-card__media {
+				position: relative;
+				inset: auto;
+				aspect-ratio: 169 / 155;
+			}
+
+			.service-card__body {
+				position: static;
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: auto 1fr auto;
+				align-content: stretch;
+				justify-items: stretch;
+				gap: 10px;
+				min-height: auto;
+				padding: 12px 10px 13px;
+			}
+
+			.service-card__content {
+				display: contents;
+			}
+
+			.service-card__icon {
+				top: auto;
+				bottom: 15px;
+				left: 14px;
+			}
+
+			.service-card__title {
+				min-height: 2em;
+				color: var(--gray-800);
+			}
+
+			.service-card__text {
+				color: var(--gray-600);
+			}
+		}
 	}
 }

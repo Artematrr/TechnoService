@@ -156,6 +156,7 @@
 			<h1 class="production-detail-heading__title" id="page-title">Компрессорные станции</h1>
 		</div>
 
+		<!-- AUDIT-CHECK: возможно, аналогичен блокам `service-inspection` и `service-modernization`. Нужно проверить перед рефакторингом. -->
 		<section class="product-catalog product-catalog--detail section" aria-labelledby="page-title">
 			<div class="product-catalog__container container">
 				<aside class="product-catalog__nav" aria-label="Разделы продукции">
@@ -409,6 +410,7 @@
 						соблюдаем до успешного внедрения работы на производственных площадках.
 					</p>
 
+					<!-- AUDIT: аналогичен блоку `detail-accordion` в `our-services-detail-01.html`. Рекомендуемый общий блок: `accordion-list` с модификатором товарной строки. Отличается только составом строки и CTA внутри панели. -->
 					<section class="product-offers" aria-labelledby="product-offers-title">
 						<h2 class="product-offers__title" id="product-offers-title">Мы предлагаем</h2>
 						<div class="product-offers__list js-product-offers">

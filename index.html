@@ -88,7 +88,7 @@
 	</header>
 
 	<main class="main home-page" id="main">
-		<section class="page-hero page-hero--home section" aria-labelledby="home-title">
+		<section class="page-hero section" aria-labelledby="home-title">
 			<div class="page-hero__container container">
 				<div class="page-hero__body">
 					<picture class="page-hero__picture">
@@ -102,94 +102,151 @@
 			</div>
 		</section>
 
-		<section class="home-services section" aria-labelledby="services-title">
-			<div class="home-services__container container">
-				<h2 class="home-title" id="services-title">Наши услуги</h2>
-				<div class="cards-grid cards-grid--plain">
-					<ul class="cards-grid__list">
-						<li><a class="service-card" href="/our-services.html"><span class="service-card__body"><span
-										class="service-card__title">Обследование</span><span class="service-card__text">Техническое
-										обследование оборудования</span><img class="service-card__arrow" src="/images/icons/arrow-more.svg"
-										alt=""></span></a></li>
-						<li><a class="service-card" href="/our-services.html"><span class="service-card__body"><span
-										class="service-card__title">Повышение квалификации</span><span class="service-card__text">Обучение и
-										развитие персонала</span><img class="service-card__arrow" src="/images/icons/arrow-more.svg"
-										alt=""></span></a></li>
-						<li><a class="service-card" href="/our-services.html"><span class="service-card__body"><span
-										class="service-card__title">Стратегия модернизации</span><span class="service-card__text">Разработка
-										программы развития предприятия</span><img class="service-card__arrow"
-										src="/images/icons/arrow-more.svg" alt=""></span></a></li>
-						<li><a class="service-card" href="/our-services.html"><span class="service-card__body"><span
-										class="service-card__title">Проектирование</span><span class="service-card__text">Инженерные
-										решения полного цикла</span><img class="service-card__arrow" src="/images/icons/arrow-more.svg"
-										alt=""></span></a></li>
-					</ul>
-				</div>
+		<section class="cards-grid cards-grid--center section" aria-label="Направления услуг">
+			<h2 class="cards-grid__title container" id="our-services-title">Наши услуги</h2>
+			<div class="cards-grid__container container">
+				<ul class="cards-grid__list">
+					<li>
+						<a class="service-card" href="#">
+							<span class="service-card__body">
+								<span class="service-card__title">Обследование</span>
+								<span class="service-card__text">Техническое обследование оборудования</span>
+								<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+							</span>
+						</a>
+					</li>
+					<li>
+						<a class="service-card" href="#">
+							<span class="service-card__body">
+								<span class="service-card__title">Повышение квалификации</span>
+								<span class="service-card__text">Обучение персонала</span>
+								<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+							</span>
+						</a>
+					</li>
+					<li>
+						<a class="service-card" href="#">
+							<span class="service-card__body">
+								<span class="service-card__title">Стратегия модернизации</span>
+								<span class="service-card__text">Разработка планов модернизации</span>
+								<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+							</span>
+						</a>
+					</li>
+					<li>
+						<a class="service-card" href="#">
+							<span class="service-card__body">
+								<span class="service-card__title">Проектирование</span>
+								<span class="service-card__text">Инженерное проектирование</span>
+								<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+							</span>
+						</a>
+					</li>
+				</ul>
 			</div>
 		</section>
 
-		<section class="home-service section js-home-service" aria-labelledby="service-title">
-			<div class="home-service__container container">
-				<h2 class="home-title" id="service-title">Сервис</h2>
-				<div class="home-service__swiper swiper">
+		<section class="background section">
+			<div
+				class="cards-grid cards-grid--plain cards-grid--center cards-grid--slider cards-grid--mobile-single cards-grid--pagination-hidden cards-grid--darken js-cards-slider"
+				aria-label="Сервис">
+				<h2 class="cards-grid__title container" id="service-title">Сервис</h2>
+				<div class="cards-grid__container container swiper">
+					<ul class="cards-grid__list swiper-wrapper">
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="#">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/14-service/service-01.jpg" alt="" width="330"
+										height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/14-service/service-icon-01.svg" alt="" width="32"
+											height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Обследование</span>
+									<span class="service-card__text">Техническое обследование оборудования</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="#">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/14-service/service-02.jpg" alt="" width="330"
+										height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/14-service/service-icon-2.svg" alt="" width="32"
+											height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Повышение квалификации</span>
+									<span class="service-card__text">Обучение персонала</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="#">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/14-service/service-03.jpg" alt="" width="330"
+										height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/14-service/service-icon-3.svg" alt="" width="32"
+											height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Стратегия модернизации</span>
+									<span class="service-card__text">Разработка планов модернизации</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="#">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/14-service/service-04.jpg" alt="" width="330"
+										height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/14-service/service-icon-4.svg" alt="" width="32"
+											height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Проектирование</span>
+									<span class="service-card__text">Инженерное проектирование</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+					</ul>
+					<div class="cards-grid__pagination" aria-label="Навигация по разделам сервиса"></div>
+				</div>
+			</div>
+
+			<div class="home-brands container js-home-brands">
+				<div class="home-brands__swiper swiper">
 					<ul class="swiper-wrapper">
-						<li class="home-service__slide swiper-slide"><a class="home-service__card"
-								href="/service-detail-01.html"><span class="home-service__media"><img class="home-service__image"
-										src="/images/04-our-services/our-service-01.png" alt="Инспекция оборудования"><span
-										class="home-service__icon"><img src="/images/14-service/service-list-icon-01.svg"
-											alt=""></span></span><span class="home-service__body"><span
-										class="home-service__card-title">Безвозмездная инспекция</span><span
-										class="home-service__text">Диагностика оборудования и рекомендации специалистов.</span><img
-										class="home-service__arrow" src="/images/icons/arrow-more.svg" alt=""></span></a></li>
-						<li class="home-service__slide swiper-slide"><a class="home-service__card" href="/service.html"><span
-									class="home-service__media"><img class="home-service__image"
-										src="/images/04-our-services/our-service-02.png" alt="Полевой сервис"><span
-										class="home-service__icon"><img src="/images/14-service/service-list-icon-02.svg"
-											alt=""></span></span><span class="home-service__body"><span
-										class="home-service__card-title">Полевой сервис</span><span class="home-service__text">Работы на
-										площадке заказчика с оперативным выездом.</span><img class="home-service__arrow"
-										src="/images/icons/arrow-more.svg" alt=""></span></a></li>
-						<li class="home-service__slide swiper-slide"><a class="home-service__card" href="/service.html"><span
-									class="home-service__media"><img class="home-service__image"
-										src="/images/04-our-services/our-service-03.png" alt="Превентивное обслуживание"><span
-										class="home-service__icon"><img src="/images/14-service/service-list-icon-03.svg"
-											alt=""></span></span><span class="home-service__body"><span
-										class="home-service__card-title">Превентивное обслуживание</span><span
-										class="home-service__text">Плановые работы для надежной эксплуатации.</span><img
-										class="home-service__arrow" src="/images/icons/arrow-more.svg" alt=""></span></a></li>
-						<li class="home-service__slide swiper-slide"><a class="home-service__card" href="/service.html"><span
-									class="home-service__media"><img class="home-service__image"
-										src="/images/04-our-services/our-service-04.png" alt="Капитальный ремонт"><span
-										class="home-service__icon"><img src="/images/14-service/service-list-icon-04.svg"
-											alt=""></span></span><span class="home-service__body"><span
-										class="home-service__card-title">Капитальный ремонт</span><span
-										class="home-service__text">Восстановление ресурса промышленного оборудования.</span><img
-										class="home-service__arrow" src="/images/icons/arrow-more.svg" alt=""></span></a></li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/gea-grasso.svg" alt="GEA Grasso">
+						</li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/howden.svg" alt="Howden"></li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/aerzen.svg" alt="Aerzen"></li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/mycom.svg" alt="Mycom"></li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/gea.svg" alt="GEA"></li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/gea-grasso.svg" alt="GEA Grasso">
+						</li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/howden.svg" alt="Howden"></li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/aerzen.svg" alt="Aerzen"></li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/mycom.svg" alt="Mycom"></li>
+						<li class="home-brands__card swiper-slide"><img src="/images/15-brands/gea.svg" alt="GEA"></li>
 					</ul>
-				</div>
-				<div class="home-service__pagination home-pagination"></div>
-				<div class="home-brands js-home-brands">
-					<div class="home-brands__swiper swiper">
-						<ul class="swiper-wrapper">
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/gea-grasso.svg" alt="GEA Grasso">
-							</li>
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/howden.svg" alt="Howden"></li>
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/aerzen.svg" alt="Aerzen"></li>
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/mycom.svg" alt="Mycom"></li>
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/gea.svg" alt="GEA"></li>
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/gea-grasso.svg" alt="GEA Grasso">
-							</li>
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/howden.svg" alt="Howden"></li>
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/aerzen.svg" alt="Aerzen"></li>
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/mycom.svg" alt="Mycom"></li>
-							<li class="home-brands__slide swiper-slide"><img src="/images/15-brands/gea.svg" alt="GEA"></li>
-						</ul>
-					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="callback-section home-callback section" aria-labelledby="callback-title">
+		<section class="callback-section section" aria-labelledby="callback-title">
 			<div class="callback-section__container container">
 				<div class="callback-section__content">
 					<div class="callback-section__top">
@@ -224,73 +281,209 @@
 			</div>
 		</section>
 
-		<section class="home-products section js-home-products" aria-labelledby="products-title">
-			<div class="home-products__container container">
-				<h2 class="home-title" id="products-title">Продукция</h2>
-				<div class="home-products__swiper swiper">
-					<ul class="swiper-wrapper">
-						<li class="home-products__slide swiper-slide"><a class="product-catalog__card" href="/production.html"><img
-									class="product-catalog__card-image" src="/images/06-production/production-card-01.png"
-									alt="Чиллеры"><span class="product-catalog__card-title">Чиллеры</span><img
-									class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt=""></a></li>
-						<li class="home-products__slide swiper-slide"><a class="product-catalog__card" href="/production.html"><img
-									class="product-catalog__card-image" src="/images/06-production/production-card-02.png"
-									alt="Компрессоры"><span class="product-catalog__card-title">Компрессоры и компрессорные
-									станции</span><img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt=""></a>
+		<section class="background section">
+			<div class="home-production cards-grid cards-grid--center js-home-production"
+				aria-labelledby="home-production-title">
+				<h2 class="cards-grid__title container" id="home-production-title">Продукция</h2>
+				<div class="cards-grid__container container swiper">
+					<ul class="cards-grid__list swiper-wrapper">
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="/production.html">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/06-production/production-image-01.jpg" alt="Чиллеры"
+										width="330" height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/06-production/production-icon-white-01.svg"
+											alt="" width="32" height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Чиллеры</span>
+									<span class="service-card__text">Господа, синтетическое тестирование является качественно новой
+										ступенью
+										поставленных обществом задач. Учитывая ключевые сценарии поведения.</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
 						</li>
-						<li class="home-products__slide swiper-slide"><a class="product-catalog__card" href="/production.html"><img
-									class="product-catalog__card-image" src="/images/06-production/production-card-03.png"
-									alt="Теплообменное оборудование"><span class="product-catalog__card-title">Теплообменное
-									оборудование</span><img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg"
-									alt=""></a></li>
-						<li class="home-products__slide swiper-slide"><a class="product-catalog__card" href="/production.html"><img
-									class="product-catalog__card-image" src="/images/06-production/production-card-04.png"
-									alt="Насосы"><span class="product-catalog__card-title">Насосы и насосные станции</span><img
-									class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt=""></a></li>
-						<li class="home-products__slide swiper-slide"><a class="product-catalog__card" href="/production.html"><img
-									class="product-catalog__card-image" src="/images/06-production/production-card-05.png"
-									alt="Сосуды и емкости"><span class="product-catalog__card-title">Сосуды и емкости</span><img
-									class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt=""></a></li>
-						<li class="home-products__slide swiper-slide"><a class="product-catalog__card" href="/production.html"><img
-									class="product-catalog__card-image" src="/images/06-production/production-card-06.png"
-									alt="Вспомогательное оборудование"><span class="product-catalog__card-title">Вспомогательное
-									оборудование</span><img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg"
-									alt=""></a></li>
-						<li class="home-products__slide swiper-slide"><a class="product-catalog__card" href="/production.html"><img
-									class="product-catalog__card-image" src="/images/06-production/production-card-07.png"
-									alt="Щиты"><span class="product-catalog__card-title">Щиты</span><img
-									class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg" alt=""></a></li>
-						<li class="home-products__slide swiper-slide"><a class="product-catalog__card" href="/production.html"><img
-									class="product-catalog__card-image" src="/images/06-production/production-card-08.png"
-									alt="Модификация и автоматизация"><span class="product-catalog__card-title">Модификация и
-									автоматизация</span><img class="product-catalog__card-arrow" src="/images/icons/arrow-more.svg"
-									alt=""></a></li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="/production.html">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/06-production/production-image-02.jpg"
+										alt="Компрессоры и компрессорные станции" width="330" height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/06-production/production-icon-white-02.svg"
+											alt="" width="32" height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Компрессоры и компрессорные станции</span>
+									<span class="service-card__text">Господа, синтетическое тестирование является качественно новой
+										ступенью
+										поставленных обществом задач. Учитывая ключевые сценарии поведения.</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="/production.html">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/06-production/production-image-03.jpg"
+										alt="Теплообменное оборудование" width="330" height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/06-production/production-icon-white-03.svg"
+											alt="" width="32" height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Теплообменное оборудование</span>
+									<span class="service-card__text">Господа, синтетическое тестирование является качественно новой
+										ступенью
+										поставленных обществом задач. Учитывая ключевые сценарии поведения.</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="/production.html">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/06-production/production-image-04.jpg"
+										alt="Насосы и насосные станции" width="330" height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/06-production/production-icon-white-04.svg"
+											alt="" width="32" height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Насосы и насосные станции</span>
+									<span class="service-card__text">Господа, синтетическое тестирование является качественно новой
+										ступенью
+										поставленных обществом задач. Учитывая ключевые сценарии поведения.</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="/production.html">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/06-production/production-image-05.jpg"
+										alt="Сосуды и емкости" width="330" height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/06-production/production-icon-white-05.svg"
+											alt="" width="32" height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Сосуды и емкости</span>
+									<span class="service-card__text">Господа, синтетическое тестирование является качественно новой
+										ступенью
+										поставленных обществом задач. Учитывая ключевые сценарии поведения.</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="/production.html">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/06-production/production-image-06.jpg"
+										alt="Вспомогательное оборудование" width="330" height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/06-production/production-icon-white-06.svg"
+											alt="" width="32" height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Вспомогательное оборудование</span>
+									<span class="service-card__text">Господа, синтетическое тестирование является качественно новой
+										ступенью
+										поставленных обществом задач. Учитывая ключевые сценарии поведения.</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="/production.html">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/06-production/production-image-07.jpg" alt="Щиты"
+										width="330" height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/06-production/production-icon-white-07.svg"
+											alt="" width="32" height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Щиты</span>
+									<span class="service-card__text">Господа, синтетическое тестирование является качественно новой
+										ступенью
+										поставленных обществом задач. Учитывая ключевые сценарии поведения.</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item swiper-slide">
+							<a class="service-card" href="/production.html">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/06-production/production-image-08.jpg"
+										alt="Модификация и автоматизация" width="330" height="256">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/06-production/production-icon-white-08.svg"
+											alt="" width="32" height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__title">Модификация и автоматизация</span>
+									<span class="service-card__text">Господа, синтетическое тестирование является качественно новой
+										ступенью
+										поставленных обществом задач. Учитывая ключевые сценарии поведения.</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
+						<li class="cards-grid__item cards-grid__item--wide swiper-slide">
+							<a class="service-card service-card--wide" href="/production.html">
+								<span class="service-card__media">
+									<img class="service-card__image" src="/images/06-production/production-image-09.jpg"
+										alt="Опросные листы" width="1410" height="220">
+									<span class="service-card__icon">
+										<img class="service-card__icon-image" src="/images/06-production/production-icon-white-09.svg"
+											alt="" width="32" height="32">
+									</span>
+								</span>
+								<span class="service-card__body">
+									<span class="service-card__content">
+										<span class="service-card__title">Опросные листы</span>
+										<span class="service-card__text">Господа, синтетическое тестирование является качественно новой
+											ступенью
+											поставленных обществом задач. Учитывая ключевые сценарии поведения.</span>
+									</span>
+									<img class="service-card__arrow" src="/images/icons/arrow-more.svg" alt="" width="26" height="16">
+								</span>
+							</a>
+						</li>
 					</ul>
+					<div class="cards-grid__pagination" aria-label="Навигация по разделам продукции"></div>
 				</div>
-				<div class="home-products__pagination home-pagination"></div>
-				<a class="questionnaires" href="/production.html"><img class="questionnaires__image"
-						src="/images/06-production/production-image-09.jpg" alt=""><span class="questionnaires__text"><b>Опросные
-							листы</b><span>Скачать документы для подбора оборудования</span></span></a>
+			</div>
+
+			<div class="substitution" id="substitution" aria-labelledby="substitution-title">
+				<div class="substitution__container container">
+					<a class="substitution__body" href="#">
+						<picture class="substitution__picture">
+							<source srcset="/images/16-substitution/substitution-bg-mobile.png" media="(max-width: 767px)">
+							<img class="substitution__image" src="/images/16-substitution/substitution-bg.png" alt="" width="1410"
+								height="493">
+						</picture>
+						<div class="substitution__content">
+							<h2 class="substitution__title" id="substitution-title">Импортозамещение</h2>
+							<p class="substitution__text">Российские аналоги<br>импортного оборудования</p>
+						</div>
+						<div class="substitution__label">Подробнее →</div>
+					</a>
+				</div>
 			</div>
 		</section>
 
-		<section class="substitution section" id="substitution" aria-labelledby="substitution-title">
-			<div class="substitution__container container">
-				<a class="substitution__body" href="#">
-					<picture class="substitution__picture">
-						<source srcset="/images/16-substitution/substitution-bg-mobile.png" media="(max-width: 767px)">
-						<img class="substitution__image" src="/images/16-substitution/substitution-bg.png" alt="" width="1410"
-							height="493">
-					</picture>
-					<div class="substitution__content">
-						<h2 class="substitution__title" id="substitution-title">Импортозамещение</h2>
-						<p class="substitution__text">Российские аналоги<br>импортного оборудования</p>
-					</div>
-					<div class="substitution__label">Подробнее →</div>
-				</a>
-			</div>
-		</section>
-
+		<!-- AUDIT: похож на блоки `service-clients`, `customers-slider`, `home-brands`. Вероятно, нужно объединить в общий компонент `logos-list` с модификаторами. -->
 		<section class="service-clients service-clients--home section js-home-clients" aria-labelledby="clients-title">
 			<div class="service-clients__container container">
 				<h2 class="home-title" id="clients-title">Наши заказчики</h2>
@@ -352,6 +545,7 @@
 			</div>
 		</section>
 
+		<!-- AUDIT: аналогичен блоку `projects-slider` в `projects.html`. Рекомендуемый общий блок: `work-card-slider`. Отличается табами, контентом и количеством строк. -->
 		<section class="service-works service-works--home section js-service-works js-home-work-tabs"
 			aria-labelledby="works-title">
 			<div class="service-works__container container">
@@ -465,6 +659,7 @@
 			</div>
 		</section>
 
+		<!-- AUDIT: аналогичен блоку `news-list` в `news.html` и `related-news` в `news-detail.html`. Рекомендуемый общий блок: `news-card-slider`. Отличается только контекстом вывода и навигацией. -->
 		<section class="news-slider news-slider--home section js-news-slider" aria-labelledby="news-title">
 			<div class="news-slider__container container">
 				<h2 class="news-slider__title" id="news-title">Новости и статьи</h2>
