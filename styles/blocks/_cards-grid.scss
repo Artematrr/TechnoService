@@ -138,7 +138,7 @@
 				z-index: 1;
 				pointer-events: none;
 				content: '';
-				background-color: var(--card-overlay);
+				background-color: var(--black-alpha-35);
 				transition: opacity var(--transition-duration-long)
 					var(--transition-timing-function);
 			}

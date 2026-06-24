@@ -85,7 +85,7 @@
 		display: grid;
 		grid-template-columns: 22px 1fr;
 		gap: 14px;
-		color: var(--white-alpha-72);
+		color: var(--white-alpha-75);
 	}
 
 	&__contact-icon {
@@ -98,7 +98,7 @@
 		@include fluid-text(13, 13);
 
 		margin-bottom: 6px;
-		color: var(--white-alpha-46);
+		color: var(--white-alpha-35);
 	}
 
 	&__contact-text,
@@ -191,7 +191,7 @@
 	&__link {
 		@include fluid-text(14, 14);
 
-		color: var(--white-alpha-42);
+		color: var(--white-alpha-35);
 
 		@include hover {
 			color: var(--primary-500);
@@ -213,7 +213,7 @@
 		gap: 18px;
 		padding: 18px;
 		text-align: center;
-		border: 1px solid var(--white-alpha-70);
+		border: 1px solid var(--white-alpha-75);
 
 		@include mobile {
 			gap: 14px;
@@ -238,7 +238,7 @@
 		align-items: center;
 		gap: 54px;
 		padding-top: 28px;
-		color: var(--white-alpha-36);
+		color: var(--white-alpha-35);
 		border-top: 1px solid var(--white-alpha-75);
 
 		@include mobile {

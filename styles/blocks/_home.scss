@@ -1,20 +1,3 @@
-.background {
-	padding-block: 80px;
-	background-color: var(--gray-200);
-
-	@include mobile {
-		padding-block: 30px;
-	}
-
-	> :not(:last-child) {
-		margin-bottom: 30px;
-
-		@include mobile {
-			margin-bottom: 15px;
-		}
-	}
-}
-
 .home-brands {
 	&__swiper {
 	}
@@ -34,135 +17,8 @@
 	}
 }
 
-.home-products {
-	padding-block: 50px;
-	background-color: var(--gray-200);
-
-	@include mobile {
-		padding-block: 30px;
-	}
-
-	&__container {
-		display: grid;
-		gap: 28px;
-		min-width: 0;
-	}
-
-	&__swiper {
-		width: 100%;
-		height: 680px;
-		overflow: hidden;
-
-		@include mobile {
-			height: 390px;
-		}
-	}
-
-	&__slide {
-		height: auto;
-	}
-
-	&__pagination {
-	}
-
-	.product-catalog__card {
-		display: grid;
-		grid-template-rows: 215px 1fr auto;
-		align-items: start;
-		height: 100%;
-		min-height: 0;
-		padding: 0;
-		color: var(--gray-800);
-		background-color: var(--white);
-		border: 1px solid var(--gray-300);
-
-		&::after {
-			display: none;
-		}
-
-		@include mobile {
-			aspect-ratio: auto;
-		}
-	}
-
-	.product-catalog__card-image {
-		position: static;
-		height: 215px;
-		object-fit: cover;
-	}
-
-	.product-catalog__card-title {
-		max-width: none;
-		padding: 16px 14px 8px;
-		color: var(--gray-800);
-	}
-
-	.product-catalog__card-arrow {
-		position: static;
-		width: 26px;
-		margin: 0 14px 16px;
-		filter: none;
-	}
-}
-
-.questionnaires {
-	position: relative;
-	display: block;
-	height: 94px;
-	overflow: hidden;
-	color: var(--white);
-	border-radius: 6px;
-
-	@include hover {
-		.questionnaires__image {
-			scale: 1.04;
-		}
-	}
-
-	&::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			90deg,
-			var(--gray-900-alpha-70),
-			var(--gray-900-alpha-12)
-		);
-	}
-
-	&__image {
-		width: 100%;
-		height: 100%;
-		transition: scale var(--transition-duration-long);
-	}
-
-	&__text {
-		position: absolute;
-		z-index: 2;
-		top: 50%;
-		left: 22px;
-		display: grid;
-		gap: 3px;
-		font-size: 13px;
-		translate: 0 -50%;
-
-		b {
-			font-size: 17px;
-		}
-	}
-}
-
 .home-production {
 	.cards-grid__list {
-		// display: grid;
-		// grid-template-columns: repeat(4, minmax(0, 1fr));
-		// gap: 30px;
-
-		// @include tablet {
-		// 	grid-template-columns: repeat(2, minmax(0, 1fr));
-		// 	gap: 24px;
-		// }
-
 		@include mobile {
 			display: flex;
 			gap: 0;
@@ -457,37 +313,6 @@
 		&.is-active {
 			color: var(--white);
 			background-color: var(--primary-500);
-		}
-	}
-}
-
-.home-faq {
-	.faq__container {
-		grid-template-columns: 390px minmax(0, 1fr);
-
-		@include tablet {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	.faq__title {
-		@include mobile {
-			font-size: 23px;
-		}
-	}
-
-	.faq__question {
-		@include mobile {
-			grid-template-columns: minmax(0, 1fr) 30px;
-			gap: 10px;
-			padding-block: 14px;
-			font-size: 12px;
-		}
-	}
-
-	.faq__icon {
-		@include mobile {
-			@include square(28px);
 		}
 	}
 }

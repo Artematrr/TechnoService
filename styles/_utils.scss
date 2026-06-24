@@ -43,3 +43,20 @@
 		}
 	}
 }
+
+.background {
+	padding-block: 80px;
+	background-color: var(--gray-200);
+
+	@include mobile {
+		padding-block: 30px;
+	}
+
+	> :not(:last-child) {
+		margin-bottom: 30px;
+
+		@include mobile {
+			margin-bottom: 15px;
+		}
+	}
+}
