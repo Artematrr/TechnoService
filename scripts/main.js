@@ -857,39 +857,201 @@ $(function () {
 	})
 
 	$('.product-catalog__nav').each(function () {
-		const $nav = $(this)
-		const $list = $nav.find('.product-catalog__nav-list')
-		const $arrows = $nav.find('.product-catalog__nav-arrow')
-		const $activeLink = $list.find('.product-catalog__nav-link.is-active')
+		const nav = this
+		const list = nav.querySelector('.product-catalog__nav-list')
+		const arrows = nav.querySelectorAll('.product-catalog__nav-arrow')
+		const tabletMedia = window.matchMedia('(max-width: 1023px)')
+		let swiper = null
+		let swiperElement = null
 
-		if (!$list.length || $arrows.length < 2) {
+		if (!list || arrows.length < 2) {
 			return
 		}
 
-		const centerActiveLink = function () {
-			if (
-				!window.matchMedia('(max-width: 1023px)').matches ||
-				!$activeLink.length
-			) {
+		const prepareSlider = function () {
+			if (!swiperElement) {
+				swiperElement = nav.querySelector('.product-catalog__nav-swiper')
+
+				if (!swiperElement) {
+					swiperElement = document.createElement('div')
+					swiperElement.className = 'product-catalog__nav-swiper swiper'
+					list.parentNode.insertBefore(swiperElement, list)
+					swiperElement.appendChild(list)
+				}
+			}
+
+			list.classList.add('swiper-wrapper')
+			Array.from(list.children).forEach((item) => {
+				item.classList.add('swiper-slide')
+			})
+
+			return swiperElement
+		}
+
+		const slideToActiveLink = function () {
+			if (!swiper) {
 				return
 			}
 
-			const list = $list.get(0)
-			const activeItem = $activeLink.closest('li').get(0)
+			const activeSlide = list
+				.querySelector('.product-catalog__nav-link.is-active')
+				?.closest('.swiper-slide')
+			const activeIndex = Array.from(list.children).indexOf(activeSlide)
 
-			list.scrollLeft =
-				activeItem.offsetLeft - (list.clientWidth - activeItem.offsetWidth) / 2
+			if (activeIndex >= 0) {
+				swiper.slideTo(activeIndex, 0)
+			}
 		}
 
-		centerActiveLink()
-		$(window).on('resize', centerActiveLink)
+		const destroySlider = function () {
+			if (!swiper) {
+				return
+			}
 
-		$arrows.on('click', function () {
-			const direction = $(this).is($arrows.first()) ? -1 : 1
-			const step = Math.max(180, $list.innerWidth() * 0.85)
+			swiper.destroy(true, true)
+			swiper = null
+		}
 
-			$list.animate({ scrollLeft: $list.scrollLeft() + step * direction }, 240)
+		const toggleSlider = function () {
+			if (!tabletMedia.matches) {
+				destroySlider()
+				return
+			}
+
+			if (swiper || !window.Swiper) {
+				return
+			}
+
+			swiper = new Swiper(prepareSlider(), {
+				slidesPerView: 'auto',
+				spaceBetween: 12,
+				grabCursor: true,
+				watchOverflow: true,
+				navigation: {
+					prevEl: arrows[0],
+					nextEl: arrows[1],
+				},
+			})
+
+			slideToActiveLink()
+		}
+
+		arrows.forEach((arrow) => {
+			arrow.addEventListener('click', function (event) {
+				if (arrow.tagName === 'A') {
+					event.preventDefault()
+				}
+			})
 		})
+
+		toggleSlider()
+
+		if (tabletMedia.addEventListener) {
+			tabletMedia.addEventListener('change', toggleSlider)
+		} else {
+			tabletMedia.addListener(toggleSlider)
+		}
+	})
+
+	$('.service-brand__grid--selector').each(function () {
+		const list = this
+		const mobileMedia = window.matchMedia('(max-width: 767px)')
+		let swiper = null
+		let slider = null
+		let swiperElement = null
+		let prevButton = null
+		let nextButton = null
+
+		const prepareSlider = function () {
+			if (!slider) {
+				slider = document.createElement('div')
+				slider.className = 'service-brand__grid-slider'
+
+				prevButton = document.createElement('button')
+				prevButton.className =
+					'service-brand__grid-arrow service-brand__grid-arrow--prev'
+				prevButton.type = 'button'
+				prevButton.setAttribute('aria-label', 'Предыдущий тип оборудования')
+				prevButton.textContent = '←'
+
+				nextButton = document.createElement('button')
+				nextButton.className =
+					'service-brand__grid-arrow service-brand__grid-arrow--next'
+				nextButton.type = 'button'
+				nextButton.setAttribute('aria-label', 'Следующий тип оборудования')
+				nextButton.textContent = '→'
+
+				swiperElement = document.createElement('div')
+				swiperElement.className = 'service-brand__grid-swiper swiper'
+
+				list.parentNode.insertBefore(slider, list)
+				slider.appendChild(prevButton)
+				slider.appendChild(swiperElement)
+				swiperElement.appendChild(list)
+				slider.appendChild(nextButton)
+			}
+
+			list.classList.add('swiper-wrapper')
+			Array.from(list.children).forEach((item) => {
+				item.classList.add('swiper-slide')
+			})
+
+			return swiperElement
+		}
+
+		const slideToActiveItem = function () {
+			if (!swiper) {
+				return
+			}
+
+			const activeSlide = list.querySelector('li.is-active')
+			const activeIndex = Array.from(list.children).indexOf(activeSlide)
+
+			if (activeIndex >= 0) {
+				swiper.slideTo(activeIndex, 0)
+			}
+		}
+
+		const destroySlider = function () {
+			if (!swiper) {
+				return
+			}
+
+			swiper.destroy(true, true)
+			swiper = null
+		}
+
+		const toggleSlider = function () {
+			if (!mobileMedia.matches) {
+				destroySlider()
+				return
+			}
+
+			if (swiper || !window.Swiper) {
+				return
+			}
+
+			swiper = new Swiper(prepareSlider(), {
+				slidesPerView: 1,
+				spaceBetween: 0,
+				grabCursor: true,
+				watchOverflow: true,
+				navigation: {
+					prevEl: prevButton,
+					nextEl: nextButton,
+				},
+			})
+
+			slideToActiveItem()
+		}
+
+		toggleSlider()
+
+		if (mobileMedia.addEventListener) {
+			mobileMedia.addEventListener('change', toggleSlider)
+		} else {
+			mobileMedia.addListener(toggleSlider)
+		}
 	})
 
 	$('.js-faq').each(function () {

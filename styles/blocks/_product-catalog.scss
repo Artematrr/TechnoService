@@ -20,11 +20,24 @@
 	&__nav {
 		display: grid;
 		gap: 8px;
+		min-width: 0;
+		max-width: 100%;
 
 		@include tablet {
 			grid-template-columns: 24px minmax(0, 1fr) 24px;
 			align-items: center;
 			gap: 10px;
+		}
+	}
+
+	&__nav-swiper {
+		width: 100%;
+		min-width: 0;
+		max-width: 100%;
+		overflow: visible;
+
+		@include tablet {
+			overflow: hidden !important;
 		}
 	}
 
@@ -34,24 +47,20 @@
 
 		@include tablet {
 			display: flex;
-			gap: 12px;
-			overflow-x: auto;
-			scroll-snap-type: x mandatory;
-			scrollbar-width: none;
-
-			&::-webkit-scrollbar {
-				display: none;
-			}
+			gap: 0;
+			overflow: visible;
 
 			> li {
-				flex: 0 0 240px;
-				scroll-snap-align: center;
+				flex: 0 0 auto;
+				width: 240px !important;
+				max-width: calc(100vw - 106px);
 			}
 		}
 
 		@include mobile {
 			> li {
-				flex-basis: min(77vw, 280px);
+				width: min(77vw, 280px) !important;
+				margin-block: auto;
 			}
 		}
 	}
@@ -124,6 +133,16 @@
 
 		@include tablet {
 			display: flex;
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0.35;
+			pointer-events: none;
+		}
+
+		&.swiper-button-lock {
+			visibility: hidden;
+			pointer-events: none;
 		}
 	}
 

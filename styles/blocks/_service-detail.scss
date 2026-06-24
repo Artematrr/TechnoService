@@ -583,7 +583,15 @@
 	}
 
 	&__nav {
-		.product-catalog__nav-link {
+		.product-catalog__nav-list > li:not(.is-active) {
+			display: none;
+
+			@include tablet {
+				display: block;
+			}
+		}
+
+		.product-catalog__nav-link.is-active {
 			color: var(--primary-500);
 			background-color: var(--white);
 			border-color: var(--primary-500);
@@ -649,37 +657,60 @@
 		}
 	}
 
-	&__grid--selector {
+	&__grid-slider {
+		min-width: 0;
+		max-width: 100%;
+
 		@include mobile {
+			display: grid;
 			grid-template-columns: 20px minmax(0, 1fr) 20px;
 			align-items: center;
 			gap: 8px;
+		}
+	}
 
-			&::before,
-			&::after {
-				font-size: 18px;
-				color: var(--gray-800);
-				text-align: center;
-			}
+	&__grid-swiper {
+		width: 100%;
+		min-width: 0;
+		max-width: 100%;
+		overflow: visible;
 
-			&::before {
-				content: '←';
-				grid-column: 1;
-			}
+		@include mobile {
+			overflow: hidden !important;
+		}
+	}
 
-			&::after {
-				content: '→';
-				grid-column: 3;
-			}
+	&__grid-arrow {
+		@include reset-button;
+		@include flex-center;
+
+		display: none;
+		min-width: 20px;
+		color: var(--gray-800);
+		font-size: 18px;
+		line-height: 1;
+		cursor: pointer;
+
+		@include mobile {
+			display: flex;
+		}
+
+		&.swiper-button-disabled,
+		&.swiper-button-lock {
+			opacity: 0.35;
+			pointer-events: none;
+		}
+	}
+
+	&__grid--selector {
+		@include mobile {
+			display: flex;
+			gap: 0;
 
 			> li {
-				display: none;
-
-				&.is-active {
-					display: block;
-					grid-column: 2;
-					grid-row: 1;
-				}
+				display: block;
+				flex: 0 0 auto;
+				width: 100% !important;
 			}
 
 			.service-equipment-card {

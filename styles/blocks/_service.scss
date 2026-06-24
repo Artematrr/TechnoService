@@ -79,7 +79,7 @@
 
 		.product-catalog__nav-list > li {
 			@include mobile {
-				flex-basis: calc(100vw - 106px);
+				width: calc(100vw - 106px) !important;
 			}
 		}
 	}
