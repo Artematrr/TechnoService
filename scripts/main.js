@@ -371,6 +371,46 @@ $(function () {
 			})
 		})
 
+		$('.solution-temperature__customers-slider').each(function () {
+			new Swiper(this, {
+				slidesPerView: 2.2,
+				spaceBetween: 10,
+				grabCursor: true,
+				simulateTouch: true,
+				watchOverflow: true,
+				breakpoints: {
+					768: {
+						slidesPerView: 3,
+						spaceBetween: 14,
+					},
+					1024: {
+						slidesPerView: 5,
+						spaceBetween: 14,
+					},
+				},
+			})
+		})
+
+		$('.service-customers__slider').each(function () {
+			new Swiper(this, {
+				slidesPerView: 2.2,
+				spaceBetween: 10,
+				grabCursor: true,
+				simulateTouch: true,
+				watchOverflow: true,
+				breakpoints: {
+					768: {
+						slidesPerView: 3,
+						spaceBetween: 12,
+					},
+					1024: {
+						slidesPerView: 5,
+						spaceBetween: 12,
+					},
+				},
+			})
+		})
+
 		$('.js-home-brands').each(function () {
 			new Swiper(this.querySelector('.home-brands__swiper'), {
 				slidesPerView: 1.5,

@@ -61,6 +61,7 @@
 
 	&__item {
 		border-bottom: 1px solid var(--gray-300);
+		border-left: 1px solid var(--gray-300);
 
 		&.is-open {
 			.detail-accordion__icon {
@@ -91,10 +92,10 @@
 		cursor: pointer;
 
 		@include mobile {
-			grid-template-columns: 80px minmax(0, 1fr) 26px;
+			grid-template-columns: 40px minmax(0, 1fr) 26px;
 			gap: 8px;
 			min-height: 54px;
-			padding-inline: 4px;
+			padding-inline: 15px;
 		}
 	}
 
@@ -106,7 +107,7 @@
 	}
 
 	&__name {
-		@include fluid-text(12, 18);
+		@include fluid-text(20, 24);
 
 		font-weight: 600;
 		color: var(--gray-800);
@@ -156,7 +157,7 @@
 			padding: 0 10px 30px;
 
 			@include mobile {
-				padding: 0 4px 10px;
+				padding: 0 15px 10px;
 			}
 		}
 
@@ -178,6 +179,7 @@
 		width: 110px;
 		height: 84px;
 		object-fit: cover;
+		border-radius: 5px;
 
 		@include mobile {
 			width: 52px;
@@ -194,6 +196,35 @@
 				grid-template-columns: 52px minmax(0, 1fr) 26px;
 				min-height: 64px;
 			}
+
+			&--image-top {
+				@include mobile {
+					grid-template-columns: minmax(0, 1fr) 34px;
+					grid-template-areas:
+						'image icon'
+						'name .';
+					align-items: start;
+					gap: 16px 10px;
+					min-height: 122px;
+					padding: 26px 15px 18px;
+
+					.detail-accordion__image {
+						grid-area: image;
+						width: 78px;
+						height: 60px;
+					}
+
+					.detail-accordion__name {
+						grid-area: name;
+					}
+
+					.detail-accordion__icon {
+						grid-area: icon;
+						align-self: center;
+						justify-self: center;
+					}
+				}
+			}
 		}
 
 		.detail-accordion__details {
@@ -201,7 +232,7 @@
 				padding-left: 132px;
 
 				@include mobile {
-					padding-left: 64px;
+					padding-left: 15px;
 				}
 			}
 		}
@@ -209,6 +240,10 @@
 }
 
 .service-customers {
+	width: 100%;
+	min-width: 0;
+	overflow: hidden;
+
 	&__title {
 		@include fluid-text(20, 24);
 
@@ -217,22 +252,21 @@
 		color: var(--gray-800);
 	}
 
-	&__list {
-		display: grid;
-		grid-template-columns: repeat(5, minmax(0, 1fr));
-		gap: 12px;
+	&__slider {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		overflow: hidden;
 
 		@include mobile {
-			display: flex;
 			width: calc(100vw - 48px);
-			padding-bottom: 6px;
-			overflow-x: auto;
-			scrollbar-width: none;
-
-			&::-webkit-scrollbar {
-				display: none;
-			}
 		}
+	}
+
+	&__list {
+		display: flex;
+		align-items: stretch;
+		min-width: 0;
 
 		li {
 			@include flex-center;
@@ -244,7 +278,6 @@
 			border-radius: 5px;
 
 			@include mobile {
-				flex: 0 0 122px;
 				height: 68px;
 				padding: 10px;
 			}
@@ -346,6 +379,8 @@
 
 	&__customers {
 		grid-area: customers;
+		width: 100%;
+		min-width: 0;
 		margin-top: 34px;
 
 		@include mobile {

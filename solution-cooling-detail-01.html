@@ -221,14 +221,16 @@
 					</div>
 
 					<div class="solution-temperature__content">
-						<ul class="solution-temperature__customers" aria-label="Заказчики">
-							<li><img src="/images/11-customers/gazprom-neft.svg" alt="Газпром нефть"></li>
-							<li><img src="/images/11-customers/rosatom.svg" alt="Росатом"></li>
-							<li><img src="/images/11-customers/sibur.svg" alt="Сибур"></li>
-							<li><img src="/images/11-customers/lukoil.svg" alt="Лукойл"></li>
-							<li><img src="/images/11-customers/danone.svg" alt="Danone"></li>
-						</ul>
-						<div class="solution-temperature__copy">
+						<div class="solution-temperature__customers-slider swiper">
+							<ul class="solution-temperature__customers swiper-wrapper" aria-label="Заказчики">
+								<li class="swiper-slide"><img src="/images/11-customers/gazprom-neft.svg" alt="Газпром нефть"></li>
+								<li class="swiper-slide"><img src="/images/11-customers/rosatom.svg" alt="Росатом"></li>
+								<li class="swiper-slide"><img src="/images/11-customers/sibur.svg" alt="Сибур"></li>
+								<li class="swiper-slide"><img src="/images/11-customers/lukoil.svg" alt="Лукойл"></li>
+								<li class="swiper-slide"><img src="/images/11-customers/danone.svg" alt="Danone"></li>
+							</ul>
+						</div>
+						<div class="solution-temperature__text">
 							<p>Нефтяная и газовая промышленность в прямом и переносном смысле питает мировую экономику двигателем,
 								а разработка и обустройство месторождений, добыча и переработка нефти и газа требуют сложной
 								многоступенчатой цепочки поставок. Все это очень длительный, сложный и самое главное дорогостоящий
@@ -327,8 +329,7 @@
 			</div>
 		</section>
 
-		<!-- AUDIT: аналогичен блоку `news-list` в `news.html` и `related-news` в `news-detail.html`. Рекомендуемый общий блок: `news-card-slider`. Отличается только контекстом вывода. -->
-		<section class="news-slider solution-detail-page__news section js-news-slider" aria-labelledby="news-slider-title">
+		<section class="news-slider section js-news-slider" aria-labelledby="news-slider-title">
 			<div class="news-slider__container container">
 				<h2 class="news-slider__title" id="news-slider-title">Новости и статьи</h2>
 				<div class="news-slider__stage">

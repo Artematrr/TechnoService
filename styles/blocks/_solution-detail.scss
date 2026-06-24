@@ -1,10 +1,6 @@
 .solution-detail-page {
 	overflow: clip;
 
-	&__news {
-		margin-top: 58px;
-	}
-
 	&__callback {
 		padding-top: 54px;
 
@@ -189,9 +185,15 @@
 		height: 100px;
 
 		@include mobile {
+			flex: 0 0 275px;
+			width: 275px !important;
+			height: auto;
+			min-height: 60px;
+		}
+
+		@include mobile-s {
 			flex: 0 0 245px;
 			width: 245px !important;
-			height: 50px;
 		}
 	}
 
@@ -218,7 +220,7 @@
 		}
 
 		@include mobile {
-			grid-template-columns: 58px 72px minmax(0, 1fr);
+			grid-template-columns: 65px 78px minmax(0, 1fr);
 			overflow: hidden;
 			background-color: var(--white);
 			border: 1px solid var(--gray-300);
@@ -312,18 +314,15 @@
 		}
 	}
 
-	&__customers {
-		display: grid;
-		grid-template-columns: repeat(5, minmax(0, 1fr));
-		gap: 14px;
+	&__customers-slider {
+		width: 100%;
+		min-width: 0;
+		overflow: hidden;
+	}
 
-		@include mobile {
-			display: flex;
-			gap: 10px;
-			margin-inline: calc(var(--container-padding-x) * -1);
-			padding-inline: var(--container-padding-x);
-			overflow: hidden;
-		}
+	&__customers {
+		display: flex;
+		align-items: stretch;
 
 		li {
 			@include flex-center;
@@ -335,7 +334,6 @@
 			border-radius: 6px;
 
 			@include mobile {
-				flex: 0 0 142px;
 				height: 96px;
 				padding: 18px;
 			}
@@ -350,14 +348,14 @@
 		}
 	}
 
-	&__copy {
+	&__text {
 		display: grid;
-		gap: 16px;
+		gap: 15px;
 		width: 100%;
 		min-width: 0;
 
 		@include mobile {
-			gap: 13px;
+			gap: 10px;
 		}
 
 		p {

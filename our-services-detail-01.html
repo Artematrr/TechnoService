@@ -279,20 +279,22 @@
 
 					<section class="service-customers" aria-labelledby="customers-title">
 						<h2 class="service-customers__title" id="customers-title">Наши заказчики</h2>
-						<ul class="service-customers__list">
-							<li><img src="/images/11-customers/gazprom-neft.svg" alt="Газпром нефть"></li>
-							<li><img src="/images/11-customers/rosatom.svg" alt="Росатом"></li>
-							<li><img src="/images/11-customers/sibur.svg" alt="Сибур"></li>
-							<li><img src="/images/11-customers/lukoil.svg" alt="Лукойл"></li>
-							<li><img src="/images/11-customers/danone.svg" alt="Danone"></li>
-						</ul>
+						<div class="service-customers__slider swiper">
+							<ul class="service-customers__list swiper-wrapper">
+								<li class="swiper-slide"><img src="/images/11-customers/gazprom-neft.svg" alt="Газпром нефть"></li>
+								<li class="swiper-slide"><img src="/images/11-customers/rosatom.svg" alt="Росатом"></li>
+								<li class="swiper-slide"><img src="/images/11-customers/sibur.svg" alt="Сибур"></li>
+								<li class="swiper-slide"><img src="/images/11-customers/lukoil.svg" alt="Лукойл"></li>
+								<li class="swiper-slide"><img src="/images/11-customers/danone.svg" alt="Danone"></li>
+							</ul>
+						</div>
 					</section>
 
 					<section class="detail-accordion detail-accordion--installations" aria-labelledby="installations-title">
 						<h2 class="detail-accordion__title" id="installations-title">Установки</h2>
 						<div class="detail-accordion__list js-detail-accordion">
 							<article class="detail-accordion__item is-open">
-								<button class="detail-accordion__button" type="button" aria-expanded="true"
+								<button class="detail-accordion__button detail-accordion__button--image-top" type="button" aria-expanded="true"
 									aria-controls="installation-1">
 									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg"
 										alt="Промышленная установка" width="155" height="120">
@@ -306,7 +308,7 @@
 										</ul></div></div>
 							</article>
 							<article class="detail-accordion__item">
-								<button class="detail-accordion__button" type="button" aria-expanded="false"
+								<button class="detail-accordion__button detail-accordion__button--image-top" type="button" aria-expanded="false"
 									aria-controls="installation-2">
 									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
 										width="155" height="120"><span class="detail-accordion__name">Установка 2</span><span
@@ -316,7 +318,7 @@
 											предоставляются по запросу.</p></div></div>
 							</article>
 							<article class="detail-accordion__item">
-								<button class="detail-accordion__button" type="button" aria-expanded="false"
+								<button class="detail-accordion__button detail-accordion__button--image-top" type="button" aria-expanded="false"
 									aria-controls="installation-3">
 									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
 										width="155" height="120"><span class="detail-accordion__name">Установка 3</span><span
@@ -326,7 +328,7 @@
 											предоставляются по запросу.</p></div></div>
 							</article>
 							<article class="detail-accordion__item">
-								<button class="detail-accordion__button" type="button" aria-expanded="false"
+								<button class="detail-accordion__button detail-accordion__button--image-top" type="button" aria-expanded="false"
 									aria-controls="installation-4">
 									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
 										width="155" height="120"><span class="detail-accordion__name">Установка 4</span><span
@@ -336,7 +338,7 @@
 											предоставляются по запросу.</p></div></div>
 							</article>
 							<article class="detail-accordion__item">
-								<button class="detail-accordion__button" type="button" aria-expanded="false"
+								<button class="detail-accordion__button detail-accordion__button--image-top" type="button" aria-expanded="false"
 									aria-controls="installation-5">
 									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
 										width="155" height="120"><span class="detail-accordion__name">Установка 5</span><span
@@ -346,7 +348,7 @@
 											предоставляются по запросу.</p></div></div>
 							</article>
 							<article class="detail-accordion__item">
-								<button class="detail-accordion__button" type="button" aria-expanded="false"
+								<button class="detail-accordion__button detail-accordion__button--image-top" type="button" aria-expanded="false"
 									aria-controls="installation-6">
 									<img class="detail-accordion__image" src="/images/04-our-services/our-service-design-item-01.jpg" alt=""
 										width="155" height="120"><span class="detail-accordion__name">Установка 6</span><span
@@ -375,7 +377,6 @@
 			</div>
 		</section>
 
-		<!-- AUDIT: аналогичен блоку `news-list` в `news.html` и `related-news` в `news-detail.html`. Рекомендуемый общий блок: `news-card-slider`. Отличается только контекстом вывода. -->
 		<section class="news-slider section js-news-slider" aria-labelledby="news-slider-title">
 			<div class="news-slider__container container">
 				<h2 class="news-slider__title" id="news-slider-title">Новости и статьи</h2>
