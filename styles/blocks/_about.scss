@@ -594,7 +594,7 @@
 
 .about-projects__metrics {
 	display: grid;
-	grid-template-columns: minmax(250px, 0.74fr) minmax(610px, 1.26fr);
+	grid-template-columns: minmax(250px, 1fr) minmax(570px, 2fr);
 	align-items: center;
 	gap: 70px;
 
@@ -683,7 +683,7 @@
 
 	@include mobile {
 		width: 86px;
-		min-width: 86px;
+		gap: 25px;
 	}
 
 	&__card {
