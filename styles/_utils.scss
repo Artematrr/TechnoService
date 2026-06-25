@@ -61,9 +61,8 @@
 	}
 }
 
-.section--title-left {
-	.service-clients__title,
-	.projects-slider__title {
+.section--title-service {
+	h2 {
 		margin-inline: 0;
 		padding: 0 0 0 18px;
 		text-align: left;

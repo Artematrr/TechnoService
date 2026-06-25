@@ -1,6 +1,4 @@
 .contacts-section {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 		display: grid;
 		grid-template-columns: minmax(320px, 1fr) minmax(0, 1fr);

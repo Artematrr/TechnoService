@@ -1,6 +1,4 @@
 .product-catalog {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 		display: grid;
 		grid-template-columns: 330px minmax(0, 1fr);

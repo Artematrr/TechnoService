@@ -294,8 +294,6 @@
 }
 
 .service-detail-text {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 		display: grid;
 		gap: 14px;
@@ -323,8 +321,6 @@
 
 .service-modernization,
 .service-inspection {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 		display: grid;
 		grid-template-columns: 260px minmax(0, 1fr);
@@ -580,8 +576,6 @@
 }
 
 .service-brand {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 		display: grid;
 		grid-template-columns: 330px minmax(0, 1fr);

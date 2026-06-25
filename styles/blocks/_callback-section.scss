@@ -1,6 +1,4 @@
 .callback-section {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 		display: grid;
 		grid-template-columns: 450px minmax(0, 940px);
@@ -145,10 +143,8 @@
 	}
 
 	&__form {
-
 	}
 
 	&__submit {
-
 	}
 }

@@ -22,8 +22,6 @@
 }
 
 .about-intro {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 		display: grid;
 		gap: 26px;
@@ -118,8 +116,6 @@
 }
 
 .about-values {
-	margin-bottom: var(--section-margin-bottom);
-
 	&__container {
 		display: grid;
 		grid-template-columns: 330px minmax(0, 1fr);
@@ -531,7 +527,6 @@
 .about-work {
 	display: grid;
 	gap: 36px;
-	margin-bottom: var(--section-margin-bottom);
 	padding-block: 48px 42px;
 	background-color: var(--gray-200);
 
