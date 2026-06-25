@@ -1,0 +1,44 @@
+<svg viewBox="0 0 1459.9 671.904" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1459.903320" height="671.904419" fill="none" customFrame="#000000">
+	<defs>
+		<g id="pixso_custom_effect_0">
+			<effect x="0.000000" y="28.024845" visibility="visible" fill="rgb(55,52,169)" fill-opacity="0.300000012" effectType="dropShadow" stdDeviation="28.0248451" radius="0" />
+		</g>
+		<filter id="filter_0" width="1459.903320" height="671.904419" x="0.000000" y="0.000000" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_0)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feOffset dx="0.000000" dy="28.024845" in="SourceAlpha" />
+			<feGaussianBlur stdDeviation="9.34161472" />
+			<feColorMatrix type="matrix" values="0 0 0 0 0.215686 0 0 0 0 0.203922 0 0 0 0 0.662745 0 0 0 0.3 0 " />
+			<feBlend result="effect_dropShadow_1" in2="BackgroundImageFix" mode="normal" />
+			<feBlend result="shape" in="SourceGraphic" in2="effect_dropShadow_1" mode="normal" />
+		</filter>
+		<clipPath id="clipPath_0">
+			<rect width="74.732918" height="74.732918" x="783.218750" y="373.192749" rx="37.366459" fill="rgb(255,255,255)" />
+		</clipPath>
+		<clipPath id="clipPath_1">
+			<rect width="74.732918" height="74.732918" x="281.953125" y="410.925659" rx="37.366459" fill="rgb(255,255,255)" />
+		</clipPath>
+		<clipPath id="clipPath_2">
+			<rect width="74.732918" height="74.732918" x="963.953125" y="126.925659" rx="37.366459" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<g id="Group 232">
+		<g filter="url(#filter_0)">
+			<path id="Vector 335" d="M30.9531 612.926L320.953 448.926L816.953 408.926L998.953 162.926L1428.95 2.92566" stroke="rgb(255,46,23)" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.838509" />
+		</g>
+		<g id="Frame 199" customFrame="url(#clipPath_0)">
+			<rect id="Frame 199" width="74.732918" height="74.732918" x="783.218750" y="373.192749" rx="37.366459" fill="rgb(255,255,255)" />
+			<rect id="Rectangle 106" width="26.857143" height="26.857143" x="806.218750" y="397.130737" rx="11.677018" fill="rgb(151,183,212)" />
+			<rect id="Frame 199" width="73.732918" height="73.732918" x="783.718750" y="373.692749" rx="36.866459" stroke="rgb(0,0,0)" stroke-width="1.000000" />
+		</g>
+		<g id="Frame 199" customFrame="url(#clipPath_1)">
+			<rect id="Frame 199" width="74.732918" height="74.732918" x="281.953125" y="410.925659" rx="37.366459" fill="rgb(255,255,255)" />
+			<rect id="Rectangle 106" width="26.857143" height="26.857143" x="304.953125" y="434.863647" rx="11.677018" fill="rgb(255,46,23)" />
+			<rect id="Frame 199" width="73.732918" height="73.732918" x="282.453125" y="411.425659" rx="36.866459" stroke="rgb(0,0,0)" stroke-width="1.000000" />
+		</g>
+		<g id="Frame 199" customFrame="url(#clipPath_2)">
+			<rect id="Frame 199" width="74.732918" height="74.732918" x="963.953125" y="126.925659" rx="37.366459" fill="rgb(255,255,255)" />
+			<rect id="Rectangle 106" width="26.857143" height="26.857143" x="986.953125" y="150.863647" rx="11.677018" fill="rgb(255,46,23)" />
+			<rect id="Frame 199" width="73.732918" height="73.732918" x="964.453125" y="127.425659" rx="36.866459" stroke="rgb(0,0,0)" stroke-width="1.000000" />
+		</g>
+	</g>
+</svg>
