@@ -175,6 +175,43 @@ $(function () {
 			})
 		})
 
+		$('.js-about-certificates').each(function () {
+			const pagination = this
+				.closest('.about-certificates')
+				?.querySelector('.about-certificates__pagination')
+
+			if (!pagination) {
+				return
+			}
+
+			new Swiper(this, {
+				slidesPerView: 2,
+				spaceBetween: 16,
+				grabCursor: true,
+				simulateTouch: true,
+				watchOverflow: true,
+				pagination: {
+					el: pagination,
+					clickable: true,
+					bulletClass: 'about-certificates__bullet',
+					bulletActiveClass: 'is-active',
+					renderBullet(index, className) {
+						return `<button class="${className}" type="button" aria-label="Показать сертификат ${index + 1}"></button>`
+					},
+				},
+				breakpoints: {
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 24,
+					},
+					1024: {
+						slidesPerView: 4,
+						spaceBetween: 28,
+					},
+				},
+			})
+		})
+
 		$('.js-related-news').each(function () {
 			const slider = this.querySelector('.related-news__swiper')
 			const pagination = this.querySelector('.related-news__pagination')
@@ -620,11 +657,22 @@ $(function () {
 			})
 
 			if (animate && card) {
+				const flipDuration =
+					parseFloat(counter.style.getPropertyValue('--flip-duration')) || 180
+
 				card.classList.remove('is-flipping')
 				void card.offsetWidth
 				card.classList.add('is-flipping')
+				clearTimeout(card.flipTimer)
+				card.flipTimer = setTimeout(() => {
+					card.classList.remove('is-flipping')
+				}, flipDuration + 40)
 			}
 		}
+
+		counters.forEach(counter => {
+			setCounterValue(counter, targets[counter.dataset.timeUnit] || 0, false)
+		})
 
 		const runCounters = function () {
 			if (metrics.classList.contains('is-animated')) {
@@ -644,40 +692,65 @@ $(function () {
 				return
 			}
 
-			const animationDuration = 2400
+			const animationDuration = 1600
+			const maxFlipSteps = 14
 			const animationStart = performance.now()
-			const previousValues = {}
+			const counterStates = {}
 
-			const frame = function () {
-				const timestamp = performance.now()
+			counters.forEach(counter => {
+				const unit = counter.dataset.timeUnit
+				const target = targets[unit] || 0
+				const steps = Math.min(target, maxFlipSteps)
+				const stepDuration = steps ? animationDuration / steps : 0
+				const flipDuration = target
+					? Math.min(180, Math.max(70, stepDuration * 0.7))
+					: 180
+
+				counter.style.setProperty('--flip-duration', `${flipDuration}ms`)
+				counterStates[unit] = {
+					target,
+					steps,
+					stepDuration,
+					previousValue: 0,
+				}
+				setCounterValue(counter, 0, false)
+			})
+
+			const frame = function (timestamp) {
 				const progress = Math.min(
 					(timestamp - animationStart) / animationDuration,
 					1,
 				)
-				const easedProgress = 1 - Math.pow(1 - progress, 3)
+				const elapsed = timestamp - animationStart
 
 				counters.forEach(counter => {
 					const unit = counter.dataset.timeUnit
-					const nextValue = Math.floor((targets[unit] || 0) * easedProgress)
+					const state = counterStates[unit]
+					const { target, steps, stepDuration } = state
+					const currentStep =
+						progress >= 1 || !stepDuration
+							? steps
+							: Math.min(steps, Math.floor(elapsed / stepDuration))
+					const nextValue =
+						progress >= 1 || !steps
+							? target
+							: Math.min(
+									target,
+									Math.round((target * currentStep) / steps),
+								)
 
-					if (previousValues[unit] !== nextValue) {
-						setCounterValue(counter, nextValue, progress > 0)
-						previousValues[unit] = nextValue
+					if (state.previousValue !== nextValue) {
+						setCounterValue(counter, nextValue, nextValue > 0)
+						state.previousValue = nextValue
 					}
 				})
 
-				if (progress >= 1) {
-					clearInterval(animationTimer)
-					setTimeout(() => {
-						metrics.querySelectorAll('.flip-counter__card').forEach(card => {
-							card.classList.remove('is-flipping')
-						})
-					}, 200)
+				if (progress < 1) {
+					requestAnimationFrame(frame)
 				}
 			}
 
-			const animationTimer = setInterval(frame, 16)
-			frame()
+			requestAnimationFrame(frame)
 		}
 
 		let observer

@@ -134,10 +134,6 @@
 			position: relative;
 			top: unset;
 			left: unset;
-			// top: 153px;
-			// left: 50%;
-			// width: calc(100% - 48px);
-			// translate: -50% 0;
 			translate: unset;
 			width: auto;
 			justify-items: center;
@@ -183,38 +179,18 @@
 		@include tablet {
 			right: 30px;
 			width: 40%;
+			bottom: 0;
 		}
 
 		@include mobile {
 			position: relative;
 			right: unset;
 			bottom: unset;
-			// right: 66px;
-			// bottom: 90px;
 			width: auto;
-			padding-inline: 37px;
+			padding-inline: 40px;
 			height: 42px;
 			font-size: 18px;
 			border-radius: 28px 4px 22px 4px;
 		}
-	}
-}
-
-.home-projects {
-	margin-bottom: 0 !important;
-	padding-top: 0;
-
-	.about-projects__aside,
-	.about-projects__list {
-		display: none;
-	}
-
-	.about-projects__container {
-		display: block;
-	}
-
-	.about-projects__metrics {
-		margin: 0;
-		padding-block: 8px 18px;
 	}
 }

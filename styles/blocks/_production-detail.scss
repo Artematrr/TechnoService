@@ -289,10 +289,14 @@
 			opacity var(--transition-duration);
 
 		> div {
-			position: relative;
-			padding: 0 78px 0 188px;
+			display: grid;
+			grid-template-columns: minmax(0, 420px) max-content;
+			align-items: end;
+			gap: 0 32px;
+			padding: 0 28px 22px 188px;
 
 			@include mobile {
+				display: block;
 				padding: 0 24px 26px;
 			}
 		}
@@ -310,6 +314,7 @@
 	}
 
 	&__stock {
+		grid-column: 1 / -1;
 		margin-bottom: 12px;
 		color: var(--success-500) !important;
 
@@ -321,9 +326,8 @@
 
 	&__specs {
 		display: grid;
-		max-width: 420px;
 		gap: 5px;
-		padding-bottom: 24px;
+		margin: 0;
 
 		@include mobile {
 			max-width: none;
@@ -358,9 +362,6 @@
 		@include reset-button;
 		@include fluid-text(12, 13);
 
-		position: absolute;
-		right: 28px;
-		bottom: 22px;
 		min-height: 36px;
 		padding-inline: 18px;
 		color: var(--primary-500);
@@ -373,7 +374,6 @@
 		}
 
 		@include mobile {
-			position: static;
 			display: block;
 			width: fit-content;
 			min-height: 44px;
