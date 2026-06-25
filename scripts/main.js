@@ -255,42 +255,6 @@ $(function () {
 			})
 		})
 
-		$('.js-service-works').each(function () {
-			const slider = this.querySelector('.service-works__swiper')
-			const pagination = this.querySelector('.service-works__pagination')
-
-			if (!slider || !pagination) {
-				return
-			}
-
-			new Swiper(slider, {
-				slidesPerView: 1,
-				spaceBetween: 16,
-				grabCursor: true,
-				simulateTouch: true,
-				watchOverflow: true,
-				pagination: {
-					el: pagination,
-					clickable: true,
-					bulletClass: 'service-works__bullet',
-					bulletActiveClass: 'is-active',
-					renderBullet(index, className) {
-						return `<button class="${className}" type="button" aria-label="Показать пример работы ${index + 1}"></button>`
-					},
-				},
-				breakpoints: {
-					768: {
-						slidesPerView: 2,
-						spaceBetween: 24,
-					},
-					1024: {
-						slidesPerView: 4,
-						spaceBetween: 30,
-					},
-				},
-			})
-		})
-
 		$('.js-service-gallery').each(function () {
 			const slider = this.querySelector('.service-gallery__swiper')
 			const pagination = this.querySelector('.service-gallery__pagination')
@@ -468,25 +432,53 @@ $(function () {
 			mobileMedia.addEventListener('change', toggleSlider)
 		})
 
-		$('.js-home-clients').each(function () {
-			new Swiper(this.querySelector('.service-clients__swiper'), {
+		$('.js-service-clients').each(function () {
+			const slider = this.querySelector('.service-clients__swiper')
+			const previousButton = this.querySelector('.service-clients__button--prev')
+			const nextButton = this.querySelector('.service-clients__button--next')
+			const pagination = this.querySelector('.service-clients__pagination')
+			const hasArrows = !this.classList.contains(
+				'service-clients--arrows-hidden',
+			)
+			const hasPagination = !this.classList.contains(
+				'service-clients--pagination-hidden',
+			)
+			const options = {
 				slidesPerView: 2,
-				spaceBetween: 0,
+				spaceBetween: 24,
 				grabCursor: true,
+				simulateTouch: true,
 				watchOverflow: true,
-				navigation: {
-					prevEl: this.querySelector('.service-clients__button--prev'),
-					nextEl: this.querySelector('.service-clients__button--next'),
-				},
-				pagination: {
-					el: this.querySelector('.service-clients__pagination'),
-					clickable: true,
-				},
 				breakpoints: {
-					768: { slidesPerView: 4 },
-					1024: { slidesPerView: 5 },
+					768: { slidesPerView: 4, spaceBetween: 12 },
+					1024: { slidesPerView: 5, spaceBetween: 12 },
 				},
-			})
+			}
+
+			if (!slider) {
+				return
+			}
+
+			if (hasArrows && previousButton && nextButton) {
+				options.navigation = {
+					prevEl: previousButton,
+					nextEl: nextButton,
+				}
+			}
+
+			if (hasPagination && pagination) {
+				options.pagination = {
+					el: pagination,
+					clickable: true,
+					bulletClass: 'service-clients__bullet',
+					bulletActiveClass: 'is-active',
+					renderBullet(index, className) {
+						return `<button class="${className}" type="button" aria-label="Показать заказчика ${index + 1}"></button>`
+					},
+				}
+			}
+
+			new Swiper(slider, options)
 		})
 
 		$('.js-solution-temperature').each(function () {
@@ -1112,15 +1104,16 @@ $(function () {
 
 	$('.js-home-work-tabs').each(function () {
 		const $section = $(this)
-		const $buttons = $section.find('.home-tabs__button')
-		const $slides = $section.find('.service-works__slide')
-		const swiper = $section.find('.service-works__swiper').get(0)?.swiper
+		const $buttons = $section.find('.projects-slider__tab')
+		const $slides = $section.find('.projects-slider__slide')
+		const swiper = $section.find('.projects-slider__swiper').get(0)?.swiper
 
-		$buttons.on('click', function () {
-			const category = $(this).data('category')
+		const activateTab = button => {
+			const $button = $(button)
+			const category = $button.data('category')
 
 			$buttons.removeClass('is-active').attr('aria-selected', 'false')
-			$(this).addClass('is-active').attr('aria-selected', 'true')
+			$button.addClass('is-active').attr('aria-selected', 'true')
 			$slides.each(function () {
 				$(this).toggle(
 					category === 'all' || $(this).data('category') === category,
@@ -1128,6 +1121,10 @@ $(function () {
 			})
 			swiper?.slideTo(0)
 			swiper?.update()
+		}
+
+		$buttons.on('click', function () {
+			activateTab(this)
 		})
 	})
 

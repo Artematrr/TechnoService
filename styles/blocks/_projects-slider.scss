@@ -284,4 +284,136 @@
 			text-align: center;
 		}
 	}
+
+	&--home-tabs {
+		margin-bottom: 0;
+		padding-block: 52px;
+		background-color: var(--gray-200);
+
+		@include mobile {
+			padding-block: 30px 34px;
+		}
+
+		.projects-slider__container {
+			gap: 30px;
+
+			@include mobile {
+				gap: 24px;
+			}
+		}
+
+		.projects-slider__title {
+			margin-inline: auto;
+			text-align: center;
+
+			@include mobile {
+				width: fit-content;
+				padding-inline: 0;
+				text-align: left;
+			}
+		}
+
+		.projects-slider__tabs-row {
+			position: relative;
+			display: block;
+			min-width: 0;
+			border-bottom: 1px solid var(--primary-500);
+
+			@include mobile {
+				display: grid;
+				grid-template-columns: 34px minmax(0, 1fr) 34px;
+				align-items: stretch;
+				gap: 12px;
+			}
+		}
+
+		.projects-slider__tabs {
+			display: flex;
+			gap: 0;
+			min-width: 0;
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+			user-select: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
+		.projects-slider__tab {
+			@include reset-button;
+
+			flex: 0 0 auto;
+			min-width: 150px;
+			padding: 18px 28px;
+			font-size: 18px;
+			color: var(--gray-800);
+			border-radius: 28px 4px 0 0;
+
+			&.is-active {
+				font-weight: 700;
+				color: var(--white);
+				background-color: var(--primary-500);
+			}
+
+			@include mobile {
+				min-width: 150px;
+				padding: 12px 20px;
+				font-size: 13px;
+				border-radius: 24px 4px 0 0;
+			}
+		}
+
+		.projects-slider__swiper {
+			height: auto;
+		}
+
+		.projects-slider__card {
+			display: grid;
+			grid-template-rows: auto 1fr;
+			// height: 100%;
+			background-color: var(--white);
+			border: 1px solid var(--gray-300);
+		}
+
+		.projects-slider__body {
+			height: 100%;
+		}
+
+		.projects-slider__action {
+			align-self: end;
+			width: 100%;
+			margin-top: auto;
+			text-align: center;
+		}
+
+		.projects-slider__controls {
+			justify-content: center;
+		}
+
+		.projects-slider__tabs-row > .projects-slider__button {
+			@include square(34px);
+
+			position: absolute;
+			z-index: 2;
+			top: calc(100% + 160px);
+
+			&.projects-slider__button--prev {
+				left: 10px;
+			}
+
+			&.projects-slider__button--next {
+				right: 10px;
+			}
+
+			@include mobile {
+				@include square(32px);
+				position: static;
+				align-self: center;
+				color: var(--gray-800);
+				background-color: var(--white);
+			}
+		}
+	}
 }

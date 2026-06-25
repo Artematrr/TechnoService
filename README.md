@@ -21,25 +21,25 @@
 
 ## localhost
 
-1. [О компании](http://127.0.0.1:5500/about.html) -
-2. [Корпоративная культура](http://127.0.0.1:5500/culture.html)
-3. [Контакты](http://127.0.0.1:5500/contacts.html)
-4. [Оборудование](http://127.0.0.1:5500/equipment.html)
-5. [Новости](http://127.0.0.1:5500/news.html)
-6. [Новость](http://127.0.0.1:5500/news-detail.html)
-7. [Наши услуги](http://127.0.0.1:5500/our-services.html)
-8. [Услуга Проектирование](http://127.0.0.1:5500/our-services-detail-01.html)
-9. [Услуга Стратегия модернизации](http://127.0.0.1:5500/our-services-detail-02.html)
-10. [Продукция](http://127.0.0.1:5500/production.html)
-11. [Продукция Компрессоры](http://127.0.0.1:5500/production-detail.html)
-12. [Проекты](http://127.0.0.1:5500/projects.html)
-13. [Проект подробно](http://127.0.0.1:5500/project.html)
-14. [Готовые решения](http://127.0.0.1:5500/solutions.html)
-15. [Утилизация ПНГ](http://127.0.0.1:5500/solution-cooling-detail-01.html) - термоментр и блок наши услуги
-16. [Охлаждение](http://127.0.0.1:5500/solution-cooling.html) - термоментр и блок наши услуги
-17. [Сервис](http://127.0.0.1:5500/service.html) - дубликаты исправить
-18. [Сервис Безвозмездная инспекция](http://127.0.0.1:5500/service-detail-01.html)
-19. [Сервис Запасные части](http://127.0.0.1:5500/service-detail-02.html)
-20. [Сервис Запасные части GEA](http://127.0.0.1:5500/service-brand-01.html)
-21. [Сервис Запасные части GEA Винтовые компрессоры](http://127.0.0.1:5500/service-brand-detail-01.html)
-22. [Главная](http://127.0.0.1:5500/index.html) - картнки и блоки
+1. [Главная](http://127.0.0.1:5500/index.html) -
+2. [О компании](http://127.0.0.1:5500/about.html) -
+3. [Корпоративная культура](http://127.0.0.1:5500/culture.html)
+4. [Контакты](http://127.0.0.1:5500/contacts.html)
+5. [Оборудование](http://127.0.0.1:5500/equipment.html)
+6. [Новости](http://127.0.0.1:5500/news.html)
+7. [Новость](http://127.0.0.1:5500/news-detail.html)
+8. [Наши услуги](http://127.0.0.1:5500/our-services.html)
+9. [Услуга Проектирование](http://127.0.0.1:5500/our-services-detail-01.html)
+10. [Услуга Стратегия модернизации](http://127.0.0.1:5500/our-services-detail-02.html)
+11. [Продукция](http://127.0.0.1:5500/production.html)
+12. [Продукция Компрессоры](http://127.0.0.1:5500/production-detail.html)
+13. [Проекты](http://127.0.0.1:5500/projects.html)
+14. [Проект подробно](http://127.0.0.1:5500/project.html)
+15. [Готовые решения](http://127.0.0.1:5500/solutions.html)
+16. [Утилизация ПНГ](http://127.0.0.1:5500/solution-cooling-detail-01.html)
+17. [Охлаждение](http://127.0.0.1:5500/solution-cooling.html)
+18. [Сервис](http://127.0.0.1:5500/service.html)
+19. [Сервис Безвозмездная инспекция](http://127.0.0.1:5500/service-detail-01.html)
+20. [Сервис Запасные части](http://127.0.0.1:5500/service-detail-02.html)
+21. [Сервис Запасные части GEA](http://127.0.0.1:5500/service-brand-01.html)
+22. [Сервис Запасные части GEA Винтовые компрессоры](http://127.0.0.1:5500/service-brand-detail-01.html)

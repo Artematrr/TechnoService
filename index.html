@@ -483,10 +483,9 @@
 			</div>
 		</section>
 
-		<!-- AUDIT: похож на блоки `service-clients`, `customers-slider`, `home-brands`. Вероятно, нужно объединить в общий компонент `logos-list` с модификаторами. -->
-		<section class="service-clients service-clients--home section js-home-clients" aria-labelledby="clients-title">
+		<section class="service-clients service-clients--home section js-service-clients" aria-labelledby="clients-title">
 			<div class="service-clients__container container">
-				<h2 class="home-title" id="clients-title">Наши заказчики</h2>
+				<h2 class="service-clients__title" id="clients-title">Наши заказчики</h2>
 				<div class="service-clients__stage">
 					<button class="service-clients__button service-clients__button--prev" type="button"
 						aria-label="Предыдущие заказчики">←</button>
@@ -509,7 +508,7 @@
 					<button class="service-clients__button service-clients__button--next" type="button"
 						aria-label="Следующие заказчики">→</button>
 				</div>
-				<div class="service-clients__pagination home-pagination"></div>
+				<div class="service-clients__pagination"></div>
 			</div>
 		</section>
 
@@ -545,55 +544,81 @@
 			</div>
 		</section>
 
-		<!-- AUDIT: аналогичен блоку `projects-slider` в `projects.html`. Рекомендуемый общий блок: `work-card-slider`. Отличается табами, контентом и количеством строк. -->
-		<section class="service-works service-works--home section js-service-works js-home-work-tabs"
+		<section class="projects-slider projects-slider--single-row projects-slider--home-tabs section js-projects-slider js-home-work-tabs"
 			aria-labelledby="works-title">
-			<div class="service-works__container container">
-				<h2 class="service-section-title" id="works-title">Готовые решения</h2>
-				<div class="home-tabs" role="tablist" aria-label="Отрасли">
-					<button class="home-tabs__button is-active" type="button" role="tab" aria-selected="true"
-						data-category="all">Все</button>
-					<button class="home-tabs__button" type="button" role="tab" aria-selected="false"
-						data-category="cryo">Криогеника</button>
-					<button class="home-tabs__button" type="button" role="tab" aria-selected="false"
-						data-category="cooling">Охлаждение</button>
-					<button class="home-tabs__button" type="button" role="tab" aria-selected="false" data-category="oil">Нефтегаз
-						и энергетика</button>
+			<div class="projects-slider__container container">
+				<h2 class="projects-slider__title" id="works-title">Готовые решения</h2>
+				<div class="projects-slider__tabs-row">
+					<button class="projects-slider__button projects-slider__button--prev" type="button"
+						aria-label="Предыдущие решения"></button>
+					<div class="projects-slider__tabs" role="tablist" aria-label="Отрасли">
+						<button class="projects-slider__tab is-active" type="button" role="tab" aria-selected="true"
+							data-category="all">Химия</button>
+						<button class="projects-slider__tab" type="button" role="tab" aria-selected="false"
+							data-category="cryo">Криогеника</button>
+						<button class="projects-slider__tab" type="button" role="tab" aria-selected="false"
+							data-category="cooling">Охлаждение</button>
+						<button class="projects-slider__tab" type="button" role="tab" aria-selected="false" data-category="oil">Нефтегаз
+							и энергетика</button>
+					</div>
+					<button class="projects-slider__button projects-slider__button--next" type="button"
+						aria-label="Следующие решения"></button>
 				</div>
-				<div class="service-works__swiper swiper">
-					<ul class="service-works__list swiper-wrapper">
-						<li class="service-works__slide swiper-slide" data-category="cryo"><a class="service-work-card"
-								href="#"><span class="service-work-card__media"><img
-										src="/images/04-our-services/our-service-design-item-01.jpg" alt=""></span><span
-									class="service-work-card__body"><span class="service-work-card__meta"><time datetime="2025-06-15">15
-											июня 2025 г.</time><span>Криогеника</span></span><span
-										class="service-work-card__title">Промышленная система технологических трубопроводов</span><span
-										class="service-work-card__text">Комплексное проектирование и реализация.</span><span
-										class="service-work-card__cta">Бесплатная консультация</span></span></a></li>
-						<li class="service-works__slide swiper-slide" data-category="oil"><a class="service-work-card"
-								href="#"><span class="service-work-card__media"><img src="/images/07-projects/project-image-01.png"
-										alt=""></span><span class="service-work-card__body"><span class="service-work-card__meta"><time
-											datetime="2025-06-15">15
-											июня 2025 г.</time><span>Нефтегаз</span></span><span class="service-work-card__title">Подготовка
-										попутного нефтяного газа</span><span class="service-work-card__text">Решение для надежной работы
-										объекта.</span></span></a></li>
-						<li class="service-works__slide swiper-slide" data-category="oil"><a class="service-work-card"
-								href="#"><span class="service-work-card__media"><img src="/images/07-projects/project-image-05.jpg"
-										alt=""></span><span class="service-work-card__body"><span class="service-work-card__meta"><time
-											datetime="2025-06-15">15
-											июня 2025 г.</time><span>Энергетика</span></span><span
-										class="service-work-card__title">Модернизация промышленного объекта</span><span
-										class="service-work-card__text">Повышение эффективности производства.</span></span></a></li>
-						<li class="service-works__slide swiper-slide" data-category="cooling"><a class="service-work-card"
-								href="#"><span class="service-work-card__media"><img src="/images/10-solutions/cooling-01.jpg"
-										alt=""></span><span class="service-work-card__body"><span class="service-work-card__meta"><time
-											datetime="2025-06-15">15 июня 2025
-											г.</time><span>Охлаждение</span></span><span class="service-work-card__title">Промышленное
-										охлаждение под ключ</span><span class="service-work-card__text">От концепции до запуска
-										оборудования.</span></span></a></li>
+				<div class="projects-slider__swiper swiper">
+					<ul class="projects-slider__list swiper-wrapper">
+						<li class="projects-slider__slide swiper-slide" data-category="cryo">
+							<a class="projects-slider__card" href="#">
+								<span class="projects-slider__media"><img class="projects-slider__image"
+										src="/images/04-our-services/our-service-design-item-01.jpg" alt="Промышленная система"
+										width="330" height="256"></span>
+								<span class="projects-slider__body"><span class="projects-slider__meta"><time
+											class="projects-slider__date" datetime="2025-06-15">15 июня 2025 г.</time><span
+											class="projects-slider__tag">Химия</span></span><span
+										class="projects-slider__card-title">Effective product marketing techniques for small businesses</span><span
+										class="projects-slider__text">Explore cost-effective marketing strategies to promote your product busi...</span><span
+										class="projects-slider__action button">Бесплатный тестдрайв</span></span>
+							</a>
+						</li>
+						<li class="projects-slider__slide swiper-slide" data-category="oil">
+							<a class="projects-slider__card" href="#">
+								<span class="projects-slider__media"><img class="projects-slider__image"
+										src="/images/07-projects/project-image-01.png" alt="Нефтегазовый объект" width="330"
+										height="256"></span>
+								<span class="projects-slider__body"><span class="projects-slider__meta"><time
+											class="projects-slider__date" datetime="2025-06-15">15 июня 2025 г.</time><span
+											class="projects-slider__tag">Оборудование</span></span><span
+										class="projects-slider__card-title">Effective product marketing techniques for small businesses ...</span><span
+										class="projects-slider__text">Explore cost-effective marketing strategies to promote your product busi...</span></span>
+							</a>
+						</li>
+						<li class="projects-slider__slide swiper-slide" data-category="oil">
+							<a class="projects-slider__card" href="#">
+								<span class="projects-slider__media"><img class="projects-slider__image"
+										src="/images/07-projects/project-image-05.jpg" alt="Промышленный объект" width="330" height="256"></span>
+								<span class="projects-slider__body"><span class="projects-slider__meta"><time
+											class="projects-slider__date" datetime="2025-06-15">15 июня 2025 г.</time><span
+											class="projects-slider__tag">Ремонт</span></span><span
+										class="projects-slider__card-title">Effective product marketing techniques for small businesses</span><span
+										class="projects-slider__text">Explore cost-effective marketing strategies to promote your product busi...</span></span>
+							</a>
+						</li>
+						<li class="projects-slider__slide swiper-slide" data-category="cooling">
+							<a class="projects-slider__card" href="#">
+								<span class="projects-slider__media"><img class="projects-slider__image"
+										src="/images/10-solutions/cooling-01.jpg" alt="Промышленное охлаждение" width="330"
+										height="256"></span>
+								<span class="projects-slider__body"><span class="projects-slider__meta"><time
+											class="projects-slider__date" datetime="2025-06-15">15 июня 2025 г.</time><span
+											class="projects-slider__tag">Импортозамещение</span></span><span
+										class="projects-slider__card-title">Effective product marketing techniques for small businesses</span><span
+										class="projects-slider__text">Explore cost-effective marketing strategies to promote your product busi...</span></span>
+							</a>
+						</li>
 					</ul>
 				</div>
-				<div class="service-works__pagination"></div>
+				<div class="projects-slider__controls">
+					<div class="projects-slider__pagination" aria-label="Навигация по решениям"></div>
+				</div>
 			</div>
 		</section>
 
