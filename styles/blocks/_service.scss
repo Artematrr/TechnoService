@@ -1,19 +1,5 @@
 .service-page,
 .service-detail-page {
-	&__hero {
-		.page-hero__body {
-			@include mobile {
-				height: 330px;
-			}
-		}
-
-		.page-hero__title {
-			@include mobile {
-				top: 34px;
-			}
-		}
-	}
-
 	&__callback {
 		padding-top: 30px;
 
