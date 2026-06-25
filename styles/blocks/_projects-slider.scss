@@ -383,6 +383,11 @@
 			width: 100%;
 			margin-top: auto;
 			text-align: center;
+
+			@include hover {
+				color: var(--white);
+				background-color: var(--primary-500);
+			}
 		}
 
 		.projects-slider__controls {

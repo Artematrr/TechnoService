@@ -183,6 +183,13 @@ svg * {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "ShareTech";
+  src: url("/fonts/ShareTech/ShareTech-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --current-color: currentColor;
   --transparent: transparent;
@@ -209,9 +216,10 @@ svg * {
   --white-alpha-75: rgb(255 255 255 / 75%);
   --white-alpha-90: rgb(255 255 255 / 90%);
   --font-family-base:
-  	'EncodeSans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  	'EncodeSans', 'Calibri', 'Arial', system-ui, -apple-system, 'Segoe UI',
+  	sans-serif;
   --font-family-secondary:
-  	'Calibri', 'Arial', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  	'ShareTech', 'Arial', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --border: 1px solid var(--transparent);
   --container-width: 1410px;
   --container-padding-x: 15px;
@@ -2341,6 +2349,18 @@ h4,
   margin-top: auto;
   text-align: center;
 }
+@media (hover: hover) {
+  .projects-slider--home-tabs .projects-slider__action:hover {
+    color: var(--white);
+    background-color: var(--primary-500);
+  }
+}
+@media (hover: none) {
+  .projects-slider--home-tabs .projects-slider__action:active {
+    color: var(--white);
+    background-color: var(--primary-500);
+  }
+}
 .projects-slider--home-tabs .projects-slider__controls {
   justify-content: center;
 }
@@ -3993,46 +4013,24 @@ h4,
   }
 }
 
-.about-projects__metrics {
-  display: grid;
-  grid-template-columns: minmax(250px, 1fr) minmax(570px, 2fr);
-  align-items: center;
-  gap: 70px;
-}
-@media (max-width: 1023px) {
-  .about-projects__metrics {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-@media (max-width: 767px) {
-  .about-projects__metrics {
-    gap: 18px;
-  }
-}
-
-.about-metrics__completed,
-.about-projects__metrics .about-projects__completed {
+.about-metrics__completed {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 @media (max-width: 1023px) {
-  .about-metrics__completed,
-  .about-projects__metrics .about-projects__completed {
+  .about-metrics__completed {
     justify-content: center;
   }
 }
-.about-metrics__completed strong,
-.about-projects__metrics .about-projects__completed strong {
+.about-metrics__completed strong {
   font-size: clamp(48px, 4.8611111111vw, 70px);
   flex: 0 0 auto;
   font-weight: 600;
   line-height: 1;
   color: var(--primary-500);
 }
-.about-metrics__completed span,
-.about-projects__metrics .about-projects__completed span {
+.about-metrics__completed span {
   font-size: clamp(16px, 1.3888888889vw, 20px);
   max-width: 180px;
   font-weight: 700;
@@ -4041,21 +4039,18 @@ h4,
   color: var(--gray-500);
 }
 
-.about-metrics__runtime,
-.about-projects__metrics .about-projects__runtime {
+.about-metrics__runtime {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 @media (max-width: 1023px) {
-  .about-metrics__runtime,
-  .about-projects__metrics .about-projects__runtime {
+  .about-metrics__runtime {
     justify-content: center;
   }
 }
 @media (max-width: 767px) {
-  .about-metrics__runtime,
-  .about-projects__metrics .about-projects__runtime {
+  .about-metrics__runtime {
     display: grid;
     grid-template-columns: repeat(3, 86px);
     justify-content: center;
@@ -4064,8 +4059,7 @@ h4,
   }
 }
 
-.about-metrics__runtime-label,
-.about-projects__metrics .about-projects__runtime-label {
+.about-metrics__runtime-label {
   font-size: clamp(16px, 1.4583333333vw, 21px);
   margin-left: 8px;
   font-weight: 700;
@@ -4074,8 +4068,7 @@ h4,
   color: var(--gray-500);
 }
 @media (max-width: 767px) {
-  .about-metrics__runtime-label,
-  .about-projects__metrics .about-projects__runtime-label {
+  .about-metrics__runtime-label {
     grid-column: 1/-1;
     margin-top: 0;
     margin-left: 0;
@@ -4084,6 +4077,7 @@ h4,
 }
 
 .flip-counter {
+  font-family: var(--font-family-secondary);
   display: grid;
   justify-items: center;
   gap: 7px;
@@ -4129,13 +4123,13 @@ h4,
   transform-style: preserve-3d;
 }
 .flip-counter__half span {
-  font-size: clamp(48px, 4.4444444444vw, 64px);
+  font-size: clamp(70px, 6.25vw, 90px);
   position: absolute;
   left: 50%;
   font-weight: 500;
   font-variant-numeric: tabular-nums;
-  line-height: 97px;
-  letter-spacing: 0;
+  line-height: 91px;
+  letter-spacing: -5px;
   translate: -50% 0;
 }
 .flip-counter__half--top {

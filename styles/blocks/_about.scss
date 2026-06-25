@@ -649,24 +649,7 @@
 	}
 }
 
-.about-projects__metrics {
-	display: grid;
-	grid-template-columns: minmax(250px, 1fr) minmax(570px, 2fr);
-	align-items: center;
-	gap: 70px;
-
-	@include tablet {
-		grid-template-columns: 1fr;
-		gap: 28px;
-	}
-
-	@include mobile {
-		gap: 18px;
-	}
-}
-
-.about-metrics__completed,
-.about-projects__metrics .about-projects__completed {
+.about-metrics__completed {
 	display: flex;
 	align-items: center;
 	gap: 18px;
@@ -695,8 +678,7 @@
 	}
 }
 
-.about-metrics__runtime,
-.about-projects__metrics .about-projects__runtime {
+.about-metrics__runtime {
 	display: flex;
 	align-items: center;
 	gap: 12px;
@@ -714,8 +696,7 @@
 	}
 }
 
-.about-metrics__runtime-label,
-.about-projects__metrics .about-projects__runtime-label {
+.about-metrics__runtime-label {
 	@include fluid-text(16, 21);
 
 	margin-left: 8px;
@@ -733,6 +714,7 @@
 }
 
 .flip-counter {
+	font-family: var(--font-family-secondary);
 	display: grid;
 	justify-items: center;
 	gap: 7px;
@@ -781,14 +763,14 @@
 		transform-style: preserve-3d;
 
 		span {
-			@include fluid-text(48, 64);
+			@include fluid-text(70, 90);
 
 			position: absolute;
 			left: 50%;
 			font-weight: 500;
 			font-variant-numeric: tabular-nums;
-			line-height: 97px;
-			letter-spacing: 0;
+			line-height: 91px;
+			letter-spacing: -5px;
 			translate: -50% 0;
 		}
 
