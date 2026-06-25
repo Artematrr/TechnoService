@@ -19,16 +19,19 @@
 	&__top {
 		display: grid;
 		grid-template-columns: 300px 1fr 330px;
-		gap: 64px;
+		gap: 30px;
 
+		@include desktop {
+			grid-template-columns: 200px 1fr 230px;
+		}
 		@include tablet {
 			grid-template-columns: 1fr 1fr;
-			gap: 40px;
+			gap: 20px;
 		}
 
 		@include mobile {
 			grid-template-columns: 1fr;
-			gap: 26px;
+			gap: 10px;
 		}
 	}
 
@@ -86,6 +89,20 @@
 		grid-template-columns: 22px 1fr;
 		gap: 14px;
 		color: var(--white-alpha-75);
+
+		&--email {
+			div {
+				display: inline-flex;
+				gap: 14px;
+				align-items: baseline;
+			}
+		}
+	}
+
+	&__contact-row {
+		display: flex;
+		align-items: center;
+		gap: 15px;
 	}
 
 	&__contact-icon {
@@ -143,17 +160,17 @@
 	&__nav {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(180px, 1fr));
-		gap: 34px 76px;
+		gap: 20px 30px;
 		align-content: start;
 
 		@include tablet {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 28px;
+			gap: 20px;
 		}
 
 		@include mobile {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 22px 24px;
+			gap: 10px;
 		}
 	}
 
@@ -172,6 +189,8 @@
 
 		font-weight: 700;
 		color: var(--white);
+		hyphens: auto;
+
 		@include hover {
 			color: var(--primary-500);
 		}
@@ -198,11 +217,11 @@
 
 	&__aside {
 		display: grid;
-		gap: 34px;
+		gap: 20px;
 		align-content: start;
 
 		@include mobile {
-			gap: 22px;
+			gap: 10px;
 		}
 	}
 

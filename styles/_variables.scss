@@ -46,12 +46,15 @@
 	--transition-duration-long: 0.35s;
 	--transition-timing-function: ease-in-out;
 
+	@include tablet {
+		--header-height: 92px;
+	}
+
 	@include mobile {
 		--container-padding-x: 24px;
 		--section-margin-bottom: 30px;
 		--input-height: 52px;
 		--button-height: 48px;
-		--header-height: 92px;
 	}
 
 	@include mobile-s {
