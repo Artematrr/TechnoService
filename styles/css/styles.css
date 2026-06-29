@@ -184,6 +184,20 @@ svg * {
   font-display: swap;
 }
 @font-face {
+  font-family: "Calibri";
+  src: url("/fonts/Calibri/Calibri-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Calibri";
+  src: url("/fonts/Calibri/Calibri.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "ShareTech";
   src: url("/fonts/ShareTech/ShareTech-Regular.woff2") format("woff2");
   font-weight: normal;
@@ -216,8 +230,7 @@ svg * {
   --white-alpha-75: rgb(255 255 255 / 75%);
   --white-alpha-90: rgb(255 255 255 / 90%);
   --font-family-base:
-  	'EncodeSans', 'Calibri', 'Arial', system-ui, -apple-system, 'Segoe UI',
-  	sans-serif;
+  	'Calibri', 'Arial', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-family-secondary:
   	'ShareTech', 'Arial', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --border: 1px solid var(--transparent);
