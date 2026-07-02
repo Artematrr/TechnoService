@@ -11,7 +11,6 @@
 		padding-block: 16px;
 		align-items: center;
 		min-height: var(--header-height);
-		border-bottom: 1px solid var(--gray-300);
 
 		@include desktop {
 			column-gap: 20px;
@@ -75,7 +74,7 @@
 	}
 
 	&__phone {
-		@include fluid-text(18, 20);
+		@include fluid-text(20, 24);
 
 		display: inline-flex;
 		align-items: center;
@@ -116,7 +115,7 @@
 	}
 
 	&__mail {
-		@include fluid-text(16, 16);
+		@include fluid-text(18, 20);
 
 		display: inline-flex;
 		align-items: center;
@@ -126,10 +125,9 @@
 		color: var(--gray-900);
 		white-space: nowrap;
 
-		img {
+		.header__icon {
 			width: 18px;
 			height: 14px;
-			object-fit: contain;
 		}
 
 		@include hover {
@@ -153,10 +151,9 @@
 		color: var(--gray-900);
 		border-left: 1px solid var(--gray-300);
 
-		img {
+		.header__icon {
 			width: 22px;
 			height: 22px;
-			object-fit: contain;
 		}
 
 		@include hover {
@@ -169,6 +166,12 @@
 		}
 	}
 
+	&__icon {
+		display: block;
+		flex: 0 0 auto;
+		fill: currentColor;
+	}
+
 	&__actions > &__icon-button:first-of-type {
 		@include tablet {
 			display: none;
@@ -176,7 +179,7 @@
 	}
 
 	&__callback {
-		@include fluid-text(16, 16);
+		@include fluid-text(18, 20);
 
 		gap: 11px;
 		min-width: 196px;
@@ -297,7 +300,7 @@
 
 	&__nav-link {
 		@include reset-button;
-		@include fluid-text(16, 16);
+		@include fluid-text(18, 20);
 
 		display: inline-flex;
 		align-items: center;
@@ -321,7 +324,6 @@
 			width: 100%;
 			gap: 16px;
 			min-height: 43px;
-			font-size: 18px;
 			font-weight: 400;
 			color: var(--gray-700);
 
@@ -375,7 +377,7 @@
 			translate var(--transition-duration) var(--transition-timing-function);
 
 		a {
-			@include fluid-text(14, 14);
+			@include fluid-text(16, 18);
 
 			display: block;
 
@@ -457,7 +459,7 @@
 	&__mobile-mail,
 	&__mobile-callback {
 		@include tablet {
-			@include fluid-text(18, 18);
+			@include fluid-text(20, 20);
 
 			display: inline-flex;
 			align-items: center;
@@ -469,11 +471,14 @@
 
 	&__mobile-mail {
 		@include tablet {
-			img {
+			.header__icon {
 				width: 20px;
 				height: 16px;
-				object-fit: contain;
 			}
+		}
+
+		@include hover {
+			color: var(--primary-500);
 		}
 	}
 
@@ -490,5 +495,4 @@
 			}
 		}
 	}
-
 }

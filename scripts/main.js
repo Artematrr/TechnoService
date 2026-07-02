@@ -4,6 +4,17 @@ $(function () {
 	const $menuButton = $('.js-menu-button')
 	const $submenuButtons = $('.js-submenu-button')
 
+	$(document).on('click', '.js-location-modal-trigger', function (event) {
+		event.preventDefault()
+
+		if (window.MicroModal) {
+			MicroModal.show('location-modal', {
+				openClass: 'is-open',
+				disableScroll: true,
+			})
+		}
+	})
+
 	$(document).on(
 		'click',
 		'[data-micromodal-trigger="image-modal"][data-modal-image-src]',

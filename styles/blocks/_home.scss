@@ -160,7 +160,7 @@
 	}
 
 	&__label {
-		@include fluid-text(24, 24);
+		@include fluid-text(18, 24);
 		@include flex-center;
 
 		position: absolute;
@@ -190,7 +190,6 @@
 			width: auto;
 			padding-inline: 40px;
 			height: 42px;
-			font-size: 18px;
 			border-radius: 28px 4px 22px 4px;
 		}
 	}

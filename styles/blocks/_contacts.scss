@@ -167,7 +167,7 @@
 .faq {
 	&__container {
 		display: grid;
-		grid-template-columns: 370px minmax(0, 1fr);
+		grid-template-columns: 450px minmax(0, 1fr);
 		grid-template-areas:
 			'title list'
 			'button list';
@@ -204,11 +204,14 @@
 
 	&__list {
 		grid-area: list;
-		border-top: 1px solid var(--gray-300);
 	}
 
 	&__item {
 		border-bottom: 1px solid var(--gray-300);
+
+		&:last-child{
+			border-bottom: none;
+		}
 
 		&.is-open {
 			.faq__icon {

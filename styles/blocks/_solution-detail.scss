@@ -23,7 +23,7 @@
 
 		.callback-section__text {
 			@include mobile {
-				font-size: 11px;
+				font-size: 12px;
 				text-align: center;
 			}
 		}
@@ -231,16 +231,15 @@
 
 	&__value {
 		@include flex-center;
+		@include fluid-text(14, 18);
 
 		position: relative;
 		z-index: 1;
 		padding-inline: 4px;
-		font-size: 18px;
 		font-weight: 700;
 		color: var(--black);
 
 		@include mobile {
-			font-size: 14px;
 			background-color: var(--temperature-color);
 		}
 	}

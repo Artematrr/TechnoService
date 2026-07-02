@@ -340,11 +340,11 @@
 
 		.projects-slider__tab {
 			@include reset-button;
+			@include fluid-text(16, 20);
 
 			flex: 0 0 auto;
 			min-width: 150px;
 			padding: 18px 28px;
-			font-size: 18px;
 			color: var(--gray-800);
 			border-radius: 28px 4px 0 0;
 
@@ -357,7 +357,6 @@
 			@include mobile {
 				min-width: 150px;
 				padding: 12px 20px;
-				font-size: 13px;
 				border-radius: 24px 4px 0 0;
 			}
 		}

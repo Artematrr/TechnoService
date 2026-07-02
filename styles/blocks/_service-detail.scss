@@ -427,11 +427,7 @@
 
 		p,
 		li {
-			font-size: 13px;
-
-			@include mobile {
-				font-size: 11px;
-			}
+			font-size: 12px;
 		}
 	}
 
@@ -488,15 +484,11 @@
 	}
 
 	&__title {
-		margin-bottom: 12px;
-		font-size: 16px;
+		@include fluid-text(14, 16);
+
+		margin-bottom: 10px;
 		font-weight: 500;
 		color: var(--gray-800);
-
-		@include mobile {
-			margin-bottom: 10px;
-			font-size: 14px;
-		}
 	}
 
 	&__list {
@@ -756,7 +748,7 @@
 				}
 
 				span {
-					font-size: 11px;
+					font-size: 12px;
 					color: var(--primary-500);
 				}
 			}
@@ -934,10 +926,6 @@
 		@include fluid-text(12, 14);
 
 		color: var(--gray-800);
-
-		@include mobile {
-			font-size: 10px;
-		}
 	}
 
 	&__text {
@@ -1146,9 +1134,9 @@
 
 	&__button {
 		@include square(46px);
+		@include fluid-text(20, 28);
 
 		top: 50%;
-		font-size: 28px;
 		background-color: var(--white-alpha-10);
 		border-radius: 50%;
 		translate: 0 -50%;
@@ -1171,8 +1159,6 @@
 
 		@include mobile {
 			@include square(34px);
-
-			font-size: 20px;
 		}
 	}
 }

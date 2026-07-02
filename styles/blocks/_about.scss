@@ -321,7 +321,6 @@
 
 			::marker {
 				color: var(--primary-500);
-				// font-size: 16px;
 			}
 		}
 
@@ -955,10 +954,10 @@
 	}
 
 	&__avatar {
+		@include fluid-text(12, 12);
 		@include square(38px);
 		@include flex-center;
 
-		font-size: 11px;
 		color: var(--primary-500);
 		background-color: var(--gray-200);
 		border-radius: 50%;
