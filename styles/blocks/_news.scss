@@ -72,7 +72,7 @@
 	transition: translate var(--transition-duration);
 
 	@include hover {
-		translate: 0 -3px;
+		// translate: 0 -3px;
 
 		.news-card__image {
 			scale: 1.035;

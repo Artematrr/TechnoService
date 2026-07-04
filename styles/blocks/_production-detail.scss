@@ -309,13 +309,37 @@
 	}
 
 	&__stock {
+		--product-offers-stock-color: var(--success-500);
+		--product-offers-stock-icon: '✓';
+
 		grid-column: 1 / -1;
 		margin-bottom: 12px;
-		color: var(--success-500) !important;
+		padding-bottom: 0 !important;
+		color: var(--product-offers-stock-color) !important;
 
 		&::before {
-			content: '✓';
+			content: var(--product-offers-stock-icon);
 			margin-right: 7px;
+		}
+
+		&--low {
+			--product-offers-stock-color: #d58a00;
+			--product-offers-stock-icon: '!';
+		}
+
+		&--order {
+			--product-offers-stock-color: var(--gray-600);
+			--product-offers-stock-icon: '→';
+		}
+
+		&--expected {
+			--product-offers-stock-color: #3978b7;
+			--product-offers-stock-icon: '○';
+		}
+
+		&--unavailable {
+			--product-offers-stock-color: var(--primary-500);
+			--product-offers-stock-icon: '×';
 		}
 	}
 

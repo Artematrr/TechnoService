@@ -1,16 +1,14 @@
 .about-section-title {
-	@include fluid-text(30, 42);
+	@include fluid-text(34, 48);
 
 	width: fit-content;
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 	font-weight: 700;
 	line-height: 1.15;
 	color: var(--gray-800);
 	border-bottom: 2px solid var(--primary-500);
 
 	@include mobile {
-		@include fluid-text(22, 26);
-
 		width: 100%;
 		text-align: center;
 	}
@@ -33,13 +31,13 @@
 
 	&__row {
 		display: grid;
-		grid-template-columns: 310px minmax(0, 1fr);
+		grid-template-columns: 290px minmax(0, 1fr);
 		align-items: center;
-		gap: 34px;
+		gap: 40px;
 
 		@include mobile {
 			grid-template-columns: 1fr;
-			gap: 16px;
+			gap: 15px;
 		}
 
 		&:not(
@@ -68,14 +66,18 @@
 		}
 
 		img {
-			width: min(100%, 210px);
+			width: 100%;
 			height: auto;
+
+			@include mobile {
+				width: min(100%, 210px);
+			}
 		}
 	}
 
 	&__slogan {
 		@include flex-center;
-		@include fluid-text(18, 26);
+		@include fluid-text(24, 24);
 
 		min-height: 62px;
 		padding: 12px 24px;
@@ -84,12 +86,11 @@
 		text-align: center;
 		color: var(--white);
 		background-color: var(--primary-500);
-		border-radius: 44px 3px 36px;
+		border-radius: 60px 3px 60px 3px;
 
 		@include mobile {
 			width: 100%;
 			min-height: 48px;
-			border-radius: 28px 3px 22px;
 		}
 	}
 
@@ -98,18 +99,9 @@
 		gap: 15px;
 
 		p {
-			@include fluid-text(15, 21);
+			@include fluid-text(16, 20);
 
 			line-height: 1.45;
-			color: var(--gray-600);
-
-			@include mobile {
-				@include fluid-text(13, 15);
-				line-height: 1.48;
-			}
-		}
-
-		b {
 			color: var(--gray-800);
 		}
 	}
@@ -196,6 +188,12 @@
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
+
+		@include mobile {
+			width: 100%;
+			margin-left: 0;
+			padding-inline: 0;
+		}
 		gap: 25px;
 		min-height: 890px;
 
@@ -266,7 +264,7 @@
 		border-radius: 50%;
 
 		@include tablet {
-			@include square(300px);
+			@include square(350px);
 
 			position: relative;
 			top: auto !important;
@@ -294,16 +292,20 @@
 				outline: 1px solid var(--gray-500);
 				translate: -50% 0;
 			}
+
+			@include mobile-s {
+				@include square(300px);
+			}
 		}
 
 		h3 {
-			@include fluid-text(24, 30);
+			@include fluid-text(34, 34);
 
 			color: var(--gray-800);
 		}
 
 		p {
-			@include fluid-text(13, 15);
+			@include fluid-text(16, 16);
 
 			font-weight: 700;
 			color: var(--gray-800);
@@ -311,13 +313,18 @@
 
 		span,
 		li {
-			@include fluid-text(10, 12);
+			@include fluid-text(16, 16);
 
-			color: var(--gray-600);
+			color: var(--gray-500);
+
+			@include mobile-s {
+				@include fluid-text(14, 14);
+			}
 		}
 
 		ul {
 			text-align: left;
+			padding-left: 20px;
 
 			::marker {
 				color: var(--primary-500);
@@ -434,10 +441,15 @@
 
 	&__actions {
 		position: absolute;
-		bottom: 8px;
-		left: 8px;
+		bottom: 15px;
+		left: 15px;
 		display: flex;
 		gap: 8px;
+
+		@include mobile {
+			bottom: 8px;
+			left: 8px;
+		}
 
 		button,
 		a {
@@ -448,9 +460,13 @@
 		}
 
 		img {
-			width: 18px;
-			height: 18px;
+			@include square(24px);
+
 			object-fit: contain;
+
+			@include mobile {
+				@include square(17px);
+			}
 		}
 	}
 
@@ -546,18 +562,17 @@
 	display: grid;
 	gap: 36px;
 	padding-block: 48px 42px;
-	background-color: var(--gray-200);
 
 	@include mobile {
 		gap: 28px;
-		padding-block: 34px;
+		padding-block: 30px;
 	}
 }
 
 .about-projects {
 	&__container {
 		display: grid;
-		grid-template-columns: 310px minmax(0, 1fr);
+		grid-template-columns: 450px minmax(0, 1fr);
 		align-items: start;
 		gap: 34px 52px;
 
@@ -638,7 +653,7 @@
 	align-items: center;
 	gap: 70px;
 
-	@include tablet {
+	@include desktop {
 		grid-template-columns: 1fr;
 		gap: 28px;
 	}
@@ -653,27 +668,36 @@
 	align-items: center;
 	gap: 18px;
 
-	@include tablet {
+	@include desktop {
 		justify-content: center;
+		flex-direction: column;
 	}
 
 	strong {
-		@include fluid-text(48, 70);
+		@include fluid-text(86, 96);
+
+		font-family: var(--font-family-secondary);
 
 		flex: 0 0 auto;
 		font-weight: 600;
 		line-height: 1;
 		color: var(--primary-500);
+		letter-spacing: -10%;
 	}
 
 	span {
-		@include fluid-text(16, 20);
+		@include fluid-text(24, 36);
 
-		max-width: 180px;
+		max-width: 220px;
 		font-weight: 700;
-		line-height: 1.05;
+		line-height: 1;
 		text-transform: uppercase;
 		color: var(--gray-500);
+
+		@include desktop {
+			max-width: unset;
+			text-align: center;
+		}
 	}
 }
 
@@ -681,8 +705,9 @@
 	display: flex;
 	align-items: center;
 	gap: 12px;
+	justify-content: flex-end;
 
-	@include tablet {
+	@include desktop {
 		justify-content: center;
 	}
 
@@ -691,50 +716,55 @@
 		grid-template-columns: repeat(3, 86px);
 		justify-content: center;
 		justify-items: center;
-		gap: 2px 4px;
+		gap: 10px 12px;
 	}
 }
 
 .about-metrics__runtime-label {
-	@include fluid-text(16, 21);
+	@include fluid-text(24, 36);
 
 	margin-left: 8px;
 	font-weight: 700;
 	line-height: 1.05;
 	text-transform: uppercase;
 	color: var(--gray-500);
+	max-width: 265px;
 
 	@include mobile {
 		grid-column: 1 / -1;
 		margin-top: 0;
 		margin-left: 0;
 		text-align: center;
+		max-width: unset;
 	}
 }
 
 .flip-counter {
-	font-family: var(--font-family-secondary);
+	--flip-card-width: 115px;
+	--flip-card-height: 96px;
+	--flip-half-height: 48px;
+
+	font-family: var(--font-family-accent);
 	display: grid;
 	justify-items: center;
 	gap: 7px;
-	min-width: 115px;
+	min-width: var(--flip-card-width);
 
 	@include mobile {
+		--flip-card-width: 86px;
+		--flip-card-height: 72px;
+		--flip-half-height: 36px;
+
 		width: 86px;
-		gap: 25px;
+		gap: 5px;
 	}
 
 	&__card {
 		position: relative;
-		width: 115px;
-		height: 97px;
+		width: var(--flip-card-width);
+		height: var(--flip-card-height);
 		color: var(--white);
 		perspective: 500px;
-
-		@include mobile {
-			scale: 0.74;
-			transform-origin: center bottom;
-		}
 
 		&.is-flipping {
 			.flip-counter__half--top {
@@ -745,6 +775,12 @@
 				animation: metric-flip-bottom var(--flip-duration, 180ms) ease-out;
 			}
 		}
+
+		&.is-complete {
+			.flip-counter__half--top::after {
+				background-image: none;
+			}
+		}
 	}
 
 	&__half {
@@ -753,7 +789,7 @@
 		display: flex;
 		justify-content: center;
 		width: 100%;
-		height: 49px;
+		height: var(--flip-half-height);
 		overflow: hidden;
 		background-image: url('/images/12-about/metrics-half.svg');
 		background-repeat: no-repeat;
@@ -762,15 +798,22 @@
 		transform-style: preserve-3d;
 
 		span {
-			@include fluid-text(70, 90);
+			@include fluid-text(72, 84);
 
 			position: absolute;
+			top: 0;
 			left: 50%;
+			height: var(--flip-card-height);
 			font-weight: 500;
 			font-variant-numeric: tabular-nums;
-			line-height: 91px;
+			line-height: var(--flip-card-height);
 			letter-spacing: -5px;
 			translate: -50% 0;
+
+			@include mobile {
+				font-size: 60px;
+				letter-spacing: -3px;
+			}
 		}
 
 		&--top {
@@ -791,7 +834,6 @@
 
 			span {
 				z-index: 1;
-				top: 0;
 			}
 		}
 
@@ -802,32 +844,45 @@
 			transform-origin: top;
 
 			span {
-				bottom: 0;
+				top: calc(var(--flip-half-height) * -1);
 			}
 		}
 	}
+
+	// &[data-time-unit='days'] {
+	// 	.flip-counter__half span {
+	// 		font-size: clamp(60px, 5vw, 72px);
+	// 		letter-spacing: -4px;
+
+	// 		@include mobile {
+	// 			font-size: 48px;
+	// 			letter-spacing: -2px;
+	// 		}
+	// 	}
+	// }
 
 	&__divider {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		z-index: 3;
-		width: calc(100% + 13px);
+		width: 128px;
 		height: 12px;
 		object-fit: cover;
 		translate: -50% -50%;
 		overflow: visible;
+
+		@include mobile {
+			width: 96px;
+			height: 9px;
+		}
 	}
 
 	&__label {
-		@include fluid-text(9, 11);
+		@include fluid-text(16, 16);
 
 		text-transform: lowercase;
 		color: var(--gray-600);
-
-		@include mobile {
-			margin-top: -22px;
-		}
 	}
 }
 
@@ -855,6 +910,10 @@
 	padding-block: 46px;
 	background-color: var(--gray-200);
 	margin-bottom: 0px;
+
+	@include mobile {
+		background-color: var(--white);
+	}
 
 	&__container {
 		display: grid;
@@ -902,6 +961,11 @@
 		gap: var(--testimonials-gap);
 		width: max-content;
 		box-sizing: border-box;
+
+		@include mobile {
+			gap: 0;
+			width: auto;
+		}
 	}
 
 	&__slide {
@@ -909,7 +973,34 @@
 		height: auto;
 
 		@include mobile {
-			width: calc(100vw - 48px);
+			width: auto;
+		}
+	}
+
+	&__pagination {
+		display: none;
+
+		@include mobile {
+			display: flex;
+			justify-content: center;
+			gap: 12px;
+		}
+
+		&.swiper-pagination-lock {
+			display: none;
+		}
+	}
+
+	&__bullet {
+		@include reset-button;
+		@include square(10px);
+
+		flex: 0 0 auto;
+		background-color: var(--gray-500);
+		border-radius: 50%;
+
+		&.is-active {
+			background-color: var(--primary-500);
 		}
 	}
 }

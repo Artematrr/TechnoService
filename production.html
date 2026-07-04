@@ -167,7 +167,7 @@
 						<img class="page-hero__image" src="/images/02-hero/bg-pattern-outline.svg" alt="" width="1410" height="509">
 					</picture>
 					<span class="page-hero__stripe" aria-hidden="true"></span>
-					<h1 class="page-hero__title" id="page-title">Продукция</h1>
+					<h1 class="page-hero__title" id="page-title"><span class="page-hero__title-text"><span class="page-hero__title-content">Продукция</span></span></h1>
 					<div class="page-hero__label">Человек в деле</div>
 				</div>
 			</div>
@@ -550,10 +550,6 @@
 								<input class="form__input" type="tel" name="phone" placeholder="Ваш номер телефона" autocomplete="tel"
 									required>
 							</label>
-							<label class="form__field">
-								<span class="visually-hidden">Email</span>
-								<input class="form__input" type="email" name="email" placeholder="Email" autocomplete="email" required>
-							</label>
 							<button class="callback-section__submit button" type="submit">Получить консультацию</button>
 							<label class="form__checkbox">
 								<input class="form__checkbox-input" type="checkbox" name="agreement" checked required>
@@ -684,7 +680,7 @@
 							<p class="footer__tender-text">Принимаем участие в тендерных закупках коммерческих организаций, а так же в
 								соответствии с 44-ФЗ и 223-ФЗ</p>
 							<button class="footer__tender-button button" type="button"
-								data-micromodal-trigger="callback-modal">Пригласить в тендер</button>
+								data-micromodal-trigger="tender-modal">Пригласить в тендер</button>
 						</div>
 					</div>
 				</div>
@@ -702,6 +698,30 @@
 				<button class="modal__close" type="button" aria-label="Закрыть окно" data-micromodal-close></button>
 				<img class="modal__image" src="/images/icons/map-placeholder.jpg"
 					alt="Схема проезда к офису ТехноСервис" width="1410" height="420">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal micromodal-slide" id="tender-modal" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="tender-modal-title">
+				<button class="modal__close" type="button" aria-label="Закрыть окно" data-micromodal-close></button>
+				<h2 class="modal__title" id="tender-modal-title">Пригласить в тендер</h2>
+				<form class="form" action="#" method="post" enctype="multipart/form-data">
+					<label class="form__field"><span class="visually-hidden">Ваше имя</span><input class="form__input"
+						type="text" name="tender-name" placeholder="Ваше имя" autocomplete="name" required></label>
+					<label class="form__field"><span class="visually-hidden">Номер телефона</span><input
+						class="form__input" type="tel" name="tender-phone" placeholder="Ваш номер телефона"
+						autocomplete="tel" required></label>
+					<label class="form__field"><span class="visually-hidden">Сообщение</span><textarea
+						class="form__textarea" name="tender-message" placeholder="Сообщение" required></textarea></label>
+					<label class="form__field"><span class="form__label">Прикрепить файл</span><input class="form__file"
+						type="file" name="tender-file" accept=".pdf,.doc,.docx,.xls,.xlsx,.zip,.rar,image/*"></label>
+					<button class="button" type="submit">Отправить приглашение</button>
+					<label class="form__checkbox"><input class="form__checkbox-input" type="checkbox"
+						name="tender-agreement" checked required><span class="form__checkbox-control"></span><span>Заполняя поля
+							формы, Вы даете согласие на обработку персональных данных</span></label>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -34,6 +34,7 @@
 		background-color: var(--white);
 		border: 1px solid var(--gray-300);
 		outline: none;
+		border-radius: 3px;
 
 		&:focus {
 			border-color: var(--primary-500);
@@ -52,6 +53,31 @@
 		min-height: 136px;
 		padding-block: 20px;
 		resize: vertical;
+	}
+
+	&__file {
+		@include fluid-text(14, 16);
+
+		width: 100%;
+		color: var(--gray-500);
+
+		&::file-selector-button {
+			min-height: 42px;
+			margin-right: 14px;
+			padding-inline: 18px;
+			color: var(--primary-500);
+			background-color: var(--white);
+			border: 1px solid var(--primary-500);
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		@include hover {
+			&::file-selector-button {
+				color: var(--white);
+				background-color: var(--primary-500);
+			}
+		}
 	}
 
 	&__checkbox {
@@ -94,6 +120,7 @@
 		margin-top: 1px;
 		background-color: var(--white);
 		border: 1px solid var(--gray-300);
+		border-radius: 4px;
 
 		&::after {
 			content: '';

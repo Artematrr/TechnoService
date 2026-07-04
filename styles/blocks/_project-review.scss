@@ -66,6 +66,7 @@
 		color: var(--gray-800);
 		background-color: var(--white);
 		border: 1px solid var(--gray-500);
+		border-radius: 8px;
 
 		@include hover {
 			color: var(--white);

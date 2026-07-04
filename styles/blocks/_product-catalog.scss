@@ -47,6 +47,7 @@
 			display: flex;
 			gap: 0;
 			overflow: visible;
+			align-items: center;
 
 			> li {
 				flex: 0 0 auto;
@@ -65,7 +66,7 @@
 
 	&__nav-link {
 		@include reset-link;
-		@include fluid-text(12, 18);
+		@include fluid-text(20, 20);
 
 		display: flex;
 		align-items: center;
@@ -76,7 +77,7 @@
 		color: var(--gray-700);
 		background-color: var(--gray-200);
 		border: 1px solid var(--gray-400);
-		border-radius: 4px;
+		border-radius: 8px;
 		transition:
 			color var(--transition-duration),
 			border-color var(--transition-duration),
@@ -154,7 +155,7 @@
 	}
 
 	&__text {
-		@include fluid-text(12, 18);
+		@include fluid-text(14, 20);
 
 		color: var(--gray-700);
 	}

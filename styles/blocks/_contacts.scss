@@ -108,7 +108,7 @@
 	}
 
 	&__form-title {
-		@include fluid-text(28, 34);
+		@include fluid-text(34, 34);
 
 		font-weight: 700;
 		line-height: 1;
@@ -184,10 +184,10 @@
 	}
 
 	&__title {
-		@include fluid-text(24, 48);
+		@include fluid-text(34, 48);
 
 		grid-area: title;
-		padding-bottom: 22px;
+		padding-bottom: 10px;
 		font-weight: 700;
 		color: var(--gray-800);
 		border-bottom: 2px solid var(--primary-500);

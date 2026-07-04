@@ -13,7 +13,7 @@
 	}
 
 	&__title {
-		@include fluid-text(30, 42);
+		@include fluid-text(34, 48);
 
 		width: fit-content;
 		padding-bottom: 12px;
@@ -23,8 +23,6 @@
 		border-bottom: 2px solid var(--primary-500);
 
 		@include mobile {
-			@include fluid-text(22, 26);
-
 			width: 100%;
 			text-align: center;
 		}
@@ -60,7 +58,6 @@
 		grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
 		height: 100%;
 		overflow: hidden;
-		background-color: var(--white);
 		border-radius: 6px;
 
 		@include hover {
@@ -88,6 +85,7 @@
 			height: 100%;
 			object-fit: cover;
 			transition: scale var(--transition-duration-long);
+			border-radius: 8px;
 		}
 	}
 
@@ -105,7 +103,7 @@
 	}
 
 	&__meta {
-		@include fluid-text(10, 11);
+		@include fluid-text(12, 12);
 
 		display: flex;
 		align-items: center;
@@ -126,14 +124,18 @@
 	}
 
 	&__card-title {
-		@include fluid-text(12, 20);
+		@include fluid-text(20, 24);
 
 		font-weight: 700;
 		color: var(--gray-800);
+
+		@include mobile {
+			font-weight: 400;
+		}
 	}
 
 	&__text {
-		@include fluid-text(10, 14);
+		@include fluid-text(14, 16);
 
 		display: -webkit-box;
 		overflow: hidden;

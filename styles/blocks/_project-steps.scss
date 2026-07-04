@@ -5,7 +5,7 @@
 	}
 
 	&__title {
-		@include fluid-text(18, 20);
+		@include fluid-text(20, 24);
 
 		font-weight: 700;
 		color: var(--gray-800);
@@ -19,10 +19,9 @@
 	&__item {
 		counter-increment: project-step;
 		display: grid;
-		grid-template-columns: 132px minmax(0, 1fr);
-		gap: 24px;
-		padding-block: 18px;
-		padding-left: 24px;
+		grid-template-columns: 98px minmax(0, 1fr);
+		gap: 15px;
+		padding: 20px 15px;
 		border-left: 2px solid var(--gray-300);
 		border-bottom: 1px solid var(--gray-300);
 
@@ -41,10 +40,6 @@
 			gap: 10px;
 			padding-block: 15px;
 			padding-left: 16px;
-
-			&::before {
-				@include fluid-text(64, 72);
-			}
 		}
 	}
 
@@ -54,14 +49,14 @@
 	}
 
 	&__item-title {
-		@include fluid-text(16, 20);
+		@include fluid-text(16, 24);
 
 		font-weight: 700;
 		color: var(--gray-800);
 	}
 
 	&__text {
-		@include fluid-text(13, 14);
+		@include fluid-text(14, 16);
 
 		color: var(--gray-500);
 	}

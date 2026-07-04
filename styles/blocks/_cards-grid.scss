@@ -130,6 +130,14 @@
 		}
 	}
 
+	&--pagination-mobile {
+		.cards-grid__pagination {
+			@include mobile-above {
+				display: none;
+			}
+		}
+	}
+
 	&--darken {
 		.service-card__media {
 			&::after {

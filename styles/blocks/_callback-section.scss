@@ -32,7 +32,7 @@
 	}
 
 	&__title {
-		@include fluid-text(34, 54);
+		@include fluid-text(34, 56);
 
 		font-weight: 700;
 		line-height: 1;
@@ -67,7 +67,7 @@
 		font-weight: 700;
 		color: var(--gray-500);
 		text-align: left;
-		max-width: 190px;
+		max-width: 200px;
 
 		@include tablet {
 			max-width: unset;

@@ -3,6 +3,18 @@ $(function () {
 	const $header = $('.js-header')
 	const $menuButton = $('.js-menu-button')
 	const $submenuButtons = $('.js-submenu-button')
+	const getCustomersAutoplayOptions = slider =>
+		slider.classList.contains('js-customers-autoplay')
+			? {
+					loop: true,
+					speed: 650,
+					autoplay: {
+						delay: 2200,
+						disableOnInteraction: false,
+						pauseOnMouseEnter: true,
+					},
+				}
+			: {}
 
 	$(document).on('click', '.js-location-modal-trigger', function (event) {
 		event.preventDefault()
@@ -196,7 +208,7 @@ $(function () {
 			}
 
 			new Swiper(this, {
-				slidesPerView: 2,
+				slidesPerView: 1,
 				spaceBetween: 16,
 				grabCursor: true,
 				simulateTouch: true,
@@ -211,7 +223,7 @@ $(function () {
 					},
 				},
 				breakpoints: {
-					768: {
+					375: {
 						slidesPerView: 2,
 						spaceBetween: 24,
 					},
@@ -265,7 +277,7 @@ $(function () {
 			})
 		})
 
-		$('.js-news-slider').each(function () {
+	$('.js-news-slider').each(function () {
 			const slider = this.querySelector('.news-slider__swiper')
 			const pagination = this.querySelector('.news-slider__pagination')
 			const previousButton = this.querySelector('.news-slider__button--prev')
@@ -361,6 +373,7 @@ $(function () {
 				grabCursor: true,
 				simulateTouch: true,
 				watchOverflow: true,
+				...getCustomersAutoplayOptions(slider),
 				pagination: {
 					el: pagination,
 					clickable: true,
@@ -390,6 +403,7 @@ $(function () {
 				grabCursor: true,
 				simulateTouch: true,
 				watchOverflow: true,
+				...getCustomersAutoplayOptions(this),
 				breakpoints: {
 					768: {
 						slidesPerView: 3,
@@ -410,6 +424,7 @@ $(function () {
 				grabCursor: true,
 				simulateTouch: true,
 				watchOverflow: true,
+				...getCustomersAutoplayOptions(this),
 				breakpoints: {
 					768: {
 						slidesPerView: 3,
@@ -497,6 +512,8 @@ $(function () {
 				grabCursor: true,
 				simulateTouch: true,
 				watchOverflow: true,
+				autoplay: true,
+				...getCustomersAutoplayOptions(slider),
 				breakpoints: {
 					768: { slidesPerView: 4, spaceBetween: 12 },
 					1024: { slidesPerView: 5, spaceBetween: 12 },
@@ -593,28 +610,120 @@ $(function () {
 	}
 
 	$('.js-testimonials').each(function () {
-		this.querySelectorAll('.testimonials__row').forEach(row => {
-			const list = row.querySelector('.testimonials__list')
-			const slides = list ? Array.from(list.children) : []
+		const testimonials = this
+		const rows = Array.from(
+			testimonials.querySelectorAll('.testimonials__row'),
+		)
+		const forwardRow = testimonials.querySelector(
+			'.testimonials__row--forward',
+		)
+		const pagination = testimonials.querySelector(
+			'.testimonials__pagination',
+		)
+		const mobileMedia = window.matchMedia('(max-width: 767px)')
+		let mobileSlider = null
 
-			if (!list || !slides.length) {
-				return
-			}
+		const removeMarquee = function () {
+			rows.forEach(row => {
+				row.classList.remove('is-marquee-ready')
+				const list = row.querySelector('.testimonials__list')
 
-			slides.forEach(slide => {
-				const clone = slide.cloneNode(true)
-				const button = clone.querySelector('button')
-
-				clone.setAttribute('aria-hidden', 'true')
-				button?.setAttribute('tabindex', '-1')
-				list.append(clone)
+				list?.style.removeProperty('--testimonials-duration')
+				list
+					?.querySelectorAll('[data-testimonials-clone]')
+					.forEach(clone => clone.remove())
 			})
+		}
 
-			list.style.setProperty(
-				'--testimonials-duration',
-				`${Math.max(28, slides.length * 8)}s`,
-			)
-			row.classList.add('is-marquee-ready')
+		const createMarquee = function () {
+			rows.forEach(row => {
+				const list = row.querySelector('.testimonials__list')
+				const slides = list
+					? Array.from(list.children).filter(
+							slide => !slide.hasAttribute('data-testimonials-clone'),
+						)
+					: []
+
+				if (!list || !slides.length) {
+					return
+				}
+
+				slides.forEach(slide => {
+					const clone = slide.cloneNode(true)
+					const button = clone.querySelector('button')
+
+					clone.dataset.testimonialsClone = ''
+					clone.setAttribute('aria-hidden', 'true')
+					button?.setAttribute('tabindex', '-1')
+					list.append(clone)
+				})
+
+				list.style.setProperty(
+					'--testimonials-duration',
+					`${Math.max(28, slides.length * 8)}s`,
+				)
+				row.classList.add('is-marquee-ready')
+			})
+		}
+
+		const updateTestimonials = function () {
+			if (mobileMedia.matches) {
+				removeMarquee()
+
+				if (!mobileSlider && forwardRow && pagination) {
+					mobileSlider = new Swiper(forwardRow, {
+						slidesPerView: 1,
+						spaceBetween: 12,
+						loop: true,
+						speed: 650,
+						grabCursor: true,
+						autoplay: {
+							delay: 3000,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: true,
+						},
+						pagination: {
+							el: pagination,
+							clickable: true,
+							bulletClass: 'testimonials__bullet',
+							bulletActiveClass: 'is-active',
+							renderBullet(index, className) {
+								return `<button class="${className}" type="button" aria-label="Показать отзыв ${index + 1}"></button>`
+							},
+						},
+					})
+				}
+			} else {
+				if (mobileSlider) {
+					mobileSlider.destroy(true, true)
+					mobileSlider = null
+				}
+
+				removeMarquee()
+				createMarquee()
+			}
+		}
+
+		updateTestimonials()
+
+		if (typeof mobileMedia.addEventListener === 'function') {
+			mobileMedia.addEventListener('change', updateTestimonials)
+		} else {
+			mobileMedia.addListener(updateTestimonials)
+		}
+	})
+
+	$('.js-news-detail-gallery').each(function () {
+		new Swiper(this, {
+			slidesPerView: 1.22,
+			spaceBetween: 14,
+			watchOverflow: true,
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+				},
+			},
 		})
 	})
 
@@ -699,6 +808,7 @@ $(function () {
 						targets[counter.dataset.timeUnit] || 0,
 						false,
 					)
+					counter.querySelector('.flip-counter__card')?.classList.add('is-complete')
 				})
 				return
 			}
@@ -707,17 +817,22 @@ $(function () {
 			const maxFlipSteps = 14
 			const animationStart = performance.now()
 			const counterStates = {}
+			let maxFlipDuration = 0
+			let completionScheduled = false
 
 			counters.forEach(counter => {
 				const unit = counter.dataset.timeUnit
 				const target = targets[unit] || 0
+				const card = counter.querySelector('.flip-counter__card')
 				const steps = Math.min(target, maxFlipSteps)
 				const stepDuration = steps ? animationDuration / steps : 0
 				const flipDuration = target
 					? Math.min(180, Math.max(70, stepDuration * 0.7))
 					: 180
 
+				card?.classList.remove('is-complete')
 				counter.style.setProperty('--flip-duration', `${flipDuration}ms`)
+				maxFlipDuration = Math.max(maxFlipDuration, flipDuration)
 				counterStates[unit] = {
 					target,
 					steps,
@@ -758,6 +873,15 @@ $(function () {
 
 				if (progress < 1) {
 					requestAnimationFrame(frame)
+				} else if (!completionScheduled) {
+					completionScheduled = true
+					setTimeout(() => {
+						counters.forEach(counter => {
+							counter
+								.querySelector('.flip-counter__card')
+								?.classList.add('is-complete')
+						})
+					}, maxFlipDuration + 50)
 				}
 			}
 
@@ -794,7 +918,7 @@ $(function () {
 		checkVisibility()
 	})
 
-	$('.js-review-card').on('click', function () {
+	$(document).on('click', '.js-review-card', function () {
 		const $card = $(this)
 
 		$('.js-review-modal-title').text(

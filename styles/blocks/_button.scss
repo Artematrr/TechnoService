@@ -1,7 +1,7 @@
 .button {
 	@include reset-button;
 	@include flex-center;
-	@include fluid-text(16, 24);
+	@include fluid-text(20, 24);
 
 	min-height: var(--button-height);
 	padding-inline: 36px;
@@ -11,10 +11,9 @@
 	color: var(--white);
 	background-color: var(--primary-500);
 	border: 1px solid var(--primary-500);
-	border-radius: 0;
+	border-radius: 3px;
 
 	@include mobile {
-		// width: 100%;
 		padding-inline: 20px;
 	}
 

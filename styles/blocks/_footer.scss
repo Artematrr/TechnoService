@@ -228,9 +228,10 @@
 	&__tender {
 		display: grid;
 		gap: 18px;
-		padding: 18px;
+		padding: 12px 15px;
 		text-align: center;
 		border: 1px solid var(--white-alpha-75);
+		border-radius: 5px;
 
 		@include mobile {
 			gap: 14px;

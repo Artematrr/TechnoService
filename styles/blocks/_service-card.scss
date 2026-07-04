@@ -28,6 +28,7 @@
 		position: relative;
 		overflow: hidden;
 		aspect-ratio: 330 / 256;
+		border-radius: 8px;
 
 		@include mobile {
 			aspect-ratio: 169 / 155;

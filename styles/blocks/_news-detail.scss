@@ -69,47 +69,30 @@
 	}
 
 	&__gallery {
-		display: grid;
-		grid-template-columns: repeat(2, 330px);
-		gap: 30px;
+		width: min(100%, 690px);
 		margin-bottom: 28px;
+		margin-left: 0;
+		overflow: hidden;
+		cursor: grab;
 
-		@include mobile {
-			display: flex;
-			gap: 20px;
-			margin-inline: calc(var(--container-padding-x) * -1);
-			overflow-x: auto;
-			scroll-padding-inline: var(--container-padding-x);
-			scroll-snap-type: x mandatory;
-			scrollbar-width: none;
-
-			&::-webkit-scrollbar {
-				display: none;
-			}
+		&:active {
+			cursor: grabbing;
 		}
+	}
+
+	&__gallery-list {
+		display: flex;
+	}
+
+	&__gallery-slide {
+		aspect-ratio: 1;
+		height: auto;
+		overflow: hidden;
 
 		img {
-			width: 330px;
-			aspect-ratio: 1;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
-
-			@include mobile {
-				flex: 0 0 78%;
-				width: auto;
-				scroll-snap-align: start;
-			}
-
-			&:first-child {
-				@include mobile {
-					margin-left: var(--container-padding-x);
-				}
-			}
-
-			&:last-child {
-				@include mobile {
-					margin-right: var(--container-padding-x);
-				}
-			}
 		}
 	}
 
@@ -125,9 +108,10 @@
 
 		display: inline-flex;
 		align-items: center;
-		gap: 12px;
+		gap: 10px;
 		min-height: 50px;
-		padding-inline: 22px;
+		padding-inline: 20px;
+		padding-block: 5px;
 		color: var(--gray-800);
 		background-color: var(--gray-300);
 		border-radius: 28px;
@@ -141,8 +125,7 @@
 		}
 
 		@include mobile {
-			@include fluid-text(10, 12);
-
+			gap: 5px;
 			min-height: 30px;
 			padding-inline: 10px;
 		}
@@ -166,6 +149,7 @@
 		&--next {
 			color: var(--white);
 			background-color: var(--gray-500);
+			text-align: right;
 
 			@include hover {
 				color: var(--white);
