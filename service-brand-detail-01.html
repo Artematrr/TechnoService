@@ -139,7 +139,6 @@
 			<h1 class="production-detail-heading__title" id="page-title">Запасные части бренд GEA</h1>
 		</div>
 
-		<!-- AUDIT: похож на блоки `service-inspection`, `service-modernization`, `product-catalog`. Вероятно, нужно объединить в общий компонент `detail-layout` с модификаторами. -->
 		<section class="service-brand section" aria-labelledby="equipment-types-title">
 			<div class="service-brand__container container">
 				<div class="service-brand__sidebar">
@@ -249,7 +248,6 @@
 						<span class="product-catalog__nav-arrow" aria-hidden="true">→</span>
 					</aside>
 
-					<!-- AUDIT-CHECK: возможно, аналогичен блокам `home-brands` и `service-clients`. Нужно проверить перед рефакторингом. -->
 					<section class="spare-parts-brands js-spare-parts-brands" aria-labelledby="spare-parts-brands-title">
 						<h2 class="spare-parts-brands__title" id="spare-parts-brands-title">Бренды запчастей</h2>
 						<ul class="spare-parts-brands__list" id="spare-parts-brands-list">
@@ -292,7 +290,6 @@
 									alt="Насос GEA" width="222" height="203"><span>Насосы</span></a></li>
 					</ul>
 
-					<!-- AUDIT: аналогичен блоку `detail-accordion` в `our-services-detail-01.html`. Рекомендуемый общий блок: `accordion-list` с модификатором товарной группы. Отличается только вложенными строками продукции. -->
 					<section class="service-product-groups" aria-labelledby="product-groups-title">
 						<h2 class="service-product-groups__title" id="product-groups-title">Группа товаров</h2>
 						<div class="service-product-groups__list detail-accordion__list js-detail-accordion">
