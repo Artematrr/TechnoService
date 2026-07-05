@@ -321,7 +321,7 @@ svg * {
   	'ShareTech', 'Arial', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --border: 1px solid var(--transparent);
   --container-width: 1410px;
-  --container-padding-x: 15px;
+  --container-padding-x: 24px;
   --section-margin-bottom: 60px;
   --input-height: 68px;
   --button-height: 72px;
