@@ -211,7 +211,7 @@
 			}
 
 			img {
-				filter: saturate(1.15);
+				filter: grayscale(0) ;
 			}
 		}
 
@@ -243,6 +243,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		filter: grayscale(1);
 		transition: filter var(--transition-duration);
 		padding-block: 10px;
 
@@ -268,10 +269,8 @@
 		color: var(--primary-500);
 	}
 
-	&__item.swiper-slide-active &__name {
-		@include mobile {
-			color: var(--primary-500);
-		}
+	&__item.is-active &__link img {
+		filter: grayscale(0) saturate(1.15);
 	}
 
 	&__button {
@@ -345,7 +344,6 @@
 			max-height: 54px;
 			object-fit: contain;
 			filter: grayscale(1);
-			opacity: 0.72;
 		}
 	}
 

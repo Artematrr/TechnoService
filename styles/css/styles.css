@@ -7181,7 +7181,7 @@ h4,
     color: var(--primary-500);
   }
   .solution-temperature__link:hover img {
-    filter: saturate(1.15);
+    filter: grayscale(0);
   }
 }
 @media (hover: none) {
@@ -7189,7 +7189,7 @@ h4,
     color: var(--primary-500);
   }
   .solution-temperature__link:active img {
-    filter: saturate(1.15);
+    filter: grayscale(0);
   }
 }
 @media (max-width: 767px) {
@@ -7222,6 +7222,7 @@ h4,
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  filter: grayscale(1);
   transition: filter var(--transition-duration);
   padding-block: 10px;
 }
@@ -7245,10 +7246,8 @@ h4,
 .solution-temperature__item.is-active .solution-temperature__name {
   color: var(--primary-500);
 }
-@media (max-width: 767px) {
-  .solution-temperature__item.swiper-slide-active .solution-temperature__name {
-    color: var(--primary-500);
-  }
+.solution-temperature__item.is-active .solution-temperature__link img {
+  filter: grayscale(0) saturate(1.15);
 }
 .solution-temperature__button {
   padding: 0;
@@ -7326,7 +7325,6 @@ h4,
   -o-object-fit: contain;
      object-fit: contain;
   filter: grayscale(1);
-  opacity: 0.72;
 }
 .solution-temperature__text {
   display: grid;
