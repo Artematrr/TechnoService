@@ -49,10 +49,10 @@
 
 	@include tablet {
 		--header-height: 92px;
+		--container-padding-x: 24px;
 	}
 
 	@include mobile {
-		--container-padding-x: 24px;
 		--section-margin-bottom: 30px;
 		--input-height: 52px;
 		--button-height: 48px;
