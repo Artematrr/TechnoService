@@ -406,9 +406,10 @@
 
 	&__nav {
 		.product-catalog__nav-link {
+			@include fluid-text(16, 16);
+
 			min-height: 42px;
 			padding: 9px 14px;
-			font-size: 14px;
 		}
 	}
 
@@ -429,11 +430,6 @@
 
 	&__copy {
 		gap: 12px;
-
-		p,
-		li {
-			font-size: 12px;
-		}
 	}
 
 	&__gallery {

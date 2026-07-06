@@ -58,9 +58,10 @@
 
 	&__nav {
 		.product-catalog__nav-link {
+			@include fluid-text(16, 16);
+
 			min-height: 40px;
 			padding: 8px 14px;
-			font-size: 14px;
 		}
 
 		.product-catalog__nav-list > li {
@@ -72,11 +73,6 @@
 
 	&__copy {
 		gap: 12px;
-
-		p,
-		li {
-			font-size: 14px;
-		}
 	}
 }
 
