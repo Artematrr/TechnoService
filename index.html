@@ -50,7 +50,61 @@
 					<button class="header__menu-button js-menu-button" type="button" aria-label="Открыть меню"
 						aria-controls="site-fullscreen-menu" aria-expanded="false"><span></span><span></span></button>
 				</div>
-				<nav class="header__nav" id="site-fullscreen-menu" aria-label="Основная навигация" aria-hidden="true">
+				<nav class="header__nav" id="site-primary-navigation" aria-label="Основная навигация">
+					<ul class="header__menu">
+						<li class="header__menu-item"><button class="header__nav-link js-submenu-button" type="button"
+								aria-expanded="false">О компании<img src="/images/icons/arrow-down.svg" alt=""></button>
+							<ul class="header__submenu">
+								<li><a href="#">О компании</a></li>
+								<li><a href="#">Реализованные проекты</a></li>
+								<li><a href="#">Корпоративная культура</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item"><button class="header__nav-link js-submenu-button" type="button"
+								aria-expanded="false">Готовые решения<img src="/images/icons/arrow-down.svg" alt=""></button>
+							<ul class="header__submenu">
+								<li><a href="#">Все решения</a></li>
+								<li><a href="#">Охлаждение</a></li>
+								<li><a href="#">Нефтегаз и энергетика</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item"><button class="header__nav-link js-submenu-button" type="button"
+								aria-expanded="false">Запасные части<img src="/images/icons/arrow-down.svg" alt=""></button>
+							<ul class="header__submenu">
+								<li><a href="#">GEA</a></li>
+								<li><a href="#">Опросные листы</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item"><button class="header__nav-link js-submenu-button" type="button"
+								aria-expanded="false">Сервис<img src="/images/icons/arrow-down.svg" alt=""></button>
+							<ul class="header__submenu">
+								<li><a href="#">Все направления</a></li>
+								<li><a href="#">Безвозмездная инспекция</a></li>
+								<li><a href="#">Запасные части</a></li>
+							</ul>
+						</li>
+						<li class="header__menu-item"><a class="header__nav-link" href="#substitution">Импортозамещение</a></li>
+					</ul>
+					<div class="header__mobile-contacts">
+						<div class="header__mobile-row">
+							<a class="header__mobile-phone" href="tel:+74951205039">+7 (495) 120-50-39</a>
+							<div class="header__mobile-socials"><a class="header__mobile-social" href="#"><img
+										src="/images/icons/tg.svg" alt="Telegram"></a><a class="header__mobile-social" href="#"><img
+										src="/images/icons/max.svg" alt="MAX"></a></div>
+						</div>
+						<a class="header__mobile-mail" href="mailto:info@tech-srv.ru">
+							<svg class="header__icon" viewBox="0 0 20 20" width="18" height="14" aria-hidden="true" focusable="false">
+								<path
+									d="M19.8234 3.97266 13.7578 9.99918l6.0656 6.02652c.1096-.2292.1762-.4825.1762-.7531V4.72574c0-.27058-.0666-.5239-.1762-.75308ZM18.2423 2.96875H1.75797c-.27059 0-.52391.06652-.75309.17617l7.75246 7.71338c.68547.6855 1.80016.6855 2.48566 0l7.7524-7.71338c-.2292-.10965-.4825-.17617-.7531-.17617ZM.176172 3.97266C.0665234 4.20184 0 4.45516 0 4.72574V15.2726c0 .2706.0665234.524.176172.7531L6.24176 9.99918.176172 3.97266ZM12.9298 10.8281l-.8583.8583c-1.1421 1.1422-3.0006 1.1422-4.14275 0l-.85828-.8583-6.06559 6.0265c.22918.1097.4825.1762.75309.1762H18.2423c.2706 0 .5239-.0665.7531-.1762l-6.0656-6.0265Z" />
+							</svg>
+							info@tech-srv.ru
+						</a>
+						<button class="header__mobile-callback" type="button" data-micromodal-trigger="callback-modal"><img
+								src="/images/icons/call.svg" alt="">Заказать звонок</button>
+					</div>
+				</nav>
+
+				<nav class="header__fullscreen-menu" id="site-fullscreen-menu" aria-label="Полноэкранное меню" aria-hidden="true">
 					<ul class="header__menu">
 						<li class="header__menu-item"><button class="header__nav-link js-submenu-button" type="button"
 								aria-expanded="false">О компании<img src="/images/icons/arrow-down.svg" alt=""></button>

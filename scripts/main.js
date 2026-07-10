@@ -8,13 +8,13 @@ $(function () {
 		$header.each(function () {
 			const $currentHeader = $(this)
 			const isOpen = $currentHeader.hasClass('is-open')
-			const isVisibleInHeader =
-				desktopMenuMedia.matches &&
-				$currentHeader.hasClass('header--fullscreen-menu')
 
 			$currentHeader
 				.find('.header__nav')
-				.attr('aria-hidden', String(!isOpen && !isVisibleInHeader))
+				.attr('aria-hidden', String(!desktopMenuMedia.matches))
+			$currentHeader
+				.find('.header__fullscreen-menu')
+				.attr('aria-hidden', String(!isOpen))
 		})
 	}
 	const getCustomersAutoplayOptions = slider =>
@@ -87,13 +87,18 @@ $(function () {
 
 		if ($currentHeader.hasClass('header--fullscreen-menu')) {
 			const $items = $currentHeader.find('.header__menu-item')
+			const $fullscreenItems = $currentHeader.find(
+				'.header__fullscreen-menu .header__menu-item',
+			)
 
-			$items.removeClass('is-expanded')
-				.find('.js-submenu-button')
-				.attr('aria-expanded', 'false')
+			if (isOpen) {
+				$items.removeClass('is-expanded')
+					.find('.js-submenu-button')
+					.attr('aria-expanded', 'false')
+			}
 
 			if (isOpen && desktopMenuMedia.matches) {
-				const $firstItem = $items.has('.header__submenu').first()
+				const $firstItem = $fullscreenItems.has('.header__submenu').first()
 
 				$firstItem
 					.addClass('is-expanded')
@@ -108,7 +113,7 @@ $(function () {
 
 		const $item = $(this).closest('.header__menu-item')
 		const isFullscreenDesktop =
-			$item.closest('.header--fullscreen-menu.is-open').length > 0 &&
+			$item.closest('.header__fullscreen-menu').length > 0 &&
 			desktopMenuMedia.matches
 		const isExpanded = isFullscreenDesktop || !$item.hasClass('is-expanded')
 
@@ -122,10 +127,10 @@ $(function () {
 		$(this).attr('aria-expanded', String(isExpanded))
 	})
 
-	$('.header--fullscreen-menu .header__menu-item').on(
+	$('.header__fullscreen-menu .header__menu-item').on(
 		'mouseenter focusin',
 		function () {
-			const $currentHeader = $(this).closest('.header--fullscreen-menu')
+			const $currentHeader = $(this).closest('.header')
 
 			if (
 				!$currentHeader.hasClass('is-open') ||
@@ -148,19 +153,23 @@ $(function () {
 		},
 	)
 
-	$('.header--fullscreen-menu').on('click', '.header__nav', function (event) {
-		const $currentHeader = $(this).closest('.header')
+	$('.header--fullscreen-menu').on(
+		'click',
+		'.header__fullscreen-menu',
+		function (event) {
+			const $currentHeader = $(this).closest('.header')
 
-		if (event.target !== this || !$currentHeader.hasClass('is-open')) {
-			return
-		}
+			if (event.target !== this || !$currentHeader.hasClass('is-open')) {
+				return
+			}
 
-		$currentHeader.find('.js-menu-button').trigger('click')
-	})
+			$currentHeader.find('.js-menu-button').trigger('click')
+		},
+	)
 
 	$('.header--fullscreen-menu').on(
 		'click',
-		'.header__submenu a, .header__menu-item > a',
+		'.header__fullscreen-menu .header__submenu a, .header__fullscreen-menu .header__menu-item > a',
 		function () {
 			const $currentHeader = $(this).closest('.header')
 
