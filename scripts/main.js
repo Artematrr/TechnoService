@@ -3,6 +3,20 @@ $(function () {
 	const $header = $('.js-header')
 	const $menuButton = $('.js-menu-button')
 	const $submenuButtons = $('.js-submenu-button')
+	const desktopMenuMedia = window.matchMedia('(min-width: 1024px)')
+	const syncHeaderNavigationState = function () {
+		$header.each(function () {
+			const $currentHeader = $(this)
+			const isOpen = $currentHeader.hasClass('is-open')
+			const isVisibleInHeader =
+				desktopMenuMedia.matches &&
+				$currentHeader.hasClass('header--fullscreen-menu')
+
+			$currentHeader
+				.find('.header__nav')
+				.attr('aria-hidden', String(!isOpen && !isVisibleInHeader))
+		})
+	}
 	const getCustomersAutoplayOptions = slider =>
 		slider.classList.contains('js-customers-autoplay')
 			? {
@@ -69,7 +83,7 @@ $(function () {
 		$(this)
 			.attr('aria-expanded', String(isOpen))
 			.attr('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню')
-		$currentHeader.find('.header__nav').attr('aria-hidden', String(!isOpen))
+		syncHeaderNavigationState()
 
 		if ($currentHeader.hasClass('header--fullscreen-menu')) {
 			const $items = $currentHeader.find('.header__menu-item')
@@ -78,7 +92,7 @@ $(function () {
 				.find('.js-submenu-button')
 				.attr('aria-expanded', 'false')
 
-			if (isOpen && window.matchMedia('(min-width: 1024px)').matches) {
+			if (isOpen && desktopMenuMedia.matches) {
 				const $firstItem = $items.has('.header__submenu').first()
 
 				$firstItem
@@ -94,8 +108,8 @@ $(function () {
 
 		const $item = $(this).closest('.header__menu-item')
 		const isFullscreenDesktop =
-			$item.closest('.header--fullscreen-menu').length > 0 &&
-			window.matchMedia('(min-width: 1024px)').matches
+			$item.closest('.header--fullscreen-menu.is-open').length > 0 &&
+			desktopMenuMedia.matches
 		const isExpanded = isFullscreenDesktop || !$item.hasClass('is-expanded')
 
 		$item
@@ -115,7 +129,7 @@ $(function () {
 
 			if (
 				!$currentHeader.hasClass('is-open') ||
-				!window.matchMedia('(min-width: 1024px)').matches
+				!desktopMenuMedia.matches
 			) {
 				return
 			}
@@ -135,18 +149,24 @@ $(function () {
 	)
 
 	$('.header--fullscreen-menu').on('click', '.header__nav', function (event) {
-		if (event.target !== this) {
+		const $currentHeader = $(this).closest('.header')
+
+		if (event.target !== this || !$currentHeader.hasClass('is-open')) {
 			return
 		}
 
-		$(this).closest('.header').find('.js-menu-button').trigger('click')
+		$currentHeader.find('.js-menu-button').trigger('click')
 	})
 
 	$('.header--fullscreen-menu').on(
 		'click',
 		'.header__submenu a, .header__menu-item > a',
 		function () {
-			$(this).closest('.header').find('.js-menu-button').trigger('click')
+			const $currentHeader = $(this).closest('.header')
+
+			if ($currentHeader.hasClass('is-open')) {
+				$currentHeader.find('.js-menu-button').trigger('click')
+			}
 		},
 	)
 
@@ -175,8 +195,10 @@ $(function () {
 		$submenuButtons.attr('aria-expanded', 'false')
 	})
 
+	syncHeaderNavigationState()
+
 	$(window).on('resize', function () {
-		if (window.matchMedia('(min-width: 1024px)').matches) {
+		if (desktopMenuMedia.matches) {
 			const $regularHeaders = $header.not('.header--fullscreen-menu')
 
 			$regularHeaders.removeClass('is-open')
@@ -190,6 +212,8 @@ $(function () {
 				$body.removeClass('is-fixed')
 			}
 		}
+
+		syncHeaderNavigationState()
 	})
 
 	if (window.Swiper) {
@@ -232,6 +256,17 @@ $(function () {
 					next: {
 						translate: [0, 0, -1],
 						rotate: [180, 0, 0],
+					},
+				},
+				on: {
+					click(swiper, event) {
+						const activeSlide = event.target.closest(
+							'.culture-vacancies__banner-item.swiper-slide-active',
+						)
+
+						if (activeSlide) {
+							swiper.slideNext()
+						}
 					},
 				},
 			})

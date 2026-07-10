@@ -367,6 +367,7 @@
 	&__banner-item {
 		display: flex;
 		align-items: center;
+		cursor: pointer;
 
 		p {
 			@include fluid-text(22, 38);
