@@ -374,15 +374,16 @@
 
 		.projects-slider__tabs {
 			display: flex;
-			gap: 30px;
+			flex-wrap: wrap;
 			min-width: 0;
-			overflow-x: auto;
-			-webkit-overflow-scrolling: touch;
-			scrollbar-width: none;
 			user-select: none;
 
 			@include mobile {
+				flex-wrap: nowrap;
 				gap: 5px;
+				overflow-x: auto;
+				-webkit-overflow-scrolling: touch;
+				scrollbar-width: none;
 			}
 
 			&::-webkit-scrollbar {
@@ -394,10 +395,11 @@
 			@include reset-button;
 			@include fluid-text(14, 24);
 
-			flex: 0 0 auto;
-			min-width: 150px;
+			flex: 1 0 calc(100% / 6);
+			min-width: calc(100% / 6);
 			padding: 15px 30px;
 			color: var(--gray-800);
+			text-align: center;
 			border-radius: 40px 3px 0 0;
 
 			&.is-active {
@@ -407,6 +409,7 @@
 			}
 
 			@include mobile {
+				flex: 0 0 auto;
 				min-width: 100px;
 				padding: 10px 30px;
 			}

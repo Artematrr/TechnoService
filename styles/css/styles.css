@@ -2641,18 +2641,19 @@ h4,
 }
 .projects-slider--home-tabs .projects-slider__tabs {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
   min-width: 0;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
 @media (max-width: 767px) {
   .projects-slider--home-tabs .projects-slider__tabs {
+    flex-wrap: nowrap;
     gap: 5px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 }
 .projects-slider--home-tabs .projects-slider__tabs::-webkit-scrollbar {
@@ -2663,10 +2664,11 @@ h4,
   background-color: var(--transparent);
   border: none;
   font-size: clamp(14px, 1.6666666667vw, 24px);
-  flex: 0 0 auto;
-  min-width: 150px;
+  flex: 1 0 16.6666666667%;
+  min-width: 16.6666666667%;
   padding: 15px 30px;
   color: var(--gray-800);
+  text-align: center;
   border-radius: 40px 3px 0 0;
 }
 .projects-slider--home-tabs .projects-slider__tab.is-active {
@@ -2676,6 +2678,7 @@ h4,
 }
 @media (max-width: 767px) {
   .projects-slider--home-tabs .projects-slider__tab {
+    flex: 0 0 auto;
     min-width: 100px;
     padding: 10px 30px;
   }
@@ -8393,4 +8396,6 @@ h4,
     height: 42px;
     border-radius: 28px 4px 22px 4px;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
