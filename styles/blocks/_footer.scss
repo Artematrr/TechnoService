@@ -61,11 +61,10 @@
 	}
 
 	&__tagline {
-		@include fluid-text(14, 14);
+		@include fluid-text(14, 16);
 
 		max-width: 250px;
-		font-weight: 700;
-		line-height: 1;
+		font-weight: 400;
 
 		@include mobile {
 			max-width: 260px;
@@ -88,7 +87,7 @@
 		display: grid;
 		grid-template-columns: 22px 1fr;
 		gap: 14px;
-		color: var(--white-alpha-75);
+		color: var(--white);
 
 		&--email {
 			div {
@@ -112,16 +111,16 @@
 	}
 
 	&__contact-title {
-		@include fluid-text(13, 13);
+		@include fluid-text(14, 16);
 
 		margin-bottom: 6px;
-		color: var(--white-alpha-35);
+		color: var(--gray-500);
 	}
 
 	&__contact-text,
 	&__contact-link,
 	&__route {
-		@include fluid-text(14, 14);
+		@include fluid-text(14, 16);
 	}
 
 	&__contact-link {
@@ -136,7 +135,13 @@
 		}
 	}
 
+	&__contact-phone {
+		@include fluid-text(24, 24);
+	}
+
 	&__route {
+		@include fluid-text(14, 14);
+
 		display: inline-flex;
 		margin-top: 6px;
 		font-weight: 700;
@@ -208,7 +213,7 @@
 	&__link {
 		@include fluid-text(14, 14);
 
-		color: var(--white-alpha-35);
+		color: var(--gray-500);
 
 		@include hover {
 			color: var(--primary-500);
@@ -230,7 +235,7 @@
 		gap: 18px;
 		padding: 12px 15px;
 		text-align: center;
-		border: 1px solid var(--white-alpha-75);
+		border: 1px solid var(--white);
 		border-radius: 5px;
 
 		@include mobile {
@@ -255,8 +260,8 @@
 		align-items: center;
 		gap: 54px;
 		padding-top: 28px;
-		color: var(--white-alpha-35);
-		border-top: 1px solid var(--white-alpha-75);
+		color: var(--gray-500);
+		border-top: 1px solid var(--white);
 
 		@include mobile {
 			display: grid;
