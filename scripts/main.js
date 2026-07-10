@@ -102,6 +102,50 @@ $(function () {
 	})
 
 	if (window.Swiper) {
+		$('.js-culture-vacancies-slider').each(function () {
+			const slider = this
+			const banner = slider.closest('.culture-vacancies__banner')
+			const previousButton = banner?.querySelector('.js-culture-vacancies-prev')
+			const nextButton = banner?.querySelector('.js-culture-vacancies-next')
+			const reduceMotion = window.matchMedia(
+				'(prefers-reduced-motion: reduce)',
+			).matches
+
+			if (!previousButton || !nextButton) {
+				return
+			}
+
+			new Swiper(slider, {
+				effect: 'creative',
+				loop: true,
+				speed: 700,
+				grabCursor: true,
+				simulateTouch: true,
+				autoplay: reduceMotion
+					? false
+					: {
+							delay: 3000,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: true,
+						},
+				navigation: {
+					prevEl: previousButton,
+					nextEl: nextButton,
+				},
+				creativeEffect: {
+					perspective: true,
+					prev: {
+						translate: [0, 0, -1],
+						rotate: [-180, 0, 0],
+					},
+					next: {
+						translate: [0, 0, -1],
+						rotate: [180, 0, 0],
+					},
+				},
+			})
+		})
+
 		$('.js-cards-slider').each(function () {
 			const slider = this.querySelector('.cards-grid__container')
 			const pagination = this.querySelector('.cards-grid__pagination')
@@ -199,9 +243,9 @@ $(function () {
 		})
 
 		$('.js-about-certificates').each(function () {
-			const pagination = this
-				.closest('.about-certificates')
-				?.querySelector('.about-certificates__pagination')
+			const pagination = this.closest('.about-certificates')?.querySelector(
+				'.about-certificates__pagination',
+			)
 
 			if (!pagination) {
 				return
@@ -277,7 +321,7 @@ $(function () {
 			})
 		})
 
-	$('.js-news-slider').each(function () {
+		$('.js-news-slider').each(function () {
 			const slider = this.querySelector('.news-slider__swiper')
 			const pagination = this.querySelector('.news-slider__pagination')
 			const previousButton = this.querySelector('.news-slider__button--prev')
@@ -451,7 +495,7 @@ $(function () {
 					disableOnInteraction: false,
 				},
 				breakpoints: {
-					768: { slidesPerView: 3, centeredSlides: false, },
+					768: { slidesPerView: 3, centeredSlides: false },
 					1024: { slidesPerView: 5 },
 				},
 			})
@@ -497,7 +541,9 @@ $(function () {
 
 		$('.js-service-clients').each(function () {
 			const slider = this.querySelector('.service-clients__swiper')
-			const previousButton = this.querySelector('.service-clients__button--prev')
+			const previousButton = this.querySelector(
+				'.service-clients__button--prev',
+			)
 			const nextButton = this.querySelector('.service-clients__button--next')
 			const pagination = this.querySelector('.service-clients__pagination')
 			const hasArrows = !this.classList.contains(
@@ -611,15 +657,9 @@ $(function () {
 
 	$('.js-testimonials').each(function () {
 		const testimonials = this
-		const rows = Array.from(
-			testimonials.querySelectorAll('.testimonials__row'),
-		)
-		const forwardRow = testimonials.querySelector(
-			'.testimonials__row--forward',
-		)
-		const pagination = testimonials.querySelector(
-			'.testimonials__pagination',
-		)
+		const rows = Array.from(testimonials.querySelectorAll('.testimonials__row'))
+		const forwardRow = testimonials.querySelector('.testimonials__row--forward')
+		const pagination = testimonials.querySelector('.testimonials__pagination')
 		const mobileMedia = window.matchMedia('(max-width: 767px)')
 		let mobileSlider = null
 
@@ -808,7 +848,9 @@ $(function () {
 						targets[counter.dataset.timeUnit] || 0,
 						false,
 					)
-					counter.querySelector('.flip-counter__card')?.classList.add('is-complete')
+					counter
+						.querySelector('.flip-counter__card')
+						?.classList.add('is-complete')
 				})
 				return
 			}
@@ -860,10 +902,7 @@ $(function () {
 					const nextValue =
 						progress >= 1 || !steps
 							? target
-							: Math.min(
-									target,
-									Math.round((target * currentStep) / steps),
-								)
+							: Math.min(target, Math.round((target * currentStep) / steps))
 
 					if (state.previousValue !== nextValue) {
 						setCounterValue(counter, nextValue, nextValue > 0)
@@ -1121,7 +1160,7 @@ $(function () {
 			}
 
 			list.classList.add('swiper-wrapper')
-			Array.from(list.children).forEach((item) => {
+			Array.from(list.children).forEach(item => {
 				item.classList.add('swiper-slide')
 			})
 
@@ -1176,7 +1215,7 @@ $(function () {
 			slideToActiveLink()
 		}
 
-		arrows.forEach((arrow) => {
+		arrows.forEach(arrow => {
 			arrow.addEventListener('click', function (event) {
 				if (arrow.tagName === 'A') {
 					event.preventDefault()
@@ -1232,7 +1271,7 @@ $(function () {
 			}
 
 			list.classList.add('swiper-wrapper')
-			Array.from(list.children).forEach((item) => {
+			Array.from(list.children).forEach(item => {
 				item.classList.add('swiper-slide')
 			})
 

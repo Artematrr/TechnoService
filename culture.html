@@ -173,7 +173,8 @@
 						<img class="page-hero__image" src="/images/02-hero/bg-pattern-outline.svg" alt="" width="1410" height="509">
 					</picture>
 					<span class="page-hero__stripe" aria-hidden="true"></span>
-					<h1 class="page-hero__title" id="page-title"><span class="page-hero__title-text"><span class="page-hero__title-content">Как мы живем<br>и работаем</span></span></h1>
+					<h1 class="page-hero__title" id="page-title"><span class="page-hero__title-text"><span
+								class="page-hero__title-content">Как мы живем<br>и работаем</span></span></h1>
 					<div class="page-hero__label">Будем знакомы!</div>
 				</div>
 			</div>
@@ -287,28 +288,34 @@
 					<h3>Если ты —</h3>
 					<div class="culture-vacancies__banner-wrapper">
 						<div class="culture-vacancies__banner" aria-label="Кого мы ищем">
-							<img class="culture-vacancies__banner-decor" src="/images/13-culture/hiring-decor-left.svg" alt="">
-							<div class="culture-vacancies__banner-viewport">
-								<div class="culture-vacancies__banner-track">
-									<div class="culture-vacancies__banner-group">
-										<div class="culture-vacancies__banner-item"><p>Получил образование по системам холодоснабжения</p></div>
-										<div class="culture-vacancies__banner-item"><p>Инженер по призванию</p></div>
-										<div class="culture-vacancies__banner-item"><p>Хочешь проектировать системы холодоснабжения</p></div>
-										<div class="culture-vacancies__banner-item"><p>Разделяешь наши ценности</p></div>
-										<div class="culture-vacancies__banner-item"><p>Знаешь цикл Карно</p></div>
-										<div class="culture-vacancies__banner-item"><p>Любишь амбициозные и нетривиальные задачи</p></div>
+							<img class="culture-vacancies__banner-decor js-culture-vacancies-prev"
+								src="/images/13-culture/hiring-decor-left.svg" alt="" role="button" tabindex="0"
+								aria-label="Предыдущее качество кандидата">
+							<div class="culture-vacancies__banner-viewport swiper js-culture-vacancies-slider">
+								<div class="culture-vacancies__banner-track swiper-wrapper">
+									<div class="culture-vacancies__banner-item swiper-slide">
+										<p>Получил образование по системам холодоснабжения</p>
 									</div>
-									<div class="culture-vacancies__banner-group" aria-hidden="true">
-										<div class="culture-vacancies__banner-item"><p>Получил образование по системам холодоснабжения</p></div>
-										<div class="culture-vacancies__banner-item"><p>Инженер по призванию</p></div>
-										<div class="culture-vacancies__banner-item"><p>Хочешь проектировать системы холодоснабжения</p></div>
-										<div class="culture-vacancies__banner-item"><p>Разделяешь наши ценности</p></div>
-										<div class="culture-vacancies__banner-item"><p>Знаешь цикл Карно</p></div>
-										<div class="culture-vacancies__banner-item"><p>Любишь амбициозные и нетривиальные задачи</p></div>
+									<div class="culture-vacancies__banner-item swiper-slide">
+										<p>Инженер по призванию</p>
+									</div>
+									<div class="culture-vacancies__banner-item swiper-slide">
+										<p>Хочешь проектировать системы холодоснабжения</p>
+									</div>
+									<div class="culture-vacancies__banner-item swiper-slide">
+										<p>Разделяешь наши ценности</p>
+									</div>
+									<div class="culture-vacancies__banner-item swiper-slide">
+										<p>Знаешь цикл Карно</p>
+									</div>
+									<div class="culture-vacancies__banner-item swiper-slide">
+										<p>Любишь амбициозные и нетривиальные задачи</p>
 									</div>
 								</div>
 							</div>
-							<img class="culture-vacancies__banner-decor" src="/images/13-culture/hiring-decor-right.svg" alt="">
+							<img class="culture-vacancies__banner-decor js-culture-vacancies-next"
+								src="/images/13-culture/hiring-decor-right.svg" alt="" role="button" tabindex="0"
+								aria-label="Следующее качество кандидата">
 						</div>
 					</div>
 					<h3>Будем рады видеть в нашей команде!</h3>
@@ -575,18 +582,17 @@
 				<button class="modal__close" type="button" aria-label="Закрыть окно" data-micromodal-close></button>
 				<h2 class="modal__title" id="tender-modal-title">Пригласить в тендер</h2>
 				<form class="form" action="#" method="post" enctype="multipart/form-data">
-					<label class="form__field"><span class="visually-hidden">Ваше имя</span><input class="form__input"
-						type="text" name="tender-name" placeholder="Ваше имя" autocomplete="name" required></label>
-					<label class="form__field"><span class="visually-hidden">Номер телефона</span><input
-						class="form__input" type="tel" name="tender-phone" placeholder="Ваш номер телефона"
-						autocomplete="tel" required></label>
-					<label class="form__field"><span class="visually-hidden">Сообщение</span><textarea
-						class="form__textarea" name="tender-message" placeholder="Сообщение" required></textarea></label>
+					<label class="form__field"><span class="visually-hidden">Ваше имя</span><input class="form__input" type="text"
+							name="tender-name" placeholder="Ваше имя" autocomplete="name" required></label>
+					<label class="form__field"><span class="visually-hidden">Номер телефона</span><input class="form__input"
+							type="tel" name="tender-phone" placeholder="Ваш номер телефона" autocomplete="tel" required></label>
+					<label class="form__field"><span class="visually-hidden">Сообщение</span><textarea class="form__textarea"
+							name="tender-message" placeholder="Сообщение" required></textarea></label>
 					<label class="form__field"><span class="form__label">Прикрепить файл</span><input class="form__file"
-						type="file" name="tender-file" accept=".pdf,.doc,.docx,.xls,.xlsx,.zip,.rar,image/*"></label>
+							type="file" name="tender-file" accept=".pdf,.doc,.docx,.xls,.xlsx,.zip,.rar,image/*"></label>
 					<button class="button" type="submit">Отправить приглашение</button>
-					<label class="form__checkbox"><input class="form__checkbox-input" type="checkbox"
-						name="tender-agreement" checked required><span class="form__checkbox-control"></span><span>Заполняя поля
+					<label class="form__checkbox"><input class="form__checkbox-input" type="checkbox" name="tender-agreement"
+							checked required><span class="form__checkbox-control"></span><span>Заполняя поля
 							формы, Вы даете согласие на обработку персональных данных</span></label>
 				</form>
 			</div>
