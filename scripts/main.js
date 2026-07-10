@@ -61,18 +61,42 @@ $(function () {
 	}
 
 	$menuButton.on('click', function () {
-		const isOpen = !$header.hasClass('is-open')
+		const $currentHeader = $(this).closest('.js-header')
+		const isOpen = !$currentHeader.hasClass('is-open')
 
-		$header.toggleClass('is-open', isOpen)
+		$currentHeader.toggleClass('is-open', isOpen)
 		$body.toggleClass('is-fixed', isOpen)
-		$(this).attr('aria-expanded', String(isOpen))
+		$(this)
+			.attr('aria-expanded', String(isOpen))
+			.attr('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню')
+		$currentHeader.find('.header__nav').attr('aria-hidden', String(!isOpen))
+
+		if ($currentHeader.hasClass('header--fullscreen-menu')) {
+			const $items = $currentHeader.find('.header__menu-item')
+
+			$items.removeClass('is-expanded')
+				.find('.js-submenu-button')
+				.attr('aria-expanded', 'false')
+
+			if (isOpen && window.matchMedia('(min-width: 1024px)').matches) {
+				const $firstItem = $items.has('.header__submenu').first()
+
+				$firstItem
+					.addClass('is-expanded')
+					.children('.js-submenu-button')
+					.attr('aria-expanded', 'true')
+			}
+		}
 	})
 
 	$submenuButtons.on('click', function (event) {
 		event.stopPropagation()
 
 		const $item = $(this).closest('.header__menu-item')
-		const isExpanded = !$item.hasClass('is-expanded')
+		const isFullscreenDesktop =
+			$item.closest('.header--fullscreen-menu').length > 0 &&
+			window.matchMedia('(min-width: 1024px)').matches
+		const isExpanded = isFullscreenDesktop || !$item.hasClass('is-expanded')
 
 		$item
 			.toggleClass('is-expanded', isExpanded)
@@ -84,8 +108,66 @@ $(function () {
 		$(this).attr('aria-expanded', String(isExpanded))
 	})
 
+	$('.header--fullscreen-menu .header__menu-item').on(
+		'mouseenter focusin',
+		function () {
+			const $currentHeader = $(this).closest('.header--fullscreen-menu')
+
+			if (
+				!$currentHeader.hasClass('is-open') ||
+				!window.matchMedia('(min-width: 1024px)').matches
+			) {
+				return
+			}
+
+			const $item = $(this)
+			const $button = $item.children('.js-submenu-button')
+
+			$item
+				.addClass('is-expanded')
+				.siblings('.header__menu-item')
+				.removeClass('is-expanded')
+				.find('.js-submenu-button')
+				.attr('aria-expanded', 'false')
+
+			$button.attr('aria-expanded', String($button.length > 0))
+		},
+	)
+
+	$('.header--fullscreen-menu').on('click', '.header__nav', function (event) {
+		if (event.target !== this) {
+			return
+		}
+
+		$(this).closest('.header').find('.js-menu-button').trigger('click')
+	})
+
+	$('.header--fullscreen-menu').on(
+		'click',
+		'.header__submenu a, .header__menu-item > a',
+		function () {
+			$(this).closest('.header').find('.js-menu-button').trigger('click')
+		},
+	)
+
+	$(document).on('keydown', function (event) {
+		if (event.key !== 'Escape') {
+			return
+		}
+
+		const $openHeader = $('.header--fullscreen-menu.is-open')
+
+		if ($openHeader.length) {
+			$openHeader.find('.js-menu-button').trigger('click').trigger('focus')
+		}
+	})
+
 	$(document).on('click', function (event) {
-		if ($(event.target).closest('.header__menu-item').length) {
+		if (
+			$(event.target).closest(
+				'.header__menu-item, .header--fullscreen-menu.is-open',
+			).length
+		) {
 			return
 		}
 
@@ -95,9 +177,18 @@ $(function () {
 
 	$(window).on('resize', function () {
 		if (window.matchMedia('(min-width: 1024px)').matches) {
-			$header.removeClass('is-open')
-			$body.removeClass('is-fixed')
-			$menuButton.attr('aria-expanded', 'false')
+			const $regularHeaders = $header.not('.header--fullscreen-menu')
+
+			$regularHeaders.removeClass('is-open')
+			$regularHeaders.find('.header__nav').removeAttr('aria-hidden')
+			$regularHeaders
+				.find('.js-menu-button')
+				.attr('aria-expanded', 'false')
+				.attr('aria-label', 'Открыть меню')
+
+			if (!$header.filter('.is-open').length) {
+				$body.removeClass('is-fixed')
+			}
 		}
 	})
 

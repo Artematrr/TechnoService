@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<header class="header js-header">
+	<header class="header header--fullscreen-menu js-header js-header-menu-fullscreen">
 		<div class="header__container container">
 			<a class="header__logo" href="#" aria-label="ТехноСервис">
 				<img class="header__logo-image" src="/images/icons/logo.svg" alt="ТехноСервис" width="213" height="90">
@@ -48,10 +48,10 @@
 					</svg>
 					</a>
 					<button class="header__menu-button js-menu-button" type="button" aria-label="Открыть меню"
-						aria-expanded="false"><span></span><span></span></button>
+						aria-controls="site-fullscreen-menu" aria-expanded="false"><span></span><span></span></button>
 				</div>
 
-				<nav class="header__nav" aria-label="Основная навигация">
+				<nav class="header__nav" id="site-fullscreen-menu" aria-label="Основная навигация" aria-hidden="true">
 					<ul class="header__menu">
 						<li class="header__menu-item">
 							<button class="header__nav-link js-submenu-button" type="button" aria-expanded="false">
