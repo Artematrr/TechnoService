@@ -240,7 +240,7 @@ $(function () {
 			}
 
 			new Swiper(slider, {
-				effect: 'creative',
+				effect: 'slide',
 				loop: true,
 				speed: 700,
 				grabCursor: true,
@@ -255,17 +255,6 @@ $(function () {
 				navigation: {
 					prevEl: previousButton,
 					nextEl: nextButton,
-				},
-				creativeEffect: {
-					perspective: true,
-					prev: {
-						translate: [0, 0, -1],
-						rotate: [-180, 0, 0],
-					},
-					next: {
-						translate: [0, 0, -1],
-						rotate: [180, 0, 0],
-					},
 				},
 				on: {
 					click(swiper, event) {
