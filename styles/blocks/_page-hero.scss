@@ -98,14 +98,13 @@
 			background: radial-gradient(
 				ellipse at 42% 50%,
 				var(--white) 0%,
-				var(--white) 58%,
-				rgb(255 255 255 / 96%) 65%,
+				rgb(255 255 255 / 86%) 65%,
 				rgb(255 255 255 / 76%) 74%,
 				rgb(255 255 255 / 38%) 83%,
 				rgb(255 255 255 / 10%) 91%,
 				transparent 100%
 			);
-			border-radius: 50%;
+			border-radius: 90%;
 			filter: blur(7px);
 			pointer-events: none;
 			content: '';
@@ -170,6 +169,23 @@
 			height: 52px;
 			margin-top: 10px;
 			border-radius: 28px 4px 22px 4px;
+		}
+	}
+
+	&--home {
+		.page-hero__title {
+			&::before {
+				background: radial-gradient(
+					ellipse at 42% 50%,
+					var(--white) 0%,
+					var(--white) 58%,
+					rgb(255 255 255 / 86%) 65%,
+					rgb(255 255 255 / 76%) 74%,
+					rgb(255 255 255 / 38%) 83%,
+					rgb(255 255 255 / 10%) 91%,
+					transparent 100%
+				);
+			}
 		}
 	}
 }
