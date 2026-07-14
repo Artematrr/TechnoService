@@ -302,6 +302,24 @@
 		// @include full-width;
 	}
 
+	&__variants {
+		display: grid;
+		gap: 30px;
+	}
+
+	&__variant {
+		display: grid;
+		gap: 10px;
+	}
+
+	&__variant-title {
+		@include fluid-text(16, 20);
+
+		font-weight: 600;
+		color: var(--gray-600);
+		text-align: center;
+	}
+
 	&__banner {
 		display: grid;
 		grid-template-columns: clamp(150px, 16.72vw, 235px) minmax(0, 1fr) clamp(
@@ -357,7 +375,24 @@
 		width: min(100%, 834px);
 		min-width: 0;
 		overflow: hidden;
+		background-color: var(--primary-500);
 		border-radius: 1120px 3px 1120px 3px;
+
+		&[data-animation$='vertical'] {
+			height: 118px;
+
+			@include tablet {
+				height: 90px;
+			}
+
+			@include mobile {
+				height: 56px;
+			}
+		}
+
+		&[data-content='plaque'] {
+			background-color: var(--transparent);
+		}
 	}
 
 	&__banner-track {
@@ -368,6 +403,7 @@
 		display: flex;
 		align-items: center;
 		cursor: pointer;
+		height: auto;
 
 		p {
 			@include fluid-text(22, 38);
@@ -375,14 +411,13 @@
 
 			width: 100%;
 			min-height: 118px;
+			height: 100%;
 			padding: 20px 60px;
 			font-weight: 400;
 			line-height: 1.12;
 			color: var(--white);
 			text-align: center;
 			text-wrap: balance;
-			background-color: var(--primary-500);
-			border-radius: 1120px 3px 1120px 3px;
 		}
 
 		@include tablet {
@@ -401,6 +436,64 @@
 				line-height: 1.15;
 			}
 		}
+	}
+
+	&__banner-viewport:is(
+			[data-animation='scale'],
+			[data-animation='blur'],
+			[data-animation='reveal']
+		)
+		&__banner-item
+		p {
+		opacity: 0;
+		transition:
+			opacity 700ms ease,
+			transform 700ms ease,
+			filter 700ms ease,
+			clip-path 700ms ease;
+	}
+
+	&__banner-viewport:is(
+			[data-animation='scale'],
+			[data-animation='blur'],
+			[data-animation='reveal']
+		)
+		.swiper-slide-active
+		p {
+		opacity: 1;
+	}
+
+	&__banner-viewport[data-animation='scale'] &__banner-item p {
+		transform: scale(0.82);
+	}
+
+	&__banner-viewport[data-animation='scale'] .swiper-slide-active p {
+		transform: scale(1);
+	}
+
+	&__banner-viewport[data-animation='blur'] &__banner-item p {
+		filter: blur(12px);
+		transform: scale(1.04);
+	}
+
+	&__banner-viewport[data-animation='blur'] .swiper-slide-active p {
+		filter: blur(0);
+		transform: scale(1);
+	}
+
+	&__banner-viewport[data-animation='reveal'] &__banner-item p {
+		clip-path: inset(100% 0 0);
+		transform: translateY(18px);
+	}
+
+	&__banner-viewport[data-animation='reveal'] .swiper-slide-active p {
+		clip-path: inset(0);
+		transform: translateY(0);
+	}
+
+	&__banner-viewport[data-content='plaque'] &__banner-item p {
+		background-color: var(--primary-500);
+		border-radius: 1120px 3px 1120px 3px;
 	}
 
 	&__cards {

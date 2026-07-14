@@ -5035,6 +5035,20 @@ h4,
     text-align: center;
   }
 }
+.culture-vacancies__variants {
+  display: grid;
+  gap: 30px;
+}
+.culture-vacancies__variant {
+  display: grid;
+  gap: 10px;
+}
+.culture-vacancies__variant-title {
+  font-size: clamp(16px, 1.3888888889vw, 20px);
+  font-weight: 600;
+  color: var(--gray-600);
+  text-align: center;
+}
 .culture-vacancies__banner {
   display: grid;
   grid-template-columns: clamp(150px, 16.72vw, 235px) minmax(0, 1fr) clamp(150px, 16.72vw, 235px);
@@ -5086,7 +5100,24 @@ h4,
   width: min(100%, 834px);
   min-width: 0;
   overflow: hidden;
+  background-color: var(--primary-500);
   border-radius: 1120px 3px 1120px 3px;
+}
+.culture-vacancies__banner-viewport[data-animation$=vertical] {
+  height: 118px;
+}
+@media (max-width: 1023px) {
+  .culture-vacancies__banner-viewport[data-animation$=vertical] {
+    height: 90px;
+  }
+}
+@media (max-width: 767px) {
+  .culture-vacancies__banner-viewport[data-animation$=vertical] {
+    height: 56px;
+  }
+}
+.culture-vacancies__banner-viewport[data-content=plaque] {
+  background-color: var(--transparent);
 }
 .culture-vacancies__banner-track {
   align-items: stretch;
@@ -5095,6 +5126,7 @@ h4,
   display: flex;
   align-items: center;
   cursor: pointer;
+  height: auto;
 }
 .culture-vacancies__banner-item p {
   font-size: clamp(22px, 2.6388888889vw, 38px);
@@ -5103,14 +5135,13 @@ h4,
   align-items: center;
   width: 100%;
   min-height: 118px;
+  height: 100%;
   padding: 20px 60px;
   font-weight: 400;
   line-height: 1.12;
   color: var(--white);
   text-align: center;
   text-wrap: balance;
-  background-color: var(--primary-500);
-  border-radius: 1120px 3px 1120px 3px;
 }
 @media (max-width: 1023px) {
   .culture-vacancies__banner-item p {
@@ -5125,6 +5156,43 @@ h4,
     padding: 12px 28px;
     line-height: 1.15;
   }
+}
+.culture-vacancies__banner-viewport:is([data-animation=scale],
+[data-animation=blur],
+[data-animation=reveal]) .culture-vacancies__banner-item p {
+  opacity: 0;
+  transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease, clip-path 700ms ease;
+}
+.culture-vacancies__banner-viewport:is([data-animation=scale],
+[data-animation=blur],
+[data-animation=reveal]) .swiper-slide-active p {
+  opacity: 1;
+}
+.culture-vacancies__banner-viewport[data-animation=scale] .culture-vacancies__banner-item p {
+  transform: scale(0.82);
+}
+.culture-vacancies__banner-viewport[data-animation=scale] .swiper-slide-active p {
+  transform: scale(1);
+}
+.culture-vacancies__banner-viewport[data-animation=blur] .culture-vacancies__banner-item p {
+  filter: blur(12px);
+  transform: scale(1.04);
+}
+.culture-vacancies__banner-viewport[data-animation=blur] .swiper-slide-active p {
+  filter: blur(0);
+  transform: scale(1);
+}
+.culture-vacancies__banner-viewport[data-animation=reveal] .culture-vacancies__banner-item p {
+  clip-path: inset(100% 0 0);
+  transform: translateY(18px);
+}
+.culture-vacancies__banner-viewport[data-animation=reveal] .swiper-slide-active p {
+  clip-path: inset(0);
+  transform: translateY(0);
+}
+.culture-vacancies__banner-viewport[data-content=plaque] .culture-vacancies__banner-item p {
+  background-color: var(--primary-500);
+  border-radius: 1120px 3px 1120px 3px;
 }
 .culture-vacancies__cards {
   display: grid;

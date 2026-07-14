@@ -226,11 +226,94 @@ $(function () {
 	})
 
 	if (window.Swiper) {
+		const cultureAnimationVariants = [
+			{
+				animation: 'fade',
+				content: 'text',
+				title: '1. Плавное растворение текста',
+			},
+			{
+				animation: 'vertical',
+				content: 'text',
+				title: '2. Вертикальная смена текста',
+			},
+			{
+				animation: 'scale',
+				content: 'text',
+				title: '3. Мягкое увеличение текста',
+			},
+			{
+				animation: 'blur',
+				content: 'text',
+				title: '4. Расфокусировка текста',
+			},
+			{
+				animation: 'reveal',
+				content: 'text',
+				title: '5. Проявление текста снизу',
+			},
+			{
+				animation: 'plaque-slide',
+				content: 'plaque',
+				title: '6. Горизонтальная смена плашки',
+			},
+			{
+				animation: 'plaque-fade',
+				content: 'plaque',
+				title: '7. Растворение плашки',
+			},
+		]
+
+		$('.js-culture-vacancies-variants').each(function () {
+			const sourceVariant = this.querySelector('.culture-vacancies__variant')
+
+			if (!sourceVariant) {
+				return
+			}
+
+			cultureAnimationVariants.forEach(
+				({ animation, content, title }, index) => {
+					const variant = index === 0
+						? sourceVariant
+						: sourceVariant.cloneNode(true)
+					const variantTitle = variant.querySelector(
+						'.culture-vacancies__variant-title',
+					)
+					const slider = variant.querySelector('.js-culture-vacancies-slider')
+
+					if (!variantTitle || !slider) {
+						return
+					}
+
+					variantTitle.textContent = title
+					slider.dataset.animation = animation
+					slider.dataset.content = content
+
+					if (index > 0) {
+						this.append(variant)
+					}
+				},
+			)
+		})
+
 		$('.js-culture-vacancies-slider').each(function () {
 			const slider = this
 			const banner = slider.closest('.culture-vacancies__banner')
 			const previousButton = banner?.querySelector('.js-culture-vacancies-prev')
 			const nextButton = banner?.querySelector('.js-culture-vacancies-next')
+			const animation = slider.dataset.animation || 'fade'
+			const fadeAnimations = [
+				'fade',
+				'scale',
+				'blur',
+				'reveal',
+				'plaque-fade',
+			]
+			let effect = 'slide'
+
+			if (fadeAnimations.includes(animation)) {
+				effect = 'fade'
+			}
 			const reduceMotion = window.matchMedia(
 				'(prefers-reduced-motion: reduce)',
 			).matches
@@ -239,8 +322,12 @@ $(function () {
 				return
 			}
 
-			new Swiper(slider, {
-				effect: 'slide',
+			const cultureSlider = new Swiper(slider, {
+				effect,
+				direction: animation.includes('vertical') ? 'vertical' : 'horizontal',
+				fadeEffect: {
+					crossFade: true,
+				},
 				loop: true,
 				speed: 700,
 				grabCursor: true,
@@ -248,7 +335,7 @@ $(function () {
 				autoplay: reduceMotion
 					? false
 					: {
-							delay: 3000,
+							delay: 2000,
 							disableOnInteraction: false,
 							pauseOnMouseEnter: true,
 						},
@@ -268,6 +355,28 @@ $(function () {
 					},
 				},
 			})
+
+			let hoverNavigationTimeout
+			const addHoverNavigation = (button, direction) => {
+				button.addEventListener('mouseenter', () => {
+					hoverNavigationTimeout = window.setTimeout(() => {
+						cultureSlider[direction]()
+					}, 180)
+				})
+
+				button.addEventListener('mouseleave', () => {
+					window.clearTimeout(hoverNavigationTimeout)
+				})
+
+				button.addEventListener(
+					'click',
+					() => window.clearTimeout(hoverNavigationTimeout),
+					{ capture: true },
+				)
+			}
+
+			addHoverNavigation(previousButton, 'slidePrev')
+			addHoverNavigation(nextButton, 'slideNext')
 		})
 
 		$('.js-cards-slider').each(function () {
