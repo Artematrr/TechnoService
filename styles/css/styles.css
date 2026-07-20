@@ -1859,6 +1859,14 @@ h4,
   overflow: hidden;
   background-color: var(--white);
 }
+.page-hero__body::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: url("/images/02-hero/hero-outline-external.svg") center/100% 100% no-repeat;
+  pointer-events: none;
+  content: "";
+}
 .page-hero__body span:not(.page-hero__title-text):not(.page-hero__title-content) {
   color: var(--primary-500);
 }
@@ -1874,6 +1882,9 @@ h4,
     aspect-ratio: auto;
     overflow: visible;
     background-color: var(--transparent);
+  }
+  .page-hero__body::after {
+    display: none;
   }
 }
 .page-hero__picture {
@@ -1915,6 +1926,20 @@ h4,
     transform-origin: center;
   }
 }
+.page-hero__outline {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .page-hero__outline {
+    display: none;
+  }
+}
 .page-hero__stripe {
   position: absolute;
   top: 12px;
@@ -1938,22 +1963,11 @@ h4,
   left: 30%;
   max-width: 750px;
   z-index: 2;
-  isolation: isolate;
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
   color: var(--gray-800);
   translate: -50% -50%;
-}
-.page-hero__title::before {
-  position: absolute;
-  inset: -0.02em -0.66em -0.02em -0.5em;
-  z-index: -1;
-  background: radial-gradient(ellipse at 42% 50%, var(--white) 0%, rgba(255, 255, 255, 0.86) 65%, rgba(255, 255, 255, 0.76) 74%, rgba(255, 255, 255, 0.38) 83%, rgba(255, 255, 255, 0.1) 91%, transparent 100%);
-  border-radius: 90%;
-  filter: blur(7px);
-  pointer-events: none;
-  content: "";
 }
 @media (max-width: 767px) {
   .page-hero__title {
@@ -1971,9 +1985,6 @@ h4,
     border-bottom: 2px solid var(--primary-500);
     border-radius: 8px 8px 0 0;
     translate: 0;
-  }
-  .page-hero__title::before {
-    display: none;
   }
 }
 .page-hero__title-text {
@@ -2014,9 +2025,6 @@ h4,
     margin-top: 10px;
     border-radius: 28px 4px 22px 4px;
   }
-}
-.page-hero--home .page-hero__title::before {
-  background: radial-gradient(ellipse at 42% 50%, var(--white) 0%, var(--white) 58%, rgba(255, 255, 255, 0.86) 65%, rgba(255, 255, 255, 0.76) 74%, rgba(255, 255, 255, 0.38) 83%, rgba(255, 255, 255, 0.1) 91%, transparent 100%);
 }
 
 .page-text__container {

@@ -49,3 +49,33 @@
 20. [Новости](http://127.0.0.1:5500/news.html)
 21. [Новость](http://127.0.0.1:5500/news-detail.html)
 22. [Контакты](http://127.0.0.1:5500/contacts.html)
+
+## Страницы с баннером
+
+1. http://127.0.0.1:5500/index.html
+2. http://127.0.0.1:5500/solutions.html
+3. http://127.0.0.1:5500/service.html
+4. http://127.0.0.1:5500/our-services-detail-01.html
+5. http://127.0.0.1:5500/about.html
+6. http://127.0.0.1:5500/culture.html
+7. http://127.0.0.1:5500/production.html
+8. http://127.0.0.1:5500/projects.html
+9. http://127.0.0.1:5500/our-services.html
+10. http://127.0.0.1:5500/equipment.html
+11. http://127.0.0.1:5500/news.html
+12. http://127.0.0.1:5500/contacts.html
+
+## Страницы с баннером на Vercel
+
+1. http://techno-service-pearl.vercel.app/index.html
+2. http://techno-service-pearl.vercel.app/solutions.html
+3. http://techno-service-pearl.vercel.app/service.html
+4. http://techno-service-pearl.vercel.app/our-services-detail-01.html
+5. http://techno-service-pearl.vercel.app/about.html
+6. http://techno-service-pearl.vercel.app/culture.html
+7. http://techno-service-pearl.vercel.app/production.html
+8. http://techno-service-pearl.vercel.app/projects.html
+9. http://techno-service-pearl.vercel.app/our-services.html
+10. http://techno-service-pearl.vercel.app/equipment.html
+11. http://techno-service-pearl.vercel.app/news.html
+12. http://techno-service-pearl.vercel.app/contacts.html
