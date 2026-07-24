@@ -2315,17 +2315,11 @@ h4,
 .projects-slider__swiper {
   width: 100%;
   min-width: 0;
-  height: 980px;
   overflow: hidden;
   cursor: grab;
 }
 .projects-slider__swiper:active {
   cursor: grabbing;
-}
-@media (max-width: 1023px) {
-  .projects-slider__swiper {
-    height: 1080px;
-  }
 }
 @media (max-width: 767px) {
   .projects-slider__swiper {
@@ -2400,7 +2394,7 @@ h4,
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 4px 8px;
 }
 .projects-slider__date, .projects-slider__tag {
   font-size: clamp(12px, 0.8333333333vw, 12px);
@@ -2425,6 +2419,7 @@ h4,
   display: -webkit-box;
   overflow: hidden;
   font-weight: 700;
+  line-height: 1.35;
   color: var(--gray-800);
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -2438,6 +2433,7 @@ h4,
   font-size: clamp(14px, 1.1111111111vw, 16px);
   display: -webkit-box;
   overflow: hidden;
+  line-height: 1.35;
   color: var(--gray-500);
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -2738,6 +2734,18 @@ h4,
     align-self: center;
     color: var(--gray-800);
     background-color: var(--white);
+  }
+}
+
+@media (min-width: 768px) {
+  .projects-slider:not(.projects-slider--single-row, .projects-slider--home-tabs) .projects-slider__card-title {
+    min-height: 4.05em;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects-slider:not(.projects-slider--single-row, .projects-slider--home-tabs) .projects-slider__text {
+    min-height: 2.7em;
   }
 }
 

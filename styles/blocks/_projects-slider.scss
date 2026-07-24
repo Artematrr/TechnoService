@@ -29,16 +29,11 @@
 	&__swiper {
 		width: 100%;
 		min-width: 0;
-		height: 980px;
 		overflow: hidden;
 		cursor: grab;
 
 		&:active {
 			cursor: grabbing;
-		}
-
-		@include tablet {
-			height: 1080px;
 		}
 
 		@include mobile {
@@ -111,7 +106,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: 8px;
+		gap: 4px 8px;
 	}
 
 	&__date,
@@ -137,6 +132,7 @@
 		display: -webkit-box;
 		overflow: hidden;
 		font-weight: 700;
+		line-height: 1.35;
 		color: var(--gray-800);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 3;
@@ -151,6 +147,7 @@
 
 		display: -webkit-box;
 		overflow: hidden;
+		line-height: 1.35;
 		color: var(--gray-500);
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
@@ -465,5 +462,19 @@
 				background-color: var(--white);
 			}
 		}
+	}
+}
+
+.projects-slider:not(.projects-slider--single-row, .projects-slider--home-tabs)
+	.projects-slider__card-title {
+	@include mobile-above {
+		min-height: 4.05em;
+	}
+}
+
+.projects-slider:not(.projects-slider--single-row, .projects-slider--home-tabs)
+	.projects-slider__text {
+	@include mobile-above {
+		min-height: 2.7em;
 	}
 }
